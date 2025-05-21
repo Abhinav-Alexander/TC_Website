@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Therapy Council - Begin Your Journey to Well-being</title>
+    <title>Therapy Council – Begin Your Journey to Well-being</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -15,15 +20,25 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- ▸ HEADER ---------------------------------------------------------- -->
     <header class="header">
         <div class="container header-container">
+
             <div class="logo-container">
                 <div class="logo-image">
-                    <img src="logo/logo_black.png" alt="Therapy Council Logo" />
+                    <img src="logo/logo_black.png"
+                         alt="Therapy Council Logo">
                 </div>
                 <h1 class="logo-text">THERAPY COUNCIL</h1>
             </div>
+
+            <!-- Hamburger button (visible on small screens) -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Primary navigation -->
             <nav>
                 <ul class="nav-links">
                     <li><a href="#">Services</a></li>
@@ -36,9 +51,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ▸ HERO ------------------------------------------------------------ -->
     <section class="hero">
         <div class="container hero-container">
+
             <div class="hero-content">
                 <h2>Begin Your Journey to Well-being Today</h2>
                 <p>Experience transformative therapy with our expert clinicians at a special introductory rate.</p>
@@ -46,11 +62,11 @@
                     Limited Time: 50% Off Your First Session
                 </div>
             </div>
+
             <div class="signup-card">
                 <h3>Reserve Your Session</h3>
-                
-                <!-- Sign-up Fields -->
-                <div class="signup-form">
+
+                <form class="signup-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" placeholder="Jane Doe">
@@ -73,66 +89,69 @@
                             <option>Other</option>
                         </select>
                     </div>
+
                     <div class="secure-notice">
                         <div class="secure-badge"></div>
                         <p>Secure & Confidential</p>
                     </div>
-                    <button class="cta-button">Claim Your Discounted Session</button>
+
+                    <button class="cta-button" type="submit">
+                        Claim Your Discounted Session
+                    </button>
+
                     <p class="terms-notice">
                         By booking, you agree to our privacy policy and terms of service.
                     </p>
-                </div>
+                </form>
             </div>
+
         </div>
     </section>
 
-    <!-- Trust Signals -->
+    <!-- ▸ TRUST SIGNALS --------------------------------------------------- -->
     <section class="trust-signals">
         <div class="container">
             <div class="features">
+
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-award"></i></div>
                     <h3>Licensed Professionals</h3>
                     <p>All therapists are fully licensed with advanced training</p>
                 </div>
+
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>100% Confidential</h3>
                     <p>Your privacy is guaranteed with secure, encrypted sessions</p>
                 </div>
+
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
                     <h3>Flexible Scheduling</h3>
                     <p>Evening and weekend appointments available</p>
                 </div>
+
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                     <h3>Personalized Approach</h3>
                     <p>Tailored therapy plans to meet your specific needs</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
+    <!-- ▸ SOCIAL PROOF ---------------------------------------------------- -->
     <section class="social-proof">
         <div class="container">
+
             <h2>Transformative Experiences</h2>
-            
+
             <div class="testimonials">
+
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                         <div class="testimonial-author">
                             <h4>Sarah K.</h4>
                             <p>Client since 2022</p>
@@ -140,12 +159,10 @@
                     </div>
                     <p class="testimonial-text">"I was hesitant to try therapy, but that first session changed everything. The personalized approach helped me develop coping skills I use every day."</p>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                         <div class="testimonial-author">
                             <h4>Michael T.</h4>
                             <p>Client since 2023</p>
@@ -153,12 +170,10 @@
                     </div>
                     <p class="testimonial-text">"My therapist's expertise helped me navigate a difficult transition period. I'm grateful I took that first step and booked the introductory session."</p>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                         <div class="testimonial-author">
                             <h4>Jamie R.</h4>
                             <p>Client since 2021</p>
@@ -166,100 +181,79 @@
                     </div>
                     <p class="testimonial-text">"The safe space created during my sessions allowed me to explore underlying issues I didn't even realize were affecting me. It's been truly life-changing."</p>
                 </div>
+
             </div>
-            
+
             <div class="rating-badge">
                 <span class="rating-score">4.9/5</span>
                 <span class="rating-text">Average Client Rating</span>
                 <span class="rating-stars">★★★★★</span>
             </div>
+
         </div>
     </section>
 
-    <!-- Value Clarity & Scarcity -->
+    <!-- ▸ VALUE SECTION --------------------------------------------------- -->
     <section class="value-section">
         <div class="container value-container">
+
             <div class="expect-content">
                 <h2>What to Expect</h2>
+
                 <div class="expect-details">
                     <h3>Your First Session</h3>
                     <ul class="benefits-list">
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>A comfortable, non-judgmental space to share your story</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>Collaborative goal-setting based on your needs</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>Initial insights and practical takeaways you can use immediately</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>A personalized recommendation for your therapy journey</p>
-                        </li>
+                        <li><div class="bullet-point"></div><p>A comfortable, non-judgmental space to share your story</p></li>
+                        <li><div class="bullet-point"></div><p>Collaborative goal-setting based on your needs</p></li>
+                        <li><div class="bullet-point"></div><p>Initial insights and practical takeaways you can use immediately</p></li>
+                        <li><div class="bullet-point"></div><p>A personalized recommendation for your therapy journey</p></li>
                     </ul>
                 </div>
-                
+
                 <div class="approach">
                     <h3>Our Approach</h3>
-                    <p>
-                        We combine evidence-based techniques with compassionate care to help you overcome challenges and thrive. Our integrative methods are tailored to your unique situation.
-                    </p>
+                    <p>We combine evidence-based techniques with compassionate care to help you overcome challenges and thrive. Our integrative methods are tailored to your unique situation.</p>
                 </div>
             </div>
-            
+
             <div class="offer-card">
                 <div class="offer-header">
                     <h3>Limited Time Offer</h3>
                     <p>Experience transformative therapy at a special introductory rate</p>
-                    
+
                     <div class="price-display">
                         <div class="original-price">$180</div>
                         <div class="sale-price">$90</div>
-                        <div class="discount-tag">
-                            50% OFF
-                        </div>
+                        <div class="discount-tag">50% OFF</div>
                     </div>
-                    
+
                     <div class="availability">
                         <i class="fas fa-calendar"></i>
                         <span>Only 8 spots remaining this month</span>
                     </div>
                 </div>
-                
+
                 <div class="pain-points">
                     <h4>Are you experiencing:</h4>
                     <ul class="pain-list">
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Persistent worry or overwhelming stress?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Difficulty in relationships or communication?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Feelings of sadness or lack of motivation?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>A desire for personal growth and self-discovery?</span>
-                        </li>
+                        <li><div class="pain-bullet"></div><span>Persistent worry or overwhelming stress?</span></li>
+                        <li><div class="pain-bullet"></div><span>Difficulty in relationships or communication?</span></li>
+                        <li><div class="pain-bullet"></div><span>Feelings of sadness or lack of motivation?</span></li>
+                        <li><div class="pain-bullet"></div><span>A desire for personal growth and self-discovery?</span></li>
                     </ul>
                     <button class="cta-button">Book Your Discounted Session Now</button>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Footer with credentials & trust -->
+    <!-- ▸ FOOTER ---------------------------------------------------------- -->
     <footer class="footer">
         <div class="container footer-container">
+
             <div class="footer-sections">
+
                 <div class="footer-brand">
                     <h3>Therapy Council</h3>
                     <p>Professional therapy services delivered with compassion and expertise.</p>
@@ -269,29 +263,17 @@
                         <div class="social-icon"><span>ig</span></div>
                     </div>
                 </div>
-                
+
                 <div class="footer-credentials">
                     <h3>Professional Credentials</h3>
                     <div class="credential-list">
-                        <div class="credential-item">
-                            <div class="credential-dot"></div>
-                            <span>Licensed Psychologists</span>
-                        </div>
-                        <div class="credential-item">
-                            <div class="credential-dot"></div>
-                            <span>HIPAA Compliant</span>
-                        </div>
-                        <div class="credential-item">
-                            <div class="credential-dot"></div>
-                            <span>APA Members</span>
-                        </div>
-                        <div class="credential-item">
-                            <div class="credential-dot"></div>
-                            <span>Evidence-Based</span>
-                        </div>
+                        <div class="credential-item"><div class="credential-dot"></div><span>Licensed Psychologists</span></div>
+                        <div class="credential-item"><div class="credential-dot"></div><span>HIPAA Compliant</span></div>
+                        <div class="credential-item"><div class="credential-dot"></div><span>APA Members</span></div>
+                        <div class="credential-item"><div class="credential-dot"></div><span>Evidence-Based</span></div>
                     </div>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
                     <p>support@therapycouncil.com</p>
@@ -299,14 +281,17 @@
                     <p>123 Wellness Way, Suite 100</p>
                     <button class="support-button">Get Support</button>
                 </div>
+
             </div>
-            
+
             <div class="footer-bottom">
                 <p>© 2025 Therapy Council. All rights reserved. Privacy Policy | Terms of Service</p>
             </div>
+
         </div>
     </footer>
 
+    <!-- ▸ JS -------------------------------------------------------------- -->
     <script src="script.js"></script>
 </body>
 </html>
