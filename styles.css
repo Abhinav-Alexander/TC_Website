@@ -818,3 +818,369 @@ select {
         width: 100%;
     }
 }
+
+/* ▸ THANK YOU PAGE STYLES -------------------------------------------- */
+
+/* Thank You Hero Section */
+.thank-you-hero {
+    background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.thank-you-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    margin-bottom: 24px;
+}
+
+.success-icon i {
+    font-size: 64px;
+    color: #10b981;
+    background: white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.thank-you-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.thank-you-content .lead {
+    font-size: 20px;
+    margin-bottom: 0;
+    opacity: 0.95;
+}
+
+/* Next Steps Section */
+.next-steps {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.next-steps-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.next-steps h2 {
+    font-size: 30px;
+    margin-bottom: 48px;
+    color: #1f2937;
+}
+
+.steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: left;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border-left: 4px solid #0d9488;
+}
+
+.step-number {
+    background: #0d9488;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: #1f2937;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.step-content p {
+    color: #6b7280;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.step-time {
+    color: #0d9488;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Important Info Section */
+.important-info {
+    padding: 60px 0;
+    background-color: #f9fafb;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.info-card.emergency {
+    border-color: #fbbf24;
+    background: #fffbeb;
+}
+
+.info-icon {
+    margin-bottom: 16px;
+}
+
+.info-icon i {
+    font-size: 32px;
+    color: #0d9488;
+}
+
+.info-card.emergency .info-icon i {
+    color: #f59e0b;
+}
+
+.info-card h3 {
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.info-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Helpful Resources Section */
+.helpful-resources {
+    padding: 60px 0;
+    background: white;
+}
+
+.helpful-resources h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 48px;
+    color: #1f2937;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background: #f9fafb;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.resource-card:hover {
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.resource-icon {
+    margin-bottom: 16px;
+}
+
+.resource-icon i {
+    font-size: 28px;
+    color: #0d9488;
+}
+
+.resource-card h4 {
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.resource-card p {
+    color: #6b7280;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0d9488;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #0f766e;
+}
+
+.resource-link i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.resource-link:hover i {
+    transform: translateX(2px);
+}
+
+/* Stay Connected Section */
+.stay-connected {
+    padding: 60px 0;
+    background: #1f2937;
+    color: white;
+    text-align: center;
+}
+
+.connect-content h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.connect-content p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: #374151;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    background: #0d9488;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.social-link i {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .thank-you-content h1 {
+        font-size: 42px;
+    }
+
+    .steps-timeline {
+        gap: 24px;
+    }
+
+    .step-item {
+        gap: 24px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .social-links {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thank-you-hero {
+        padding: 60px 0 40px;
+    }
+
+    .success-icon i {
+        font-size: 48px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .thank-you-content h1 {
+        font-size: 28px;
+    }
+
+    .thank-you-content .lead {
+        font-size: 18px;
+    }
+
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .step-content {
+        text-align: center;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link {
+        justify-content: center;
+        min-width: 200px;
+    }
+}

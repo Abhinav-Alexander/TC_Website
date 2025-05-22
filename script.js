@@ -42,50 +42,53 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ── booking-form logic ─────────────────────────────────── */
-const form  = document.getElementById('bookingForm');
-const toast = document.getElementById('formToast');
+const form = document.getElementById('bookingForm');
 
-if (form && toast) {
+if (form) {
 const endpoint = form.action;
-const btn      = form.querySelector('button');
-const nameFld  = document.getElementById('name');
+const btn = form.querySelector('button');
+const nameFld = document.getElementById('name');
 const phoneFld = document.getElementById('phone');
 const emailFld = document.getElementById('email');
 
 /* live phone filter: digits only */
-phoneFld.addEventListener('input', () => {
-  phoneFld.value = phoneFld.value.replace(/[^0-9]/g, '');
-});
+if (phoneFld) {
+  phoneFld.addEventListener('input', () => {
+    phoneFld.value = phoneFld.value.replace(/[^0-9]/g, '');
+  });
+}
 
 /* custom validity + error text */
 const checks = {
-  name:  {
+  name: {
     field: nameFld,
     errEl: document.getElementById('nameErr'),
-    msg:   'Enter your first & last name (letters only).'
+    msg: 'Enter your first & last name (letters only).'
   },
   phone: {
     field: phoneFld,
     errEl: document.getElementById('phoneErr'),
-    msg:   'Phone must be 10–15 digits, no symbols or spaces.'
+    msg: 'Phone must be 10-15 digits, no symbols or spaces.'
   },
   email: {
     field: emailFld,
     errEl: document.getElementById('emailErr'),
-    msg:   'Please enter a valid email like name@example.com.'
+    msg: 'Please enter a valid email like name@example.com.'
   }
 };
 
 /* attach handlers */
 Object.values(checks).forEach(({ field, errEl, msg }) => {
-  field.addEventListener('invalid', () => {
-    field.setCustomValidity(msg);
-    errEl.textContent = msg;
-  });
-  field.addEventListener('input', () => {
-    field.setCustomValidity('');
-    errEl.textContent = '';
-  });
+  if (field && errEl) {
+    field.addEventListener('invalid', () => {
+      field.setCustomValidity(msg);
+      errEl.textContent = msg;
+    });
+    field.addEventListener('input', () => {
+      field.setCustomValidity('');
+      errEl.textContent = '';
+    });
+  }
 });
 
 /* main submit */
@@ -100,14 +103,14 @@ form.addEventListener('submit', async (e) => {
   /* honeypot spam trap */
   if (data.get('website')) return;
 
-  btn.disabled   = true;
-  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
 
   try {
     const res = await fetch(endpoint, { method: 'POST', body: data });
     if (res.ok) {
-      form.reset();
-      showToast('Thank you! We will be in touch shortly.');
+      // Redirect to thank you page on success
+      window.location.href = '/src/thank-you.html';
     } else {
       throw new Error(`Server responded ${res.status}`);
     }
@@ -115,16 +118,41 @@ form.addEventListener('submit', async (e) => {
     console.error(err);
     showToast('Oops - please try again or email us.', true);
   } finally {
-    btn.disabled   = false;
+    btn.disabled = false;
     btn.textContent = 'Claim Your Discounted Session';
   }
 });
 
-/* toast helper */
+/* toast helper - fallback for errors */
 function showToast(message, isError = false) {
+  // Create toast element if it doesn't exist
+  let toast = document.getElementById('formToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'formToast';
+    toast.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: ${isError ? '#ef4444' : '#10b981'};
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      max-width: 300px;
+    `;
+    document.body.appendChild(toast);
+  }
+  
   toast.textContent = message;
-  toast.classList.toggle('error', isError);
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4000);
+  toast.style.background = isError ? '#ef4444' : '#10b981';
+  toast.style.transform = 'translateX(0)';
+  
+  setTimeout(() => {
+    toast.style.transform = 'translateX(400px)';
+  }, 4000);
 }
 }
