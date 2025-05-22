@@ -62,6 +62,8 @@ select {
     background-color: white;
     box-shadow: none;
     padding: 1px 0;
+    position: relative;
+    z-index: 1000;
 }
 
 .header-container {
@@ -85,7 +87,7 @@ select {
 }
 
 .logo-image img {
-    height: 80px; /* Adjusted size */
+    height: 80px;
     width: auto;
 }
 
@@ -117,11 +119,24 @@ select {
     color: #0d9488;
 }
 
+/* Hamburger button (hidden on ≥768 px) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: #334155;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
-    background: #3C827F; /* Changed to match your screenshot */
+    background: #3C827F;
     color: white;
     padding: 64px 0;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-container {
@@ -164,6 +179,8 @@ select {
     padding: 24px;
     width: 100%;
     max-width: 440px;
+    position: relative;
+    z-index: 20;
 }
 
 .signup-card h3 {
@@ -187,6 +204,18 @@ select {
     display: block;
     color: #4b5563;
     margin-bottom: 4px;
+}
+
+.form-group .hint {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.form-group .error-msg {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
 }
 
 .secure-notice {
@@ -232,6 +261,8 @@ select {
 .trust-signals {
     background-color: white;
     padding: 48px 0;
+    position: relative;
+    z-index: 5;
 }
 
 .features {
@@ -334,13 +365,16 @@ select {
 }
 
 .rating-badge {
-    display: inline-block;
+    display: flex;
     background-color: white;
     border-radius: 9999px;
     padding: 12px 24px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 24px auto 0;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
 
 .rating-score {
@@ -583,6 +617,12 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.2s;
+}
+
+.social-icon:active,
+.social-icon:hover {
+    background: #4b5563;
 }
 
 .credential-list {
@@ -640,7 +680,62 @@ select {
     font-size: 14px;
 }
 
-/* Responsive Styles */
+.footer-bottom a {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* Mobile Navigation */
+@media (max-width: 767px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ffffff;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .nav-links.open {
+        max-height: 300px;
+        padding: 1rem 0;
+    }
+
+    .nav-links li {
+        padding: 12px 24px;
+        border-bottom: 1px solid #f3f4f6;
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links li:hover {
+        background-color: #f9fafb;
+        color: #0d9488;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        font-weight: 500;
+    }
+}
+
+/* Desktop Responsive Styles */
 @media (min-width: 768px) {
     .hero-container {
         flex-direction: row;
@@ -693,93 +788,33 @@ select {
     }
 }
 
-/* ─────────────── BASE STYLES (as you provided) ─────────────── */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9fafb;
-}
-
-/* ...  ⬇︎  everything you already had  ⬇︎  (unchanged) ... */
-
-/* ------------- Responsive Styles at ≥768px (unchanged) ------------- */
-@media (min-width: 768px) {
-    .hero-container { flex-direction: row; align-items: center; }
-    .hero-content   { width: 50%; text-align: left; margin-bottom: 0; padding-right: 48px; }
-    .signup-card    { width: 50%; }
-
-    .feature-item   { width: 25%; }
-    .testimonial-card { width: calc(33.333% - 32px); }
-
-    .value-container { flex-direction: row; }
-    .expect-content  { width: 50%; padding-right: 48px; margin-bottom: 0; }
-    .offer-card      { width: 50%; }
-
-    .footer-brand       { width: 33.333%; }
-    .footer-credentials { width: 33.333%; }
-    .footer-contact     { width: 25%; }
-}
-
-/* ──────────────────────────────────────────────────────────────── */
-/*            MOBILE-FIRST ENHANCEMENTS (new section)              */
-/* ──────────────────────────────────────────────────────────────── */
-
-/* 1) Hamburger button (hidden on ≥768 px) */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    line-height: 1;
-    color: #334155;
-    cursor: pointer;
-}
-
-/* 2) Collapsible nav on phones */
-@media (max-width: 767px) {
-    /* show burger */
-    .nav-toggle { display: block; }
-
-    /* override row layout */
-    .nav-links {
-        position: absolute;
-        inset: 100% 0 auto 0;       /* sticks under header */
-        flex-direction: column;
-        background: #ffffff;
-        gap: 0.75rem;
-        padding: 1rem 1.25rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        box-shadow: 0 1px 8px hsl(0 0% 0% / 0.08);
-        z-index: 999;
-    }
-    /* toggled state */
-    .nav-links.open { max-height: 340px; }
-}
-
-/* 3) Tighter hero on XS screens */
+/* Mobile optimizations */
 @media (max-width: 480px) {
-    .hero { padding: 48px 0; }
-    .hero-content h2 { font-size: 28px; }
-    .hero-content p  { font-size: 18px; }
-    .signup-card     { padding: 20px; }
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .signup-card {
+        padding: 20px;
+    }
 }
 
-/* 4) Flexible feature grid */
 @media (max-width: 767px) {
     .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 1.25rem;
     }
-    .feature-item { width: 100%; }
-}
 
-/* 5) Touch-friendly footer icons */
-.social-icon { transition: background 0.2s; }
-.social-icon:active,
-.social-icon:hover  { background: #4b5563; }
+    .feature-item {
+        width: 100%;
+    }
+}
