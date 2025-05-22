@@ -61,14 +61,14 @@ select {
 .header {
     background-color: white;
     box-shadow: none;
-    padding: 20px 0;
+    padding: 1px 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 20px;
+    padding: 10px 20px;
 }
 
 .logo-container {
@@ -783,23 +783,3 @@ body {
 .social-icon { transition: background 0.2s; }
 .social-icon:active,
 .social-icon:hover  { background: #4b5563; }
-
-/* ---------- toast feedback ---------- */
-.form-toast {
-    position: fixed;
-    left: 50%;
-    bottom: 2rem;
-    transform: translateX(-50%) translateY(100%);
-    background: #10b981;
-    color: #fff;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 6px 16px hsl(155 60% 10% / 0.25);
-    font-size: 0.95rem;
-    pointer-events: none;
-    transition: transform 0.35s ease;
-    z-index: 1000;
-  }
-  .form-toast.show { transform: translateX(-50%) translateY(0); }
-  .form-toast.error { background: #ef4444; }
-  
