@@ -1,0 +1,376 @@
+/* ▸ SERVICES PAGE STYLES - Specific to services.html */
+
+/* Services Overview */
+.services-overview {
+    padding: 60px 0;
+    background: white;
+}
+
+.overview-content {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.overview-content h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+    color: #1f2937;
+}
+
+.overview-content p {
+    font-size: 18px;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: #0d9488;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.service-icon {
+    margin-bottom: 20px;
+}
+
+.service-icon i {
+    font-size: 32px;
+    color: #0d9488;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.service-card > p {
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.service-features li {
+    color: #6b7280;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+}
+
+.service-features li::before {
+    content: "✓";
+    color: #0d9488;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.service-link {
+    color: #0d9488;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: #0f766e;
+}
+
+.service-link i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Service Details */
+.service-details {
+    padding: 60px 0;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+.service-detail-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.service-detail-card h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #1f2937;
+    text-align: center;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.detail-text .lead {
+    font-size: 18px;
+    color: #0d9488;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.detail-text h4 {
+    font-size: 20px;
+    margin: 24px 0 16px;
+    color: #1f2937;
+}
+
+.detail-text p {
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.benefit-item i {
+    color: #0d9488;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.benefit-item span {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.detail-sidebar {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.pricing-card {
+    text-align: center;
+}
+
+.pricing-card h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.pricing-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.pricing-card li {
+    margin-bottom: 8px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.pricing-card strong {
+    color: #1f2937;
+}
+
+/* Treatment Approaches */
+.treatment-approaches {
+    padding: 60px 0;
+    background: white;
+}
+
+.treatment-approaches h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.treatment-approaches > p {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 48px;
+    font-size: 18px;
+}
+
+.approaches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.approach-card {
+    background: #f9fafb;
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid #0d9488;
+}
+
+.approach-card h4 {
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.approach-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 60px 0;
+    background: #f9fafb;
+}
+
+.faq-section h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 48px;
+    color: #1f2937;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.faq-question {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f9fafb;
+}
+
+.faq-question h4 {
+    color: #1f2937;
+    font-size: 16px;
+    margin: 0;
+}
+
+.faq-question i {
+    color: #6b7280;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 24px 20px;
+    max-height: 200px;
+}
+
+.faq-answer p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .detail-content {
+        flex-direction: row;
+    }
+    
+    .detail-text {
+        flex: 2;
+    }
+    
+    .detail-sidebar {
+        flex: 1;
+        margin-left: 32px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .approaches-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .approaches-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,216 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Therapy Council</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" src="/src/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – Therapy Council</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header-footer.css">
+<link rel="stylesheet" href="../css/about.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="index.html">
-            <h1>THERAPY<span>COUNCIL</span></h1>
-          </a>
+
+<!-- ▸ HEADER ------------------------------------------------------------ -->
+<header class="header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <div class="logo-image">
+                <img src="../logo/logo_black.png" alt="Therapy Council Logo">
+            </div>
+            <h1 class="logo-text">THERAPY COUNCIL</h1>
         </div>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
-        <div class="mobile-nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
     </div>
-  </header>
+</header>
 
-  <!-- Hero Section -->
-  <section class="about-hero">
+<!-- ▸ HERO SECTION ------------------------------------------------------ -->
+<section class="page-hero">
     <div class="container">
-      <div class="hero-content">
-        <h2>About Therapy Council</h2>
-        <p>Learn about our mission, values, and approach to therapy.</p>
-      </div>
+        <div class="page-hero-content">
+            <h1>About Therapy Council</h1>
+            <p>Dedicated to transforming lives through compassionate, evidence-based therapy.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- About Content -->
-  <section class="about-content">
+<!-- ▸ OUR STORY SECTION ------------------------------------------------- -->
+<section class="our-story">
     <div class="container">
-      <!-- About Us Section -->
-      <div class="about-section">
-        <div class="section-header">
-          <h2>Our Story</h2>
-          <p>How we began and where we're going</p>
+        <div class="story-content">
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p class="lead">Founded in 2018 with a vision to make quality mental health care accessible to everyone in our community.</p>
+                
+                <p>Therapy Council began when a group of dedicated mental health professionals recognized a critical gap in accessible, high-quality therapy services. We saw too many individuals struggling with barriers—whether financial, cultural, or simply the overwhelming process of finding the right therapist.</p>
+                
+                <p>What started as a small practice with three therapists has grown into a comprehensive mental health center serving hundreds of clients. Throughout our growth, we've remained committed to our founding principles: personalized care, evidence-based treatment, and creating a safe, inclusive environment where healing can happen.</p>
+                
+                <p>Today, we're proud to offer a diverse range of therapeutic services, from individual and couples therapy to specialized programs for trauma recovery and family healing. Our team continues to evolve, bringing new expertise and perspectives while maintaining the compassionate approach that defines who we are.</p>
+            </div>
+            
+            <div class="story-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Lives Transformed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Licensed Therapists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <p>
-            Therapy Council was founded in 2018 by a group of dedicated mental health professionals who shared a vision: to create a therapy practice that combines evidence-based techniques with genuine compassion and accessibility. We recognized that many people face barriers to receiving quality mental health care, whether due to cost, stigma, or lack of tailored approaches.
-          </p>
-          <p>
-            What began as a small practice has grown into a diverse team of specialized therapists, each bringing unique skills and perspectives to our collaborative approach. Throughout our growth, we've remained committed to our founding principles: providing personalized care, creating a safe and inclusive environment, and empowering our clients to achieve meaningful change in their lives.
-          </p>
-          <p>
-            Today, Therapy Council serves hundreds of individuals, couples, and families across our community. We continue to evolve our practices based on the latest research, client feedback, and emerging therapeutic approaches, ensuring that we provide the most effective care possible.
-          </p>
-        </div>
-      </div>
-
-      <!-- Mission & Values -->
-      <div class="about-section" id="mission">
-        <div class="section-header">
-          <h2>Our Mission & Values</h2>
-          <p>The principles that guide our practice</p>
-        </div>
-        <p>
-          At Therapy Council, our mission is to provide transformative therapeutic support that empowers individuals, couples, and families to overcome challenges, build resilience, and create more fulfilling lives. We believe that therapy should be accessible, personalized, and guided by both scientific evidence and genuine human connection.
-        </p>
-        <div class="mission-values">
-          <div class="value-card">
-            <h3>Compassion</h3>
-            <p>We approach every client with empathy, understanding, and non-judgment, creating a safe space for vulnerability and growth.</p>
-          </div>
-          <div class="value-card">
-            <h3>Excellence</h3>
-            <p>We are committed to providing the highest quality care through continuous education, supervision, and evidence-based practices.</p>
-          </div>
-          <div class="value-card">
-            <h3>Inclusivity</h3>
-            <p>We honor diverse backgrounds, identities, and experiences, tailoring our approaches to meet each client's unique needs.</p>
-          </div>
-          <div class="value-card">
-            <h3>Collaboration</h3>
-            <p>We view therapy as a partnership, working together with clients to establish goals and develop strategies for meaningful change.</p>
-          </div>
-          <div class="value-card">
-            <h3>Integrity</h3>
-            <p>We uphold the highest ethical standards, maintaining confidentiality and respecting client autonomy in all our interactions.</p>
-          </div>
-          <div class="value-card">
-            <h3>Growth</h3>
-            <p>We believe in the capacity for positive change and help clients build on their strengths to create lasting transformation.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Our Approach -->
-      <div class="about-section" id="approach">
-        <div class="section-header">
-          <h2>Our Therapeutic Approach</h2>
-          <p>How we work with clients to create positive change</p>
-        </div>
-        <p>
-          At Therapy Council, we take an integrative approach to therapy, drawing from multiple evidence-based methods to address each client's unique needs. We believe that effective therapy combines proven techniques with a strong therapeutic relationship, creating a foundation for meaningful and lasting change.
-        </p>
-        <p>
-          Our therapists are trained in a variety of modalities, including:
-        </p>
-        <ul class="approach-list" style="margin-bottom: 1.5rem;">
-          <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps identify and change thought patterns that negatively influence behavior and emotions.</li>
-          <li><strong>Mindfulness-Based Approaches:</strong> Cultivates present-moment awareness to reduce stress and enhance well-being.</li>
-          <li><strong>Emotion-Focused Therapy:</strong> Works with emotions as a primary source of meaning and direction for positive change.</li>
-          <li><strong>Solution-Focused Brief Therapy:</strong> Focuses on solutions rather than problems by identifying resources and future hopes.</li>
-          <li><strong>Psychodynamic Therapy:</strong> Explores unconscious processes and past experiences that influence current behavior.</li>
-          <li><strong>Acceptance and Commitment Therapy (ACT):</strong> Helps clients accept difficult thoughts and feelings while committing to behavior change.</li>
-        </ul>
-        <p>
-          Rather than adhering strictly to one methodology, we customize our approach based on what research and experience indicate will be most effective for your specific situation. Throughout the therapy process, we regularly check in about what's working and what isn't, adjusting our methods as needed to ensure you're progressing toward your goals.
-        </p>
-        <p>
-          We believe that therapy should be both supportive and challenging, providing a compassionate space for exploration while also encouraging growth and positive change. Our goal is to help you not only resolve immediate concerns but also develop the insights and skills that will serve you well beyond your time in therapy.
-        </p>
-      </div>
-
-      <!-- Team Preview -->
-      <div class="about-section">
-        <div class="section-header">
-          <h2>Our Team</h2>
-          <p>Meet the dedicated professionals behind Therapy Council</p>
-        </div>
-        <p class="team-preview">
-          Our diverse team of licensed therapists brings together a wide range of specialties, experiences, and approaches. Each therapist undergoes rigorous training and ongoing professional development to ensure they provide the highest quality care. We take a collaborative approach, consulting with one another to bring multiple perspectives to complex situations.
-        </p>
-        <div class="team-cta">
-          <a href="team.html" class="btn btn-primary">Meet Our Team</a>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
+<!-- ▸ MISSION & VALUES SECTION ------------------------------------------ -->
+<section class="mission-values">
     <div class="container">
-      <div class="cta-content">
-        <h2>Ready to Begin Your Healing Journey?</h2>
-        <p>Experience transformative therapy at a special introductory rate. Take the first step toward positive change today.</p>
-        <a href="contact.html" class="btn btn-primary">Book Your Session</a>
-      </div>
+        <div class="mission-content">
+            <div class="mission-statement">
+                <h2>Our Mission</h2>
+                <p>To provide transformative therapeutic support that empowers individuals, couples, and families to overcome challenges, build resilience, and create more fulfilling lives. We believe therapy should be accessible, personalized, and guided by both scientific evidence and genuine human connection.</p>
+            </div>
+            
+            <div class="values-grid">
+                <h3>Our Core Values</h3>
+                <div class="values-list">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Compassion</h4>
+                        <p>We approach every client with empathy, understanding, and non-judgment, creating a safe space for vulnerability and growth.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Excellence</h4>
+                        <p>We're committed to providing the highest quality care through continuous education, supervision, and evidence-based practices.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Inclusivity</h4>
+                        <p>We honor diverse backgrounds, identities, and experiences, tailoring our approaches to meet each client's unique needs.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Collaboration</h4>
+                        <p>We view therapy as a partnership, working together with clients to establish goals and develop strategies for meaningful change.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Integrity</h4>
+                        <p>We uphold the highest ethical standards, maintaining confidentiality and respecting client autonomy in all our interactions.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Growth</h4>
+                        <p>We believe in the capacity for positive change and help clients build on their strengths to create lasting transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
+<!-- ▸ OUR APPROACH SECTION ---------------------------------------------- -->
+<section class="our-approach">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <h2>THERAPY<span>COUNCIL</span></h2>
-          <p>Transformative therapy for your well-being</p>
+        <div class="approach-content">
+            <div class="approach-text">
+                <h2>Our Therapeutic Approach</h2>
+                <p class="lead">We take an integrative approach to therapy, drawing from multiple evidence-based methods to address each client's unique needs.</p>
+                
+                <p>Our therapists are trained in a variety of modalities, allowing us to customize treatment plans that work best for your specific situation. We believe that effective therapy combines proven techniques with a strong therapeutic relationship.</p>
+                
+                <div class="modalities-list">
+                    <h4>Our Treatment Modalities Include:</h4>
+                    <ul>
+                        <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Identifies and changes thought patterns that negatively influence behavior and emotions</li>
+                        <li><strong>Mindfulness-Based Approaches:</strong> Cultivates present-moment awareness to reduce stress and enhance well-being</li>
+                        <li><strong>Emotion-Focused Therapy:</strong> Works with emotions as a primary source of meaning and direction for positive change</li>
+                        <li><strong>Solution-Focused Brief Therapy:</strong> Focuses on solutions rather than problems by identifying resources and future hopes</li>
+                        <li><strong>Psychodynamic Therapy:</strong> Explores unconscious processes and past experiences that influence current behavior</li>
+                        <li><strong>Acceptance and Commitment Therapy (ACT):</strong> Helps clients accept difficult thoughts and feelings while committing to behavior change</li>
+                    </ul>
+                </div>
+                
+                <p>Throughout the therapy process, we regularly check in about what's working and adjust our methods as needed to ensure you're progressing toward your goals. Our aim is to help you not only resolve immediate concerns but also develop insights and skills that will serve you well beyond therapy.</p>
+            </div>
+            
+            <div class="approach-visual">
+                <div class="approach-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h5>Assessment</h5>
+                        <p>We start by understanding your unique situation, goals, and preferences</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h5>Personalization</h5>
+                        <p>We develop a treatment plan tailored specifically to your needs</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h5>Progress</h5>
+                        <p>We work together using evidence-based techniques to achieve your goals</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h5>Growth</h5>
+                        <p>You develop lasting skills and insights for continued well-being</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-links">
-          <div class="footer-links-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-column">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="services.html#individual">Individual Therapy</a></li>
-              <li><a href="services.html#couples">Couples Therapy</a></li>
-              <li><a href="services.html#family">Family Therapy</a></li>
-              <li><a href="services.html#group">Group Therapy</a></li>
-              <li><a href="services.html#telehealth">Telehealth</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-column">
-            <h3>Contact Us</h3>
-            <ul class="contact-info">
-              <li><i class="icon-location"></i>123 Healing Way, Suite 201<br>New York, NY 10001</li>
-              <li><i class="icon-phone"></i>(555) 123-4567</li>
-              <li><i class="icon-email"></i>info@therapycouncil.org</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Therapy Council. All Rights Reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-        </div>
-      </div>
     </div>
-  </footer>
+</section>
+
+<!-- ▸ TEAM PREVIEW SECTION ---------------------------------------------- -->
+<section class="team-preview">
+    <div class="container">
+        <div class="team-preview-content">
+            <h2>Meet Our Team</h2>
+            <p>Our diverse team of licensed therapists brings together a wide range of specialties, experiences, and approaches. Each therapist undergoes rigorous training and ongoing professional development to ensure the highest quality care.</p>
+            
+            <div class="team-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Advanced Training</h4>
+                    <p>All therapists hold advanced degrees and specialized certifications</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-users-cog"></i>
+                    <h4>Collaborative Approach</h4>
+                    <p>Our team consults with one another to bring multiple perspectives to complex situations</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-book-reader"></i>
+                    <h4>Ongoing Education</h4>
+                    <p>Continuous professional development ensures we stay current with best practices</p>
+                </div>
+            </div>
+            
+            <div class="team-cta">
+                <a href="team.html" class="cta-button">Meet Our Therapists</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ CTA SECTION ------------------------------------------------------- -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Begin Your Healing Journey?</h2>
+            <p>Experience transformative therapy at a special introductory rate. Take the first step toward positive change today.</p>
+            <a href="../index.html#bookingForm" class="cta-button">Book Your Session</a>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ FOOTER ------------------------------------------------------------ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-sections">
+            <div class="footer-brand">
+                <h3>Therapy Council</h3>
+                <p>Professional therapy services delivered with compassion and expertise.</p>
+                <div class="social-icons">
+                    <div class="social-icon"><span>f</span></div>
+                    <div class="social-icon"><span>in</span></div>
+                    <div class="social-icon"><span>ig</span></div>
+                </div>
+            </div>
+            
+            <div class="footer-credentials">
+                <h3>Professional Credentials</h3>
+                <div class="credential-list">
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Licensed Psychologists</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>APA Members</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Evidence-Based</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>support@therapycouncil.com</p>
+                <p>(555) 123-4567</p>
+                <p>123 Wellness Way, Suite 100</p>
+                <button class="support-button">Get Support</button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>
+                © 2025 Therapy Council. All rights reserved.
+                <a href="/docs/Privacy_policy.pdf" target="_blank">Privacy Policy</a> |
+                <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+<script src="../script.js"></script>
 </body>
 </html>

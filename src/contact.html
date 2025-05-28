@@ -1,231 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Therapy Council</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" src="/src/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Therapy Council</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header-footer.css">
+<link rel="stylesheet" href="../css/contact.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="index.html">
-            <h1>THERAPY<span>COUNCIL</span></h1>
-          </a>
+
+<!-- ▸ HEADER ------------------------------------------------------------ -->
+<header class="header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <div class="logo-image">
+                <img src="../logo/logo_black.png" alt="Therapy Council Logo">
+            </div>
+            <h1 class="logo-text">THERAPY COUNCIL</h1>
         </div>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-          </ul>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
         </nav>
-        <div class="mobile-nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
     </div>
-  </header>
+</header>
 
-  <!-- Hero Section -->
-  <section class="contact-hero">
+<!-- ▸ HERO SECTION ------------------------------------------------------ -->
+<section class="page-hero">
     <div class="container">
-      <div class="hero-content">
-        <h2>Contact Us</h2>
-        <p>We're here to answer your questions and help you begin your therapy journey</p>
-      </div>
+        <div class="page-hero-content">
+            <h1>Contact Us</h1>
+            <p>We're here to answer your questions and help you begin your therapy journey. Reach out today.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Contact Content -->
-  <section class="contact-content">
+<!-- ▸ CONTACT CONTENT --------------------------------------------------- -->
+<section class="contact-content">
     <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-form">
-          <div class="section-header">
-            <h2>Get in Touch</h2>
-            <p>Fill out the form below and we'll respond as soon as possible</p>
-          </div>
-          <form id="contactForm" action="#" method="POST">
-            <div class="form-group">
-              <label for="name" class="form-label">Your Name *</label>
-              <input type="text" id="name" name="name" class="form-control" required>
+        <div class="contact-wrapper">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our services or want to learn more? Fill out the form below and we'll respond as soon as possible.</p>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactService">Service of Interest</label>
+                            <select id="contactService" name="service">
+                                <option value="">Please select</option>
+                                <option value="individual">Individual Therapy</option>
+                                <option value="couples">Couples Therapy</option>
+                                <option value="family">Family Therapy</option>
+                                <option value="group">Group Therapy</option>
+                                <option value="specialized">Specialized Programs</option>
+                                <option value="telehealth">Telehealth Services</option>
+                                <option value="other">Other/Not Sure</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message *</label>
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about what brings you here or any questions you have..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" required>
+                            <span class="checkmark"></span>
+                            I agree to the privacy policy and consent to being contacted about my inquiry.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
             </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-control" required>
+            
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>123 Wellness Way, Suite 100<br>New York, NY 10001</p>
+                            <small>Easily accessible by public transportation</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+                            <small>Call or text for immediate assistance</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:support@therapycouncil.com">support@therapycouncil.com</a></p>
+                            <small>We typically respond within 24 hours</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Office Hours -->
+                <div class="office-hours-card">
+                    <h3>Office Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday - Thursday</span>
+                            <span class="time">9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Friday</span>
+                            <span class="time">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 3:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                    <p class="hours-note">Emergency appointments available outside regular hours</p>
+                </div>
+                
+                <!-- Insurance -->
+                <div class="insurance-card">
+                    <h3>Insurance & Payment</h3>
+                    <p>We accept most major insurance plans and offer flexible payment options to make therapy accessible.</p>
+                    <div class="insurance-features">
+                        <div class="insurance-item">
+                            <i class="fas fa-check"></i>
+                            <span>Most major insurance accepted</span>
+                        </div>
+                        <div class="insurance-item">
+                            <i class="fas fa-check"></i>
+                            <span>Sliding scale fees available</span>
+                        </div>
+                        <div class="insurance-item">
+                            <i class="fas fa-check"></i>
+                            <span>Payment plans offered</span>
+                        </div>
+                        <div class="insurance-item">
+                            <i class="fas fa-check"></i>
+                            <span>HSA/FSA accepted</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="service" class="form-label">Service of Interest</label>
-              <select id="service" name="service" class="form-control">
-                <option value="">Please select</option>
-                <option value="individual">Individual Therapy</option>
-                <option value="couples">Couples Therapy</option>
-                <option value="family">Family Therapy</option>
-                <option value="group">Group Therapy</option>
-                <option value="telehealth">Telehealth Services</option>
-                <option value="other">Other/Not Sure</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message" class="form-label">Your Message *</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
-            </div>
-            <div class="form-group">
-              <label class="form-check">
-                <input type="checkbox" name="privacy" required>
-                I agree to the privacy policy and consent to being contacted about my inquiry.
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
         </div>
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          <div class="contact-info-item">
-            <i class="icon-location"></i>
-            <div class="contact-info-text">
-              <h4>Our Location</h4>
-              <p>123 Healing Way, Suite 201<br>New York, NY 10001</p>
+    </div>
+</section>
+
+<!-- ▸ QUICK BOOKING SECTION --------------------------------------------- -->
+<section class="quick-booking">
+    <div class="container">
+        <div class="booking-content">
+            <div class="booking-text">
+                <h2>Ready to Book Your First Session?</h2>
+                <p>Skip the waiting and get started with our special introductory offer. Your first session is 50% off!</p>
+                <div class="booking-benefits">
+                    <div class="booking-benefit">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Quick online booking</span>
+                    </div>
+                    <div class="booking-benefit">
+                        <i class="fas fa-user-md"></i>
+                        <span>Matched with the right therapist</span>
+                    </div>
+                    <div class="booking-benefit">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% confidential</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="contact-info-item">
-            <i class="icon-phone"></i>
-            <div class="contact-info-text">
-              <h4>Phone</h4>
-              <p>(555) 123-4567</p>
+            <div class="booking-action">
+                <div class="price-highlight">
+                    <span class="original-price">$180</span>
+                    <span class="sale-price">$90</span>
+                    <span class="discount">50% OFF</span>
+                </div>
+                <a href="../index.html#bookingForm" class="cta-button large">Book Your Session Now</a>
+                <p class="booking-note">No commitment required • Cancel anytime</p>
             </div>
-          </div>
-          <div class="contact-info-item">
-            <i class="icon-email"></i>
-            <div class="contact-info-text">
-              <h4>Email</h4>
-              <p>info@therapycouncil.org</p>
-            </div>
-          </div>
-          
-          <div class="contact-hours">
-            <h3>Office Hours</h3>
-            <div class="hours-grid">
-              <div class="day">Monday - Thursday:</div>
-              <div class="hours">9:00 AM - 7:00 PM</div>
-              <div class="day">Friday:</div>
-              <div class="hours">9:00 AM - 5:00 PM</div>
-              <div class="day">Saturday:</div>
-              <div class="hours">10:00 AM - 3:00 PM</div>
-              <div class="day">Sunday:</div>
-              <div class="hours">Closed</div>
-            </div>
-          </div>
-          
-          <div style="margin-top: 2rem;">
-            <h3>Emergency Services</h3>
-            <p>If you are experiencing a mental health emergency or crisis, please call 988 for the Suicide and Crisis Lifeline, or go to your nearest emergency room.</p>
-          </div>
         </div>
-      </div>
-      
-      <!-- Map Section -->
-      <div style="margin-top: 4rem;">
-        <div class="section-header">
-          <h2>Our Location</h2>
-          <p>Find us in the heart of the city, easily accessible by public transportation</p>
+    </div>
+</section>
+
+<!-- ▸ EMERGENCY SECTION ------------------------------------------------- -->
+<section class="emergency-section">
+    <div class="container">
+        <div class="emergency-content">
+            <div class="emergency-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="emergency-text">
+                <h3>Need Immediate Support?</h3>
+                <p>If you're experiencing a mental health crisis or having thoughts of suicide, please reach out for immediate help:</p>
+                <div class="emergency-contacts">
+                    <div class="emergency-contact">
+                        <strong>Suicide & Crisis Lifeline:</strong> <a href="tel:988">988</a>
+                    </div>
+                    <div class="emergency-contact">
+                        <strong>Crisis Text Line:</strong> Text HOME to <a href="sms:741741">741741</a>
+                    </div>
+                    <div class="emergency-contact">
+                        <strong>Emergency Services:</strong> <a href="tel:911">911</a>
+                    </div>
+                </div>
+                <p>Help is available 24/7. You are not alone.</p>
+            </div>
         </div>
+    </div>
+</section>
+
+<!-- ▸ LOCATION MAP SECTION ---------------------------------------------- -->
+<section class="location-map">
+    <div class="container">
+        <h2>Find Us</h2>
+        <p>Located in the heart of the city with convenient parking and public transportation access.</p>
+        
         <div class="map-container">
-          <!-- Replace with actual iframe map embed code -->
-          <div style="width: 100%; height: 400px; background-color: #f2f2f2; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <p>Map Embed will go here</p>
-          </div>
+            <!-- Replace this placeholder with your actual Google Maps embed -->
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>123 Wellness Way, Suite 100</h4>
+                    <p>New York, NY 10001</p>
+                    <p><em>Interactive map will be embedded here</em></p>
+                </div>
+            </div>
         </div>
-      </div>
+        
+        <div class="location-details">
+            <div class="location-feature">
+                <i class="fas fa-parking"></i>
+                <h4>Free Parking</h4>
+                <p>Ample parking available in our building's garage</p>
+            </div>
+            <div class="location-feature">
+                <i class="fas fa-subway"></i>
+                <h4>Public Transit</h4>
+                <p>2 blocks from Metro Station, multiple bus lines nearby</p>
+            </div>
+            <div class="location-feature">
+                <i class="fas fa-wheelchair"></i>
+                <h4>Accessible</h4>
+                <p>Fully ADA compliant with elevator access to all floors</p>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <h2>THERAPY<span>COUNCIL</span></h2>
-          <p>Transformative therapy for your well-being</p>
+<!-- ▸ FOOTER ------------------------------------------------------------ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-sections">
+            <div class="footer-brand">
+                <h3>Therapy Council</h3>
+                <p>Professional therapy services delivered with compassion and expertise.</p>
+                <div class="social-icons">
+                    <div class="social-icon"><span>f</span></div>
+                    <div class="social-icon"><span>in</span></div>
+                    <div class="social-icon"><span>ig</span></div>
+                </div>
+            </div>
+            
+            <div class="footer-credentials">
+                <h3>Professional Credentials</h3>
+                <div class="credential-list">
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Licensed Psychologists</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>APA Members</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Evidence-Based</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>support@therapycouncil.com</p>
+                <p>(555) 123-4567</p>
+                <p>123 Wellness Way, Suite 100</p>
+                <button class="support-button">Get Support</button>
+            </div>
         </div>
-        <div class="footer-links">
-          <div class="footer-links-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-column">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="services.html#individual">Individual Therapy</a></li>
-              <li><a href="services.html#couples">Couples Therapy</a></li>
-              <li><a href="services.html#family">Family Therapy</a></li>
-              <li><a href="services.html#group">Group Therapy</a></li>
-              <li><a href="services.html#telehealth">Telehealth</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-column">
-            <h3>Contact Us</h3>
-            <ul class="contact-info">
-              <li><i class="icon-location"></i>123 Healing Way, Suite 201<br>New York, NY 10001</li>
-              <li><i class="icon-phone"></i>(555) 123-4567</li>
-              <li><i class="icon-email"></i>info@therapycouncil.org</li>
-            </ul>
-          </div>
+        
+        <div class="footer-bottom">
+            <p>
+                © 2025 Therapy Council. All rights reserved.
+                <a href="/docs/Privacy_policy.pdf" target="_blank">Privacy Policy</a> |
+                <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
+            </p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Therapy Council. All Rights Reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-        </div>
-      </div>
     </div>
-  </footer>
+</footer>
 
-  <script>
-    // Form Validation and Submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Basic form validation
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      if (name && email && message) {
-        // In a real application, you would send the form data to a server
-        // For demonstration, we'll just show a success message
-        alert('Thank you for your message! We will respond as soon as possible.');
-        this.reset();
-      } else {
-        alert('Please fill in all required fields.');
-      }
-    });
-  </script>
+<!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+<script src="../script.js"></script>
+
+<script>
+// Contact Form Handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            const privacy = formData.get('privacy');
+            
+            // Basic validation
+            if (!name || !email || !message || !privacy) {
+                showContactToast('Please fill in all required fields and accept the privacy policy.', true);
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Show success message
+                showContactToast('Thank you for your message! We will respond within 24 hours.');
+                
+                // Reset form
+                contactForm.reset();
+            }, 2000);
+        });
+    }
+    
+    // Toast notification function
+    function showContactToast(message, isError = false) {
+        // Remove existing toast
+        const existingToast = document.querySelector('.contact-toast');
+        if (existingToast) {
+            existingToast.remove();
+        }
+        
+        // Create new toast
+        const toast = document.createElement('div');
+        toast.className = `contact-toast ${isError ? 'error' : 'success'}`;
+        toast.textContent = message;
+        
+        // Style the toast
+        Object.assign(toast.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            background: isError ? '#ef4444' : '#10b981',
+            color: 'white',
+            padding: '16px 24px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            zIndex: '1000',
+            transform: 'translateX(400px)',
+            transition: 'transform 0.3s ease',
+            maxWidth: '300px',
+            fontSize: '14px',
+            lineHeight: '1.4'
+        });
+        
+        document.body.appendChild(toast);
+        
+        // Animate in
+        setTimeout(() => {
+            toast.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Animate out and remove
+        setTimeout(() => {
+            toast.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }, 4000);
+    }
+});
+</script>
+
 </body>
 </html>

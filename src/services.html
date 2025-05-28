@@ -1,104 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Therapy Council</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" src="/src/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services – Therapy Council</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header-footer.css">
+<link rel="stylesheet" href="../css/services.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="index.html">
-            <h1>THERAPY<span>COUNCIL</span></h1>
-          </a>
-        </div>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="mobile-nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="services-hero">
-    <div class="container">
-      <div class="hero-content">
-        <h2>Our Services</h2>
-        <p>Discover the therapeutic approaches we offer to support your well-being</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Content -->
-  <section class="services-content">
-    <div class="container">
-      <div class="section-header">
-        <h2>Comprehensive Therapy Services</h2>
-        <p>We offer a range of evidence-based therapeutic approaches tailored to meet your unique needs.</p>
-      </div>
-
-      <!-- Individual Therapy -->
-      <div id="individual" class="service-item">
-        <h3>Individual Therapy</h3>
-        <div class="service-item-content">
-          <div class="service-item-text">
-            <p>Individual therapy provides a confidential, supportive space where you can work one-on-one with a therapist to address personal challenges, develop coping strategies, and work toward your unique goals. Our tailored approach recognizes that each person's journey is different, requiring personalized care and attention.</p>
-            <div class="service-details">
-              <h4>How Individual Therapy Can Help</h4>
-              <ul>
-                <li>Develop effective coping strategies for stress, anxiety, and depression</li>
-                <li>Work through past trauma and difficult experiences</li>
-                <li>Build self-esteem and strengthen personal identity</li>
-                <li>Improve relationship patterns and communication skills</li>
-                <li>Navigate life transitions and major decisions</li>
-                <li>Address specific mental health concerns</li>
-                <li>Cultivate greater self-awareness and emotional regulation</li>
-              </ul>
-              <h4>Our Approach</h4>
-              <p>We use an integrative approach that draws from evidence-based methods such as Cognitive Behavioral Therapy (CBT), mindfulness practices, psychodynamic therapy, and solution-focused techniques. Your therapist will collaborate with you to determine which approaches will be most beneficial for your specific situation and adjust the treatment plan as needed throughout your therapeutic journey.</p>
-              <p>Sessions typically last 50 minutes and are usually held weekly, though frequency can be adjusted based on your needs and progress. We offer both in-person and telehealth options for individual therapy.</p>
+<!-- ▸ HEADER ------------------------------------------------------------ -->
+<header class="header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <div class="logo-image">
+                <img src="../logo/logo_black.png" alt="Therapy Council Logo">
             </div>
-            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
-          </div>
-          <div class="service-item-image">
-            <img src="assets/images/individual-therapy-full.jpg" alt="Individual therapy session">
-          </div>
+            <h1 class="logo-text">THERAPY COUNCIL</h1>
         </div>
-      </div>
 
-      <!-- Couples Therapy -->
-      <div id="couples" class="service-item">
-        <h3>Couples Therapy</h3>
-        <div class="service-item-content">
-          <div class="service-item-text">
-            <p>Couples therapy provides a structured, supportive environment where partners can improve communication, resolve conflicts, and strengthen their connection. Whether you're facing a specific challenge, preparing for a major life transition, or simply seeking to deepen your relationship, our therapists can help you build a healthier, more satisfying partnership.</p>
-            <div class="service-details">
-              <h4>How Couples Therapy Can Help</h4>
-              <ul>
-                <li>Develop more effective communication patterns</li>
-                <li>Resolve recurring conflicts and improve problem-solving skills</li>
-                <li>Rebuild trust and heal from relationship injuries</li>
-                <li>Navigate major life transitions or decisions together</li>
-                <li>Strengthen emotional intimacy and connection</li>
-                <li>Develop healthier patterns of relating to one another</li>
-                <li>Address challenges related to parenting, finances, or extended family</li>
-              </ul>
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ▸ HERO SECTION ------------------------------------------------------ -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive therapeutic approaches tailored to support your unique journey toward healing and growth.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ SERVICES OVERVIEW ------------------------------------------------- -->
+<section class="services-overview">
+    <div class="container">
+        <div class="overview-content">
+            <h2>Comprehensive Care for Every Need</h2>
+            <p>We offer a range of evidence-based therapeutic services designed to meet you wherever you are in your journey. From individual therapy to specialized programs, our experienced team is here to support your mental health and well-being.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card" id="individual">
+                <div class="service-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Individual Therapy</h3>
+                <p>One-on-one sessions focused on your personal goals, challenges, and growth in a confidential, supportive environment.</p>
+                <ul class="service-features">
+                    <li>Personalized treatment plans</li>
+                    <li>Multiple therapeutic approaches</li>
+                    <li>Flexible scheduling options</li>
+                    <li>In-person and telehealth available</li>
+                </ul>
+                <a href="#individual-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card" id="couples">
+                <div class="service-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Couples Therapy</h3>
+                <p>Strengthen your relationship through improved communication, conflict resolution, and deeper emotional connection.</p>
+                <ul class="service-features">
+                    <li>Communication skills training</li>
+                    <li>Conflict resolution strategies</li>
+                    <li>Intimacy and connection building</li>
+                    <li>Pre-marital counseling</li>
+                </ul>
+                <a href="#couples-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card" id="family">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Family Therapy</h3>
+                <p>Navigate family dynamics, improve relationships, and create a healthier home environment for everyone.</p>
+                <ul class="service-features">
+                    <li>Family systems approach</li>
+                    <li>Teen and adolescent support</li>
+                    <li>Parenting guidance</li>
+                    <li>Crisis intervention</li>
+                </ul>
+                <a href="#family-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card" id="group">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Group Therapy</h3>
+                <p>Connect with others facing similar challenges in a supportive group setting led by experienced therapists.</p>
+                <ul class="service-features">
+                    <li>Anxiety and depression groups</li>
+                    <li>Trauma recovery support</li>
+                    <li>Addiction recovery groups</li>
+                    <li>Social skills development</li>
+                </ul>
+                <a href="#group-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card" id="specialized">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Specialized Programs</h3>
+                <p>Targeted interventions for specific conditions including trauma, addiction, and life transitions.</p>
+                <ul class="service-features">
+                    <li>EMDR for trauma recovery</li>
+                    <li>Addiction counseling</li>
+                    <li>Grief and loss support</li>
+                    <li>Life transition coaching</li>
+                </ul>
+                <a href="#specialized-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card" id="telehealth">
+                <div class="service-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Telehealth Services</h3>
+                <p>Access therapy from the comfort of your home with our secure, HIPAA-compliant virtual sessions.</p>
+                <ul class="service-features">
+                    <li>Secure video sessions</li>
+                    <li>Flexible scheduling</li>
+                    <li>Same quality care</li>
+                    <li>Easy-to-use platform</li>
+                </ul>
+                <a href="#telehealth-details" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ DETAILED SERVICES SECTIONS ---------------------------------------- -->
+<section class="service-details" id="individual-details">
+    <div class="container">
+        <div class="service-detail-card">
+            <h2>Individual Therapy</h2>
+            <div class="detail-content">
+                <div class="detail-text">
+                    <p class="lead">Individual therapy provides a confidential, supportive space where you can work one-on-one with a therapist to address personal challenges, develop coping strategies, and work toward your unique goals.</p>
+                    
+                    <h4>How Individual Therapy Can Help</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Develop effective coping strategies for stress, anxiety, and depression</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Work through past trauma and difficult experiences</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Build self-esteem and strengthen personal identity</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Improve relationship patterns and communication skills</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Navigate life transitions and major decisions</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Address specific mental health concerns</span>
+                        </div>
+                    </div>
+                    
+                    <h4>What to Expect</h4>
+                    <p>Sessions typically last 50 minutes and are usually held weekly, though frequency can be adjusted based on your needs and progress. We offer both in-person and telehealth options for maximum flexibility.</p>
+                </div>
+                
+                <div class="detail-sidebar">
+                    <div class="pricing-card">
+                        <h4>Session Information</h4>
+                        <ul>
+                            <li><strong>Duration:</strong> 50 minutes</li>
+                            <li><strong>Frequency:</strong> Weekly (flexible)</li>
+                            <li><strong>Format:</strong> In-person or virtual</li>
+                            <li><strong>First Session:</strong> $90 (50% off)</li>
+                        </ul>
+                        <a href="../index.html#bookingForm" class="cta-button">Book Your Session</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-details" id="couples-details">
+    <div class="container">
+        <div class="service-detail-card">
+            <h2>Couples Therapy</h2>
+            <div class="detail-content">
+                <div class="detail-text">
+                    <p class="lead">Couples therapy provides a structured, supportive environment where partners can improve communication, resolve conflicts, and strengthen their connection.</p>
+                    
+                    <h4>Common Issues We Address</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication difficulties and misunderstandings</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Recurring conflicts and power struggles</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-heart-broken"></i>
+                            <span>Trust issues and relationship injuries</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-route"></i>
+                            <span>Major life transitions and decisions</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Intimacy and emotional connection challenges</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <span>Parenting, finances, and extended family issues</span>
+                        </div>
+                    </div>
+                    
+                    <h4>Our Approach</h4>
+                    <p>We use evidence-based methods including Emotionally Focused Therapy (EFT) and the Gottman Method to help couples build stronger, more resilient relationships. Our therapists create a neutral, safe space where both partners can be heard and understood.</p>
+                </div>
+                
+                <div class="detail-sidebar">
+                    <div class="pricing-card">
+                        <h4>Session Information</h4>
+                        <ul>
+                            <li><strong>Duration:</strong> 75 minutes</li>
+                            <li><strong>Frequency:</strong> Weekly or bi-weekly</li>
+                            <li><strong>Format:</strong> In-person or virtual</li>
+                            <li><strong>Both partners present:</strong> Required</li>
+                        </ul>
+                        <a href="../index.html#bookingForm" class="cta-button">Book Your Session</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ TREATMENT APPROACHES SECTION -------------------------------------- -->
+<section class="treatment-approaches">
+    <div class="container">
+        <h2>Our Treatment Approaches</h2>
+        <p>We use evidence-based therapeutic modalities tailored to your specific needs and goals.</p>
+        
+        <div class="approaches-grid">
+            <div class="approach-card">
+                <h4>Cognitive Behavioral Therapy (CBT)</h4>
+                <p>Focuses on identifying and changing negative thought patterns and behaviors that contribute to emotional distress.</p>
+            </div>
+            
+            <div class="approach-card">
+                <h4>Mindfulness-Based Therapy</h4>
+                <p>Incorporates mindfulness and meditation techniques to help manage stress, anxiety, and emotional regulation.</p>
+            </div>
+            
+            <div class="approach-card">
+                <h4>Emotion-Focused Therapy (EFT)</h4>
+                <p>Helps clients access and process emotions in a healthy way to create positive change and deeper connections.</p>
+            </div>
+            
+            <div class="approach-card">
+                <h4>Solution-Focused Brief Therapy</h4>
+                <p>Concentrates on solutions and future goals rather than dwelling on problems and past difficulties.</p>
+            </div>
+            
+            <div class="approach-card">
+                <h4>EMDR Therapy</h4>
+                <p>Specialized treatment for trauma that helps the brain process and integrate traumatic memories.</p>
+            </div>
+            
+            <div class="approach-card">
+                <h4>Acceptance and Commitment Therapy</h4>
+                <p>Helps clients accept difficult thoughts and feelings while committing to actions aligned with their values.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ FAQ SECTION ------------------------------------------------------- -->
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How do I know if therapy is right for me?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Therapy can be beneficial for anyone looking to improve their mental health, work through challenges, or simply gain better self-understanding. If you're experiencing persistent stress, relationship difficulties, life transitions, or just feel like you could use support, therapy might be right for you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How long does therapy typically take?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The length of therapy varies greatly depending on your goals, the issues you're addressing, and your personal progress. Some clients see improvement in just a few sessions, while others benefit from longer-term work. We'll regularly check in about your progress and adjust as needed.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you accept insurance?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we accept most major insurance plans. Our billing team can help verify your benefits and explain your coverage. We also offer sliding scale fees and payment plans to make therapy accessible.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What's the difference between in-person and telehealth sessions?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Both formats provide the same quality of care. In-person sessions offer face-to-face interaction, while telehealth provides convenience and accessibility from your own space. Many clients find telehealth just as effective, and some prefer the comfort of being at home.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How do I choose the right therapist?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We'll help match you with a therapist based on your specific needs, preferences, and goals. Factors include the therapist's specialties, approach, availability, and personality fit. You can always request a different therapist if the initial match isn't quite right.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ CTA SECTION ------------------------------------------------------- -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Take the Next Step?</h2>
+            <p>Start your healing journey today with our special introductory offer. Our compassionate team is here to support you every step of the way.</p>
+            <div class="cta-buttons">
+                <a href="../index.html#bookingForm" class="cta-button primary">Book Your Session</a>
+                <a href="contact.html" class="cta-button secondary">Ask Questions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ FOOTER ------------------------------------------------------------ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-sections">
+            <div class="footer-brand">
+                <h3>Therapy Council</h3>
+                <p>Professional therapy services delivered with compassion and expertise.</p>
+                <div class="social-icons">
+                    <div class="social-icon"><span>f</span></div>
+                    <div class="social-icon"><span>in</span></div>
+                    <div class="social-icon"><span>ig</span></div>
+                </div>
+            </div>
+            
+            <div class="footer-credentials">
+                <h3>Professional Credentials</h3>
+                <div class="credential-list">
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Licensed Psychologists</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>APA Members</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Evidence-Based</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>support@therapycouncil.com</p>
+                <p>(555) 123-4567</p>
+                <p>123 Wellness Way, Suite 100</p>
+                <button class="support-button">Get Support</button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>
+                © 2025 Therapy Council. All rights reserved.
+                <a href="/docs/Privacy_policy.pdf" target="_blank">Privacy Policy</a> |
+                <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+<script src="../script.js"></script>
+
+<script>
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('i');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(faqItem => {
+                faqItem.classList.remove('active');
+                faqItem.querySelector('i').classList.remove('fa-chevron-up');
+                faqItem.querySelector('i').classList.add('fa-chevron-down');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
