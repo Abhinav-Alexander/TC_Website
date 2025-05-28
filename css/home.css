@@ -69,6 +69,7 @@
 .secure-notice {
     display: flex;
     align-items: center;
+    padding: 2%;
 }
 
 .secure-badge {
@@ -85,8 +86,8 @@
 }
 
 .terms-notice {
-    font-size: 12px;
-    text-align: center;
+    font-size: 11px;
+    text-align: left;
     color: #9ca3af;
 }
 

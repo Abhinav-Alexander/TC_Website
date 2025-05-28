@@ -42,7 +42,6 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="src/about.html">About</a></li>
                 <li><a href="src/services.html">Services</a></li>
-                <li><a href="src/team.html">Our Team</a></li>
                 <li><a href="src/contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -73,7 +72,7 @@
     <input  name="fullName"
             id="name"
             pattern="^[A-Za-z]{2,}(?:[ \-'][A-Za-z]{2,})+$"
-            placeholder="Jane Doe"
+           
             required>
     <small class="error-msg" id="nameErr"></small>
   </div>
@@ -86,7 +85,7 @@
             type="tel"
             inputmode="numeric"
             pattern="^[0-9]{10,15}$"
-            placeholder="9876543210"
+            
             required>
     <small class="hint">Digits only • 10–15 numbers</small>
     <small class="error-msg" id="phoneErr"></small>
@@ -348,10 +347,9 @@
             
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <p>support@therapycouncil.com</p>
-                <p>(555) 123-4567</p>
-                <p>123 Wellness Way, Suite 100</p>
-                <button class="support-button">Get Support</button>
+                <p>support@therapycouncil.org</p>
+                <p>(+91) 9211-750-322</p>
+                <button class="cta-button" onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Get Support</button>
             </div>
         </div>
         
