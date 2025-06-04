@@ -322,7 +322,59 @@
     margin-top: 32px;
 }
 
-/* Responsive Design */
+/* ▸ TRUST SIGNALS / STATS SECTION - OVERRIDE HOME STYLES */
+
+.trust-signals {
+    background-color: white;
+    padding: 48px 0;
+    position: relative;
+    z-index: 5;
+}
+
+.trust-signals .features {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 24px;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: unset !important;
+    flex-direction: unset !important;
+}
+
+.trust-signals .feature-item {
+    width: 100%;
+    padding: 20px 16px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trust-signals .feature-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.trust-signals .feature-icon i {
+    font-size: 48px;
+    color: #0d9488;
+}
+
+.trust-signals .feature-item h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.trust-signals .feature-item p {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ▸ RESPONSIVE DESIGN */
+
 @media (min-width: 768px) {
     .story-content {
         flex-direction: row;
@@ -375,5 +427,169 @@
     
     .story-stats {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ▸ MOBILE RESPONSIVE FIXES */
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .page-hero-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+    
+    .page-hero-content p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .trust-signals {
+        padding: 40px 0;
+    }
+    
+    .trust-signals .features {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+    
+    .trust-signals .feature-item {
+        padding: 16px;
+    }
+    
+    .trust-signals .feature-item h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        line-height: 1.3;
+    }
+    
+    .trust-signals .feature-item p {
+        font-size: 12px;
+    }
+    
+    .trust-signals .feature-icon i {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+    
+    .mission-values,
+    .our-approach,
+    .our-approach {
+        padding: 40px 0;
+    }
+    
+    .mission-statement h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .mission-statement p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .values-grid h3 {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+    
+    .values-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .value-card {
+        padding: 24px 20px;
+    }
+    
+    .approach-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .approach-text h2 {
+        font-size: 24px;
+    }
+    
+    .approach-text .lead {
+        font-size: 16px;
+    }
+    
+    .approach-visual {
+        margin-left: 0;
+    }
+    
+    .approach-steps {
+        gap: 16px;
+    }
+    
+    .step {
+        gap: 12px;
+    }
+    
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .step h5 {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    
+    .step p {
+        font-size: 12px;
+    }
+    
+
+    
+    .cta-content h2 {
+        font-size: 24px;
+    }
+    
+    .cta-content p {
+        font-size: 16px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .modalities-list ul {
+        padding-left: 16px;
+    }
+    
+    .modalities-list li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .trust-signals .features {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    
+    .trust-signals .feature-item h3 {
+        font-size: 14px;
+    }
+    
+    .trust-signals .feature-item p {
+        font-size: 11px;
     }
 }
