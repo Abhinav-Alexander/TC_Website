@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Therapy Council</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Prevent caching of error pages -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error-container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2d6862;
+        }
+        
+        .btn-primary:hover {
+            background: white;
+            color: #2d6862;
+        }
+        
+        .security-notice {
+            margin-top: 3rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        
+        <h1 class="error-title">Oops! Something went wrong</h1>
+        
+        <p class="error-message">
+            The page you're looking for might have been moved, deleted, or is temporarily unavailable. 
+            Don't worry - we're here to help you find what you need.
+        </p>
+        
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                Go to Homepage
+            </a>
+            
+            <a href="/src/contact.html" class="btn">
+                <i class="fas fa-envelope"></i>
+                Contact Support
+            </a>
+            
+            <a href="javascript:history.back()" class="btn">
+                <i class="fas fa-arrow-left"></i>
+                Go Back
+            </a>
+        </div>
+        
+        <div class="security-notice">
+            <i class="fas fa-shield-alt"></i>
+            If you believe this is a security issue, please contact us immediately at 
+            <strong>support@therapycouncil.org</strong> or call <strong>(+91) 9211-750-322</strong>
+        </div>
+    </div>
+
+    <script>
+        // Basic security measures for error page
+        (function() {
+            'use strict';
+            
+            // Prevent common attacks on error pages
+            if (window.top !== window.self) {
+                window.top.location = window.self.location;
+            }
+            
+            // Log the error for monitoring (if needed)
+            const errorInfo = {
+                url: window.location.href,
+                referrer: document.referrer,
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Don't expose sensitive information
+            console.info('Error page loaded');
+            
+            // Basic bot detection
+            if (navigator.webdriver || window.phantom || window._phantom) {
+                // Silent handling for bots
+                return;
+            }
+            
+            // Rate limiting for error page requests
+            const errorRequests = sessionStorage.getItem('errorRequests') || '0';
+            const currentCount = parseInt(errorRequests) + 1;
+            
+            if (currentCount > 10) {
+                // Too many error page requests - potential attack
+                document.body.innerHTML = '<div style="text-align:center;padding:50px;"><h2>Too many requests</h2><p>Please contact support if you need assistance.</p></div>';
+                return;
+            }
+            
+            sessionStorage.setItem('errorRequests', currentCount.toString());
+            
+            // Clear error count after 1 hour
+            setTimeout(() => {
+                sessionStorage.removeItem('errorRequests');
+            }, 3600000);
+            
+            // Remove any potentially dangerous query parameters
+            if (window.location.search) {
+                const cleanUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        })();
+    </script>
+</body>
+</html>
