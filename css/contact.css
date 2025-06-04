@@ -87,16 +87,6 @@
     margin: 0;
 }
 
-.checkmark {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #d1d5db;
-    border-radius: 3px;
-    position: relative;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
     background-color: #0d9488;
     border-color: #0d9488;
@@ -119,18 +109,14 @@
     gap: 24px;
 }
 
-.contact-info-card,
-.office-hours-card,
-.insurance-card {
+.contact-info-card {
     background: #f9fafb;
     padding: 32px;
     border-radius: 12px;
     border: 1px solid #e5e7eb;
 }
 
-.contact-info-card h3,
-.office-hours-card h3,
-.insurance-card h3 {
+.contact-info-card h3 {
     font-size: 20px;
     margin-bottom: 24px;
     color: #1f2937;
@@ -188,68 +174,224 @@
     font-size: 12px;
 }
 
-/* Office Hours */
-.hours-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* Quick FAQ Card */
+.quick-faq-card {
+    background: #f9fafb;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin-top: 24px;
 }
 
-.hours-item {
+.quick-faq-card h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #1f2937;
+}
+
+.faq-quick-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #e5e7eb;
 }
 
-.hours-item:last-child {
+.faq-quick-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
     border-bottom: none;
 }
 
-.day {
-    color: #374151;
-    font-weight: 500;
+.faq-icon {
+    width: 40px;
+    height: 40px;
+    background: #e6fffa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.time {
+.faq-icon i {
+    font-size: 16px;
+    color: #0d9488;
+}
+
+.faq-content h4 {
+    color: #1f2937;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.faq-content p {
     color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
 }
 
-.hours-note {
-    margin-top: 16px;
-    font-size: 14px;
-    color: #9ca3af;
+/* Pricing Info Card */
+.pricing-info-card {
+    background: #f9fafb;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin-top: 24px;
+}
+
+.pricing-info-card h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #1f2937;
     text-align: center;
 }
 
-/* Insurance */
-.insurance-card p {
-    color: #6b7280;
-    margin-bottom: 20px;
-    line-height: 1.6;
+.price-breakdown {
+    margin-bottom: 24px;
 }
 
-.insurance-features {
+.price-row {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.insurance-item {
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-label {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.price-value {
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.payment-methods h4 {
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.payment-icons {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
-.insurance-item i {
+.payment-icons i {
+    font-size: 24px;
     color: #0d9488;
-    font-size: 14px;
 }
 
-.insurance-item span {
+.payment-icons span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.pricing-cta {
+    display: block;
+    background: #0d9488;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-cta:hover {
+    background: #0f766e;
+    color: white;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 60px 0;
+    background: white;
+}
+
+.why-choose-us h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.why-choose-us > p {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 48px;
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: #f9fafb;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.benefit-icon {
+    margin-bottom: 16px;
+}
+
+.benefit-icon i {
+    font-size: 32px;
+    color: #0d9488;
+    background: #e6fffa;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-card h4 {
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.benefit-card p {
     color: #6b7280;
     font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Quick Booking Section */
@@ -310,12 +452,13 @@
     gap: 20px;
 }
 
-/* Updated Pricing - ₹2599 to ₹650 */
+/* Updated Pricing - ₹1999 to ₹650 */
 .price-highlight {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 8px;
+    justify-content: center;
 }
 
 .original-price {
@@ -419,59 +562,30 @@
     text-decoration: underline;
 }
 
-/* Location Map Section */
-.location-map {
+/* Technical Requirements Section */
+.tech-requirements {
     padding: 60px 0;
-    background: white;
+    background: #f9fafb;
 }
 
-.location-map h2 {
+.tech-requirements h2 {
     font-size: 28px;
     text-align: center;
     margin-bottom: 16px;
     color: #1f2937;
 }
 
-.location-map > p {
+.tech-requirements > p {
     text-align: center;
     color: #6b7280;
     margin-bottom: 40px;
     font-size: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.map-container {
-    margin-bottom: 40px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.map-placeholder {
-    height: 300px;
-    background: #f3f4f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #d1d5db;
-}
-
-.map-content {
-    text-align: center;
-    color: #6b7280;
-}
-
-.map-content i {
-    font-size: 32px;
-    color: #0d9488;
-    margin-bottom: 12px;
-}
-
-.map-content h4 {
-    color: #1f2937;
-    margin-bottom: 8px;
-}
-
-.location-details {
+.tech-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
@@ -479,29 +593,48 @@
     margin: 0 auto;
 }
 
-.location-feature {
+.tech-item {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 12px;
     text-align: center;
-    padding: 24px;
-    background: #f9fafb;
-    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
 }
 
-.location-feature i {
-    font-size: 24px;
+.tech-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    margin-bottom: 16px;
+}
+
+.tech-icon i {
+    font-size: 32px;
     color: #0d9488;
-    margin-bottom: 12px;
+    background: #e6fffa;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.location-feature h4 {
+.tech-item h4 {
     color: #1f2937;
     margin-bottom: 8px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.location-feature p {
+.tech-item p {
     color: #6b7280;
     font-size: 14px;
     line-height: 1.5;
+    margin: 0;
 }
 
 /* Responsive Design */
@@ -552,7 +685,109 @@
         flex: 1;
     }
     
-    .location-details {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-item {
+        padding: 36px 28px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+    
+    .benefit-card {
+        padding: 36px 28px;
+    }
+    
+    .quick-faq-card,
+    .pricing-info-card {
+        padding: 36px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .benefits-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-requirements {
+        padding: 40px 0;
+    }
+    
+    .tech-item {
+        padding: 24px 20px;
+    }
+    
+    .tech-icon i {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+    
+    .tech-item h4 {
+        font-size: 16px;
+    }
+    
+    .tech-item p {
+        font-size: 13px;
+    }
+    
+    .contact-info-card {
+        padding: 24px 20px;
+    }
+    
+    .price-highlight {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .booking-note {
+        text-align: center;
+    }
+    
+    .why-choose-us {
+        padding: 40px 0;
+    }
+    
+    .benefit-card {
+        padding: 24px 20px;
+    }
+    
+    .benefit-icon i {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+    
+    .benefit-card h4 {
+        font-size: 16px;
+    }
+    
+    .benefit-card p {
+        font-size: 13px;
+    }
+    
+    .quick-faq-card,
+    .pricing-info-card {
+        padding: 24px 20px;
+    }
+    
+    .faq-quick-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .payment-icons {
+        justify-content: center;
     }
 }
