@@ -7,8 +7,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/header-footer.css">
-<link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -52,269 +52,173 @@
 <section class="page-hero">
     <div class="container">
         <div class="page-hero-content">
-            <h1>Contact Us</h1>
-            <p>We're here to answer your questions and help you begin your online therapy journey. Reach out today.</p>
+            <h1>Let's Start a Conversation</h1>
+            <p>Take the first step toward better mental health. We're here to listen and help you find the right path forward.</p>
         </div>
     </div>
 </section>
 
-<!-- ▸ CONTACT CONTENT --------------------------------------------------- -->
+<!-- ▸ MAIN CONTACT SECTION ---------------------------------------------- -->
 <section class="contact-content">
     <div class="container">
-        <div class="contact-wrapper">
-            <!-- Contact Form -->
-            <div class="contact-form-section">
-                <h2>Get in Touch</h2>
-                <p>Have questions about our online therapy services or want to learn more? Fill out the form below and we'll respond as soon as possible.</p>
-                
-                <form id="contactForm" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contactName">Your Name *</label>
-                            <input type="text" id="contactName" name="name" required>
+        <div class="contact-focused-wrapper">
+            
+            <!-- Contact Form - Main Focus -->
+            <div class="contact-form-main">
+                <div class="form-header">
+                    <h2>How Can We Help You Today?</h2>
+                    <p>Whether you have questions, want to learn more about our services, or you're ready to begin therapy, we're here for you.</p>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Confidential</span>
                         </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" name="email" required>
+                        <div class="trust-item">
+                            <i class="fas fa-clock"></i>
+                            <span>4-Hour Response</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Caring Support</span>
                         </div>
                     </div>
+                </div>
+                
+                <form id="contactForm" 
+                      class="contact-form-focused" 
+                      action="https://script.google.com/macros/s/AKfycbwKthmvnNJkSOfmrRx7rynPcQFGa2wt_gWtuhJMJ2yzdQqVp5c2xkp31yS_LrO91GQN/exec"
+                      method="POST" 
+                      novalidate>
                     
-                    <div class="form-row">
+                    <!-- Form type identifier -->
+                    <input type="hidden" name="formType" value="contact">
+                    
+                    <!-- Honeypot spam protection -->
+                    <input name="website" type="text" style="display:none">
+                    
+                    <div class="form-group">
+                        <label for="contactName">Your Name *</label>
+                        <input type="text" 
+                               id="contactName" 
+                               name="name" 
+                               placeholder="What should we call you?"
+                               pattern="^[A-Za-z]{2,}(?:[ \-'][A-Za-z]{2,})+$"
+                               required>
+                        <small class="error-msg" id="contactNameErr"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <input type="email" 
+                               id="contactEmail" 
+                               name="email" 
+                               placeholder="your.email@example.com"
+                               data-regex="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+                               required>
+                        <small class="error-msg" id="contactEmailErr"></small>
+                    </div>
+                    
+                    <div class="form-row-mobile">
                         <div class="form-group">
-                            <label for="contactPhone">Phone Number</label>
-                            <input type="tel" id="contactPhone" name="phone">
+                            <label for="contactPhone">Phone Number (Optional)</label>
+                            <input type="tel" 
+                                   id="contactPhone" 
+                                   name="phone"
+                                   placeholder="For a quicker response"
+                                   inputmode="numeric"
+                                   pattern="^[0-9]{10,15}$">
+                            <small class="hint">We can call or WhatsApp you back</small>
+                            <small class="error-msg" id="contactPhoneErr"></small>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="contactService">Service of Interest</label>
+                            <label for="contactService">What interests you most?</label>
                             <select id="contactService" name="service">
-                                <option value="">Please select</option>
-                                <option value="individual">Individual Therapy</option>
-                                <option value="couples">Couples Therapy</option>
-                                <option value="family">Family Therapy</option>
-                                <option value="specialized">Specialized Programs</option>
-                                <option value="other">Other/Not Sure</option>
+                                <option value="">I'm not sure yet</option>
+                                <option value="Individual Therapy">Individual Therapy</option>
+                                <option value="Couples Therapy">Couples Therapy</option>
+                                <option value="Family Therapy">Family Therapy</option>
+                                <option value="Anxiety & Stress">Help with Anxiety & Stress</option>
+                                <option value="Depression">Support for Depression</option>
+                                <option value="Relationships">Relationship Issues</option>
+                                <option value="Life Transitions">Life Changes & Transitions</option>
+                                <option value="Just Questions">I just have questions</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="contactMessage">Your Message *</label>
-                        <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about what brings you here or any questions you have about our online therapy services..." required></textarea>
+                        <label for="contactMessage">Tell us what's on your mind *</label>
+                        <textarea id="contactMessage" 
+                                  name="message" 
+                                  rows="4" 
+                                  placeholder="Share what brought you here today, any questions you have, or how we can best support you. Don't worry about being perfect - we're here to listen and help." 
+                                  required></textarea>
+                        <small class="char-count"><span id="charCount">0</span> characters</small>
+                        <small class="error-msg" id="contactMessageErr"></small>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="privacy" required>
 
-                            I agree to the privacy policy and consent to being contacted about my inquiry.
-                        </label>
-                    </div>
                     
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <button type="submit" class="cta-button-contact">
+                        <i class="fas fa-paper-plane"></i>
+                        Send My Message
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p><i class="fas fa-clock"></i> Expect a personal response within 4 hours</p>
+                        <p><i class="fas fa-phone"></i> Prefer to talk? Call us at <strong>(+91) 9211-750-322</strong></p>
+                    </div>
                 </form>
             </div>
             
-                            <!-- Contact Information -->
-            <div class="contact-info-section">
-                <div class="contact-info-card">
-                    <h3>Get In Touch</h3>
+            <!-- Quick Contact Sidebar -->
+            <div class="contact-sidebar">
+                <div class="contact-quick-card">
+                    <h3><i class="fas fa-comments"></i> Quick Connect</h3>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+                    <div class="quick-contact-item">
+                        <div class="quick-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone & WhatsApp</h4>
-                            <p><a href="tel:+919211750322">(+91) 9211-750-322</a></p>
-                            <small>Quick responses via call or WhatsApp</small>
+                        <div class="quick-details">
+                            <h4>Call or WhatsApp</h4>
+                            <a href="tel:+919211750322" class="contact-link">(+91) 9211-750-322</a>
+                            <small>Mon-Sat, 9 AM - 8 PM</small>
                         </div>
                     </div>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+                    <div class="quick-contact-item">
+                        <div class="quick-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-details">
-                            <h4>Email Support</h4>
-                            <p><a href="mailto:support@therapycouncil.org">support@therapycouncil.org</a></p>
-                            <small>We respond within 4-6 hours</small>
+                        <div class="quick-details">
+                            <h4>Email Us</h4>
+                            <a href="mailto:support@therapycouncil.org" class="contact-link">support@therapycouncil.org</a>
+                            <small>Response within 4-6 hours</small>
                         </div>
                     </div>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                    <div class="quick-contact-item">
+                        <div class="quick-icon">
+                            <i class="fas fa-calendar-plus"></i>
                         </div>
-                        <div class="contact-details">
-                            <h4>Available Hours</h4>
-                            <p>Monday - Saturday: 9 AM - 8 PM</p>
-                            <small>Flexible scheduling available</small>
+                        <div class="quick-details">
+                            <h4>Ready to Book?</h4>
+                            <a href="../index.html#bookingForm" class="contact-link">Book Your Session</a>
+                            <small>67% off your first session</small>
                         </div>
                     </div>
                 </div>
-
-                <!-- FAQ Quick Answers -->
-            
                 
-                <!-- Pricing Card -->
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ▸ WHY CHOOSE US SECTION --------------------------------------------- -->
-<section class="why-choose-us">
-    <div class="container">
-        <h2>Why Choose Therapy Council?</h2>
-        <p>Experience the difference that professional, accessible online therapy can make in your life.</p>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h4>Licensed Professionals</h4>
-                <p>Work with certified therapists who have extensive training and experience in online therapy delivery.</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h4>Comfort of Home</h4>
-                <p>Attend sessions from your safe space - no commute, no waiting rooms, just effective therapy when you need it.</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h4>Flexible Scheduling</h4>
-                <p>Evening and weekend slots available. We work around your schedule, not the other way around.</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-rupee-sign"></i>
-                </div>
-                <h4>Transparent Pricing</h4>
-                <p>No hidden fees, no insurance hassles. Simple, upfront pricing with special rates for first-time clients.</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h4>Ongoing Support</h4>
-                <p>Between-session support via email for urgent questions. You're never truly alone in your journey.</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h4>Easy Technology</h4>
-                <p>Simple video calling - works on any device. No complex software or technical knowledge required.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="quick-booking">
-    <div class="container">
-        <div class="booking-content">
-            <div class="booking-text">
-                <h2>Ready to Book Your First Session?</h2>
-                <p>Skip the waiting and get started with our special introductory offer. Your first session is 67% off!</p>
-                <div class="booking-benefits">
-                    <div class="booking-benefit">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Quick online booking</span>
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <div class="booking-benefit">
-                        <i class="fas fa-user-md"></i>
-                        <span>Matched with the right therapist</span>
-                    </div>
-                    <div class="booking-benefit">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>100% confidential & secure</span>
-                    </div>
+                    <h4>You're Not Alone</h4>
+                    <p>Taking this step shows incredible strength. We're here to support you every step of the way.</p>
                 </div>
-            </div>
-            <div class="booking-action">
-                <div class="price-highlight">
-                    <span class="original-price">1999</span>
-                    <span class="sale-price">650</span>
-                    <span class="discount">67% OFF</span>
-                </div>
-                <a href="../index.html#bookingForm" class="cta-button large">Book Your Session Now</a>
-                <p class="booking-note">No commitment required • Cancel anytime</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ▸ EMERGENCY SECTION ------------------------------------------------- -->
-<section class="emergency-section">
-    <div class="container">
-        <div class="emergency-content">
-            <div class="emergency-icon">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <div class="emergency-text">
-                <h3>Need Immediate Support?</h3>
-                <p>If you're experiencing a mental health crisis or having thoughts of suicide, please reach out for immediate help:</p>
-                <div class="emergency-contacts">
-                    <div class="emergency-contact">
-                        <strong>Suicide & Crisis Lifeline:</strong> <a href="tel:988">988</a>
-                    </div>
-                    <div class="emergency-contact">
-                        <strong>Crisis Text Line:</strong> Text HOME to <a href="sms:741741">741741</a>
-                    </div>
-                    <div class="emergency-contact">
-                        <strong>Emergency Services:</strong> <a href="tel:911">911</a>
-                    </div>
-                </div>
-                <p>Help is available 24/7. You are not alone.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ▸ TECHNICAL REQUIREMENTS SECTION ----------------------------------- -->
-<section class="tech-requirements">
-    <div class="container">
-        <h2>Technical Requirements for Online Sessions</h2>
-        <p>To ensure the best therapy experience, please make sure you have the following:</p>
-        
-        <div class="tech-grid">
-            <div class="tech-item">
-                <div class="tech-icon">
-                    <i class="fas fa-wifi"></i>
-                </div>
-                <h4>Stable Internet</h4>
-                <p>Reliable broadband connection for uninterrupted video sessions</p>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">
-                    <i class="fas fa-laptop"></i>
-                </div>
-                <h4>Device with Camera</h4>
-                <p>Computer, tablet, or smartphone with working camera and microphone</p>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h4>Private Space</h4>
-                <p>Quiet, confidential environment where you can speak freely</p>
-            </div>
-            <div class="tech-item">
-                <div class="tech-icon">
-                    <i class="fas fa-headphones"></i>
-                </div>
-                <h4>Headphones (Optional)</h4>
-                <p>For enhanced privacy and better audio quality during sessions</p>
             </div>
         </div>
     </div>
@@ -377,106 +281,12 @@
                 <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
             </p>
         </div>
-        
     </div>
 </footer>
 
 <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
 <script src="../script.js"></script>
-
-<script>
-// Contact Form Handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            const privacy = formData.get('privacy');
-            
-            // Basic validation
-            if (!name || !email || !message || !privacy) {
-                showContactToast('Please fill in all required fields and accept the privacy policy.', true);
-                return;
-            }
-            
-            // Simulate form submission
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Reset button
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-                
-                // Show success message
-                showContactToast('Thank you for your message! We will respond within 24 hours.');
-                
-                // Reset form
-                contactForm.reset();
-            }, 2000);
-        });
-    }
-    
-    // Toast notification function
-    function showContactToast(message, isError = false) {
-        // Remove existing toast
-        const existingToast = document.querySelector('.contact-toast');
-        if (existingToast) {
-            existingToast.remove();
-        }
-        
-        // Create new toast
-        const toast = document.createElement('div');
-        toast.className = `contact-toast ${isError ? 'error' : 'success'}`;
-        toast.textContent = message;
-        
-        // Style the toast
-        Object.assign(toast.style, {
-            position: 'fixed',
-            top: '20px',
-            right: '20px',
-            background: isError ? '#ef4444' : '#10b981',
-            color: 'white',
-            padding: '16px 24px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-            zIndex: '1000',
-            transform: 'translateX(400px)',
-            transition: 'transform 0.3s ease',
-            maxWidth: '300px',
-            fontSize: '14px',
-            lineHeight: '1.4'
-        });
-        
-        document.body.appendChild(toast);
-        
-        // Animate in
-        setTimeout(() => {
-            toast.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Animate out and remove
-        setTimeout(() => {
-            toast.style.transform = 'translateX(400px)';
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.parentNode.removeChild(toast);
-                }
-            }, 300);
-        }, 4000);
-    }
-});
-</script>
+<script src="../js/contact-form.js"></script>
 
 </body>
 </html>

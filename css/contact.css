@@ -1,793 +1,716 @@
-/* ▸ CONTACT PAGE STYLES - Specific to contact.html */
+/* ▸ CONTACT PAGE STYLES - Mobile-First Approach */
 
-/* Contact Content */
+/* ▸ CORE CONTACT LAYOUT */
 .contact-content {
-    padding: 60px 0;
+    padding: 40px 0;
     background: white;
 }
 
-.contact-wrapper {
+.contact-focused-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Contact Form Section */
-.contact-form-section h2 {
-    font-size: 28px;
-    margin-bottom: 16px;
-    color: #1f2937;
+/* ▸ MAIN CONTACT FORM */
+.contact-form-main {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
 }
 
-.contact-form-section > p {
-    color: #6b7280;
+.form-header {
+    text-align: center;
     margin-bottom: 32px;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #1f2937;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.form-header p {
+    color: #6b7280;
+    font-size: 16px;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.contact-form {
+/* ▸ TRUST INDICATORS */
+.trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0d9488;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: #f0fdfa;
+    border-radius: 20px;
+    border: 1px solid #a7f3d0;
+}
+
+.trust-item i {
+    font-size: 14px;
+}
+
+/* ▸ FORM STYLES */
+.contact-form-focused {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.form-group {
+    position: relative;
 }
 
-.contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
+.form-group label {
+    display: block;
+    font-weight: 600;
     color: #374151;
     margin-bottom: 6px;
-    font-weight: 500;
+    font-size: 15px;
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+.contact-form-focused input,
+.contact-form-focused select,
+.contact-form-focused textarea {
+    width: 100%;
     padding: 12px 16px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
+.contact-form-focused input:focus,
+.contact-form-focused select:focus,
+.contact-form-focused textarea:focus {
     outline: none;
     border-color: #0d9488;
     box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    background: white;
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
+.contact-form-focused input::placeholder,
+.contact-form-focused textarea::placeholder {
+    color: #9ca3af;
+    font-style: italic;
 }
 
-.checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: auto;
-    margin: 0;
-}
-
-.checkbox-label input[type="checkbox"]:checked + .checkmark {
-    background-color: #0d9488;
-    border-color: #0d9488;
-}
-
-.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-    content: "✓";
-    position: absolute;
-    color: white;
-    font-size: 12px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Contact Info Section */
-.contact-info-section {
+/* ▸ FORM ROW - MOBILE FIRST */
+.form-row-mobile {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
-.contact-info-card {
-    background: #f9fafb;
-    padding: 32px;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
+/* ▸ SELECT DROPDOWN */
+.contact-form-focused select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 40px;
 }
 
-.contact-info-card h3 {
-    font-size: 20px;
-    margin-bottom: 24px;
-    color: #1f2937;
-}
-
-.contact-info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.contact-info-item:last-child {
-    margin-bottom: 0;
-}
-
-.contact-icon {
-    width: 48px;
-    height: 48px;
-    background: #e6fffa;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.contact-icon i {
-    font-size: 20px;
-    color: #0d9488;
-}
-
-.contact-details h4 {
-    color: #1f2937;
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.contact-details p {
-    color: #6b7280;
-    margin-bottom: 4px;
-}
-
-.contact-details a {
-    color: #0d9488;
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
-.contact-details small {
-    color: #9ca3af;
-    font-size: 12px;
-}
-
-/* Quick FAQ Card */
-.quick-faq-card {
-    background: #f9fafb;
-    padding: 32px;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    margin-top: 24px;
-}
-
-.quick-faq-card h3 {
-    font-size: 20px;
-    margin-bottom: 24px;
-    color: #1f2937;
-}
-
-.faq-quick-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.faq-quick-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.faq-icon {
-    width: 40px;
-    height: 40px;
-    background: #e6fffa;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.faq-icon i {
-    font-size: 16px;
-    color: #0d9488;
-}
-
-.faq-content h4 {
-    color: #1f2937;
-    margin-bottom: 4px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.faq-content p {
-    color: #6b7280;
-    font-size: 14px;
+/* ▸ TEXTAREA */
+.contact-form-focused textarea {
+    resize: vertical;
+    min-height: 100px;
     line-height: 1.5;
-    margin: 0;
 }
 
-/* Pricing Info Card */
-.pricing-info-card {
-    background: #f9fafb;
-    padding: 32px;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    margin-top: 24px;
-}
-
-.pricing-info-card h3 {
-    font-size: 20px;
-    margin-bottom: 24px;
-    color: #1f2937;
-    text-align: center;
-}
-
-.price-breakdown {
-    margin-bottom: 24px;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.price-row:last-child {
-    border-bottom: none;
-}
-
-.price-label {
-    color: #6b7280;
-    font-size: 14px;
-}
-
-.price-value {
-    color: #1f2937;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.payment-methods h4 {
-    color: #1f2937;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-
-.payment-icons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.payment-icons i {
-    font-size: 24px;
-    color: #0d9488;
-}
-
-.payment-icons span {
-    color: #6b7280;
+/* ▸ CHARACTER COUNTER */
+.char-count {
     font-size: 12px;
-}
-
-.pricing-cta {
-    display: block;
-    background: #0d9488;
-    color: white;
-    text-align: center;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.pricing-cta:hover {
-    background: #0f766e;
-    color: white;
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    padding: 60px 0;
-    background: white;
-}
-
-.why-choose-us h2 {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 16px;
-    color: #1f2937;
-}
-
-.why-choose-us > p {
-    text-align: center;
     color: #6b7280;
-    margin-bottom: 48px;
-    font-size: 18px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: right;
+    margin-top: 4px;
+    display: block;
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.benefit-card {
-    background: #f9fafb;
-    padding: 32px 24px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #e5e7eb;
+/* ▸ SUBMIT BUTTON */
+.cta-button-contact {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-    background: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-.benefit-icon {
-    margin-bottom: 16px;
-}
-
-.benefit-icon i {
-    font-size: 32px;
-    color: #0d9488;
-    background: #e6fffa;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
 }
 
-.benefit-card h4 {
-    color: #1f2937;
-    margin-bottom: 12px;
-    font-size: 18px;
-    font-weight: 600;
+.cta-button-contact:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
 }
 
-.benefit-card p {
-    color: #6b7280;
+.cta-button-contact:active {
+    transform: translateY(0);
+}
+
+.cta-button-contact:disabled {
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
+.cta-button-contact i {
     font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
 }
 
-/* Quick Booking Section */
-.quick-booking {
-    padding: 60px 0;
-    background: #f9fafb;
+/* ▸ FORM FOOTER */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid #e5e7eb;
 }
 
-.booking-content {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.booking-text h2 {
-    font-size: 28px;
-    margin-bottom: 16px;
-    color: #1f2937;
-}
-
-.booking-text p {
+.form-footer p {
     color: #6b7280;
-    margin-bottom: 24px;
-    font-size: 18px;
-}
-
-.booking-benefits {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-}
-
-.booking-benefit {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.booking-benefit i {
-    color: #0d9488;
-    font-size: 18px;
-}
-
-.booking-benefit span {
-    color: #6b7280;
-    font-weight: 500;
-}
-
-.booking-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Updated Pricing - ₹1999 to ₹650 */
-.price-highlight {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-size: 14px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
 }
 
-.original-price {
-    color: #9ca3af;
-    text-decoration: line-through;
-    font-size: 18px;
+.form-footer i {
+    color: #0d9488;
+    font-size: 12px;
 }
 
-.original-price::before {
-    content: "₹";
-}
-
-.sale-price {
-    font-size: 28px;
-    font-weight: 700;
+.form-footer strong {
     color: #0d9488;
 }
 
-.sale-price::before {
-    content: "₹";
-}
-
-.discount {
-    background: #fef3c7;
-    color: #92400e;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.booking-note {
-    color: #9ca3af;
-    font-size: 12px;
-    margin: 0;
-}
-
-/* Emergency Section */
-.emergency-section {
-    padding: 40px 0;
-    background: #fef3c7;
-    border: 1px solid #fbbf24;
-}
-
-.emergency-content {
+/* ▸ CONTACT SIDEBAR */
+.contact-sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
 }
 
-.emergency-icon {
-    width: 60px;
-    height: 60px;
-    background: #f59e0b;
-    border-radius: 50%;
+.contact-quick-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+}
+
+.contact-quick-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1f2937;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.emergency-icon i {
-    font-size: 24px;
-    color: white;
-}
-
-.emergency-text h3 {
-    color: #92400e;
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.emergency-text p {
-    color: #92400e;
-    margin-bottom: 16px;
-    line-height: 1.6;
-}
-
-.emergency-contacts {
-    display: flex;
-    flex-direction: column;
     gap: 8px;
-    margin: 16px 0;
 }
 
-.emergency-contact {
-    color: #92400e;
-    font-weight: 500;
+.contact-quick-card h3 i {
+    color: #0d9488;
 }
 
-.emergency-contact a {
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.emergency-contact a:hover {
-    text-decoration: underline;
-}
-
-/* Technical Requirements Section */
-.tech-requirements {
-    padding: 60px 0;
-    background: #f9fafb;
-}
-
-.tech-requirements h2 {
-    font-size: 28px;
-    text-align: center;
+.quick-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
     margin-bottom: 16px;
-    color: #1f2937;
-}
-
-.tech-requirements > p {
-    text-align: center;
-    color: #6b7280;
-    margin-bottom: 40px;
-    font-size: 16px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.tech-item {
+    padding: 16px;
     background: white;
-    padding: 32px 24px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e5e7eb;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
-.tech-item:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+.quick-contact-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
 }
 
-.tech-icon {
-    margin-bottom: 16px;
+.quick-contact-item:last-child {
+    margin-bottom: 0;
 }
 
-.tech-icon i {
-    font-size: 32px;
-    color: #0d9488;
+.quick-icon {
+    width: 36px;
+    height: 36px;
     background: #e6fffa;
-    width: 64px;
-    height: 64px;
     border-radius: 50%;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
-.tech-item h4 {
+.quick-icon i {
+    font-size: 16px;
+    color: #0d9488;
+}
+
+.quick-details h4 {
     color: #1f2937;
-    margin-bottom: 8px;
-    font-size: 18px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-.tech-item p {
-    color: #6b7280;
+.contact-link {
+    color: #0d9488;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
     font-size: 14px;
-    line-height: 1.5;
+}
+
+.contact-link:hover {
+    color: #0f766e;
+    text-decoration: underline;
+}
+
+.quick-details small {
+    color: #9ca3af;
+    font-size: 12px;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ▸ HELP CARD */
+.help-card {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.help-icon {
+    margin-bottom: 12px;
+}
+
+.help-icon i {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.help-card h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.help-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
     margin: 0;
 }
 
-/* Responsive Design */
+/* ▸ ERROR STATES */
+.error-msg {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
+    display: block;
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.form-group input.success,
+.form-group textarea.success,
+.form-group select.success {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+/* ▸ HINTS */
+.hint {
+    font-size: 12px;
+    color: #0d9488;
+    margin-top: 4px;
+    font-style: italic;
+    display: block;
+}
+
+/* ▸ TABLET STYLES */
 @media (min-width: 768px) {
-    .contact-wrapper {
+    .contact-content {
+        padding: 60px 0;
+    }
+    
+    .contact-focused-wrapper {
         flex-direction: row;
-    }
-    
-    .contact-form-section {
-        flex: 2;
-    }
-    
-    .contact-info-section {
-        flex: 1;
-        margin-left: 48px;
-    }
-    
-    .form-row {
-        flex-direction: row;
-    }
-    
-    .booking-content {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-    }
-    
-    .booking-text {
-        flex: 2;
-    }
-    
-    .booking-action {
-        flex: 1;
-        align-items: flex-end;
-    }
-    
-    .booking-benefits {
         align-items: flex-start;
+        gap: 40px;
     }
     
-    .emergency-content {
+    .contact-form-main {
+        flex: 2;
+        padding: 40px;
+    }
+    
+    .contact-sidebar {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .form-header h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    
+    .form-header p {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+    
+    .trust-indicators {
+        gap: 20px;
+    }
+    
+    .trust-item {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .form-row-mobile {
         flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
+        gap: 24px;
     }
     
-    .emergency-text {
+    .form-row-mobile .form-group {
         flex: 1;
     }
     
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .contact-form-focused {
+        gap: 24px;
     }
     
-    .tech-item {
-        padding: 36px 28px;
+    .form-footer {
+        margin-top: 24px;
+        padding-top: 24px;
     }
     
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .form-footer p {
+        font-size: 15px;
+    }
+}
+
+/* ▸ DESKTOP STYLES */
+@media (min-width: 1024px) {
+    .trust-indicators {
         gap: 32px;
     }
     
-    .benefit-card {
-        padding: 36px 28px;
+    .trust-item {
+        font-size: 15px;
     }
     
-    .quick-faq-card,
-    .pricing-info-card {
-        padding: 36px;
+    .contact-quick-card {
+        padding: 32px 24px;
+    }
+    
+    .help-card {
+        padding: 24px;
     }
 }
 
-@media (min-width: 1024px) {
-    .tech-grid {
-        grid-template-columns: repeat(4, 1fr);
+/* ▸ MOBILE-SPECIFIC FIXES */
+@media (max-width: 767px) {
+    .contact-content {
+        padding: 30px 0;
     }
     
-    .benefits-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .tech-requirements {
-        padding: 40px 0;
+    .contact-form-main {
+        margin: 0 -20px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 20px;
     }
     
-    .tech-item {
-        padding: 24px 20px;
+    .form-header {
+        margin-bottom: 24px;
     }
     
-    .tech-icon i {
-        width: 56px;
-        height: 56px;
-        font-size: 28px;
+    .form-header h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 12px;
     }
     
-    .tech-item h4 {
-        font-size: 16px;
+    .form-header p {
+        font-size: 15px;
+        line-height: 1.5;
     }
     
-    .tech-item p {
-        font-size: 13px;
-    }
-    
-    .contact-info-card {
-        padding: 24px 20px;
-    }
-    
-    .price-highlight {
+    .trust-indicators {
         flex-direction: column;
+        align-items: center;
         gap: 8px;
     }
     
-    .booking-note {
-        text-align: center;
+    .trust-item {
+        font-size: 12px;
+        padding: 6px 12px;
     }
     
-    .why-choose-us {
-        padding: 40px 0;
+    .contact-form-focused {
+        gap: 16px;
     }
     
-    .benefit-card {
-        padding: 24px 20px;
-    }
-    
-    .benefit-icon i {
-        width: 56px;
-        height: 56px;
-        font-size: 28px;
-    }
-    
-    .benefit-card h4 {
+    .contact-form-focused input,
+    .contact-form-focused select,
+    .contact-form-focused textarea {
+        padding: 14px 16px;
         font-size: 16px;
     }
     
-    .benefit-card p {
+    .cta-button-contact {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    .contact-sidebar {
+        margin: 0 -20px;
+    }
+    
+    .contact-quick-card {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 20px;
+    }
+    
+    .help-card {
+        margin: 0 -20px;
+        border-radius: 0;
+        padding: 20px;
+    }
+    
+    .quick-contact-item {
+        padding: 12px;
+    }
+    
+    .form-footer p {
+        font-size: 13px;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* ▸ VERY SMALL MOBILE */
+@media (max-width: 480px) {
+    .form-header h2 {
+        font-size: 20px;
+    }
+    
+    .form-header p {
+        font-size: 14px;
+    }
+    
+    .trust-item {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .contact-form-focused input,
+    .contact-form-focused select,
+    .contact-form-focused textarea {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    .cta-button-contact {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+    
+    .contact-quick-card h3 {
+        font-size: 16px;
+    }
+    
+    .quick-contact-item {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .quick-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .quick-icon i {
+        font-size: 14px;
+    }
+    
+    .quick-details h4 {
+        font-size: 14px;
+    }
+    
+    .contact-link {
         font-size: 13px;
     }
     
-    .quick-faq-card,
-    .pricing-info-card {
-        padding: 24px 20px;
+    .help-card h4 {
+        font-size: 15px;
     }
     
-    .faq-quick-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
+    .help-card p {
+        font-size: 13px;
+    }
+}
+
+/* ▸ ACCESSIBILITY IMPROVEMENTS */
+@media (prefers-reduced-motion: reduce) {
+    .contact-form-focused input,
+    .contact-form-focused select,
+    .contact-form-focused textarea,
+    .cta-button-contact,
+    .quick-contact-item {
+        transition: none;
+    }
+}
+
+/* ▸ FOCUS VISIBILITY */
+.contact-form-focused input:focus-visible,
+.contact-form-focused select:focus-visible,
+.contact-form-focused textarea:focus-visible,
+.cta-button-contact:focus-visible {
+    outline: 2px solid #0d9488;
+    outline-offset: 2px;
+}
+
+/* ▸ HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+    .contact-form-focused input,
+    .contact-form-focused select,
+    .contact-form-focused textarea {
+        border-color: #000000;
     }
     
-    .payment-icons {
-        justify-content: center;
+    .contact-form-focused input:focus,
+    .contact-form-focused select:focus,
+    .contact-form-focused textarea:focus {
+        border-color: #0d9488;
+        box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.5);
+    }
+}
+
+/* ▸ PRINT STYLES */
+@media print {
+    .contact-sidebar,
+    .form-footer,
+    .cta-button-contact {
+        display: none;
+    }
+    
+    .contact-form-main {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}
+
+/* ▸ LOADING STATES */
+.cta-button-contact.loading {
+    background: #6b7280;
+    cursor: not-allowed;
+}
+
+.cta-button-contact.loading i {
+    animation: spin 1s linear infinite;
+}
+
+.cta-button-contact.success {
+    background: #10b981;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ▸ FORM VALIDATION ANIMATIONS */
+.form-group.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ▸ SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ▸ SAFE AREA FOR NOTCHED DEVICES */
+@supports (padding: max(0px)) {
+    .contact-content {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
+
+/* ▸ TOUCH IMPROVEMENTS */
+@media (pointer: coarse) {
+    .cta-button-contact,
+    .contact-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .checkbox-label {
+        padding: 8px 0;
+    }
+    
+    .checkmark {
+        width: 24px;
+        height: 24px;
     }
 }
