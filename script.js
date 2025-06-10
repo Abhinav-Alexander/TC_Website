@@ -1,4 +1,4 @@
-/* ── Enhanced Secure Script - Gentle Version ──────────────────── */
+/* ── Enhanced Secure Script - Contact Form Update ──────────────────── */
 
 // Security configuration - less aggressive
 const SECURITY_CONFIG = {
@@ -48,9 +48,10 @@ class SecurityMonitor {
 
 /* ── Secure Form Handler ──────────────────────────────────────── */
 class SecureFormHandler {
-    constructor(formId, endpoint) {
+    constructor(formId, endpoint, formType = 'booking') {
         this.form = document.getElementById(formId);
         this.endpoint = endpoint;
+        this.formType = formType; // 'booking' or 'contact'
         this.rateLimitKey = `formRateLimit_${formId}`;
         
         if (this.form) {
@@ -117,7 +118,7 @@ class SecureFormHandler {
         });
         
         // Phone number filter
-        const phoneField = this.form.querySelector('#phone');
+        const phoneField = this.form.querySelector('#phone, #contactPhone');
         if (phoneField) {
             phoneField.addEventListener('input', (e) => {
                 e.target.value = e.target.value.replace(/[^0-9]/g, '');
@@ -250,8 +251,8 @@ class SecureFormHandler {
                 // Clear rate limiting on success
                 localStorage.removeItem(this.rateLimitKey);
                 
-                // Redirect to thank you page
-                window.location.href = '/src/thank-you.html';
+                // UPDATED: Form-specific redirect
+                this.redirectToThankYou();
             } else {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -263,6 +264,31 @@ class SecureFormHandler {
             button.disabled = false;
             button.textContent = originalText;
         }
+    }
+    
+    // UPDATED: Form-specific redirect method
+    redirectToThankYou() {
+        // Get current path to determine correct redirect
+        const currentPath = window.location.pathname;
+        let thankYouPath;
+        
+        // Determine which thank you page based on form type
+        const thankYouPage = this.formType === 'contact' ? 'thank-you-contact.html' : 'thank-you.html';
+        
+        if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
+            // From homepage
+            thankYouPath = `./src/${thankYouPage}`;
+        } else if (currentPath.includes('/src/')) {
+            // From src directory pages
+            thankYouPath = `./${thankYouPage}`;
+        } else {
+            // Fallback - try to construct absolute path
+            const baseUrl = window.location.origin;
+            thankYouPath = `${baseUrl}/src/${thankYouPage}`;
+        }
+        
+        console.log(`Redirecting ${this.formType} form to:`, thankYouPath);
+        window.location.href = thankYouPath;
     }
     
     showError(message) {
@@ -329,13 +355,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize security (gentle mode)
     securityMonitor = new SecurityMonitor();
     
-    // Initialize form handlers
+    // Initialize form handlers with form types
     new SecureFormHandler('bookingForm', 
-        'https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec');
+        'https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec',
+        'booking'); // Booking form -> thank-you.html
     
     if (document.getElementById('contactForm')) {
         new SecureFormHandler('contactForm', 
-            'https://script.google.com/macros/s/AKfycbwKthmvnNJkSOfmrRx7rynPcQFGa2wt_gWtuhJMJ2yzdQqVp5c2xkp31yS_LrO91GQN/exec');
+            'https://script.google.com/macros/s/AKfycbwKthmvnNJkSOfmrRx7rynPcQFGa2wt_gWtuhJMJ2yzdQqVp5c2xkp31yS_LrO91GQN/exec',
+            'contact'); // Contact form -> thank-you-contact.html
     }
     
     // Original hamburger menu functionality

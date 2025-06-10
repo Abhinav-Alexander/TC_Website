@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Thank You - We'll Be In Touch | Therapy Council</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/thank-you.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+</head>
+<body>
+
+<!-- ▸ HEADER ------------------------------------------------------------ -->
+<header class="header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <div class="logo-image">
+                <img src="../logo/logo_black.png" alt="Therapy Council Logo">
+            </div>
+            <h1 class="logo-text">THERAPY COUNCIL</h1>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ▸ HERO SECTION - CONTACT FOCUSED ----------------------------------- -->
+<section class="hero-success">
+    <div class="container">
+        <div class="hero-content">
+            <div class="success-animation">
+                <div class="success-circle">
+                    <i class="fas fa-envelope-circle-check"></i>
+                </div>
+                <div class="success-ripple"></div>
+                <div class="success-ripple-2"></div>
+            </div>
+            
+            <h1>Thank You for Reaching Out</h1>
+            <p class="hero-subtitle">Your message has been received safely. We understand that reaching out takes courage, and we're honored you chose to connect with us.</p>
+            
+            <div class="next-step-preview">
+                <span class="step-indicator">Next Step</span>
+                <span class="step-text">We'll get back to you soon</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ MAIN ACTION SECTION - RESPONSE FOCUSED --------------------------- -->
+<section class="main-action">
+    <div class="container">
+        <div class="action-card-large">
+            <div class="card-header">
+                <div class="action-icon-large">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h2>We'll Be In Touch Soon</h2>
+                <p class="card-subtitle">Our team personally reviews every message and will respond with care and attention to your specific needs.</p>
+            </div>
+            
+            <div class="card-content">
+                <div class="email-steps">
+                    <div class="email-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Your message is being reviewed</h4>
+                            <p>Our care team is reading your message and considering the best way to help</p>
+                        </div>
+                    </div>
+                    
+                    <div class="email-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>We'll send a personal response</h4>
+                            <p>You'll receive a thoughtful, personalized response to your email address</p>
+                        </div>
+                    </div>
+                    
+                    <div class="email-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Next steps tailored to you</h4>
+                            <p>We'll suggest the best path forward based on what you've shared</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="email-status success" id="contactStatus">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Message received successfully</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ IMMEDIATE SUPPORT SECTION ---------------------------------------- -->
+<section class="preparation-strip">
+    <div class="container">
+        <div class="prep-content">
+            <div class="prep-header">
+                <i class="fas fa-heart"></i>
+                <span>Need immediate support? Here are your options</span>
+            </div>
+            
+            <div class="prep-items">
+                <div class="prep-item">
+                    <a href="https://wa.me/919211750322" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                        <i class="fas fa-phone"></i>
+                        <span>Call/WhatsApp<br><strong>(+91) 9211-750-322</strong></span>
+                    </a>
+                </div>
+                <div class="prep-item">
+                    <a href="../index.html#bookingForm" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Session<br><strong>67% Off Today</strong></span>
+                    </a>
+                </div>
+                <div class="prep-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Always<br><strong>100% Confidential</strong></span>
+                </div>
+                <div class="prep-item">
+                    <i class="fas fa-heart-pulse"></i>
+                    <span>Professional<br><strong>Licensed Therapists</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ▸ RESPONSE TIME MODAL - REMOVED SPECIFIC TIMING ------------------- -->
+<div class="modal-overlay" id="responseModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Our Response Promise</h3>
+            <button class="modal-close" onclick="closeResponseModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>We personally read and respond to every message with care and attention.</p>
+            <p>Our team will get back to you as soon as possible with a thoughtful response.</p>
+            <p><strong>Need immediate support?</strong> Call or WhatsApp us at <strong>(+91) 9211-750-322</strong></p>
+        </div>
+        
+        <div class="modal-actions">
+            <button class="primary-button" onclick="closeResponseModal()">
+                <i class="fas fa-check"></i>
+                Got It
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ▸ FOOTER ------------------------------------------------------------ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-sections">
+            <div class="footer-brand">
+                <h3>Therapy Council</h3>
+                <p>For Every Mind, Everywhere</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61576355709503" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/therapy_council/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/Therapy_Council" target="_blank" rel="noopener noreferrer" class="social-icon twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-credentials">
+                <h3>Professional Credentials</h3>
+                <div class="credential-list">
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Licensed Psychologists</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>APA Members</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-dot"></div>
+                        <span>Evidence-Based</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>support@therapycouncil.org</p>
+                <p>(+91) 9211-750-322</p>
+                <button class="cta-button" onclick="window.location.href='../index.html#bookingForm'">Get Support</button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>
+                © 2025 Therapy Council. All rights reserved.
+                <a href="/docs/Privacy_policy.pdf" target="_blank">Privacy Policy</a> |
+                <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+<script src="../script.js"></script>
+<script>
+// Contact-specific thank you page functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Track contact form completion
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'contact_form_completed', {
+            'event_category': 'engagement',
+            'event_label': 'contact_thank_you'
+        });
+    }
+    
+    // Add click-to-call functionality for mobile
+    const phoneNumbers = document.querySelectorAll('[href^="tel:"]');
+    phoneNumbers.forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'phone_call_initiated', {
+                    'event_category': 'engagement',
+                    'event_label': 'from_contact_thank_you'
+                });
+            }
+        });
+    });
+    
+    // Track booking link clicks from this page
+    const bookingLinks = document.querySelectorAll('a[href*="bookingForm"]');
+    bookingLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'booking_link_clicked', {
+                    'event_category': 'conversion',
+                    'event_label': 'from_contact_thank_you'
+                });
+            }
+        });
+    });
+    
+    // Animate success status
+    setTimeout(() => {
+        const status = document.getElementById('contactStatus');
+        if (status) {
+            status.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                status.style.transform = 'scale(1)';
+            }, 200);
+        }
+    }, 1000);
+});
+
+// Modal functions
+function openResponseModal() {
+    const modal = document.getElementById('responseModal');
+    if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeResponseModal() {
+    const modal = document.getElementById('responseModal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Add click handler for response time info
+document.addEventListener('DOMContentLoaded', function() {
+    const responseTimeElement = document.querySelector('.next-step-preview');
+    if (responseTimeElement) {
+        responseTimeElement.style.cursor = 'pointer';
+        responseTimeElement.addEventListener('click', openResponseModal);
+        responseTimeElement.title = 'Click for more details about our response time';
+    }
+});
+
+// Global functions for HTML onclick handlers
+window.openResponseModal = openResponseModal;
+window.closeResponseModal = closeResponseModal;
+</script>
+
+</body>
+</html>
