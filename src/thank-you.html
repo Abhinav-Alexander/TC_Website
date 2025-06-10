@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Security Headers -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-XSS-Protection" content="1; mode=block">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <title>Thank You - Therapy Council</title>
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Thank You - Your Journey Begins | Therapy Council</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/header-footer.css">
-<link rel="stylesheet" href="../css/thank-you.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/thank-you.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -37,7 +37,6 @@
             <h1 class="logo-text">THERAPY COUNCIL</h1>
         </div>
 
-        <!-- Hamburger (mobile only) -->
         <button class="nav-toggle" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
@@ -45,171 +44,142 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../src/about.html">About</a></li>
-                <li><a href="../src/services.html">Services</a></li>
-                <li><a href="../src/contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<!-- ▸ THANK YOU SECTION ------------------------------------------------- -->
-<section class="thank-you-hero">
+<!-- ▸ HERO SECTION - LARGE & BEAUTIFUL --------------------------------- -->
+<section class="hero-success">
     <div class="container">
-        <div class="thank-you-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
+        <div class="hero-content">
+            <div class="success-animation">
+                <div class="success-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="success-ripple"></div>
+                <div class="success-ripple-2"></div>
             </div>
-            <h1>Thank You for Taking the First Step!</h1>
-            <p class="lead">Your session request has been successfully submitted. We're excited to be part of your wellness journey.</p>
+            
+            <h1>Thank You for Taking This Important Step</h1>
+            <p class="hero-subtitle">Your journey toward better mental health starts now. We're honored to be part of this process with you.</p>
+            
+            <div class="next-step-preview">
+                <span class="step-indicator">Next Step</span>
+                <span class="step-text">Check your email for booking details</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ▸ NEXT STEPS SECTION ------------------------------------------------ -->
-<section class="next-steps">
+<!-- ▸ MAIN ACTION SECTION - SINGLE FOCUS ------------------------------- -->
+<section class="main-action">
     <div class="container">
-        <div class="next-steps-content">
-            <h2>What Happens Next?</h2>
+        <div class="action-card-large">
+            <div class="card-header">
+                <div class="action-icon-large">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h2>Check Your Email</h2>
+                <p class="card-subtitle">We've sent you a personalized booking link to complete your session scheduling.</p>
+            </div>
             
-            <div class="steps-timeline">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Confirmation Email</h3>
-                        <p>You'll receive a confirmation email within the next few minutes with your session details and next steps.</p>
-                        <small class="step-time">Within 5 minutes</small>
+            <div class="card-content">
+                <div class="email-steps">
+                    <div class="email-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Open your email inbox</h4>
+                            <p>Look for our confirmation email (check spam folder too)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="email-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Click the booking link</h4>
+                            <p>Select your preferred date and time for your first session</p>
+                        </div>
+                    </div>
+                    
+                    <div class="email-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>You're all set!</h4>
+                            <p>We'll send you a secure video link before your session</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Therapist Matching</h3>
-                        <p>Our team will carefully match you with a therapist who best fits your needs and preferences.</p>
-                        <small class="step-time">Within 4 hours</small>
-                    </div>
-                </div>
-                
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Scheduling Call</h3>
-                        <p>Your assigned therapist or our scheduling coordinator will contact you to arrange your first session.</p>
-                        <small class="step-time">Within 24 hours</small>
-                    </div>
-                </div>
-                
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Your First Session</h3>
-                        <p>Begin your therapeutic journey in a safe, supportive environment tailored to your unique needs.</p>
-                        
-                    </div>
+                <div class="email-status" id="emailStatus">
+                    <i class="fas fa-clock"></i>
+                    <span>Email typically arrives within 2-3 minutes</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ▸ IMPORTANT INFO SECTION -------------------------------------------- -->
-<section class="important-info">
+<!-- ▸ PREPARATION STRIP - MINIMAL & HELPFUL ---------------------------- -->
+<section class="preparation-strip">
     <div class="container">
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="info-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
-                <h3>Your Special Rate</h3>
-                <p>Your 70% discount for the first session has been reserved. This introductory rate of <strong> &#8377;699</strong> (regularly &#8377;2599) is locked in for your initial appointment.</p>
+        <div class="prep-content">
+            <div class="prep-header">
+                <i class="fas fa-lightbulb"></i>
+                <span>Quick preparation tips for your upcoming session</span>
             </div>
             
-            <div class="info-card">
-                <div class="info-icon">
-                    <i class="fas fa-shield-alt"></i>
+            <div class="prep-items">
+                <div class="prep-item">
+                    <i class="fas fa-wifi"></i>
+                    <span>Stable internet</span>
                 </div>
-                <h3>Complete Confidentiality</h3>
-                <p>All your information is secure and confidential. We follow strict HIPAA guidelines to protect your privacy throughout your therapeutic journey.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-icon">
-                    <i class="fas fa-phone-alt"></i>
+                <div class="prep-item">
+                    <i class="fas fa-headphones"></i>
+                    <span>Earphones (optional)</span>
                 </div>
-                <h3>Questions or Concerns?</h3>
-                <p>If you have any immediate questions or need to make changes to your request, please call us at <strong>(+91) 9211 750 322</strong> or email <strong>support@therapycouncil.org</strong>.</p>
-            </div>
-            
-            <div class="info-card emergency">
-                <div class="info-icon">
-                    <i class="fas fa-exclamation-triangle"></i>
+                <div class="prep-item">
+                    <i class="fas fa-home"></i>
+                    <span>Private space</span>
                 </div>
-                <h3>Need Immediate Support?</h3>
-                <p>If you're experiencing a mental health crisis, please call <strong>988</strong> for the Suicide & Crisis Lifeline or go to your nearest emergency room. Help is available 24/7.</p>
+                <div class="prep-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Device with camera</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ▸ RESOURCES SECTION ------------------------------------------------- -->
-<section class="helpful-resources">
-    <div class="container">
-        <h2>While You Wait - Helpful Resources</h2>
-        <div class="resources-grid">
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h4>Prepare for Your Session</h4>
-                <p>Learn what to expect during your first therapy session and how to make the most of your time.</p>
-                <a href="#" class="resource-link">Read Our Guide <i class="fas fa-arrow-right"></i></a>
+<!-- ▸ EMAIL MODAL - SIMPLE & CLEAN ------------------------------------- -->
+<div class="modal-overlay" id="emailModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Email Guidance</h3>
+            <button class="modal-close" onclick="closeEmailModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-icon">
+                <i class="fas fa-envelope"></i>
             </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-meditation"></i>
-                </div>
-                <h4>Mindfulness Exercises</h4>
-                <p>Try some simple breathing and mindfulness techniques to help manage stress and anxiety.</p>
-                <a href="#" class="resource-link">Start Practicing <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h4>Self-Care Tips</h4>
-                <p>Discover practical self-care strategies you can start implementing in your daily routine today.</p>
-                <a href="#" class="resource-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
+            <p>We've sent your booking link to the email address you provided.</p>
+            <p><strong>Don't see it?</strong> Check your spam/junk folder and add <strong>support@therapycouncil.org</strong> to your contacts.</p>
+        </div>
+        
+        <div class="modal-actions">
+            <button class="primary-button" onclick="closeEmailModal()">
+                <i class="fas fa-check"></i>
+                Got It
+            </button>
         </div>
     </div>
-</section>
-
-<!-- ▸ SOCIAL LINKS SECTION ---------------------------------------------- -->
-<section class="stay-connected">
-    <div class="container">
-        <div class="connect-content">
-            <h2>Stay Connected</h2>
-            <p>Follow us for mental health tips, resources, and updates from our community.</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61576355709503" class="social-link" aria-label="Follow us on Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                    <span>Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/therapy_council/" class="social-link" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://x.com/Therapy_Council" class="social-link" aria-label="Follow us on X">
-                    <i class="fab fa-x-twitter"></i>
-                    <span>X</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 
 <!-- ▸ FOOTER ------------------------------------------------------------ -->
 <footer class="footer">
@@ -217,7 +187,7 @@
         <div class="footer-sections">
             <div class="footer-brand">
                 <h3>Therapy Council</h3>
-                <p>For Every Mind, Everywhere - Professional therapy services delivered with compassion and expertise.</p>
+                <p>For Every Mind, Everywhere</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=61576355709503" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
@@ -257,7 +227,7 @@
                 <h3>Contact Us</h3>
                 <p>support@therapycouncil.org</p>
                 <p>(+91) 9211-750-322</p>
-                <button class="cta-button" onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Get Support</button>
+                <button class="cta-button" onclick="window.location.href='../index.html#bookingForm'">Get Support</button>
             </div>
         </div>
         
@@ -268,11 +238,12 @@
                 <a href="/docs/Terms_and_conditions.pdf" target="_blank">Terms of Service</a>
             </p>
         </div>
-        
     </div>
 </footer>
 
 <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
 <script src="../script.js"></script>
+<script src="../js/minimal-thank-you.js"></script>
+
 </body>
 </html>
