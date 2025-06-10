@@ -1,11 +1,11 @@
-/* ▸ MINIMAL FOCUS THANK YOU PAGE JAVASCRIPT - Clean & Simple */
+/* ▸ THANK YOU PAGE JAVASCRIPT - Aligned with Website Patterns */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeMinimalThankYou();
+    initializeThankYouPage();
 });
 
-function initializeMinimalThankYou() {
-    // Initialize mobile navigation
+function initializeThankYouPage() {
+    // Initialize mobile navigation (consistent with site)
     setupMobileNavigation();
     
     // Setup email status simulation
@@ -19,9 +19,15 @@ function initializeMinimalThankYou() {
     
     // Setup accessibility features
     enhanceAccessibility();
+    
+    // Handle URL parameters
+    handleUrlParameters();
+    
+    // Setup error handling
+    handleErrors();
 }
 
-// Mobile Navigation Setup
+// Mobile Navigation Setup (consistent with main site)
 function setupMobileNavigation() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -79,7 +85,7 @@ function openEmailModal() {
         // Track modal open
         trackEvent('email_modal_opened', {
             'event_category': 'engagement',
-            'event_label': 'minimal_thank_you'
+            'event_label': 'thank_you_page'
         });
     }
 }
@@ -90,7 +96,7 @@ function closeEmailModal() {
         modal.classList.remove('show');
         document.body.style.overflow = 'auto';
         
-        // Return focus to trigger button
+        // Return focus to trigger button if it exists
         const emailButton = document.querySelector('.primary-button');
         if (emailButton) {
             emailButton.focus();
@@ -100,23 +106,16 @@ function closeEmailModal() {
 
 // Email Resend Function
 function resendEmail() {
-    const button = document.querySelector('.secondary-button');
     const emailStatus = document.getElementById('emailStatus');
     
-    if (!button || !emailStatus) return;
+    if (!emailStatus) return;
     
     // Show loading state
-    button.classList.add('loading');
-    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    button.disabled = true;
+    emailStatus.className = 'email-status loading';
+    emailStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Resending email...</span>';
     
     // Simulate email resend
     setTimeout(() => {
-        // Reset button
-        button.classList.remove('loading');
-        button.innerHTML = '<i class="fas fa-redo"></i> Resend Email';
-        button.disabled = false;
-        
         // Update status
         emailStatus.className = 'email-status success';
         emailStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Email resent successfully!</span>';
@@ -127,7 +126,7 @@ function resendEmail() {
         // Track resend
         trackEvent('email_resend_requested', {
             'event_category': 'engagement',
-            'event_label': 'minimal_thank_you'
+            'event_label': 'thank_you_page'
         });
         
         // Reset status after 5 seconds
@@ -200,7 +199,7 @@ function setupModalHandlers() {
     });
 }
 
-// Notification System
+// Notification System (matching site style)
 function showNotification(message, type = 'info') {
     // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
@@ -234,7 +233,7 @@ function showNotification(message, type = 'info') {
         </button>
     `;
     
-    // Style the notification
+    // Style the notification (matching site patterns)
     Object.assign(notification.style, {
         position: 'fixed',
         top: '20px',
@@ -242,8 +241,8 @@ function showNotification(message, type = 'info') {
         background: colors[type],
         color: 'white',
         padding: '16px 20px',
-        borderRadius: '12px',
-        boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+        borderRadius: '8px',
+        boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
         zIndex: '10001',
         maxWidth: '400px',
         fontSize: '15px',
@@ -280,9 +279,9 @@ function trackPageAnalytics() {
     // Track page view
     if (typeof gtag !== 'undefined') {
         gtag('event', 'page_view', {
-            'page_title': 'Thank You - Minimal Layout',
+            'page_title': 'Thank You - Booking Confirmation',
             'page_location': window.location.href,
-            'custom_parameter_1': 'minimal_thank_you'
+            'custom_parameter_1': 'thank_you_page'
         });
     }
     
@@ -293,7 +292,7 @@ function trackPageAnalytics() {
         trackEvent('time_on_page', {
             'event_category': 'engagement',
             'value': timeSpent,
-            'custom_parameter_1': 'minimal_thank_you'
+            'custom_parameter_1': 'thank_you_page'
         });
     });
     
@@ -310,7 +309,7 @@ function trackPageAnalytics() {
         trackEvent('scroll_depth', {
             'event_category': 'engagement',
             'value': maxScroll,
-            'custom_parameter_1': 'minimal_thank_you'
+            'custom_parameter_1': 'thank_you_page'
         });
     });
 }
@@ -377,6 +376,26 @@ function enhanceAccessibility() {
         
         document.body.insertBefore(skipLink, document.body.firstChild);
     }
+    
+    // Announce success to screen readers
+    setTimeout(() => {
+        const announcement = document.createElement('div');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.style.cssText = `
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        `;
+        announcement.textContent = 'Form submitted successfully. Please check your email for next steps.';
+        document.body.appendChild(announcement);
+        
+        setTimeout(() => {
+            document.body.removeChild(announcement);
+        }, 3000);
+    }, 1000);
 }
 
 // URL Parameter Handling
@@ -384,10 +403,15 @@ function handleUrlParameters() {
     const urlParams = new URLSearchParams(window.location.search);
     const email = urlParams.get('email');
     const status = urlParams.get('status');
+    const source = urlParams.get('source');
     
     if (email && validateEmail(email)) {
         console.log('User email from URL:', email);
         // Could pre-fill email-related information if needed
+        trackEvent('thank_you_with_email', {
+            'event_category': 'conversion',
+            'custom_parameter_1': 'email_provided'
+        });
     }
     
     if (status === 'scheduled') {
@@ -399,6 +423,18 @@ function handleUrlParameters() {
             emailStatus.className = 'email-status success';
             emailStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Session scheduled successfully!</span>';
         }
+        
+        trackEvent('session_scheduled', {
+            'event_category': 'conversion',
+            'custom_parameter_1': 'scheduled_success'
+        });
+    }
+    
+    if (source) {
+        trackEvent('thank_you_source', {
+            'event_category': 'traffic',
+            'custom_parameter_1': source
+        });
     }
 }
 
@@ -421,20 +457,154 @@ function handleErrors() {
         });
         
         // Show user-friendly error message for critical errors
-        if (event.filename && event.filename.includes('minimal-thank-you')) {
+        if (event.filename && event.filename.includes('thank-you')) {
             showNotification('Something went wrong. Please refresh the page.', 'error');
         }
     });
+    
+    // Handle unhandled promise rejections
+    window.addEventListener('unhandledrejection', function(event) {
+        console.error('Unhandled promise rejection:', event.reason);
+        
+        trackEvent('promise_rejection', {
+            'event_category': 'error',
+            'error_message': event.reason ? event.reason.toString() : 'Unknown error'
+        });
+    });
 }
 
-// Initialize everything
-document.addEventListener('DOMContentLoaded', function() {
-    initializeMinimalThankYou();
+// Page Performance Tracking
+function trackPagePerformance() {
+    // Track page load time
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const performance = window.performance;
+            if (performance && performance.timing) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                
+                trackEvent('page_load_time', {
+                    'event_category': 'performance',
+                    'value': Math.round(loadTime / 1000),
+                    'custom_parameter_1': 'thank_you_page'
+                });
+            }
+        }, 0);
+    });
+}
+
+// Enhanced Modal Functions
+function setupAdvancedModal() {
+    // Add email help button if it doesn't exist
+    const emailStatus = document.getElementById('emailStatus');
+    if (emailStatus && !document.querySelector('.email-help-btn')) {
+        const helpButton = document.createElement('button');
+        helpButton.className = 'email-help-btn';
+        helpButton.innerHTML = '<i class="fas fa-question-circle"></i> Need help?';
+        helpButton.style.cssText = `
+            background: none;
+            border: none;
+            color: #0d9488;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 8px;
+            text-decoration: underline;
+        `;
+        
+        helpButton.addEventListener('click', openEmailModal);
+        emailStatus.appendChild(helpButton);
+    }
+}
+
+// Cookie/Storage Management
+function manageBrowserStorage() {
+    // Clear any sensitive form data that might be stored
+    try {
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.includes('form') && key.includes('temp')) {
+                keysToRemove.push(key);
+            }
+        }
+        
+        keysToRemove.forEach(key => {
+            localStorage.removeItem(key);
+        });
+        
+        // Store successful completion flag
+        sessionStorage.setItem('form_completed', Date.now().toString());
+        
+    } catch (error) {
+        console.warn('Storage management error:', error);
+    }
+}
+
+// Social Share Functions (optional)
+function addSocialShareOptions() {
+    const shareText = encodeURIComponent("I just took the first step towards better mental health with Therapy Council. Taking care of your mind is just as important as taking care of your body. 💚");
+    const shareUrl = encodeURIComponent(window.location.origin);
+    
+    // Could add social sharing buttons if needed
+    // This is just a placeholder for potential future feature
+}
+
+// Initialize additional features
+function initializeAdvancedFeatures() {
+    trackPagePerformance();
+    setupAdvancedModal();
+    manageBrowserStorage();
+    
+    // Add smooth scrolling for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Main initialization - updated
+function initializeThankYouPage() {
+    // Core functionality
+    setupMobileNavigation();
+    simulateEmailDelivery();
+    setupModalHandlers();
+    trackPageAnalytics();
+    enhanceAccessibility();
     handleUrlParameters();
     handleErrors();
-});
+    
+    // Advanced features
+    initializeAdvancedFeatures();
+}
 
-// Expose necessary functions globally
+// Expose necessary functions globally for HTML onclick handlers
 window.openEmailModal = openEmailModal;
 window.closeEmailModal = closeEmailModal;
 window.resendEmail = resendEmail;
+
+// Additional event listeners for enhanced functionality
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+        // User returned to tab - could refresh email status
+        console.log('User returned to thank you page');
+        trackEvent('page_focus_returned', {
+            'event_category': 'engagement',
+            'custom_parameter_1': 'thank_you_page'
+        });
+    }
+});
+
+// Handle back button navigation
+window.addEventListener('popstate', function(event) {
+    trackEvent('back_button_used', {
+        'event_category': 'navigation',
+        'custom_parameter_1': 'thank_you_page'
+    });
+});
