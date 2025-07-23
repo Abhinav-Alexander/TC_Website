@@ -111,10 +111,26 @@ class SecureFormHandler {
     
     setupBasicValidation() {
         const fields = this.form.querySelectorAll('input, textarea, select');
+        console.log(`Setting up validation for ${fields.length} fields in form:`, this.form.id);
+        
         fields.forEach(field => {
             if (field.type !== 'hidden') {
-                field.addEventListener('input', () => this.validateFieldEnhanced(field));
-                field.addEventListener('blur', () => this.validateFieldEnhanced(field));
+                console.log(`Adding listeners to field:`, field.id, field.type);
+                
+                field.addEventListener('input', () => {
+                    console.log(`Input event on field:`, field.id);
+                    this.validateFieldEnhanced(field);
+                });
+                
+                field.addEventListener('blur', () => {
+                    console.log(`Blur event on field:`, field.id);
+                    this.validateFieldEnhanced(field);
+                });
+                
+                field.addEventListener('change', () => {
+                    console.log(`Change event on field:`, field.id);
+                    this.validateFieldEnhanced(field);
+                });
             }
         });
         
@@ -159,23 +175,39 @@ class SecureFormHandler {
     }
     
     updateProgress() {
-        const progressBar = document.getElementById(this.formType + 'Progress');
-        const progressText = document.getElementById(this.formType + 'ProgressText');
+        // Determine correct progress element IDs based on form
+        let progressBarId, progressTextId;
         
-        if (!progressBar || !progressText) return;
+        if (this.form.id === 'bookingForm') {
+            progressBarId = 'signupProgress';
+            progressTextId = 'signupProgressText';
+        } else if (this.form.id === 'contactForm') {
+            progressBarId = 'contactProgress';
+            progressTextId = 'contactProgressText';
+        } else {
+            return; // No progress tracking for unknown forms
+        }
+        
+        const progressBar = document.getElementById(progressBarId);
+        const progressText = document.getElementById(progressTextId);
+        
+        if (!progressBar || !progressText) {
+            console.log('Progress elements not found:', progressBarId, progressTextId);
+            return;
+        }
         
         const progressPercentage = (this.completedSteps.size / this.totalSteps) * 100;
         progressBar.style.width = progressPercentage + '%';
         
         // Update progress text
         const stepMessages = {
-            booking: [
+            bookingForm: [
                 "Step 1 of 4 - Tell us your name",
                 "Step 2 of 4 - How can we reach you?",
                 "Step 3 of 4 - Your email address",
                 "Step 4 of 4 - What brings you here?"
             ],
-            contact: [
+            contactForm: [
                 "Step 1 of 4 - Tell us your name",
                 "Step 2 of 4 - Your email address", 
                 "Step 3 of 4 - Contact preferences",
@@ -183,7 +215,7 @@ class SecureFormHandler {
             ]
         };
         
-        const messages = stepMessages[this.formType] || stepMessages.booking;
+        const messages = stepMessages[this.form.id] || stepMessages.bookingForm;
         const nextStep = Math.min(this.completedSteps.size, this.totalSteps - 1);
         
         if (this.completedSteps.size === this.totalSteps) {
@@ -193,12 +225,14 @@ class SecureFormHandler {
             progressText.textContent = messages[nextStep];
             progressBar.classList.remove('animating');
         }
+        
+        console.log(`Progress updated: ${this.completedSteps.size}/${this.totalSteps} (${progressPercentage}%)`);
     }
     
     // Enhanced field validation with better messaging
     validateFieldEnhanced(field) {
         const value = field.value.trim();
-        const fieldGroup = field.closest('.form-group');
+        const fieldGroup = field.closest('.form-group') || field.closest('[data-step]');
         const step = fieldGroup?.getAttribute('data-step');
         
         let isValid = true;
@@ -231,6 +265,9 @@ class SecureFormHandler {
                     } else {
                         successMessage = field.getAttribute('data-success') || 'Phone number looks good!';
                     }
+                } else if (!field.hasAttribute('required')) {
+                    // Optional phone field with no value is valid
+                    isValid = true;
                 }
                 break;
                 
@@ -263,7 +300,7 @@ class SecureFormHandler {
                         successMessage = field.getAttribute('data-success') || 'Thank you for sharing!';
                     }
                 } else if (field.tagName === 'SELECT') {
-                    if (value) {
+                    if (value && value !== '') {
                         successMessage = field.getAttribute('data-success') || 'Selection noted!';
                     }
                 } else if (field.hasAttribute('required') && !value) {
@@ -277,12 +314,15 @@ class SecureFormHandler {
         // Update UI
         this.updateFieldUI(field, isValid, message, successMessage);
         
-        // Update progress
+        // Update progress - consider field complete if it has value and is valid
         if (step) {
-            if (isValid && value) {
-                this.completedSteps.add(parseInt(step));
+            const stepNum = parseInt(step);
+            if (value && isValid) {
+                this.completedSteps.add(stepNum);
+                console.log(`Step ${stepNum} completed:`, field.id, value);
             } else {
-                this.completedSteps.delete(parseInt(step));
+                this.completedSteps.delete(stepNum);
+                console.log(`Step ${stepNum} incomplete:`, field.id);
             }
             this.updateProgress();
         }
