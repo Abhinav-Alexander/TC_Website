@@ -69,38 +69,59 @@
             <div class="signup-card">
                 <h3>Reserve Your Session</h3>
 
+                <!-- Progress Indicator -->
+                <div class="form-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="signupProgress"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="signupProgressText">Step 1 of 4 - Tell us your name</span>
+                    </div>
+                </div>
+
                 <form id="bookingForm"
                     action="https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec"
                     method="POST" novalidate>
 
-                    <!-- FULL NAME  (needs at least two words, 2+ letters each) -->
-                    <div class="form-group">
+                    <!-- FULL NAME -->
+                    <div class="form-group" data-step="1">
                         <label for="name">Full Name *</label>
-                        <input name="fullName" id="name" pattern="^[A-Za-z]{2,}(?:[ \-'][A-Za-z]{2,})+$" required>
+                        <input name="fullName" id="name" minlength="2" required 
+                               data-error-empty="Please enter your full name"
+                               data-error-short="Name should be at least 2 characters"
+                               data-success="Great! We'll use this name for your session">
                         <small class="error-msg" id="nameErr"></small>
+                        <small class="success-msg" id="nameSuccess"></small>
                     </div>
 
-                    <!-- PHONE  (10–15 digits) -->
-                    <div class="form-group">
+                    <!-- PHONE -->
+                    <div class="form-group" data-step="2">
                         <label for="phone">Phone Number *</label>
-                        <input name="phone" id="phone" type="tel" inputmode="numeric" pattern="^[0-9]{10,15}$" required>
-                        <small class="hint">Digits only </small>
+                        <input name="phone" id="phone" type="tel" inputmode="numeric" required
+                               data-error-empty="We need your phone number to confirm your appointment"
+                               data-error-invalid="Please enter a valid phone number (e.g., +91 9876543210)"
+                               data-success="Perfect! We can reach you at this number">
+                        <small class="hint">We'll use this to confirm your session</small>
                         <small class="error-msg" id="phoneErr"></small>
+                        <small class="success-msg" id="phoneSuccess"></small>
                     </div>
 
-                    <!-- EMAIL  (must include dot-TLD) -->
-                    <div class="form-group">
+                    <!-- EMAIL -->
+                    <div class="form-group" data-step="3">
                         <label for="email">Email Address *</label>
-                        <input name="email" id="email" type="email"
-                            data-regex="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" placeholder="you@example.com"
-                            required>
+                        <input name="email" id="email" type="email" placeholder="you@example.com" required
+                               data-error-empty="Please provide your email address"
+                               data-error-invalid="Please enter a valid email (e.g., name@example.com)"
+                               data-success="Excellent! We'll send session details to this email">
                         <small class="error-msg" id="emailErr"></small>
+                        <small class="success-msg" id="emailSuccess"></small>
                     </div>
 
                     <!-- REASON -->
-                    <div class="form-group">
+                    <div class="form-group" data-step="4">
                         <label for="concern">What brings you here?</label>
-                        <select name="concern" id="concern">
+                        <select name="concern" id="concern"
+                                data-success="Thank you for sharing - this helps us prepare for your session">
                             <option value="I'm not sure yet">I'm not sure yet</option>
                             <option value="Anxiety &amp; Stress">Anxiety &amp; Stress</option>
                             <option value="Depression">Depression</option>
@@ -113,6 +134,7 @@
                             <option value="Just Questions">I just have questions</option>
                             <option value="Other">Other</option>
                         </select>
+                        <small class="success-msg" id="concernSuccess"></small>
                     </div>
 
                     <!-- honeypot -->

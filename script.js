@@ -1,11 +1,10 @@
 /* ── Enhanced Secure Script - Contact Form Update ──────────────────── */
 
-// Security configuration - less aggressive
+// Security configuration - user-friendly
 const SECURITY_CONFIG = {
-    maxFormAttempts: 5,  // Increased from 3 to 5
-    lockoutTime: 10 * 60 * 1000, // Reduced to 10 minutes
-    maxFieldLength: 2000,
-    suspiciousActivityThreshold: 10, // Increased threshold
+    maxFormAttempts: 15,  // More lenient
+    lockoutTime: 5 * 60 * 1000, // Reduced to 5 minutes
+    suspiciousActivityThreshold: 20, // Higher threshold
     allowedDomains: ['therapycouncil.org', 'script.google.com']
 };
 
@@ -68,6 +67,7 @@ class SecureFormHandler {
         
         this.setupBasicValidation();
         this.addSecurityFeatures();
+        this.initializeProgress();
         this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
     
@@ -113,15 +113,17 @@ class SecureFormHandler {
         const fields = this.form.querySelectorAll('input, textarea, select');
         fields.forEach(field => {
             if (field.type !== 'hidden') {
-                field.addEventListener('input', () => this.validateField(field));
+                field.addEventListener('input', () => this.validateFieldEnhanced(field));
+                field.addEventListener('blur', () => this.validateFieldEnhanced(field));
             }
         });
         
-        // Phone number filter
+        // Phone number cleanup - allow more flexible formatting
         const phoneField = this.form.querySelector('#phone, #contactPhone');
         if (phoneField) {
             phoneField.addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                // Allow numbers, spaces, hyphens, parentheses, and plus sign
+                e.target.value = e.target.value.replace(/[^0-9\s\-\(\)\+]/g, '');
             });
         }
     }
@@ -145,65 +147,182 @@ class SecureFormHandler {
         this.form.appendChild(timestamp);
     }
     
-    validateField(field) {
+    // Form Progress Tracking
+    initializeProgress() {
+        this.totalSteps = this.form.querySelectorAll('[data-step]').length;
+        this.currentStep = 0;
+        this.completedSteps = new Set();
+        
+        if (this.totalSteps > 0) {
+            this.updateProgress();
+        }
+    }
+    
+    updateProgress() {
+        const progressBar = document.getElementById(this.formType + 'Progress');
+        const progressText = document.getElementById(this.formType + 'ProgressText');
+        
+        if (!progressBar || !progressText) return;
+        
+        const progressPercentage = (this.completedSteps.size / this.totalSteps) * 100;
+        progressBar.style.width = progressPercentage + '%';
+        
+        // Update progress text
+        const stepMessages = {
+            booking: [
+                "Step 1 of 4 - Tell us your name",
+                "Step 2 of 4 - How can we reach you?",
+                "Step 3 of 4 - Your email address",
+                "Step 4 of 4 - What brings you here?"
+            ],
+            contact: [
+                "Step 1 of 4 - Tell us your name",
+                "Step 2 of 4 - Your email address", 
+                "Step 3 of 4 - Contact preferences",
+                "Step 4 of 4 - Share your thoughts"
+            ]
+        };
+        
+        const messages = stepMessages[this.formType] || stepMessages.booking;
+        const nextStep = Math.min(this.completedSteps.size, this.totalSteps - 1);
+        
+        if (this.completedSteps.size === this.totalSteps) {
+            progressText.textContent = "All set! Ready to submit";
+            progressBar.classList.add('animating');
+        } else {
+            progressText.textContent = messages[nextStep];
+            progressBar.classList.remove('animating');
+        }
+    }
+    
+    // Enhanced field validation with better messaging
+    validateFieldEnhanced(field) {
         const value = field.value.trim();
+        const fieldGroup = field.closest('.form-group');
+        const step = fieldGroup?.getAttribute('data-step');
+        
         let isValid = true;
         let message = '';
+        let successMessage = '';
         
-        // Basic security check - only block obvious attacks
-        const dangerousPatterns = [
-            /<script/gi,
-            /javascript:/gi
-        ];
-        
-        for (let pattern of dangerousPatterns) {
-            if (pattern.test(value)) {
-                isValid = false;
-                message = 'Invalid characters detected';
+        // Field-specific validation
+        switch (field.type) {
+            case 'email':
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    message = field.getAttribute('data-error-empty') || 'Email is required';
+                } else if (value && !field.validity.valid) {
+                    isValid = false;
+                    message = field.getAttribute('data-error-invalid') || 'Please enter a valid email';
+                } else if (value && field.validity.valid) {
+                    successMessage = field.getAttribute('data-success') || 'Email looks good!';
+                }
                 break;
-            }
-        }
-        
-        // Field validation
-        if (isValid) {
-            switch (field.type) {
-                case 'email':
-                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                    if (field.hasAttribute('required') && value && !emailRegex.test(value)) {
-                        isValid = false;
-                        message = 'Please enter a valid email address';
-                    }
-                    break;
-                    
-                case 'tel':
+                
+            case 'tel':
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    message = field.getAttribute('data-error-empty') || 'Phone number is required';
+                } else if (value) {
                     const digitsOnly = value.replace(/\D/g, '');
-                    if (value && (digitsOnly.length < 10 || digitsOnly.length > 15)) {
+                    if (digitsOnly.length < 7) {
                         isValid = false;
-                        message = 'Please enter a valid phone number';
+                        message = field.getAttribute('data-error-invalid') || 'Please enter a valid phone number';
+                    } else {
+                        successMessage = field.getAttribute('data-success') || 'Phone number looks good!';
                     }
-                    break;
-                    
-                default:
+                }
+                break;
+                
+            case 'text':
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    message = field.getAttribute('data-error-empty') || 'This field is required';
+                } else if (field.hasAttribute('minlength')) {
+                    const minLength = parseInt(field.getAttribute('minlength'));
+                    if (value && value.length < minLength) {
+                        isValid = false;
+                        message = field.getAttribute('data-error-short') || `Please enter at least ${minLength} characters`;
+                    } else if (value && value.length >= minLength) {
+                        successMessage = field.getAttribute('data-success') || 'Looks good!';
+                    }
+                } else if (value) {
+                    successMessage = field.getAttribute('data-success') || 'Thank you!';
+                }
+                break;
+                
+            default:
+                if (field.tagName === 'TEXTAREA') {
                     if (field.hasAttribute('required') && !value) {
                         isValid = false;
-                        message = 'This field is required';
-                    } else if (field.hasAttribute('pattern')) {
-                        const pattern = new RegExp(field.getAttribute('pattern'));
-                        if (value && !pattern.test(value)) {
-                            isValid = false;
-                            message = 'Invalid format';
-                        }
+                        message = field.getAttribute('data-error-empty') || 'Please fill in this field';
+                    } else if (value && value.length < 10) {
+                        isValid = false;
+                        message = field.getAttribute('data-error-short') || 'Please tell us a bit more';
+                    } else if (value && value.length >= 10) {
+                        successMessage = field.getAttribute('data-success') || 'Thank you for sharing!';
                     }
-            }
+                } else if (field.tagName === 'SELECT') {
+                    if (value) {
+                        successMessage = field.getAttribute('data-success') || 'Selection noted!';
+                    }
+                } else if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    message = 'This field is required';
+                } else if (value) {
+                    successMessage = field.getAttribute('data-success') || 'Thank you!';
+                }
         }
         
-        // Update error display
-        const errorElement = document.getElementById(field.id + 'Err');
-        if (errorElement) {
-            errorElement.textContent = message;
+        // Update UI
+        this.updateFieldUI(field, isValid, message, successMessage);
+        
+        // Update progress
+        if (step) {
+            if (isValid && value) {
+                this.completedSteps.add(parseInt(step));
+            } else {
+                this.completedSteps.delete(parseInt(step));
+            }
+            this.updateProgress();
         }
         
         return { valid: isValid, message };
+    }
+    
+    updateFieldUI(field, isValid, errorMessage, successMessage) {
+        const errorElement = document.getElementById(field.id + 'Err');
+        const successElement = document.getElementById(field.id + 'Success');
+        
+        // Remove existing classes
+        field.classList.remove('valid', 'invalid');
+        
+        if (errorElement) {
+            errorElement.classList.remove('show');
+            errorElement.textContent = '';
+        }
+        
+        if (successElement) {
+            successElement.classList.remove('show');
+            successElement.textContent = '';
+        }
+        
+        // Apply new state
+        if (field.value.trim()) {
+            if (isValid) {
+                field.classList.add('valid');
+                if (successElement && successMessage) {
+                    successElement.textContent = successMessage;
+                    successElement.classList.add('show');
+                }
+            } else {
+                field.classList.add('invalid');
+                if (errorElement && errorMessage) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.classList.add('show');
+                }
+            }
+        }
     }
     
     async handleSubmit(e) {

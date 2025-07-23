@@ -93,6 +93,16 @@
                                 <span>Caring Support</span>
                             </div>
                         </div>
+
+                        <!-- Progress Indicator -->
+                        <div class="form-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="contactProgress"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span id="contactProgressText">Step 1 of 4 - Tell us your name</span>
+                            </div>
+                        </div>
                     </div>
 
                     <form id="contactForm" class="contact-form-focused"
@@ -105,32 +115,43 @@
                         <!-- Honeypot spam protection -->
                         <input name="website" type="text" style="display:none">
 
-                        <div class="form-group">
+                        <div class="form-group" data-step="1">
                             <label for="contactName">Your Name *</label>
                             <input type="text" id="contactName" name="name" placeholder="What should we call you?"
-                                pattern="^[A-Za-z]{2,}(?:[ \-'][A-Za-z]{2,})+$" required>
+                                minlength="2" required
+                                data-error-empty="Please tell us your name so we can address you properly"
+                                data-error-short="Please enter your full name (at least 2 characters)"
+                                data-success="Nice to meet you! We're here to help">
                             <small class="error-msg" id="contactNameErr"></small>
+                            <small class="success-msg" id="contactNameSuccess"></small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" data-step="2">
                             <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com"
-                                data-regex="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" required>
+                            <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required
+                                data-error-empty="We need your email to send you a response"
+                                data-error-invalid="Please check your email format (e.g., name@example.com)"
+                                data-success="Great! We'll respond to this email within 4 hours">
                             <small class="error-msg" id="contactEmailErr"></small>
+                            <small class="success-msg" id="contactEmailSuccess"></small>
                         </div>
 
-                        <div class="form-row-mobile">
+                        <div class="form-row-mobile" data-step="3">
                             <div class="form-group">
                                 <label for="contactPhone">Phone Number (Optional)</label>
                                 <input type="tel" id="contactPhone" name="phone" placeholder="For a quicker response"
-                                    inputmode="numeric" pattern="^[0-9]{10,15}$">
+                                    inputmode="numeric"
+                                    data-error-invalid="Please enter a valid phone number (e.g., +91 9876543210)"
+                                    data-success="Perfect! We can call or WhatsApp you for a quicker response">
                                 <small class="hint">We can call or WhatsApp you back</small>
                                 <small class="error-msg" id="contactPhoneErr"></small>
+                                <small class="success-msg" id="contactPhoneSuccess"></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="contactService">What interests you most?</label>
-                                <select id="contactService" name="service">
+                                <select id="contactService" name="service"
+                                        data-success="This helps us connect you with the right specialist">
                                     <option value="">I'm not sure yet</option>
                                     <option value="Individual Therapy">Individual Therapy</option>
                                     <option value="Couples Therapy">Couples Therapy</option>
@@ -141,16 +162,21 @@
                                     <option value="Life Transitions">Life Changes & Transitions</option>
                                     <option value="Just Questions">I just have questions</option>
                                 </select>
+                                <small class="success-msg" id="contactServiceSuccess"></small>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" data-step="4">
                             <label for="contactMessage">Tell us what's on your mind *</label>
                             <textarea id="contactMessage" name="message" rows="4"
                                 placeholder="Share what brought you here today, any questions you have, or how we can best support you. Don't worry about being perfect - we're here to listen and help."
-                                required></textarea>
+                                required
+                                data-error-empty="Please share what's on your mind - this helps us provide better support"
+                                data-error-short="Please tell us a bit more (at least 10 characters) so we can help you better"
+                                data-success="Thank you for sharing - we'll respond with personalized guidance"></textarea>
                             <small class="char-count"><span id="charCount">0</span> characters</small>
                             <small class="error-msg" id="contactMessageErr"></small>
+                            <small class="success-msg" id="contactMessageSuccess"></small>
                         </div>
 
 

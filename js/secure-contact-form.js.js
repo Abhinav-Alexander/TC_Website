@@ -40,14 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = formData.get('message');
             
             if (!name || !email || !message) {
-                showSimpleToast('Please fill in all required fields', 'error');
+                showSimpleToast('Please complete all required fields: name, email, and message', 'error');
                 return;
             }
             
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showSimpleToast('Please enter a valid email address', 'error');
+            // Enhanced email validation
+            const emailField = contactForm.querySelector('#contactEmail');
+            if (!emailField.validity.valid) {
+                showSimpleToast('Please check your email format (e.g., name@example.com)', 'error');
+                return;
+            }
+            
+            // Message length validation
+            if (message.length < 10) {
+                showSimpleToast('Please tell us a bit more in your message (at least 10 characters)', 'error');
                 return;
             }
             
@@ -129,11 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Phone number cleanup
+    // Phone number cleanup - allow flexible formatting
     const phoneField = document.getElementById('contactPhone');
     if (phoneField) {
         phoneField.addEventListener('input', function(e) {
-            e.target.value = e.target.value.replace(/[^0-9+\-\s()]/g, '');
+            // Allow numbers, spaces, hyphens, parentheses, plus sign, and dots
+            e.target.value = e.target.value.replace(/[^0-9+\-\s().]/g, '');
         });
     }
     
