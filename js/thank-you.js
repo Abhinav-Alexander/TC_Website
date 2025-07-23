@@ -8,8 +8,8 @@ function initializeThankYouPage() {
     // Initialize mobile navigation (consistent with site)
     setupMobileNavigation();
     
-    // Setup email status simulation
-    simulateEmailDelivery();
+    // Setup email processing status
+    showEmailProcessing();
     
     // Initialize modal handlers
     setupModalHandlers();
@@ -104,56 +104,31 @@ function closeEmailModal() {
     }
 }
 
-// Email Resend Function
-function resendEmail() {
+// Email status management (removed resend functionality)
+function updateEmailStatus() {
     const emailStatus = document.getElementById('emailStatus');
-    
     if (!emailStatus) return;
     
-    // Show loading state
-    emailStatus.className = 'email-status loading';
-    emailStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Resending email...</span>';
+    // Simply show that consultation call is being prepared
+    emailStatus.className = 'email-status success';
+    emailStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Your consultation call is being prepared - we\'ll call you to schedule your session and match your therapist</span>';
     
-    // Simulate email resend
+    // Add gentle animation
+    emailStatus.style.transform = 'scale(1.02)';
     setTimeout(() => {
-        // Update status
-        emailStatus.className = 'email-status success';
-        emailStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Email resent successfully!</span>';
-        
-        // Show success notification
-        showNotification('Email resent! Please check your inbox in 2-3 minutes.', 'success');
-        
-        // Track resend
-        trackEvent('email_resend_requested', {
-            'event_category': 'engagement',
-            'event_label': 'thank_you_page'
-        });
-        
-        // Reset status after 5 seconds
-        setTimeout(() => {
-            emailStatus.className = 'email-status';
-            emailStatus.innerHTML = '<i class="fas fa-clock"></i><span>Email typically arrives within 2-3 minutes</span>';
-        }, 5000);
-    }, 2000);
+        emailStatus.style.transform = 'scale(1)';
+    }, 200);
 }
 
-// Simulate Email Delivery
-function simulateEmailDelivery() {
+// Email Processing Status
+function showEmailProcessing() {
     const emailStatus = document.getElementById('emailStatus');
     if (!emailStatus) return;
     
-    // After 3 seconds, show email sent
+    // After 6 seconds, show review is complete  
     setTimeout(() => {
-        emailStatus.className = 'email-status success';
-        emailStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Email sent successfully! Check your inbox.</span>';
-        
-        // Add gentle animation
-        emailStatus.style.transform = 'scale(1.02)';
-        setTimeout(() => {
-            emailStatus.style.transform = 'scale(1)';
-        }, 200);
-        
-    }, 3000);
+        updateEmailStatus();
+    }, 6000);
 }
 
 // Modal Handlers
@@ -494,13 +469,13 @@ function trackPagePerformance() {
 
 // Enhanced Modal Functions
 function setupAdvancedModal() {
-    // Add email help button if it doesn't exist
+    // Add email info button if it doesn't exist
     const emailStatus = document.getElementById('emailStatus');
-    if (emailStatus && !document.querySelector('.email-help-btn')) {
-        const helpButton = document.createElement('button');
-        helpButton.className = 'email-help-btn';
-        helpButton.innerHTML = '<i class="fas fa-question-circle"></i> Need help?';
-        helpButton.style.cssText = `
+    if (emailStatus && !document.querySelector('.email-info-btn')) {
+        const infoButton = document.createElement('button');
+        infoButton.className = 'email-info-btn';
+        infoButton.innerHTML = '<i class="fas fa-info-circle"></i> More info';
+        infoButton.style.cssText = `
             background: none;
             border: none;
             color: #0d9488;
@@ -510,8 +485,8 @@ function setupAdvancedModal() {
             text-decoration: underline;
         `;
         
-        helpButton.addEventListener('click', openEmailModal);
-        emailStatus.appendChild(helpButton);
+        infoButton.addEventListener('click', openEmailModal);
+        emailStatus.appendChild(infoButton);
     }
 }
 
@@ -573,7 +548,7 @@ function initializeAdvancedFeatures() {
 function initializeThankYouPage() {
     // Core functionality
     setupMobileNavigation();
-    simulateEmailDelivery();
+    showEmailProcessing();
     setupModalHandlers();
     trackPageAnalytics();
     enhanceAccessibility();
@@ -587,7 +562,6 @@ function initializeThankYouPage() {
 // Expose necessary functions globally for HTML onclick handlers
 window.openEmailModal = openEmailModal;
 window.closeEmailModal = closeEmailModal;
-window.resendEmail = resendEmail;
 
 // Additional event listeners for enhanced functionality
 document.addEventListener('visibilitychange', function() {
