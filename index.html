@@ -156,22 +156,14 @@
             <div class="signup-card">
                 <h2>Reserve Your Session</h2>
 
-                <!-- Progress Indicator -->
-                <div class="form-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="signupProgress"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span id="signupProgressText">Step 1 of 4 - Tell us your name</span>
-                    </div>
-                </div>
+
 
                 <form id="bookingForm"
                     action="https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec"
                     method="POST" novalidate>
 
                     <!-- FULL NAME -->
-                    <div class="form-group" data-step="1">
+                    <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input name="fullName" id="name" minlength="2" required 
                                data-error-empty="Please enter your full name"
@@ -182,7 +174,7 @@
                     </div>
 
                     <!-- PHONE -->
-                    <div class="form-group" data-step="2">
+                    <div class="form-group">
                         <label for="phone">Phone Number *</label>
                         <input name="phone" id="phone" type="tel" inputmode="numeric" required
                                data-error-empty="We need your phone number to confirm your appointment"
@@ -194,7 +186,7 @@
                     </div>
 
                     <!-- EMAIL -->
-                    <div class="form-group" data-step="3">
+                    <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input name="email" id="email" type="email" placeholder="you@example.com" required
                                data-error-empty="Please provide your email address"
@@ -205,7 +197,7 @@
                     </div>
 
                     <!-- REASON -->
-                    <div class="form-group" data-step="4">
+                    <div class="form-group">
                         <label for="concern">What brings you here?</label>
                         <select name="concern" id="concern"
                                 data-success="Thank you for sharing - this helps us prepare for your session">

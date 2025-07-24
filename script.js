@@ -67,7 +67,6 @@ class SecureFormHandler {
         
         this.setupBasicValidation();
         this.addSecurityFeatures();
-        this.initializeProgress();
         this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
     
@@ -163,77 +162,13 @@ class SecureFormHandler {
         this.form.appendChild(timestamp);
     }
     
-    // Form Progress Tracking
-    initializeProgress() {
-        this.totalSteps = this.form.querySelectorAll('[data-step]').length;
-        this.currentStep = 0;
-        this.completedSteps = new Set();
-        
-        if (this.totalSteps > 0) {
-            this.updateProgress();
-        }
-    }
-    
-    updateProgress() {
-        // Determine correct progress element IDs based on form
-        let progressBarId, progressTextId;
-        
-        if (this.form.id === 'bookingForm') {
-            progressBarId = 'signupProgress';
-            progressTextId = 'signupProgressText';
-        } else if (this.form.id === 'contactForm') {
-            progressBarId = 'contactProgress';
-            progressTextId = 'contactProgressText';
-        } else {
-            return; // No progress tracking for unknown forms
-        }
-        
-        const progressBar = document.getElementById(progressBarId);
-        const progressText = document.getElementById(progressTextId);
-        
-        if (!progressBar || !progressText) {
-            console.log('Progress elements not found:', progressBarId, progressTextId);
-            return;
-        }
-        
-        const progressPercentage = (this.completedSteps.size / this.totalSteps) * 100;
-        progressBar.style.width = progressPercentage + '%';
-        
-        // Update progress text
-        const stepMessages = {
-            bookingForm: [
-                "Step 1 of 4 - Tell us your name",
-                "Step 2 of 4 - How can we reach you?",
-                "Step 3 of 4 - Your email address",
-                "Step 4 of 4 - What brings you here?"
-            ],
-            contactForm: [
-                "Step 1 of 4 - Tell us your name",
-                "Step 2 of 4 - Your email address", 
-                "Step 3 of 4 - Contact preferences",
-                "Step 4 of 4 - Share your thoughts"
-            ]
-        };
-        
-        const messages = stepMessages[this.form.id] || stepMessages.bookingForm;
-        const nextStep = Math.min(this.completedSteps.size, this.totalSteps - 1);
-        
-        if (this.completedSteps.size === this.totalSteps) {
-            progressText.textContent = "All set! Ready to submit";
-            progressBar.classList.add('animating');
-        } else {
-            progressText.textContent = messages[nextStep];
-            progressBar.classList.remove('animating');
-        }
-        
-        console.log(`Progress updated: ${this.completedSteps.size}/${this.totalSteps} (${progressPercentage}%)`);
-    }
+
+
     
     // Enhanced field validation with better messaging
     validateFieldEnhanced(field) {
         const value = field.value.trim();
-        const fieldGroup = field.closest('.form-group') || field.closest('[data-step]');
-        const step = fieldGroup?.getAttribute('data-step');
+        const fieldGroup = field.closest('.form-group');
         
         let isValid = true;
         let message = '';
@@ -314,18 +249,7 @@ class SecureFormHandler {
         // Update UI
         this.updateFieldUI(field, isValid, message, successMessage);
         
-        // Update progress - consider field complete if it has value and is valid
-        if (step) {
-            const stepNum = parseInt(step);
-            if (value && isValid) {
-                this.completedSteps.add(stepNum);
-                console.log(`Step ${stepNum} completed:`, field.id, value);
-            } else {
-                this.completedSteps.delete(stepNum);
-                console.log(`Step ${stepNum} incomplete:`, field.id);
-            }
-            this.updateProgress();
-        }
+
         
         return { valid: isValid, message };
     }

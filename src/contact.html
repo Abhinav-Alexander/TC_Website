@@ -126,15 +126,7 @@
                             </div>
                         </div>
 
-                        <!-- Progress Indicator -->
-                        <div class="form-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="contactProgress"></div>
-                            </div>
-                            <div class="progress-text">
-                                <span id="contactProgressText">Step 1 of 4 - Tell us your name</span>
-                            </div>
-                        </div>
+
                     </div>
 
                     <form id="contactForm" class="contact-form-focused"
@@ -147,7 +139,7 @@
                         <!-- Honeypot spam protection -->
                         <input name="website" type="text" style="display:none">
 
-                        <div class="form-group" data-step="1">
+                        <div class="form-group">
                             <label for="contactName">Your Name *</label>
                             <input type="text" id="contactName" name="name" placeholder="What should we call you?"
                                 minlength="2" required
@@ -158,7 +150,7 @@
                             <small class="success-msg" id="contactNameSuccess"></small>
                         </div>
 
-                        <div class="form-group" data-step="2">
+                        <div class="form-group">
                             <label for="contactEmail">Email Address *</label>
                             <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required
                                 data-error-empty="We need your email to send you a response"
@@ -168,7 +160,7 @@
                             <small class="success-msg" id="contactEmailSuccess"></small>
                         </div>
 
-                        <div class="form-row-mobile" data-step="3">
+                        <div class="form-row-mobile">
                             <div class="form-group">
                                 <label for="contactPhone">Phone Number (Optional)</label>
                                 <input type="tel" id="contactPhone" name="phone" placeholder="For a quicker response"
@@ -198,7 +190,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group" data-step="4">
+                        <div class="form-group">
                             <label for="contactMessage">Tell us what's on your mind *</label>
                             <textarea id="contactMessage" name="message" rows="4"
                                 placeholder="Share what brought you here today, any questions you have, or how we can best support you. Don't worry about being perfect - we're here to listen and help."

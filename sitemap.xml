@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+    
+    <!-- ================================================================ -->
+    <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
+    <!-- Last Updated: 2025-01-27                                        -->
+    <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://therapycouncil.org/</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://therapycouncil.org/logo/logo_black.png</image:loc>
-            <image:title>Therapy Council Logo</image:title>
+            <image:title>Therapy Council Logo - Professional Online Therapy Services</image:title>
+            <image:caption>Therapy Council - For Every Mind, Everywhere. Professional mental health services.</image:caption>
         </image:image>
     </url>
     
     <!-- Services Page - High Priority -->
     <url>
         <loc>https://therapycouncil.org/src/services.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -25,7 +36,7 @@
     <!-- About Page - High Priority -->
     <url>
         <loc>https://therapycouncil.org/src/about.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -33,24 +44,55 @@
     <!-- Contact Page - High Priority -->
     <url>
         <loc>https://therapycouncil.org/src/contact.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- Thank You Pages - Lower Priority -->
+    <!-- Thank You Pages - Lower Priority (Post-conversion pages) -->
     <url>
         <loc>https://therapycouncil.org/src/thank-you.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
         <loc>https://therapycouncil.org/src/thank-you-contact.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    
+    <!-- Legal Documents - Important for Trust & Compliance -->
+    <url>
+        <loc>https://therapycouncil.org/docs/Privacy_policy.pdf</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <url>
+        <loc>https://therapycouncil.org/docs/Terms_and_conditions.pdf</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Sitemap Reference (Self-referencing for completeness) -->
+    <url>
+        <loc>https://therapycouncil.org/sitemap.xml</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <!-- Robots.txt Reference -->
+    <url>
+        <loc>https://therapycouncil.org/robots.txt</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
     </url>
     
 </urlset> 
