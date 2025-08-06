@@ -49,6 +49,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Pricing Page - High Priority -->
+    <url>
+        <loc>https://therapycouncil.org/src/pricing.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
     <!-- Thank You Pages - Lower Priority (Post-conversion pages) -->
     <url>
         <loc>https://therapycouncil.org/src/thank-you.html</loc>
