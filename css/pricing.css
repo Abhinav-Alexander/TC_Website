@@ -36,16 +36,8 @@
     overflow: hidden;
 }
 
-.pricing-highlight::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Remove dot-like shimmer on mobile and desktop */
+.pricing-highlight::before { content: none; }
 
 @keyframes shimmer {
     0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }

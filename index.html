@@ -137,7 +137,6 @@
                     <li><a href="src/about.html">About</a></li>
                     <li><a href="src/services.html">Services</a></li>
                     <li><a href="src/pricing.html">Pricing</a></li>
-                    <li><a href="src/careers.html">Careers</a></li>
                     <li><a href="src/contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -176,6 +175,10 @@
                         <div class="social-proof">2,421 people booked this offer in the last 30 days</div>
                     </div>
                 </div>
+
+                <div class="hero-secondary-cta" style="margin-top:12px;">
+                    <a class="cta-button secondary" href="https://wa.me/9192117503222?text=Hi%20Therapy%20Council%2C%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Ask a question first</a>
+                </div>
             </div>
 
             <!-- ▸ SIGN-UP CARD / FORM --------------------------------------- -->
@@ -187,7 +190,7 @@
                     </div>
                     <h2>Reserve Your Independence Special Session</h2>
                     <div class="form-subtitle">
-                        <strong>67% OFF</strong> • Usually ₹2,599, now just <strong>₹650</strong>
+                        <strong>67% OFF</strong> • Usually ₹1,999, now just <strong>₹650</strong>
                     </div>
                     <div class="trust-indicators">
                         <div class="trust-item">
@@ -212,7 +215,7 @@
                     <!-- FULL NAME -->
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input name="fullName" id="name" minlength="2" required 
+                        <input name="fullName" id="name" type="text" minlength="2" required autocomplete="name"
                                data-error-empty="Please enter your full name"
                                data-error-short="Name should be at least 2 characters"
                                data-success="Great! We'll use this name for your session">
@@ -223,7 +226,7 @@
                     <!-- PHONE -->
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
-                        <input name="phone" id="phone" type="tel" inputmode="numeric" required
+                        <input name="phone" id="phone" type="tel" inputmode="tel" autocomplete="tel" required
                                data-error-empty="We need your phone number to confirm your appointment"
                                data-error-invalid="Please enter a valid phone number (e.g., +91 9876543210)"
                                data-success="Perfect! We can reach you at this number">
@@ -235,7 +238,7 @@
                     <!-- EMAIL -->
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input name="email" id="email" type="email" placeholder="you@example.com" required
+                        <input name="email" id="email" type="email" placeholder="you@example.com" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" required
                                data-error-empty="Please provide your email address"
                                data-error-invalid="Please enter a valid email (e.g., name@example.com)"
                                data-success="Excellent! We'll send session details to this email">
@@ -273,7 +276,7 @@
 
                                             <button class="cta-button premium-cta" type="submit">
                             <div class="cta-content">
-                                <span class="cta-main">YES! Reserve My ₹650 Session</span>
+                                <span class="cta-main">Book your first session – ₹650</span>
                                 <span class="cta-sub">Save ₹1,949 • Instant Confirmation</span>
                             </div>
                             <i class="fas fa-arrow-right"></i>
@@ -290,6 +293,10 @@
     </section>
 
     <!-- ▸ TRUST SIGNALS, SOCIAL PROOF, VALUE SECTION, FOOTER --------------- -->
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <button class="cta-button" id="stickyCtaBtn">Book your first session – ₹650</button>
+    </div>
     <!-- Trust Signals -->
     <section class="trust-signals">
         <div class="container">
@@ -438,29 +445,8 @@
                     </div>
                 </div>
 
-                <div class="pain-points">
-                    <h4>Are you experiencing:</h4>
-                    <ul class="pain-list">
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Persistent worry or overwhelming stress?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Difficulty in relationships or communication?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>Feelings of sadness or lack of motivation?</span>
-                        </li>
-                        <li>
-                            <div class="pain-bullet"></div>
-                            <span>A desire for personal growth and self-discovery?</span>
-                        </li>
-                    </ul>
-                    <button class="cta-button"
-                        onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Book Your Independence Special Session</button>
-                </div>
+                <button class="cta-button offer-cta"
+                    onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Book your first session – ₹650</button>
             </div>
         </div>
     </section>

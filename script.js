@@ -449,6 +449,30 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact'); // Contact form -> thank-you-contact.html
     }
     
+    // Sticky CTA behavior (mobile)
+    const stickyCta = document.getElementById('stickyCta');
+    const stickyBtn = document.getElementById('stickyCtaBtn');
+    const bookingForm = document.getElementById('bookingForm');
+    
+    if (stickyBtn && bookingForm) {
+        stickyBtn.addEventListener('click', () => {
+            bookingForm.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Show sticky CTA after user scrolls past hero title
+        const hero = document.querySelector('.hero');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    stickyCta.classList.remove('show');
+                } else {
+                    stickyCta.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+        if (hero) observer.observe(hero);
+    }
+    
     // Original hamburger menu functionality
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');

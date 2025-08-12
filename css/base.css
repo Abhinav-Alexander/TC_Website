@@ -52,6 +52,32 @@ input, select {
     color: #374151;
 }
 
+/* Unified button system */
+.cta-button,
+.pricing-cta,
+.cta-button-contact,
+.premium-cta,
+.career-cta,
+.career-modal-cta,
+.primary-button {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Unified card elevation */
+.testimonial-card,
+.offer-card,
+.pricing-card,
+.feature-card,
+.payment-card,
+.service-card,
+.detail-card,
+.contact-quick-card,
+.action-card-large,
+.value-item {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08) !important;
+}
+
 select {
     background-color: white;
     appearance: none;
@@ -155,6 +181,27 @@ select {
     background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     color: white;
     text-align: center;
+}
+
+/* Sticky mobile CTA */
+.sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    padding: 10px 16px;
+    background: rgba(31, 41, 55, 0.9);
+    backdrop-filter: saturate(120%) blur(4px);
+    display: none;
+    z-index: 9999;
+}
+
+.sticky-cta .cta-button {
+    width: 100%;
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+}
+
+@media (max-width: 767px) {
+    .sticky-cta { display: block; }
+    body { padding-bottom: 70px; }
 }
 
 .cta-content h2 {

@@ -633,12 +633,13 @@
 .offer-card {
     background-color: #f9fafb;
     border-radius: 8px;
-    padding: 32px;
+    padding: 24px;
+    border: 1px solid #e8f5f2;
 }
 
 .offer-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .offer-header h3 {
@@ -690,14 +691,22 @@
     font-weight: 600;
 }
 
+/* Align CTA with card width */
+.offer-cta {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 16px auto 0;
+}
+
 .availability {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
 }
 
 .availability i {
@@ -732,11 +741,7 @@
 }
 
 .pain-bullet {
-    width: 16px;
-    height: 16px;
-    background-color: #0d9488;
-    border-radius: 50%;
-    margin-right: 12px;
+    display: none;
 }
 
 .pain-list li span {
