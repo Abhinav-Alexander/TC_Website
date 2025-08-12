@@ -433,9 +433,11 @@
 /* ▸ MOBILE RESPONSIVE FIXES */
 
 @media (max-width: 768px) {
-    .page-hero {
-        padding: 60px 0 40px;
-    }
+.page-hero {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
+    color: #ffffff;
+}
     
     .page-hero-content h1 {
         font-size: 28px;

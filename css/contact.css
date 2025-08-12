@@ -6,6 +6,8 @@
     background: white;
 }
 
+.page-hero { background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%); color:#fff; }
+
 .contact-focused-wrapper {
     display: flex;
     flex-direction: column;

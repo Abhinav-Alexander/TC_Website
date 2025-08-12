@@ -127,7 +127,13 @@ select {
     color: white;
     padding: 80px 0 60px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Global hero textures for aesthetic consistency */
+/* Remove hero textures globally */
+.page-hero::before, .page-hero::after { content: none; }
 
 .page-hero-content h1 {
     font-size: 36px;
@@ -177,6 +183,32 @@ select {
     gap: 16px;
     margin-bottom: 24px;
 }
+
+/* --- Site-wide subtle paper texture for content sections --- */
+/* About */
+.our-story, .mission-values, .our-approach, .team-preview,
+/* Services */
+.services-overview, .service-details, .treatment-approaches, .faq-section,
+/* Pricing */
+.pricing-overview, .pricing-plans, .pricing-features, .payment-options, .pricing-faq,
+/* Contact */
+.contact-content,
+/* Thank you */
+.main-action, .preparation-strip {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove section textures globally */
+.our-story::before, .mission-values::before, .our-approach::before, .team-preview::before,
+.services-overview::before, .service-details::before, .treatment-approaches::before, .faq-section::before,
+.pricing-overview::before, .pricing-plans::before, .pricing-features::before, .payment-options::before, .pricing-faq::before,
+.contact-content::before,
+.main-action::before, .preparation-strip::before { content: none; }
+
+/* Thank you hero aesthetics */
+.hero-success { position: relative; overflow: hidden; }
+.hero-success::after { content: none; }
 
 .original-price {
     color: #9ca3af;

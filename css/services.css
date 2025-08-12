@@ -137,6 +137,8 @@
     text-align: center;
 }
 
+.page-hero { background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%); color:#fff; }
+
 .detail-content {
     display: flex;
     flex-direction: column;
