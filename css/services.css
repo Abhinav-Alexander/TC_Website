@@ -190,18 +190,25 @@
 
 .detail-sidebar {
     background: #f9fafb;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 24px;
 }
 
 .pricing-card {
     text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important; /* override global */
 }
 
 .pricing-card h4 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 16px;
-    color: #1f2937;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .pricing-card ul {
@@ -211,13 +218,14 @@
 }
 
 .pricing-card li {
-    margin-bottom: 8px;
-    color: #6b7280;
-    font-size: 14px;
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .pricing-card strong {
-    color: #1f2937;
+    color: #0f172a;
 }
 
 /* Treatment Approaches */
