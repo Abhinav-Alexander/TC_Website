@@ -427,7 +427,7 @@
 /* Trust Signals */
 .trust-signals {
     background-color: white;
-    padding: 48px 0;
+    padding: 36px 0;
     position: relative;
     z-index: 5;
 }
@@ -472,7 +472,7 @@
 /* Social Proof */
 .social-proof {
     background-color: #f9fafb;
-    padding: 48px 0;
+    padding: 32px 0;
 }
 
 .social-proof h2 {
@@ -510,11 +510,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .testimonial-avatar i {
     color: #0d9488;
     font-size: 20px;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .testimonial-author {
@@ -565,7 +573,7 @@
 
 /* Value Section */
 .value-section {
-    padding: 48px 0;
+    padding: 36px 0;
     background-color: white;
 }
 
@@ -833,27 +841,13 @@
     }
 }
 
-    .feature-item {
-        width: 25%;
-    }
-
-    .testimonial-card {
-        width: calc(33.333% - 32px);
-    }
-
-    .value-container {
-        flex-direction: row;
-    }
-
-    .expect-content {
-        width: 50%;
-        padding-right: 48px;
-        margin-bottom: 0;
-    }
-
-    .offer-card {
-        width: 50%;
-    }
+/* Desktop/tablet layout rules (should not affect mobile) */
+@media (min-width: 768px) {
+    .feature-item { width: 25%; }
+    .testimonial-card { width: calc(33.333% - 32px); }
+    .value-container { flex-direction: row; }
+    .expect-content { width: 50%; padding-right: 48px; margin-bottom: 0; }
+    .offer-card { width: 50%; }
 }
 
 /* Small Mobile Fine-Tuning */
@@ -949,15 +943,26 @@
 }
 
 @media (max-width: 767px) {
-    .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1.25rem;
-    }
+    /* Make trust signals compact on small screens */
+    .trust-signals { padding: 24px 0; }
+    .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .feature-item { width: 100%; padding: 0 4px; margin-bottom: 0; }
+    .feature-icon i { font-size: 28px; }
+    .feature-item h3 { font-size: 16px; line-height: 1.25; }
+    .feature-item p { font-size: 13px; line-height: 1.5; }
 
-    .feature-item {
-        width: 100%;
-    }
+    /* Compact What to Expect / Value section */
+    /* Hide duplicated offer card section entirely on mobile to shorten page */
+    .value-section { display: none !important; }
+    .expect-content h2 { font-size: 22px; margin-bottom: 12px; }
+    .expect-details { margin-bottom: 14px; }
+    .expect-details h3 { font-size: 16px; margin-bottom: 8px; }
+    .benefits-list { gap: 8px; }
+    .benefits-list li p { font-size: 14px; line-height: 1.55; margin-left: 10px; }
+    .bullet-point { width: 14px; height: 14px; margin-top: 3px; }
+    .bullet-point::after { width: 6px; height: 6px; }
+    .approach h3 { font-size: 18px; margin-bottom: 8px; }
+    .approach p { font-size: 14px; line-height: 1.6; }
 }
 
 /* ▸ CAREER SECTION STYLES */

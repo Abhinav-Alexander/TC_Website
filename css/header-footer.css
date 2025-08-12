@@ -72,16 +72,29 @@
     display: none;
     background: none;
     border: none;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     line-height: 1;
-    color: #334155;
+    color: #e6f6f3;
     cursor: pointer;
 }
 
+.nav-toggle i { color: inherit; }
+
 /* Mobile Navigation */
 @media (max-width: 767px) {
+    /* Compact, clean mobile header */
+    .header { border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .header-container { padding: 10px 14px; }
+    .logo-image { margin-right: 10px; }
+    .logo-image img { height: 44px; }
+    .logo-text { font-size: 16px; letter-spacing: 1.6px; font-weight: 600; }
+
     .nav-toggle {
         display: block;
+        padding: 8px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.08);
+        -webkit-tap-highlight-color: transparent;
     }
 
     .nav-links {
