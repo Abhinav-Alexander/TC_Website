@@ -356,18 +356,13 @@ class SecureFormHandler {
         let thankYouPath;
         
         // Determine which thank you page based on form type
-        const thankYouPage = this.formType === 'contact' ? 'thank-you-contact.html' : 'thank-you.html';
+        const cleanThankYou = this.formType === 'contact' ? '/thank-you-contact' : '/thank-you';
         
-        if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
-            // From homepage
-            thankYouPath = `./src/${thankYouPage}`;
-        } else if (currentPath.includes('/src/')) {
-            // From src directory pages
-            thankYouPath = `./${thankYouPage}`;
+        if (currentPath.startsWith('/src/')) {
+            // local dev within src -> prefer clean local shim
+            thankYouPath = cleanThankYou;
         } else {
-            // Fallback - try to construct absolute path
-            const baseUrl = window.location.origin;
-            thankYouPath = `${baseUrl}/src/${thankYouPage}`;
+            thankYouPath = cleanThankYou;
         }
         
         console.log(`Redirecting ${this.formType} form to:`, thankYouPath);
@@ -448,6 +443,24 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://script.google.com/macros/s/AKfycbwKthmvnNJkSOfmrRx7rynPcQFGa2wt_gWtuhJMJ2yzdQqVp5c2xkp31yS_LrO91GQN/exec',
             'contact'); // Contact form -> thank-you-contact.html
     }
+
+    // Normalize internal links for clean URLs when deployed (and dev fallback)
+    const anchors = document.querySelectorAll('a');
+    anchors.forEach(a => {
+        const url = a.getAttribute('href');
+        if (!url || url.startsWith('http') || url.startsWith('mailto:') || url.startsWith('tel:')) return;
+        const map = new Map([
+            ['index.html', '/'],
+            ['src/about.html', '/about'],
+            ['src/services.html', '/services'],
+            ['src/pricing.html', '/pricing'],
+            ['src/contact.html', '/contact'],
+            ['src/thank-you.html', '/thank-you']
+        ]);
+        if (map.has(url)) {
+            a.setAttribute('href', map.get(url));
+        }
+    });
     
     // Sticky CTA behavior (mobile)
     const stickyCta = document.getElementById('stickyCta');

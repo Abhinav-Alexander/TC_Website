@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | Therapy Council</title>
+    <style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;color:#374151} .spinner{width:28px;height:28px;border:3px solid #d1d5db;border-top-color:#0d9488;border-radius:50%;animation:spin 1s linear infinite;margin-right:10px}@keyframes spin{to{transform:rotate(360deg)}} .wrap{display:flex;align-items:center;gap:10px;}</style>
+  </head>
+  <body>
+    <div class="wrap"><div class="spinner"></div><div>Loading…</div></div>
+    <script>
+      (function(){
+        const target = '../src/services.html';
+        fetch(target, { credentials: 'same-origin' })
+          .then(r => r.text())
+          .then(html => {
+            history.replaceState(null, '', '/services');
+            document.open();
+            document.write(html);
+            document.close();
+          })
+          .catch(() => { window.location.href = target; });
+      })();
+    </script>
+  </body>
+</html>
+
+

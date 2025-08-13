@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/src/about.html", "destination": "/about", "permanent": true },
+    { "source": "/src/services.html", "destination": "/services", "permanent": true },
+    { "source": "/src/pricing.html", "destination": "/pricing", "permanent": true },
+    { "source": "/src/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/src/thank-you.html", "destination": "/thank-you", "permanent": true },
+    { "source": "/src/thank-you-contact.html", "destination": "/thank-you-contact", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/about", "destination": "/src/about.html" },
+    { "source": "/services", "destination": "/src/services.html" },
+    { "source": "/pricing", "destination": "/src/pricing.html" },
+    { "source": "/contact", "destination": "/src/contact.html" },
+    { "source": "/thank-you", "destination": "/src/thank-you.html" },
+    { "source": "/thank-you-contact", "destination": "/src/thank-you-contact.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
+
+
