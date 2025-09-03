@@ -89,7 +89,7 @@
     font-size: 12px;
 }
 
-.offer-countdown {
+.offer-highlights {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -98,22 +98,6 @@
     text-align: center;
     margin: 16px auto 0;
     max-width: 300px;
-}
-
-.countdown-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    opacity: 0.9;
-}
-
-.countdown-timer {
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFD700;
-    margin-bottom: 8px;
-    font-feature-settings: 'tnum' 1, 'lnum' 1; /* tabular numbers for premium look */
 }
 
 .urgency-indicators {
@@ -151,8 +135,8 @@
     text-align: center;
 }
 
-/* Improve readability for social proof inside the hero countdown card */
-.offer-countdown .social-proof {
+/* Improve readability for social proof inside the hero highlights card */
+.offer-highlights .social-proof {
     background: rgba(255, 255, 255, 0.95);
     color: #1f2937;
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -817,14 +801,12 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
     
-    .offer-countdown {
+    .offer-highlights {
         text-align: left;
         margin: 20px 0 0 0;
     }
     
-    .countdown-timer {
-        font-size: 22px;
-    }
+
 }
 
 @media (min-width: 1024px) {
@@ -937,15 +919,13 @@
         font-size: 15px;
     }
     
-    .offer-countdown {
+    .offer-highlights {
         max-width: 280px;
         padding: 10px 14px;
         margin: 12px auto 0;
     }
     
-    .countdown-timer {
-        font-size: 16px;
-    }
+
 }
 
 @media (max-width: 767px) {

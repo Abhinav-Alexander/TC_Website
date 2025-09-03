@@ -107,27 +107,7 @@
     content: "₹";
 }
 
-/* ▸ INDEPENDENCE DAY THEME */
-.independence-timer {
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 12px 16px;
-    text-align: center;
-}
 
-.independence-timer p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.independence-timer #countdown {
-    color: #fbbf24;
-    font-weight: 700;
-    animation: pulse 2s infinite;
-}
 
 .urgency-banner {
     background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
@@ -142,7 +122,7 @@
 
 .urgency-banner p { margin: 0; font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.95); }
 
-.days-left, .spots-left {
+.spots-left {
     background: rgba(255, 255, 255, 0.2);
     padding: 2px 8px;
     border-radius: 4px;

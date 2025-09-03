@@ -80,19 +80,26 @@
         <priority>0.3</priority>
     </url>
     
-    <!-- Legal Documents - Important for Trust & Compliance -->
+    <!-- Legal Pages - Important for Trust & Compliance -->
     <url>
-        <loc>https://therapycouncil.org/docs/Privacy_policy.pdf</loc>
+        <loc>https://therapycouncil.org/privacy/</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.4</priority>
+        <priority>0.6</priority>
     </url>
-    
+
     <url>
-        <loc>https://therapycouncil.org/docs/Terms_and_conditions.pdf</loc>
+        <loc>https://therapycouncil.org/terms/</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.4</priority>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://therapycouncil.org/refund/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
     
     <!-- Sitemap Reference (Self-referencing for completeness) -->
