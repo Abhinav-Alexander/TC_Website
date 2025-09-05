@@ -208,7 +208,7 @@
 
                 <form id="bookingForm"
                     action="https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec"
-                    method="POST" novalidate>
+                    method="POST" data-redirect="/booking" novalidate>
 
                     <!-- FULL NAME -->
                     <div class="form-group">
@@ -444,7 +444,7 @@
                 </div>
 
                 <button class="cta-button offer-cta"
-                    onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Book your first session – ₹650</button>
+                    onclick="window.location.href='/booking'">Book your first session – ₹650</button>
             </div>
         </div>
     </section>
@@ -505,7 +505,7 @@
                     <p>support@therapycouncil.org</p>
                     <p>(+91) 9211-750-322</p>
                     <button class="cta-button"
-                        onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Get
+                        onclick="window.location.href='/booking'">Get
                         Support</button>
                 </div>
             </div>

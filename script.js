@@ -354,6 +354,12 @@ class SecureFormHandler {
         // Get current path to determine correct redirect
         const currentPath = window.location.pathname;
         let thankYouPath;
+        // If form asks for explicit redirect (e.g., to booking page), honor it
+        const customRedirect = this.form.getAttribute('data-redirect');
+        if (customRedirect) {
+            window.location.href = customRedirect;
+            return;
+        }
         
         // Determine which thank you page based on form type
         const cleanThankYou = this.formType === 'contact' ? '/thank-you-contact' : '/thank-you';
@@ -433,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize security (gentle mode)
     securityMonitor = new SecurityMonitor();
     
-    // Initialize form handlers with form types
+    // Initialize booking form handler as before (Apps Script submission)
     new SecureFormHandler('bookingForm', 
         'https://script.google.com/macros/s/AKfycbx_ndXraqa85Bvji1R9sVY-K_i9CTLHpfI2Zpd-caP46X2--5Gh9Ls-O0j7w0zOKp01NA/exec',
         'booking'); // Booking form -> thank-you.html
@@ -467,9 +473,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const stickyBtn = document.getElementById('stickyCtaBtn');
     const bookingForm = document.getElementById('bookingForm');
     
-    if (stickyBtn && bookingForm) {
+    if (stickyBtn) {
         stickyBtn.addEventListener('click', () => {
-            bookingForm.scrollIntoView({ behavior: 'smooth' });
+            window.location.href = '/booking';
         });
         
         // Show sticky CTA after user scrolls past hero title
