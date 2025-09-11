@@ -224,6 +224,17 @@ select {
     text-align: center;
 }
 
+/* Trust Signals (global) */
+.trust-signals {
+    background-color: white;
+    padding: 36px 0;
+    position: relative;
+    z-index: 5;
+}
+/* Remove section textures */
+.trust-signals::before, .social-proof::before, .value-section::before { content: none; }
+.social-proof, .value-section { position: relative; }
+
 /* Sticky mobile CTA */
 .sticky-cta {
     position: fixed;
