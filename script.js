@@ -544,6 +544,143 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Therapists carousel initialization
+    (function initTherapistsCarousel(){
+        const track = document.querySelector('.therapists .carousel-track');
+        const prev = document.querySelector('.therapists .carousel-btn.prev');
+        const next = document.querySelector('.therapists .carousel-btn.next');
+        const dotsWrap = document.querySelector('.therapists .carousel-dots');
+        const viewport = document.querySelector('.therapists .carousel-viewport');
+        if (!track || !prev || !next || !dotsWrap) return;
+
+        const cards = Array.from(track.children);
+        let index = 0;
+
+        // determine visible count based on CSS (approx)
+        function getVisibleCount(){
+            const width = window.innerWidth;
+            if (width >= 1024) return 3;
+            if (width >= 768) return 2;
+            return 1;
+        }
+
+        function getCardWidth(){
+            const first = cards[0];
+            if (!first) return 0;
+            return first.getBoundingClientRect().width + 12; // 12px gap in CSS
+        }
+
+        // create dots
+        function renderDots(){
+            dotsWrap.innerHTML = '';
+            const visible = getVisibleCount();
+            const totalPages = Math.max(1, Math.ceil(cards.length / visible));
+            for (let i = 0; i < totalPages; i++) {
+                const b = document.createElement('button');
+                b.setAttribute('aria-label', `Go to slide ${i+1}`);
+                if (i === Math.floor(index/visible)) b.classList.add('active');
+                b.addEventListener('click', () => {
+                    index = i * visible;
+                    clampIndex();
+                    update();
+                });
+                dotsWrap.appendChild(b);
+            }
+        }
+
+        function clampIndex(){
+            const visible = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visible);
+            index = Math.min(Math.max(0, index), maxIndex);
+        }
+
+        function update(){
+            const card = cards[0];
+            if (!card) return;
+            const cardWidth = getCardWidth();
+            track.style.transform = `translateX(${-index * cardWidth}px)`;
+
+            const visible = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visible);
+
+            // update dots active
+            renderDots();
+        }
+
+        prev.addEventListener('click', () => {
+            const visible = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visible);
+            if (index <= 0) {
+                index = maxIndex;
+            } else {
+                index -= 1;
+            }
+            update();
+        });
+        next.addEventListener('click', () => {
+            const visible = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visible);
+            if (index >= maxIndex) {
+                index = 0;
+            } else {
+                index += 1;
+            }
+            update();
+        });
+        window.addEventListener('resize', () => { clampIndex(); update(); });
+
+        // initial
+        renderDots();
+        update();
+
+        // Touch swipe support (mobile)
+        let startX = 0;
+        let isDragging = false;
+        let dragDelta = 0;
+
+        function onTouchStart(e){
+            const t = e.touches ? e.touches[0] : e;
+            startX = t.clientX;
+            isDragging = true;
+            dragDelta = 0;
+            track.style.transition = 'none';
+        }
+
+        function onTouchMove(e){
+            if (!isDragging) return;
+            const t = e.touches ? e.touches[0] : e;
+            const x = t.clientX;
+            dragDelta = x - startX;
+            const base = -index * getCardWidth();
+            track.style.transform = `translateX(${base + dragDelta}px)`;
+        }
+
+        function onTouchEnd(){
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = '';
+            const threshold = Math.min(120, getCardWidth() * 0.25);
+            const visible = getVisibleCount();
+            const maxIndex = Math.max(0, cards.length - visible);
+            if (dragDelta <= -threshold) {
+                index = (index >= maxIndex) ? 0 : index + 1;
+            } else if (dragDelta >= threshold) {
+                index = (index <= 0) ? maxIndex : index - 1;
+            }
+            dragDelta = 0;
+            update();
+        }
+
+        if (viewport) {
+            viewport.addEventListener('touchstart', onTouchStart, { passive: true });
+            viewport.addEventListener('touchmove', onTouchMove, { passive: true });
+            viewport.addEventListener('touchend', onTouchEnd);
+            viewport.addEventListener('mousedown', (e)=>{ e.preventDefault(); onTouchStart(e); });
+            window.addEventListener('mousemove', onTouchMove);
+            window.addEventListener('mouseup', onTouchEnd);
+        }
+    })();
 });
 
 /* ── Basic Clickjacking Protection ─────────────────────────────── */
