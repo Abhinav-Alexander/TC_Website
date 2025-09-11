@@ -241,8 +241,9 @@ select {
 }
 
 @media (max-width: 767px) {
-    .sticky-cta { display: block; }
-    body { padding-bottom: 70px; }
+    .sticky-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .sticky-cta .cta-button.secondary { border-color: #94d5cf; }
+    body { padding-bottom: 82px; }
 }
 
 .cta-content h2 {
