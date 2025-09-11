@@ -102,7 +102,7 @@
     <div class="container">
         <div class="pricing-intro">
             <h2>Special Offer - Your Journey to Mental Wellness</h2>
-            <p>Break free from anxiety, depression, and stress. We're offering exclusive savings on your first session to help you begin your journey to mental wellness. <strong>Limited availability - only 47 spots remaining this month.</strong></p>
+            <p>Break free from anxiety, depression, and stress. We're offering exclusive savings on your first session to help you begin your journey to mental wellness. <strong>Same‑week appointments available.</strong></p>
         </div>
 
         <div class="pricing-highlight">
@@ -110,7 +110,7 @@
                 <i class="fas fa-star"></i>
                 <span>Special Sale</span>
             </div>
-            <h3>57% OFF - Limited Time Offer</h3>
+            <h3>57% OFF - First Session Special</h3>
             <p>Exclusive first-session pricing. Join 3,200+ clients who've started their mental health journey with us.</p>
             <div class="highlight-price">
                 <span class="original-price">1,499</span>
@@ -126,7 +126,7 @@
     <div class="container">
         <h2>Choose Your Path - Special Pricing</h2>
         <div class="urgency-banner">
-            <p><strong>Limited Time:</strong> Only <span class="spots-left">47 spots</span> remaining this month</p>
+            <p><strong>Good to know:</strong> Evening and weekend slots available</p>
         </div>
         <div class="social-proof-bar">
             <p><strong>3,200+ clients</strong> have started their mental health journey with us • <strong>4.9/5 rating</strong> • <strong>"Life-changing experience!"</strong></p>
@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <div class="card-action">
-                    <button class="pricing-cta" onclick="window.location.href='/'">
+                    <button class="pricing-cta" onclick="window.location.href='/#bookingForm'">
                         Book your first session – ₹650
                     </button>
                 </div>
@@ -391,7 +391,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes! We're offering 57% OFF for your first session - that's ₹650 instead of ₹1,499. This special discount applies only to your first session. This is a complete 45-minute session with a licensed therapist. <strong>Only 47 spots remaining this month.</strong></p>
+                    <p>Yes! We're offering 57% OFF for your first session - that's ₹650 instead of ₹1,499. This special discount applies only to your first session. This is a complete 45-minute session with a licensed therapist.</p>
                 </div>
             </div>
                 <div class="faq-item">
@@ -457,7 +457,7 @@
     <div class="container">
         <div class="cta-content">
             <h2>Special Offer Ends Soon</h2>
-            <p><strong>Don't miss this exclusive opportunity.</strong> Join 3,200+ clients who've started their mental health journey with us this month. Only 47 spots remaining.</p>
+            <p><strong>Don't miss this opportunity.</strong> Join 3,200+ clients who've started their mental health journey with us. Same‑week appointments available.</p>
             <div class="cta-buttons">
                 <a href="../index.html#bookingForm" class="cta-button">Book your first session – ₹650</a>
                 <a href="contact.html" class="cta-button secondary">Ask Questions First</a>
@@ -560,21 +560,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     
-    // Simulate decreasing spots (for demo purposes)
-    let spotsLeft = 47;
-    const spotsElements = document.querySelectorAll('.spots-left');
-    
-    function updateSpots() {
-        if (spotsLeft > 10) {
-            spotsLeft = Math.max(10, spotsLeft - Math.floor(Math.random() * 3));
-            spotsElements.forEach(element => {
-                element.textContent = `${spotsLeft} spots`;
-            });
-        }
-    }
-    
-    // Update spots every 2 minutes
-    setInterval(updateSpots, 120000);
+    // Removed artificial scarcity counter
 });
 </script>
 

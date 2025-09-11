@@ -167,15 +167,15 @@
                 <div class="offer-highlights">
                     <div class="urgency-indicators">
                         <div class="scarcity-alert">
-                            <i class="fas fa-fire"></i>
-                            <span>Only <strong>47 spots</strong> left this month</span>
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Same‑week appointments available</span>
                         </div>
                         <div class="social-proof">2,421 people booked this offer in the last 30 days</div>
                     </div>
                 </div>
 
                 <div class="hero-secondary-cta" style="margin-top:12px;">
-                    <a class="cta-button secondary" href="https://wa.me/9192117503222?text=Hi%20Therapy%20Council%2C%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Ask a question first</a>
+                    <a class="cta-button secondary" href="https://wa.me/919211750322?text=Hi%20Therapy%20Council%2C%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Ask a question first</a>
                 </div>
             </div>
 
@@ -433,18 +433,18 @@
                         <div class="original-price">1499</div>
                         <div class="sale-price">650</div>
                         <div class="discount-tag">
-                            67% OFF
+                            57% OFF
                         </div>
                     </div>
 
                     <div class="availability">
                         <i class="fas fa-calendar"></i>
-                        <span>Limited availability: Only 47 special spots remaining</span>
+                        <span>Evening and weekend slots available</span>
                     </div>
                 </div>
 
                 <button class="cta-button offer-cta"
-                    onclick="window.location.href='/booking'">Book your first session – ₹650</button>
+                    onclick="window.location.href='/#bookingForm'">Book your first session – ₹650</button>
             </div>
         </div>
     </section>
@@ -505,7 +505,7 @@
                     <p>support@therapycouncil.org</p>
                     <p>(+91) 9211-750-322</p>
                     <button class="cta-button"
-                        onclick="window.location.href='/booking'">Get
+                        onclick="window.location.href='/#bookingForm'">Get
                         Support</button>
                 </div>
             </div>
@@ -526,24 +526,7 @@
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
     <script src="script.js"></script>
     
-    <!-- Dynamic spot counter for scarcity -->
-    <script>
-        // Dynamic spot counter for scarcity
-        let spotsLeft = 47;
-        const scarcityElement = document.querySelector('.scarcity-alert strong');
-        
-        function updateSpots() {
-            if (spotsLeft > 25 && Math.random() < 0.3) {
-                spotsLeft--;
-                if (scarcityElement) {
-                    scarcityElement.textContent = `${spotsLeft} spots`;
-                }
-            }
-        }
-        
-        // Update spots every 30-60 seconds randomly
-        setInterval(updateSpots, Math.random() * 30000 + 30000);
-    </script>
+    
 </body>
 
 </html>

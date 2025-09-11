@@ -342,6 +342,19 @@ class SecureFormHandler {
             
         } catch (error) {
             console.error('Submission error:', error);
+            // Fallback: if booking form has a data-redirect, send user there so payment can still proceed
+            const fallbackRedirect = this.form.getAttribute('data-redirect');
+            if (fallbackRedirect) {
+                try {
+                    window.location.href = fallbackRedirect;
+                    return;
+                } catch (e) {}
+            }
+            // Otherwise, send to appropriate thank-you page to confirm receipt intent
+            try {
+                this.redirectToThankYou();
+                return;
+            } catch (e) {}
             this.showError('Sorry, there was a problem. Please try again.');
         } finally {
             button.disabled = false;
@@ -475,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (stickyBtn) {
         stickyBtn.addEventListener('click', () => {
-            window.location.href = '/booking';
+            window.location.href = '/#bookingForm';
         });
         
         // Show sticky CTA after user scrolls past hero title
