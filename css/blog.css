@@ -28,7 +28,7 @@
 .meta-sep { color:#94a3b8; }
 
 .post-layout { display: grid; grid-template-columns: 1fr; gap: 24px; }
-.post-main { min-width: 0; max-width: 820px; }
+.post-main { min-width: 0; max-width: 820px; width: 100%; }
 .post-aside { position: relative; padding-left: 12px; }
 
 .post-toc { position: sticky; top: 100px; background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:16px; z-index:0; max-height: calc(100vh - 140px); overflow:auto; }
@@ -46,7 +46,8 @@
 .share-bar i { display:block; font-size:16px; line-height:1; }
 
 @media (min-width: 1024px) {
-  .post-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; }
+  /* Match first column to article max width to avoid empty space */
+  .post-layout { grid-template-columns: minmax(0, 820px) 300px; gap: 32px; justify-content: center; }
 }
 
 /* Move TOC to left rail on very wide screens so it never conflicts with right ads */
@@ -61,6 +62,9 @@
     max-height: calc(100vh - 140px);
     overflow:auto;
   }
+  /* Collapse right column when TOC is fixed to avoid blank space */
+  .post-layout { grid-template-columns: minmax(0, 820px); justify-content: center; }
+  .post-aside { padding-left: 0; }
 }
 
 .toc-hidden { opacity: 0; pointer-events: none; transition: opacity .2s ease; }
