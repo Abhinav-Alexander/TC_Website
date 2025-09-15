@@ -73,46 +73,27 @@
         <priority>0.6</priority>
     </url>
     
-    <!-- Careers Page - Psychologist Roles -->
-    <url>
-        <loc>https://therapycouncil.org/src/careers.html</loc>
-        <lastmod>2025-08-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <!-- Careers page intentionally omitted until public route is available -->
     
-    <!-- Thank You Pages - Lower Priority (Post-conversion pages) -->
-    <url>
-        <loc>https://therapycouncil.org/thank-you</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <url>
-        <loc>https://therapycouncil.org/thank-you-contact</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
+    <!-- Thank You pages omitted (noindex and blocked in robots) -->
     
     <!-- Legal Pages - Important for Trust & Compliance -->
     <url>
-        <loc>https://therapycouncil.org/privacy/</loc>
+        <loc>https://therapycouncil.org/privacy</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://therapycouncil.org/terms/</loc>
+        <loc>https://therapycouncil.org/terms</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://therapycouncil.org/refund/</loc>
+        <loc>https://therapycouncil.org/refund</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>

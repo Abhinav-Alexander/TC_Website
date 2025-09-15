@@ -5,11 +5,11 @@ User-agent: *
 
 # Allow crawling of main content
 Allow: /
-Allow: /src/
 Allow: /css/
 Allow: /js/
 Allow: /logo/
 Allow: /favicon_io/
+Allow: /blog_images/
 
 # Block sensitive areas
 Disallow: /docs/
@@ -18,10 +18,18 @@ Disallow: /error.html
 Disallow: /.htaccess
 Disallow: /script.js
 Disallow: /package*.json
+Disallow: /src/
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /public/
 
 # Block thank you pages from indexing (they should only be accessed after form submission)
 Disallow: /src/thank-you.html
 Disallow: /src/thank-you-contact.html
+Disallow: /src/thank-you-free.html
+Disallow: /thank-you/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-free/
 
 # Allow but throttle crawling of less important files
 Crawl-delay: 1
