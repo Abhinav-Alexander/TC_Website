@@ -46,6 +46,167 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/blog.css?v=20250913">
+    
+    <style>
+        /* Search and Filter Styles */
+        .search-filter-section {
+            padding: 40px 0;
+            background: #f8fafc;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .search-filter-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        /* Search Bar Styles */
+        .search-container {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            color: #64748b;
+            z-index: 2;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 14px 50px 14px 48px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            background: #ffffff;
+            transition: border-color 0.2s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #0d9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+        
+        .clear-search {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #64748b;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: color 0.2s ease;
+        }
+        
+        .clear-search:hover {
+            color: #0d9488;
+        }
+        
+        /* Category Tabs Styles */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 25px;
+            background: #ffffff;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .category-tab:hover {
+            border-color: #0d9488;
+            color: #0d9488;
+        }
+        
+        .category-tab.active {
+            background: #0d9488;
+            border-color: #0d9488;
+            color: #ffffff;
+        }
+        
+        /* No Results Styles */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .no-results-content {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .no-results-icon {
+            font-size: 48px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+        
+        .no-results h3 {
+            color: #374151;
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+        
+        .no-results p {
+            color: #64748b;
+            margin: 0 0 24px;
+        }
+        
+        .clear-filters-btn {
+            padding: 12px 24px;
+            background: #0d9488;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .clear-filters-btn:hover {
+            background: #0f766e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .search-filter-section {
+                padding: 24px 0;
+            }
+            
+            .search-input {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            .category-tabs {
+                gap: 6px;
+            }
+            
+            .category-tab {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -98,11 +259,38 @@
         </div>
     </section>
 
+    <!-- ▸ SEARCH AND FILTER SECTION ----------------------------------------- -->
+    <section class="search-filter-section">
+        <div class="container">
+            <div class="search-filter-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search articles, topics, or keywords..." class="search-input">
+                        <button id="clearSearch" class="clear-search" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All Articles</button>
+                    <button class="category-tab" data-category="Mental Health">Mental Health</button>
+                    <button class="category-tab" data-category="Digital Wellbeing">Digital Wellbeing</button>
+                    <button class="category-tab" data-category="Therapy">Therapy</button>
+                    <button class="category-tab" data-category="Wellness">Wellness</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ▸ RESOURCES SECTIONS ------------------------------------------------ -->
     <section class="blog-listing">
         <div class="container">
-            <div class="blog-grid">
-                <article class="post-card">
+            <div class="blog-grid" id="blogGrid">
+                <article class="post-card" data-category="Mental Health" data-title="How Much Does Therapy Cost in India? Affordable Options Explained" data-content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options. therapy cost India, affordable therapy, online therapy India, mental health cost, therapy prices, psychological counseling cost, therapy budget">
                     <a class="post-link" href="/resources/posts/therapy-costs-india">
                         <div class="post-thumb">
                             <img src="../resources/posts/therapy-costs-india/2.svg" alt="Therapy costs and affordable mental healthcare illustration" loading="lazy">
@@ -118,7 +306,7 @@
                 </article>
 
                 <!-- Digital Detox Article -->
-                <article class="post-card">
+                <article class="post-card" data-category="Digital Wellbeing" data-title="Digital Detox vs. Digital Balance: Which Is Better for Your Mental Wellbeing?" data-content="Understand the difference between a full reset and a sustainable approach, and how to choose what supports your mind best. digital detox, digital balance, mental wellbeing, technology habits, screen time, digital wellness, mindfulness, stress management">
                     <a class="post-link" href="/resources/posts/digital-detox-vs-digital-balance">
                         <div class="post-thumb">
                             <img src="../resources/posts/digital-detox-vs-digital-balance/1.svg" alt="Digital wellbeing illustration" loading="lazy">
@@ -132,6 +320,16 @@
                         <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
                     </a>
                 </article>
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-search no-results-icon"></i>
+                    <h3>No articles found</h3>
+                    <p>Try adjusting your search terms or browse all categories.</p>
+                    <button class="clear-filters-btn">Clear filters</button>
+                </div>
             </div>
         </div>
     </section>
@@ -214,6 +412,117 @@
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
     <script src="../script.js"></script>
+    
+    <script>
+        // Search and Filter Functionality
+        (function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearSearch = document.getElementById('clearSearch');
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const blogGrid = document.getElementById('blogGrid');
+            const noResults = document.getElementById('noResults');
+            const clearFiltersBtn = document.querySelector('.clear-filters-btn');
+            
+            let currentCategory = 'all';
+            let currentSearchTerm = '';
+            
+            // Search functionality
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                currentSearchTerm = searchTerm;
+                
+                // Show/hide clear button
+                clearSearch.style.display = searchTerm ? 'block' : 'none';
+                
+                filterArticles();
+            }
+            
+            // Filter articles based on category and search term
+            function filterArticles() {
+                const articles = document.querySelectorAll('.post-card');
+                let visibleCount = 0;
+                
+                articles.forEach(article => {
+                    const category = article.getAttribute('data-category');
+                    const title = article.getAttribute('data-title').toLowerCase();
+                    const content = article.getAttribute('data-content').toLowerCase();
+                    
+                    // Check category filter
+                    const categoryMatch = currentCategory === 'all' || category === currentCategory;
+                    
+                    // Check search term
+                    const searchMatch = !currentSearchTerm || 
+                        title.includes(currentSearchTerm) || 
+                        content.includes(currentSearchTerm);
+                    
+                    if (categoryMatch && searchMatch) {
+                        article.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                if (visibleCount === 0) {
+                    blogGrid.style.display = 'none';
+                    noResults.style.display = 'block';
+                } else {
+                    blogGrid.style.display = 'grid';
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            // Category tab functionality
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Update current category
+                    currentCategory = tab.getAttribute('data-category');
+                    
+                    filterArticles();
+                });
+            });
+            
+            // Search input events
+            searchInput.addEventListener('input', performSearch);
+            searchInput.addEventListener('keyup', performSearch);
+            
+            // Clear search functionality
+            clearSearch.addEventListener('click', () => {
+                searchInput.value = '';
+                currentSearchTerm = '';
+                clearSearch.style.display = 'none';
+                filterArticles();
+            });
+            
+            // Clear all filters
+            clearFiltersBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                currentSearchTerm = '';
+                clearSearch.style.display = 'none';
+                
+                // Reset to "All Articles" tab
+                categoryTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('data-category') === 'all') {
+                        tab.classList.add('active');
+                    }
+                });
+                
+                currentCategory = 'all';
+                filterArticles();
+            });
+            
+            // Initialize
+            filterArticles();
+        })();
+    </script>
 
 </body>
 
