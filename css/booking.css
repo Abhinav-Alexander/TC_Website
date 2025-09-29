@@ -52,16 +52,16 @@
 }
 .booking-card input[type="date"]:focus,
 .booking-card input[type="time"]:focus {
-    border-color: #0d9488;
+    border-color: var(--color-accent-teal);
     box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
 }
 
 .time-suggestion { margin-top: 10px; }
 .chip {
     display: inline-block;
-    background-color: #ecfeff;
-    border: 1px solid #99f6e4;
-    color: #0f766e;
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #1a9b8a;
     padding: 4px 10px;
     border-radius: 999px;
     font-size: 12px;
@@ -71,7 +71,7 @@
 }
 
 .chip:hover { filter: brightness(0.98); }
-.chip.active { background-color: #0d9488; color: #ffffff; border-color: #0d9488; }
+.chip.active { background-color: var(--color-accent-teal); color: #ffffff; border-color: var(--color-accent-teal); }
 
 .booking-footer { margin-top: 22px; }
 
