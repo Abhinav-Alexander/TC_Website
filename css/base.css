@@ -1,1 +1,451 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');:root{--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';--font-display:'Plus Jakarta Sans','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--font-sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.65;color:#0f172a;background-color:#f9fafb;font-size:16px}.container{width:100%;max-width:1320px;margin:0 auto;padding:0 24px}h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;color:#111827;text-wrap:balance}h1{font-size:32px;font-weight:700;letter-spacing:-0.015em}h2{font-size:26px;font-weight:600;letter-spacing:-0.01em}h3{font-size:22px;font-weight:600;letter-spacing:-0.005em}h4{font-size:18px;font-weight:600;letter-spacing:0}p,li{color:#334155;font-weight:400;line-height:1.7;letter-spacing:0}small{font-size:12px;color:#64748b}ul{list-style:none}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;outline:none}input,select{width:100%;padding:10px 16px;border:1px solid #d1d5db;border-radius:6px;font-size:16px;color:#374151}.cta-button,.pricing-cta,.cta-button-contact,.premium-cta,.career-cta,.career-modal-cta,.primary-button{background:linear-gradient(135deg,#0d9488 0%,#0f766e 100%) !important;color:#ffffff !important;font-family:var(--font-display) !important;font-weight:700 !important;letter-spacing:0.2px}.testimonial-card,.offer-card,.pricing-card,.feature-card,.payment-card,.service-card,.detail-card,.contact-quick-card,.action-card-large,.value-item{box-shadow:0 10px 24px rgba(0,0,0,0.08) !important}select{background-color:white;appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");background-position:right 10px center;background-repeat:no-repeat;background-size:20px 20px}.cta-button{background-color:#0d9488;color:white;padding:12px 24px;border-radius:6px;font-weight:600;font-size:16px;transition:background-color 0.3s;display:inline-block;text-align:center;border:none;cursor:pointer}.cta-button:hover{background-color:#0f766e}.cta-button.secondary{background:transparent;border:2px solid white;color:white}.cta-button.secondary:hover{background:white;color:#0d9488}.cta-button.large{padding:16px 32px;font-size:18px}.form-group{display:flex;flex-direction:column}.form-group label{display:block;color:#4b5563;margin-top:4px;margin-bottom:5px}.form-group .hint{font-size:11px;color:#9ca3af;margin-top:4px}.form-group .error-msg{font-size:11px;color:#ef4444;margin-top:4px}.page-hero{background:linear-gradient(135deg,#3C827F 0%,#2d6862 100%);color:white;padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}.page-hero::before,.page-hero::after{content:none}.page-hero-content h1{font-size:36px;font-weight:700;margin-bottom:16px;line-height:1.2}.page-hero-content p{font-size:20px;opacity:0.95;max-width:600px;margin:0 auto}.page-hero h1,.page-hero h2{color:#ffffff}.page-hero p{color:rgba(255,255,255,0.92)}.cta-section h2{color:#ffffff}.cta-section p{color:rgba(255,255,255,0.92)}.cta-section{padding:60px 0;background:linear-gradient(135deg,#0d9488 0%,#0f766e 100%);color:white;text-align:center}.trust-signals{background-color:white;padding:36px 0;position:relative;z-index:5}.trust-signals::before,.social-proof::before,.value-section::before{content:none}.social-proof,.value-section{position:relative}.sticky-cta{position:fixed;left:0;right:0;bottom:0;padding:10px 16px;background:rgba(31,41,55,0.9);backdrop-filter:saturate(120%) blur(4px);display:none;z-index:9999}.sticky-cta .cta-button{width:100%;background:linear-gradient(135deg,#0d9488 0%,#0f766e 100%)}@media (max-width:767px){.sticky-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sticky-cta .cta-button.secondary{border-color:#94d5cf}body{padding-bottom:82px}}.cta-content h2{font-size:30px;margin-bottom:16px}.cta-content p{font-size:18px;margin-bottom:32px;opacity:0.95}.cta-buttons{display:flex;flex-direction:column;gap:16px;align-items:center}.price-display{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:24px}.our-story,.mission-values,.our-approach,.team-preview,.services-overview,.service-details,.treatment-approaches,.faq-section,.pricing-overview,.pricing-plans,.pricing-features,.payment-options,.pricing-faq,.contact-content,.main-action,.preparation-strip{position:relative;overflow:hidden}.our-story::before,.mission-values::before,.our-approach::before,.team-preview::before,.services-overview::before,.service-details::before,.treatment-approaches::before,.faq-section::before,.pricing-overview::before,.pricing-plans::before,.pricing-features::before,.payment-options::before,.pricing-faq::before,.contact-content::before,.main-action::before,.preparation-strip::before{content:none}.hero-success{position:relative;overflow:hidden}.hero-success::after{content:none}.original-price{color:#9ca3af;text-decoration:line-through;font-size:20px}.original-price::before{content:"₹"}.sale-price{font-size:30px;font-weight:700;color:#0d9488}.sale-price::before{content:"₹"}.discount-tag{background-color:#fef3c7;color:#92400e;padding:4px 8px;border-radius:4px;font-size:14px;font-weight:600}.success-msg{font-size:12px;color:#10b981;margin-top:4px;display:none;opacity:0;transition:opacity 0.3s ease}.success-msg.show{display:block;opacity:1}.success-msg::before{content:"✓ ";font-weight:bold}.error-msg{font-size:12px;color:#ef4444;margin-top:4px;display:none;opacity:0;transition:opacity 0.3s ease}.error-msg.show{display:block;opacity:1}.error-msg::before{content:"⚠ ";font-weight:bold}.form-group input.valid,.form-group textarea.valid,.form-group select.valid{border-color:#10b981;background-color:#f0fdf4}.form-group input.invalid,.form-group textarea.invalid,.form-group select.invalid{border-color:#ef4444;background-color:#fef2f2}.form-group input.valid:focus,.form-group textarea.valid:focus,.form-group select.valid:focus{box-shadow:0 0 0 3px rgba(16,185,129,0.1)}.form-group input.invalid:focus,.form-group textarea.invalid:focus,.form-group select.invalid:focus{box-shadow:0 0 0 3px rgba(239,68,68,0.1)}@media (max-width:768px){.success-msg,.error-msg{font-size:11px}}@media (min-width:768px){.page-hero-content h1{font-size:42px}.cta-buttons{flex-direction:row;justify-content:center}}@media (max-width:767px){h2{font-size:22px}h3{font-size:18px}.cta-section{padding:40px 0}.footer{padding:28px 0}.page-hero{padding:60px 0 40px}.trust-signals{padding:24px 0 !important}.trust-signals .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}.trust-signals .feature-item{padding:8px 6px !important;margin:0 !important}.trust-signals .feature-icon i{font-size:28px !important}.trust-signals .feature-item h3{font-size:16px !important;line-height:1.25 !important}.trust-signals .feature-item p{font-size:13px !important;line-height:1.5 !important}}
+/* ▸ BASE STYLES - Core foundation styles used across all pages */
+
+/* Premium Typography (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+:root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                 Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+                 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                    Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.65;
+    color: #0f172a;
+    background-color: #f9fafb;
+    font-size: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.25;
+    color: #111827;
+    text-wrap: balance;
+}
+
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.015em; }
+h2 { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.005em; }
+h4 { font-size: 18px; font-weight: 600; letter-spacing: 0; }
+
+p, li {
+    color: #334155;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0;
+}
+
+small { font-size: 12px; color: #64748b; }
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Form Elements */
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #374151;
+}
+
+/* Unified button system */
+.cta-button,
+.pricing-cta,
+.cta-button-contact,
+.premium-cta,
+.career-cta,
+.career-modal-cta,
+.primary-button {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+    color: #ffffff !important;
+    font-family: var(--font-display) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px;
+}
+
+/* Unified card elevation */
+.testimonial-card,
+.offer-card,
+.pricing-card,
+.feature-card,
+.payment-card,
+.service-card,
+.detail-card,
+.contact-quick-card,
+.action-card-large,
+.value-item {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08) !important;
+}
+
+select {
+    background-color: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+/* Buttons */
+.cta-button {
+    background-color: #0d9488;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0f766e;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background: white;
+    color: #0d9488;
+}
+
+.cta-button.large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    color: #4b5563;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.form-group .hint {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.form-group .error-msg {
+    font-size: 11px;
+    color: #ef4444;
+    margin-top: 4px;
+}
+
+/* Page Hero Sections */
+.page-hero {
+    background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Global hero textures for aesthetic consistency */
+/* Remove hero textures globally */
+.page-hero::before, .page-hero::after { content: none; }
+
+.page-hero-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.page-hero-content p {
+    font-size: 20px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Readability on dark gradient sections */
+.page-hero h1,
+.page-hero h2 { color: #ffffff; }
+.page-hero p { color: rgba(255, 255, 255, 0.92); }
+.cta-section h2 { color: #ffffff; }
+.cta-section p { color: rgba(255, 255, 255, 0.92); }
+
+/* CTA Sections */
+.cta-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: white;
+    text-align: center;
+}
+
+/* Trust Signals (global) */
+.trust-signals {
+    background-color: white;
+    padding: 36px 0;
+    position: relative;
+    z-index: 5;
+}
+/* Remove section textures */
+.trust-signals::before, .social-proof::before, .value-section::before { content: none; }
+.social-proof, .value-section { position: relative; }
+
+/* Sticky mobile CTA */
+.sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    padding: 10px 16px;
+    background: rgba(31, 41, 55, 0.9);
+    backdrop-filter: saturate(120%) blur(4px);
+    display: none;
+    z-index: 9999;
+}
+
+.sticky-cta .cta-button {
+    width: 100%;
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+}
+
+@media (max-width: 767px) {
+    .sticky-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .sticky-cta .cta-button.secondary { border-color: #94d5cf; }
+    body { padding-bottom: 82px; }
+}
+
+.cta-content h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Pricing - Indian Rupees - ₹2599 to ₹650 */
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* --- Site-wide subtle paper texture for content sections --- */
+/* About */
+.our-story, .mission-values, .our-approach, .team-preview,
+/* Services */
+.services-overview, .service-details, .treatment-approaches, .faq-section,
+/* Pricing */
+.pricing-overview, .pricing-plans, .pricing-features, .payment-options, .pricing-faq,
+/* Contact */
+.contact-content,
+/* Thank you */
+.main-action, .preparation-strip {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove section textures globally */
+.our-story::before, .mission-values::before, .our-approach::before, .team-preview::before,
+.services-overview::before, .service-details::before, .treatment-approaches::before, .faq-section::before,
+.pricing-overview::before, .pricing-plans::before, .pricing-features::before, .payment-options::before, .pricing-faq::before,
+.contact-content::before,
+.main-action::before, .preparation-strip::before { content: none; }
+
+/* Thank you hero aesthetics */
+.hero-success { position: relative; overflow: hidden; }
+.hero-success::after { content: none; }
+
+.original-price {
+    color: #9ca3af;
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+.original-price::before {
+    content: "₹";
+}
+
+.sale-price {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0d9488;
+}
+
+.sale-price::before {
+    content: "₹";
+}
+
+.discount-tag {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+/* Enhanced Success Messages */
+.success-msg {
+    font-size: 12px;
+    color: #10b981;
+    margin-top: 4px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.success-msg.show {
+    display: block;
+    opacity: 1;
+}
+
+.success-msg::before {
+    content: "✓ ";
+    font-weight: bold;
+}
+
+/* Enhanced Error Messages */
+.error-msg {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-msg.show {
+    display: block;
+    opacity: 1;
+}
+
+.error-msg::before {
+    content: "⚠ ";
+    font-weight: bold;
+}
+
+/* Form Field States */
+.form-group input.valid,
+.form-group textarea.valid,
+.form-group select.valid {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid,
+.form-group select.invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.form-group input.valid:focus,
+.form-group textarea.valid:focus,
+.form-group select.valid:focus {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-group input.invalid:focus,
+.form-group textarea.invalid:focus,
+.form-group select.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .success-msg,
+    .error-msg {
+        font-size: 11px;
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .page-hero-content h1 {
+        font-size: 42px;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Global mobile compaction to reduce scrolling across pages */
+@media (max-width: 767px) {
+    /* Headings slightly smaller */
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+
+    /* Tighten common section paddings */
+    .cta-section { padding: 40px 0; }
+    .footer { padding: 28px 0; }
+    .page-hero { padding: 60px 0 40px; }
+
+    /* Trust signals compact rules (apply site-wide) */
+    .trust-signals { padding: 24px 0 !important; }
+    .trust-signals .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
+    .trust-signals .feature-item { padding: 8px 6px !important; margin: 0 !important; }
+    .trust-signals .feature-icon i { font-size: 28px !important; }
+    .trust-signals .feature-item h3 { font-size: 16px !important; line-height: 1.25 !important; }
+    .trust-signals .feature-item p { font-size: 13px !important; line-height: 1.5 !important; }
+}
