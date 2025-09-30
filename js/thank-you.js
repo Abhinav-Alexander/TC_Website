@@ -199,11 +199,11 @@ function showNotification(message, type = 'info') {
     };
     
     notification.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <i class="${icons[type]}" style="font-size: 18px;"></i>
+        <div class="notification-content">
+            <i class="${icons[type]} notification-icon"></i>
             <span>${message}</span>
         </div>
-        <button onclick="this.parentElement.remove()" style="background: none; border: none; color: inherit; font-size: 18px; cursor: pointer; padding: 0; margin-left: 12px;">
+        <button onclick="this.parentElement.remove()" class="notification-close">
             <i class="fas fa-times"></i>
         </button>
     `;

@@ -200,7 +200,7 @@
             
             if (currentCount > 10) {
                 // Too many error page requests - potential attack
-                document.body.innerHTML = '<div style="text-align:center;padding:50px;"><h2>Too many requests</h2><p>Please contact support if you need assistance.</p></div>';
+                document.body.innerHTML = '<div class="error-message"><h2>Too many requests</h2><p>Please contact support if you need assistance.</p></div>';
                 return;
             }
             

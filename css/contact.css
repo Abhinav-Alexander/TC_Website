@@ -1,5 +1,10 @@
 /* ▸ CONTACT PAGE STYLES - Mobile-First Approach */
 
+/* Inline styles moved to CSS */
+.honeypot-field {
+    display: none;
+}
+
 /* ▸ CORE CONTACT LAYOUT */
 .contact-content {
     padding: 40px 0;

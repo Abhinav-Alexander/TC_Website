@@ -1,4 +1,22 @@
 /* Blog page styles (aligned to site light theme) */
+
+/* Inline styles moved to CSS */
+.clear-search {
+    display: none;
+}
+
+.no-results {
+    display: none;
+}
+
+.post-meta-bar {
+    margin-top: 10px;
+}
+
+.adsbygoogle {
+    display: block;
+    text-align: center;
+}
 .blog-listing { padding: 40px 0; }
 .blog-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .post-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; transition: border-color .2s ease, box-shadow .2s ease, transform .15s ease; }

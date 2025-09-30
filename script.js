@@ -589,11 +589,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        function clampIndex(){
-            const visible = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visible);
-            index = Math.min(Math.max(0, index), maxIndex);
-        }
 
         function update(){
             const card = cards[0];
@@ -681,6 +676,175 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('mouseup', onTouchEnd);
         }
     })();
+
+    // Testimonials carousel initialization
+    (function initTestimonialsCarousel(){
+        const track = document.querySelector('.testimonials-carousel .carousel-track');
+        const prev = document.querySelector('.testimonials-carousel .carousel-btn.prev');
+        const next = document.querySelector('.testimonials-carousel .carousel-btn.next');
+        const viewport = document.querySelector('.testimonials-carousel .carousel-viewport');
+        
+        if (!track || !prev || !next) return;
+
+        const cards = Array.from(track.children);
+        let index = 0;
+        let isTransitioning = false;
+
+        // Clone cards for infinite loop
+        function setupInfiniteCarousel() {
+            const visible = getVisibleCount();
+            const totalCards = cards.length;
+            
+            // Clone cards for seamless loop
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                track.appendChild(clone);
+            });
+        }
+
+        // For testimonials, show 3 on desktop, 1 on mobile
+        function getVisibleCount(){
+            const width = window.innerWidth;
+            if (width >= 768) return 3;
+            return 1;
+        }
+
+        function getCardWidth(){
+            const visible = getVisibleCount();
+            if (visible >= cards.length) return 0;
+            
+            // Calculate the width of one card including gap
+            const first = cards[0];
+            if (!first) return 0;
+            
+            const cardRect = first.getBoundingClientRect();
+            const width = window.innerWidth;
+            
+            // Different gaps for different screen sizes
+            let gap = 4; // Default desktop gap
+            if (width <= 480) {
+                gap = 6; // Extra small mobile
+            } else if (width <= 768) {
+                gap = 8; // Mobile
+            }
+            
+            return cardRect.width + gap;
+        }
+
+
+
+        function update(){
+            const card = cards[0];
+            if (!card) return;
+            const cardWidth = getCardWidth();
+            const totalCards = cards.length / 2; // Original cards count
+            const leftOffset = -8; // Move 8px to the left
+            
+            // Enable transition for smooth movement
+            track.style.transition = 'transform 0.3s ease';
+            track.style.transform = `translateX(${-index * cardWidth + leftOffset}px)`;
+
+            // Handle infinite loop
+            setTimeout(() => {
+                if (index >= totalCards) {
+                    // Reset to beginning without transition
+                    track.style.transition = 'none';
+                    index = 0;
+                    track.style.transform = `translateX(${leftOffset}px)`;
+                } else if (index < 0) {
+                    // Reset to end without transition
+                    track.style.transition = 'none';
+                    index = totalCards - 1;
+                    track.style.transform = `translateX(${-(totalCards - 1) * cardWidth + leftOffset}px)`;
+                }
+            }, 300); // Match transition duration
+        }
+
+        prev.addEventListener('click', () => {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            index -= 1;
+            update();
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        });
+        
+        next.addEventListener('click', () => {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            index += 1;
+            update();
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        });
+
+        // initial
+        setupInfiniteCarousel();
+        update();
+        
+        // Handle resize
+        window.addEventListener('resize', () => { 
+            update(); 
+        });
+
+        // Touch swipe support (mobile)
+        let startX = 0;
+        let isDragging = false;
+        let dragDelta = 0;
+
+        function onTouchStart(e){
+            const t = e.touches ? e.touches[0] : e;
+            startX = t.clientX;
+            isDragging = true;
+            dragDelta = 0;
+            track.style.transition = 'none';
+        }
+
+        function onTouchMove(e){
+            if (!isDragging) return;
+            const t = e.touches ? e.touches[0] : e;
+            dragDelta = t.clientX - startX;
+            const cardWidth = getCardWidth();
+            const currentTransform = -index * cardWidth;
+            track.style.transform = `translateX(${currentTransform + dragDelta}px)`;
+        }
+
+        function onTouchEnd(){
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = '';
+            
+            const threshold = 50;
+            if (Math.abs(dragDelta) > threshold) {
+                if (dragDelta > 0) {
+                    // Swipe right - go to previous
+                    index -= 1;
+                } else {
+                    // Swipe left - go to next
+                    index += 1;
+                }
+            }
+            
+            dragDelta = 0;
+            update();
+        }
+
+        if (viewport) {
+            viewport.addEventListener('touchstart', onTouchStart, { passive: true });
+            viewport.addEventListener('touchmove', onTouchMove, { passive: true });
+            viewport.addEventListener('touchend', onTouchEnd);
+            viewport.addEventListener('mousedown', (e)=>{ e.preventDefault(); onTouchStart(e); });
+            window.addEventListener('mousemove', onTouchMove);
+            window.addEventListener('mouseup', onTouchEnd);
+        }
+    })();
+
 });
 
 /* ── Basic Clickjacking Protection ─────────────────────────────── */

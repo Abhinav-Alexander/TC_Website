@@ -150,17 +150,13 @@
         <div class="container hero-container">
 
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Premium Mental Health Care</span>
+                <div class="hero-google-rating">
+                    <div class="stars">★★★★★</div>
+                    <span class="rating-text">Rated 5 Star on Google</span>
                 </div>
                 <h1>Feeling anxious, stuck, or overwhelmed?</h1>
                 <p>Talk to a licensed clinical psychologist this week. First session <strong>₹650</strong>. 100% confidential online.</p>
-                <div class="hero-chips">
-                    <span class="hero-chip">Licensed clinicians</span>
-                    <span class="hero-chip">Same‑week sessions</span>
-                    <span class="hero-chip">Private & secure</span>
-                </div>
+                
                 
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -181,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="hero-secondary-cta" style="margin-top:12px;">
+                <div class="hero-secondary-cta">
                     <a class="cta-button secondary" href="https://wa.me/919211750322?text=Hi%20Therapy%20Council%2C%20I%20would%20like%20a%20free%2010-min%20discovery%20call." target="_blank" rel="noopener noreferrer">Free 10‑min discovery call</a>
                 </div>
             </div>
@@ -272,7 +268,7 @@
                     </div>
 
                     <!-- honeypot -->
-                    <input name="website" type="text" style="display:none">
+                    <input name="website" type="text" class="honeypot-field">
 
                     <div class="secure-notice">
                         <div class="secure-badge"></div>
@@ -288,16 +284,6 @@
                             </div>
                             <i class="fas fa-arrow-right"></i>
                         </button>
-                        
-
-                        <div class="form-reassure">
-                            <span class="re-chip"><i class="fas fa-credit-card"></i>No credit card or payment required</span>
-                            <span class="re-chip"><i class="fas fa-bell-slash"></i>We will never spam you</span>
-                            <span class="re-chip"><i class="fas fa-shield-alt"></i>100% private &amp; confidential</span>
-                        </div>
-
-
-                    
                 </form>
             </div>
         </div>
@@ -412,7 +398,7 @@
                 <button class="carousel-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
                 <div class="carousel-dots" aria-label="Therapist navigation"></div>
             </div>
-            <div class="therapists-cta" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+            <div class="therapists-cta">
                 <a id="bookNowDirect" href="https://payments.cashfree.com/forms/FirstSession" class="cta-button" target="_blank" rel="noopener noreferrer">Book your first session – ₹650</a>
                 <a href="https://wa.me/919211750322" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Free 10‑min discovery call</a>
             </div>
@@ -425,96 +411,151 @@
         <button class="cta-button" id="stickyCtaBtn">Book your first session – ₹650</button>
         <a class="cta-button secondary" id="stickyCtaCall" href="https://wa.me/919211750322?text=Hi%20Therapy%20Council%2C%20I%20would%20like%20a%20free%2010-min%20discovery%20call." target="_blank" rel="noopener noreferrer">Free 10‑min call</a>
     </div>
-    <!-- Trust Signals -->
-    <section class="trust-signals">
-        <div class="container">
-            <div class="features">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Licensed Professionals</h3>
-                    <p>All therapists are fully licensed with advanced training</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>100% Confidential</h3>
-                    <p>Your privacy is guaranteed with secure, encrypted sessions</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Evening and weekend appointments available</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Personalized Approach</h3>
-                    <p>Tailored therapy plans to meet your specific needs</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Social Proof -->
     <section class="social-proof">
         <div class="container">
             <h2>Transformative Experiences</h2>
+            
+            <div class="google-reviews-highlight">
+                <div class="stars">★★★★★</div>
+                <span class="highlight-text">Rated 5 Star on Google</span>
+            </div>
 
-            <div class="testimonials">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Priya S.</h4>
-                            <p>Client since 2022</p>
+            <div class="testimonials-widget">
+                <div class="testimonials-carousel">
+                    <button class="carousel-btn prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"I was hesitant to try therapy, but that first 45-minute session changed everything. The personalized approach helped me develop coping skills I use every day."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Priya S.</span>
+                                        <span class="testimonial-date">Client since 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"My therapist's expertise helped me navigate a difficult transition period. I'm grateful I took that first step and booked the introductory session."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Rohit K.</span>
+                                        <span class="testimonial-date">Client since 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The safe space created during my sessions allowed me to explore underlying issues I didn't even realize were affecting me. It's been truly life-changing."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Ananya M.</span>
+                                        <span class="testimonial-date">Client since 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"I was skeptical about online therapy, but the quality of care exceeded my expectations. My therapist's expertise helped me overcome years of anxiety."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Rajesh P.</span>
+                                        <span class="testimonial-date">Client since 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The flexibility of online sessions fits perfectly with my busy schedule. The therapy has been instrumental in improving my relationships and overall well-being."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Meera K.</span>
+                                        <span class="testimonial-date">Client since 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <div class="testimonial-source">
+                                        <span class="therapy-logo">TC</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Professional, compassionate, and effective. The sessions have given me practical tools to manage stress and build confidence in my daily life."</p>
+                                </div>
+                                <div class="testimonial-footer">
+                                    <div class="testimonial-info">
+                                        <span class="testimonial-name">Vikram S.</span>
+                                        <span class="testimonial-date">Client since 2024</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"I was hesitant to try therapy, but that first 45-minute session changed
-                        everything. The personalized approach helped me develop coping skills I use every day."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Rohit K.</h4>
-                            <p>Client since 2023</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"My therapist's expertise helped me navigate a difficult transition
-                        period. I'm grateful I took that first step and booked the introductory session."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Ananya M.</h4>
-                            <p>Client since 2021</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"The safe space created during my sessions allowed me to explore
-                        underlying issues I didn't even realize were affecting me. It's been truly life-changing."</p>
+                    <button class="carousel-btn next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="rating-badge">
-                <span class="rating-score">4.9/5</span>
-                <span class="rating-text">Average Client Rating</span>
-                <span class="rating-stars">★★★★★</span>
-            </div>
         </div>
     </section>
 

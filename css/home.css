@@ -1,5 +1,21 @@
 /* ▸ HOME PAGE STYLES - Specific to index.html */
 
+/* Inline styles moved to CSS */
+.hero-secondary-cta {
+    margin-top: 12px;
+}
+
+.therapists-cta {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.honeypot-field {
+    display: none;
+}
+
 /* Hero Section - True Mobile First */
 .hero {
     background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
@@ -63,14 +79,50 @@
     font-weight: 400;
 }
 
-.hero-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; margin-bottom: 12px; }
-.hero-chip { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+.hero-google-rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    margin: 0 0 20px 0;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-google-rating .stars {
+    color: #fbbf24;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hero-google-rating .rating-text {
+    color: #1f2937;
+    font-size: 13px;
+    font-weight: 600;
+}
 
 /* Tighter mobile hero spacing */
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 26px; }
   .hero-content p { font-size: 15px; }
   .hero-chips { gap: 6px; }
+  
+  .hero-google-rating {
+    padding: 5px 10px;
+    margin: 0 0 16px 0;
+  }
+  
+  .hero-google-rating .stars {
+    font-size: 12px;
+  }
+  
+  .hero-google-rating .rating-text {
+    font-size: 11px;
+  }
 }
 
 .hero-content strong {
@@ -230,19 +282,20 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    background: #F0FDF4;
-    border: 1px solid #BBF7D0;
+    background: #FFFFFF;
+    border: 1px solid #0d9488;
     padding: 8px 12px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 500;
-    color: #059669;
+    font-weight: 600;
+    color: #0d9488;
     white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(13, 148, 136, 0.1);
 }
 
 .trust-item i {
     font-size: 10px;
-    color: #10B981;
+    color: #0d9488;
 }
 
 .signup-card h2 {
@@ -272,7 +325,8 @@
     font-size: 16px;
     border-radius: 12px;
     border: 2px solid #E5E7EB;
-    background: #FAFAFA;
+    background: #FFFFFF;
+    color: #1f2937;
     transition: all 0.3s ease;
     min-height: 52px;
     appearance: none;
@@ -286,7 +340,8 @@
 .signup-form select:focus {
     outline: none;
     border-color: #0D9488;
-    background: white;
+    background: #FFFFFF;
+    color: #1f2937;
     box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
@@ -299,8 +354,9 @@
 
 /* Polished placeholder style */
 .signup-form input::placeholder {
-    color: #9ca3af;
+    color: #6b7280;
     font-style: italic;
+    opacity: 1;
 }
 
 .premium-cta {
@@ -433,55 +489,308 @@
 
 /* Trust Signals styles moved to base.css to avoid duplication */
 
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-}
-
-.feature-item {
-    width: 100%;
-    padding: 0 16px;
-    margin-bottom: 32px;
-}
-
-.feature-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-
-.feature-icon i {
-    font-size: 48px;
-    color: #0d9488;
-}
-
-.feature-item h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.feature-item p {
-    color: #6b7280;
-}
 
 /* Social Proof */
 .social-proof {
     background-color: #f9fafb;
-    padding: 32px 0;
+    padding: 20px 0;
 }
 
 .social-proof h2 {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 48px;
+    margin-bottom: 16px;
 }
 
-.testimonials {
+.google-reviews-highlight {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 -16px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    background: #f0f9ff;
+    border: 1px solid #0ea5e9;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.google-reviews-highlight .stars {
+    color: #fbbf24;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.google-reviews-highlight .highlight-text {
+    color: #0ea5e9;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Testimonials Widget */
+.testimonials-widget {
+    margin: 20px 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.testimonials-carousel {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.testimonials-carousel .carousel-viewport {
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.testimonials-carousel .carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 4px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.testimonials-carousel .testimonial-card {
+    flex: 0 0 100%;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    margin-right: 16px;
+    border: 1px solid #e5e7eb;
+    min-height: 160px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    align-self: flex-start;
+}
+
+/* Testimonial Card Styling */
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.testimonial-rating .stars {
+    color: #fbbf24;
+    font-size: 16px;
+}
+
+.testimonial-source .therapy-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #0d9488;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.testimonial-content {
+    margin-bottom: 16px;
+}
+
+.testimonial-text {
+    color: #374151;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+.testimonial-footer {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+}
+
+.testimonial-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 15px;
+}
+
+.testimonial-date {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* Desktop: Show 3 testimonials */
+@media (min-width: 768px) {
+    .testimonials-carousel .testimonial-card {
+        flex: 0 0 calc(33.333% - 11px);
+    }
+    
+    .testimonials-carousel .carousel-btn.prev {
+        left: -24px;
+    }
+    
+    .testimonials-carousel .carousel-btn.next {
+        right: -24px;
+    }
+}
+
+.testimonials-carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0d9488;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(13,148,136,0.3);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.testimonials-carousel .carousel-btn:hover {
+    background: #0a7c73;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.testimonials-carousel .carousel-btn.prev {
+    left: -22px;
+}
+
+.testimonials-carousel .carousel-btn.next {
+    right: -22px;
+}
+
+.testimonials-carousel .carousel-btn i {
+    font-size: 14px;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .google-reviews-highlight {
+        padding: 6px 12px;
+        margin-bottom: 20px;
+    }
+    
+    .google-reviews-highlight .stars {
+        font-size: 14px;
+    }
+    
+    .google-reviews-highlight .highlight-text {
+        font-size: 12px;
+    }
+    
+    .testimonials-widget {
+        padding: 8px;
+        margin: 12px 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .testimonials-carousel {
+        position: relative;
+        width: 100%;
+    }
+    
+    .testimonials-carousel .carousel-btn {
+        display: none !important;
+    }
+    
+    .testimonials-carousel .carousel-viewport {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .testimonials-carousel .carousel-track {
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .testimonials-carousel .testimonial-card {
+        padding: 16px;
+        margin-right: 8px;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-height: 140px;
+        box-sizing: border-box;
+    }
+    
+    .testimonial-text {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .testimonial-name {
+        font-size: 13px;
+    }
+    
+    .testimonial-date {
+        font-size: 11px;
+    }
+    
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+    .testimonials-widget {
+        padding: 6px;
+        margin: 8px 0;
+        max-width: 100%;
+    }
+    
+    .testimonials-carousel .testimonial-card {
+        padding: 12px;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-height: 120px;
+        box-sizing: border-box;
+    }
+    
+    .testimonials-carousel .carousel-track {
+        gap: 6px;
+        width: 100%;
+    }
+    
+    .testimonial-text {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    
+    .testimonial-name {
+        font-size: 12px;
+    }
+    
+    .testimonial-date {
+        font-size: 10px;
+    }
+    
 }
 
 .testimonial-card {
@@ -542,16 +851,40 @@
 
 .rating-badge {
     display: flex;
+    flex-direction: column;
     background-color: white;
-    border-radius: 9999px;
-    padding: 12px 24px;
+    border-radius: 12px;
+    padding: 16px 24px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 24px auto 0;
     text-align: center;
     justify-content: center;
     align-items: center;
     width: fit-content;
+    gap: 8px;
 }
+
+.google-rating {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.google-text {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.google-stars {
+    font-size: 14px;
+    color: #fbbf24;
+}
+
 
 .rating-score {
     color: #0d9488;
@@ -970,13 +1303,6 @@
 .therapists .therapist-tags { justify-content: flex-start; }
 
 @media (max-width: 767px) {
-    /* Make trust signals compact on small screens */
-    .trust-signals { padding: 24px 0; }
-    .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .feature-item { width: 100%; padding: 0 4px; margin-bottom: 0; }
-    .feature-icon i { font-size: 28px; }
-    .feature-item h3 { font-size: 16px; line-height: 1.25; }
-    .feature-item p { font-size: 13px; line-height: 1.5; }
 
     /* Compact What to Expect / Value section */
     /* Hide duplicated offer card section entirely on mobile to shorten page */

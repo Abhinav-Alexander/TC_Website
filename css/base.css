@@ -1,5 +1,16 @@
 /* ▸ BASE STYLES - Core foundation styles used across all pages */
 
+/* Inline styles moved to CSS */
+.legal-content {
+    padding: 48px 16px;
+    max-width: 900px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 50px;
+}
+
 /* Premium Typography (Google Fonts) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
 

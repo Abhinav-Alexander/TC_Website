@@ -1,5 +1,10 @@
 /* ▸ PRICING PAGE STYLES - Specific to pricing.html */
 
+/* Inline styles moved to CSS */
+.pricing-section h2 {
+    margin-top: 40px;
+}
+
 /* ▸ PRICING OVERVIEW SECTION */
 .pricing-overview { padding: 60px 0; background: white; }
 .page-hero { background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%); color:#fff; }

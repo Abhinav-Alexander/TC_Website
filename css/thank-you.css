@@ -1,5 +1,36 @@
 /* ▸ THANK YOU PAGE STYLES - Aligned with Website Design System */
 
+/* Inline styles moved to CSS */
+.prep-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Notification styles moved from inline */
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-icon {
+    font-size: 18px;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 12px;
+}
+
 /* ▸ HERO SUCCESS SECTION - Using site's hero pattern */
 .hero-success {
     background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%);
