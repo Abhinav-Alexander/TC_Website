@@ -506,27 +506,55 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding: 8px 16px;
-    background: #f0f9ff;
-    border: 1px solid #0ea5e9;
-    border-radius: 20px;
+    gap: 10px;
+    margin-bottom: 32px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #0d9488;
+    border-radius: 50px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.google-reviews-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.05) 0%, rgba(13, 148, 136, 0.1) 100%);
+    z-index: 1;
+}
+
+.google-reviews-highlight .stars,
+.google-reviews-highlight .highlight-text {
+    position: relative;
+    z-index: 2;
 }
 
 .google-reviews-highlight .stars {
     color: #fbbf24;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+    text-shadow: 0 1px 2px rgba(251, 191, 36, 0.3);
 }
 
 .google-reviews-highlight .highlight-text {
-    color: #0ea5e9;
-    font-size: 14px;
-    font-weight: 600;
+    color: #0d9488;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.google-reviews-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.2);
+    transition: all 0.3s ease;
 }
 
 /* Testimonials Widget */
@@ -591,18 +619,25 @@
     font-size: 16px;
 }
 
-.testimonial-source .therapy-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: #0d9488;
+.testimonial-source .therapy-logo { display: none; }
+
+.reviewer-avatar {
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
+    background: linear-gradient(135deg, #e5e7eb, #cfd4da);
+    border: 1px solid #d1d5db;
 }
+
+.joy-avatar {
+    background: url('/assets/avatars/joy.webp') center/cover no-repeat;
+    border: none;
+}
+
+.aniketh-avatar { background: url('/assets/avatars/aniketh.webp') center/cover no-repeat; border: none; }
+.udisha-avatar { background: url('/assets/avatars/udisha.webp') center/cover no-repeat; border: none; }
+.ananya-avatar { background: url('/assets/avatars/ananya.webp') center/cover no-repeat; border: none; }
+.riya-avatar { background: url('/assets/avatars/riya.webp') center/cover no-repeat; border: none; }
 
 .testimonial-content {
     margin-bottom: 16px;
@@ -693,16 +728,18 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
     .google-reviews-highlight {
-        padding: 6px 12px;
-        margin-bottom: 20px;
+        padding: 10px 20px;
+        margin-bottom: 24px;
+        gap: 8px;
     }
     
     .google-reviews-highlight .stars {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .google-reviews-highlight .highlight-text {
-        font-size: 12px;
+        font-size: 13px;
+        letter-spacing: 0.3px;
     }
     
     .testimonials-widget {

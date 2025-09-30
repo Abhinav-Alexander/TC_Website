@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Therapists carousel initialization
+    // Therapists carousel initialization (seamless infinite)
     (function initTherapistsCarousel(){
         const track = document.querySelector('.therapists .carousel-track');
         const prev = document.querySelector('.therapists .carousel-btn.prev');
@@ -554,295 +554,228 @@ document.addEventListener('DOMContentLoaded', function() {
         const viewport = document.querySelector('.therapists .carousel-viewport');
         if (!track || !prev || !next || !dotsWrap) return;
 
-        const cards = Array.from(track.children);
-        let index = 0;
+        // mark originals
+        Array.from(track.children).forEach(el => el.dataset.original = 'true');
+        let originals = Array.from(track.querySelectorAll('[data-original="true"]'));
+        let originalCount = originals.length;
+        let index = 0; // will be set in setup
 
-        // determine visible count based on CSS (approx)
         function getVisibleCount(){
-            const width = window.innerWidth;
-            if (width >= 1024) return 3;
-            if (width >= 768) return 2;
+            const w = window.innerWidth;
+            if (w >= 1024) return 3;
+            if (w >= 768) return 2;
             return 1;
         }
-
+        function getGap(){
+            const gapStr = getComputedStyle(track).gap || '12px';
+            const n = parseFloat(gapStr);
+            return isNaN(n) ? 12 : n;
+        }
         function getCardWidth(){
-            const first = cards[0];
+            const first = track.querySelector('.therapist-card');
             if (!first) return 0;
-            return first.getBoundingClientRect().width + 12; // 12px gap in CSS
+            return first.getBoundingClientRect().width + getGap();
+        }
+        function clearClones(){ track.querySelectorAll('[data-clone="true"]').forEach(n=>n.remove()); }
+
+        function setup(){
+            clearClones();
+            originals = Array.from(track.querySelectorAll('[data-original="true"]'));
+            originalCount = originals.length;
+            const visible = getVisibleCount();
+
+            const firstClones = originals.slice(0, visible).map(c=>{const n=c.cloneNode(true); n.dataset.clone='true'; return n;});
+            const lastClones = originals.slice(-visible).map(c=>{const n=c.cloneNode(true); n.dataset.clone='true'; return n;});
+            lastClones.forEach((n,i)=> track.insertBefore(lastClones[lastClones.length-1-i], track.firstChild));
+            firstClones.forEach(n=> track.appendChild(n));
+
+            index = visible; // start at first real item
+            track.style.transition='none';
+            track.style.transform = `translateX(${-index * getCardWidth()}px)`;
+            void track.offsetHeight; // reflow
+            track.style.transition='';
+
+            renderDots();
+            setActiveDot();
         }
 
-        // create dots
-        function renderDots(){
-            dotsWrap.innerHTML = '';
+        function goTo(newIndex){
+            index = newIndex;
+            track.style.transition = 'transform 0.3s ease';
+            track.style.transform = `translateX(${-index * getCardWidth()}px)`;
+            setActiveDot();
+        }
+        function onTransitionEnd(){
             const visible = getVisibleCount();
-            const totalPages = Math.max(1, Math.ceil(cards.length / visible));
-            for (let i = 0; i < totalPages; i++) {
-                const b = document.createElement('button');
+            const start = visible;
+            const end = visible + originalCount - 1;
+            if (index > end){
+                track.style.transition='none';
+                index = start;
+                track.style.transform = `translateX(${-index * getCardWidth()}px)`;
+                void track.offsetHeight; track.style.transition='';
+            } else if (index < start){
+                track.style.transition='none';
+                index = end;
+                track.style.transform = `translateX(${-index * getCardWidth()}px)`;
+                void track.offsetHeight; track.style.transition='';
+            }
+        }
+
+        function getPageCount(){
+            return Math.max(1, Math.ceil(originalCount / getVisibleCount()));
+        }
+        function getLogicalPage(){
+            const visible = getVisibleCount();
+            const logicalIndex = (index - visible + originalCount) % originalCount;
+            return Math.floor(logicalIndex / visible);
+        }
+        function renderDots(){
+            dotsWrap.innerHTML='';
+            const pages = getPageCount();
+            for (let i=0;i<pages;i++){
+                const b=document.createElement('button');
                 b.setAttribute('aria-label', `Go to slide ${i+1}`);
-                if (i === Math.floor(index/visible)) b.classList.add('active');
-                b.addEventListener('click', () => {
-                    index = i * visible;
-                    clampIndex();
-                    update();
+                b.addEventListener('click', ()=>{
+                    const visible = getVisibleCount();
+                    goTo(visible + i*visible);
                 });
                 dotsWrap.appendChild(b);
             }
         }
-
-
-        function update(){
-            const card = cards[0];
-            if (!card) return;
-            const cardWidth = getCardWidth();
-            track.style.transform = `translateX(${-index * cardWidth}px)`;
-
-            const visible = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visible);
-
-            // update dots active
-            renderDots();
+        function setActiveDot(){
+            const buttons = dotsWrap.querySelectorAll('button');
+            const activePage = getLogicalPage();
+            buttons.forEach((b,i)=>{
+                if (i===activePage) b.classList.add('active'); else b.classList.remove('active');
+            });
         }
 
-        prev.addEventListener('click', () => {
-            const visible = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visible);
-            if (index <= 0) {
-                index = maxIndex;
-            } else {
-                index -= 1;
-            }
-            update();
-        });
-        next.addEventListener('click', () => {
-            const visible = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visible);
-            if (index >= maxIndex) {
-                index = 0;
-            } else {
-                index += 1;
-            }
-            update();
-        });
-        window.addEventListener('resize', () => { clampIndex(); update(); });
+        prev.addEventListener('click', ()=> goTo(index-1));
+        next.addEventListener('click', ()=> goTo(index+1));
+        track.addEventListener('transitionend', onTransitionEnd);
 
-        // initial
-        renderDots();
-        update();
-
-        // Touch swipe support (mobile)
-        let startX = 0;
-        let isDragging = false;
-        let dragDelta = 0;
-
-        function onTouchStart(e){
-            const t = e.touches ? e.touches[0] : e;
-            startX = t.clientX;
-            isDragging = true;
-            dragDelta = 0;
-            track.style.transition = 'none';
-        }
-
-        function onTouchMove(e){
-            if (!isDragging) return;
-            const t = e.touches ? e.touches[0] : e;
-            const x = t.clientX;
-            dragDelta = x - startX;
-            const base = -index * getCardWidth();
-            track.style.transform = `translateX(${base + dragDelta}px)`;
-        }
-
-        function onTouchEnd(){
-            if (!isDragging) return;
-            isDragging = false;
-            track.style.transition = '';
-            const threshold = Math.min(120, getCardWidth() * 0.25);
-            const visible = getVisibleCount();
-            const maxIndex = Math.max(0, cards.length - visible);
-            if (dragDelta <= -threshold) {
-                index = (index >= maxIndex) ? 0 : index + 1;
-            } else if (dragDelta >= threshold) {
-                index = (index <= 0) ? maxIndex : index - 1;
-            }
-            dragDelta = 0;
-            update();
-        }
-
-        if (viewport) {
-            viewport.addEventListener('touchstart', onTouchStart, { passive: true });
-            viewport.addEventListener('touchmove', onTouchMove, { passive: true });
+        // Touch/drag
+        let startX=0, isDragging=false, dragDelta=0;
+        function onTouchStart(e){ const t=e.touches?e.touches[0]:e; startX=t.clientX; isDragging=true; dragDelta=0; track.style.transition='none'; }
+        function onTouchMove(e){ if(!isDragging) return; const t=e.touches?e.touches[0]:e; dragDelta=t.clientX-startX; const base=-(index*getCardWidth()); track.style.transform=`translateX(${base+dragDelta}px)`; }
+        function onTouchEnd(){ if(!isDragging) return; isDragging=false; track.style.transition=''; const threshold=Math.min(120, getCardWidth()*0.25); if(dragDelta>threshold) goTo(index-1); else if(dragDelta<-threshold) goTo(index+1); else goTo(index); dragDelta=0; }
+        if (viewport){
+            viewport.addEventListener('touchstart', onTouchStart, {passive:true});
+            viewport.addEventListener('touchmove', onTouchMove, {passive:true});
             viewport.addEventListener('touchend', onTouchEnd);
             viewport.addEventListener('mousedown', (e)=>{ e.preventDefault(); onTouchStart(e); });
             window.addEventListener('mousemove', onTouchMove);
             window.addEventListener('mouseup', onTouchEnd);
         }
+
+        setup();
+        window.addEventListener('resize', ()=>{ setup(); });
     })();
 
-    // Testimonials carousel initialization
+    // Testimonials carousel initialization (seamless infinite)
     (function initTestimonialsCarousel(){
         const track = document.querySelector('.testimonials-carousel .carousel-track');
         const prev = document.querySelector('.testimonials-carousel .carousel-btn.prev');
         const next = document.querySelector('.testimonials-carousel .carousel-btn.next');
         const viewport = document.querySelector('.testimonials-carousel .carousel-viewport');
-        
         if (!track || !prev || !next) return;
 
-        const cards = Array.from(track.children);
-        let index = 0;
-        let isTransitioning = false;
+        let originals = Array.from(track.children);
+        originals.forEach(el => el.dataset.original = 'true');
+        let originalCount = originals.length;
+        let index = 0; // will be set to visible in setup
+        const leftOffset = -8;
 
-        // Clone cards for infinite loop
-        function setupInfiniteCarousel() {
-            const visible = getVisibleCount();
-            const totalCards = cards.length;
-            
-            // Clone cards for seamless loop
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                track.appendChild(clone);
-            });
+        function getVisibleCount(){
+            return window.innerWidth >= 768 ? 3 : 1;
         }
 
-        // For testimonials, show 3 on desktop, 1 on mobile
-        function getVisibleCount(){
-            const width = window.innerWidth;
-            if (width >= 768) return 3;
-            return 1;
+        function getGap(){
+            const gapStr = getComputedStyle(track).gap || '4px';
+            const n = parseFloat(gapStr);
+            return isNaN(n) ? 4 : n;
         }
 
         function getCardWidth(){
-            const visible = getVisibleCount();
-            if (visible >= cards.length) return 0;
-            
-            // Calculate the width of one card including gap
-            const first = cards[0];
+            const first = track.querySelector('.testimonial-card');
             if (!first) return 0;
-            
-            const cardRect = first.getBoundingClientRect();
-            const width = window.innerWidth;
-            
-            // Different gaps for different screen sizes
-            let gap = 4; // Default desktop gap
-            if (width <= 480) {
-                gap = 6; // Extra small mobile
-            } else if (width <= 768) {
-                gap = 8; // Mobile
-            }
-            
-            return cardRect.width + gap;
+            return first.getBoundingClientRect().width + getGap();
         }
 
-
-
-        function update(){
-            const card = cards[0];
-            if (!card) return;
-            const cardWidth = getCardWidth();
-            const totalCards = cards.length / 2; // Original cards count
-            const leftOffset = -8; // Move 8px to the left
-            
-            // Enable transition for smooth movement
-            track.style.transition = 'transform 0.3s ease';
-            track.style.transform = `translateX(${-index * cardWidth + leftOffset}px)`;
-
-            // Handle infinite loop
-            setTimeout(() => {
-                if (index >= totalCards) {
-                    // Reset to beginning without transition
-                    track.style.transition = 'none';
-                    index = 0;
-                    track.style.transform = `translateX(${leftOffset}px)`;
-                } else if (index < 0) {
-                    // Reset to end without transition
-                    track.style.transition = 'none';
-                    index = totalCards - 1;
-                    track.style.transform = `translateX(${-(totalCards - 1) * cardWidth + leftOffset}px)`;
-                }
-            }, 300); // Match transition duration
+        function clearClones(){
+            track.querySelectorAll('[data-clone="true"]').forEach(n => n.remove());
         }
 
-        prev.addEventListener('click', () => {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            
-            index -= 1;
-            update();
-            
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 300);
-        });
-        
-        next.addEventListener('click', () => {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            
-            index += 1;
-            update();
-            
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 300);
-        });
+        function setup(){
+            clearClones();
+            originals = Array.from(track.querySelectorAll('[data-original="true"]'));
+            originalCount = originals.length;
+            const visible = getVisibleCount();
 
-        // initial
-        setupInfiniteCarousel();
-        update();
-        
-        // Handle resize
-        window.addEventListener('resize', () => { 
-            update(); 
-        });
+            const firstClones = originals.slice(0, visible).map(c => { const n=c.cloneNode(true); n.dataset.clone='true'; return n; });
+            const lastClones = originals.slice(-visible).map(c => { const n=c.cloneNode(true); n.dataset.clone='true'; return n; });
 
-        // Touch swipe support (mobile)
-        let startX = 0;
-        let isDragging = false;
-        let dragDelta = 0;
+            // prepend last clones (keep order)
+            lastClones.forEach((n,i)=> track.insertBefore(lastClones[lastClones.length-1-i], track.firstChild));
+            // append first clones
+            firstClones.forEach(n=> track.appendChild(n));
 
-        function onTouchStart(e){
-            const t = e.touches ? e.touches[0] : e;
-            startX = t.clientX;
-            isDragging = true;
-            dragDelta = 0;
+            // start at first real slide
+            index = visible;
             track.style.transition = 'none';
-        }
-
-        function onTouchMove(e){
-            if (!isDragging) return;
-            const t = e.touches ? e.touches[0] : e;
-            dragDelta = t.clientX - startX;
-            const cardWidth = getCardWidth();
-            const currentTransform = -index * cardWidth;
-            track.style.transform = `translateX(${currentTransform + dragDelta}px)`;
-        }
-
-        function onTouchEnd(){
-            if (!isDragging) return;
-            isDragging = false;
+            track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
+            // force reflow to apply
+            void track.offsetHeight;
             track.style.transition = '';
-            
-            const threshold = 50;
-            if (Math.abs(dragDelta) > threshold) {
-                if (dragDelta > 0) {
-                    // Swipe right - go to previous
-                    index -= 1;
-                } else {
-                    // Swipe left - go to next
-                    index += 1;
-                }
-            }
-            
-            dragDelta = 0;
-            update();
         }
 
-        if (viewport) {
-            viewport.addEventListener('touchstart', onTouchStart, { passive: true });
-            viewport.addEventListener('touchmove', onTouchMove, { passive: true });
+        function goTo(newIndex){
+            index = newIndex;
+            track.style.transition = 'transform 0.3s ease';
+            track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
+        }
+
+        function onTransitionEnd(){
+            const visible = getVisibleCount();
+            const start = visible;
+            const end = visible + originalCount - 1;
+            if (index > end){
+                track.style.transition = 'none';
+                index = start;
+                track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
+                void track.offsetHeight;
+                track.style.transition = '';
+            } else if (index < start){
+                track.style.transition = 'none';
+                index = end;
+                track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
+                void track.offsetHeight;
+                track.style.transition = '';
+            }
+        }
+
+        prev.addEventListener('click', ()=> goTo(index - 1));
+        next.addEventListener('click', ()=> goTo(index + 1));
+        track.addEventListener('transitionend', onTransitionEnd);
+
+        // Touch/drag
+        let startX=0, isDragging=false, dragDelta=0;
+        function onTouchStart(e){ const t=e.touches?e.touches[0]:e; startX=t.clientX; isDragging=true; dragDelta=0; track.style.transition='none'; }
+        function onTouchMove(e){ if(!isDragging) return; const t=e.touches?e.touches[0]:e; dragDelta=t.clientX-startX; const base=-(index*getCardWidth())+leftOffset; track.style.transform=`translateX(${base+dragDelta}px)`; }
+        function onTouchEnd(){ if(!isDragging) return; isDragging=false; track.style.transition=''; const threshold=Math.min(120, getCardWidth()*0.25); if(dragDelta>threshold) goTo(index-1); else if(dragDelta<-threshold) goTo(index+1); else goTo(index); dragDelta=0; }
+        if (viewport){
+            viewport.addEventListener('touchstart', onTouchStart, {passive:true});
+            viewport.addEventListener('touchmove', onTouchMove, {passive:true});
             viewport.addEventListener('touchend', onTouchEnd);
             viewport.addEventListener('mousedown', (e)=>{ e.preventDefault(); onTouchStart(e); });
             window.addEventListener('mousemove', onTouchMove);
             window.addEventListener('mouseup', onTouchEnd);
         }
+
+        // init and handle resize rebuild
+        setup();
+        window.addEventListener('resize', ()=> setup());
     })();
 
 });

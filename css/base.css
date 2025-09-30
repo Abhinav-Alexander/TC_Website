@@ -141,7 +141,9 @@ select {
     font-weight: 600;
     font-size: 16px;
     transition: background-color 0.3s;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     border: none;
     cursor: pointer;
@@ -155,6 +157,10 @@ select {
     background: transparent;
     border: 2px solid white;
     color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .cta-button.secondary:hover {
@@ -260,6 +266,10 @@ select {
 .sticky-cta .cta-button {
     width: 100%;
     background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 @media (max-width: 767px) {

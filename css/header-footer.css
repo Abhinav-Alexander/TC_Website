@@ -243,6 +243,31 @@
 
 .credential-item span { color: rgba(255,255,255,0.94); font-size: 15px; }
 
+.footer-google-rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.footer-google-rating .stars {
+    color: #fbbf24;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.footer-google-rating .rating-text {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    font-weight: 600;
+}
+
 .footer-contact p { color: rgba(255,255,255,0.94); margin-bottom: 8px; font-size: 15px; }
 
 .support-button {
@@ -279,6 +304,19 @@
     .credential-item span,
     .footer-contact p,
     .footer-bottom p { line-height: 1.8; }
+    
+    .footer-google-rating {
+        padding: 6px 10px;
+        margin-top: 12px;
+    }
+    
+    .footer-google-rating .stars {
+        font-size: 12px;
+    }
+    
+    .footer-google-rating .rating-text {
+        font-size: 11px;
+    }
 }
 
 /* Desktop Footer Layout */
