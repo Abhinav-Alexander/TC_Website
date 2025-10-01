@@ -463,6 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact'); // Contact form -> thank-you-contact.html
     }
 
+
     // Normalize internal links for clean URLs when deployed (and dev fallback)
     const anchors = document.querySelectorAll('a');
     anchors.forEach(a => {
@@ -778,7 +779,32 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', ()=> setup());
     })();
 
+    /* ── FAQ Accordion Functionality ──────────────────────────────── */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
 });
+
+/* ══════════════════════════════════════════════════════════════════
+   ► FAQ ACCORDION (SITEWIDE) - MOVED TO MAIN DOMContentLoaded LISTENER
+   ══════════════════════════════════════════════════════════════════ */
 
 /* ── Basic Clickjacking Protection ─────────────────────────────── */
 if (window.top !== window.self) {

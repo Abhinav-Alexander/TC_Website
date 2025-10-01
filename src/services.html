@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;" https://kit.fontawesome.com>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -31,6 +31,17 @@
     <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
     <link rel="canonical" href="https://therapycouncil.org/services">
     
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Therapy Services – Individual, Couples & Family Therapy Online">
     <meta property="og:description" content="Comprehensive online therapy services with experienced professionals. CBT, mindfulness therapy, trauma care. Secure video sessions, flexible scheduling.">
@@ -43,6 +54,78 @@
     <meta name="twitter:title" content="Therapy Services – Individual, Couples & Family Therapy Online">
     <meta name="twitter:description" content="Comprehensive online therapy services with experienced professionals. CBT, mindfulness therapy, trauma care. Secure video sessions, flexible scheduling.">
     <meta name="twitter:image" content="https://therapycouncil.org/logo/logo_black.png">
+    
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://therapycouncil.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://therapycouncil.org/services"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do online therapy sessions work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our online sessions are conducted through secure, HIPAA-compliant video platforms. You'll receive a private link before your session and can join from any device with a stable internet connection. The experience is just as effective as in-person therapy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does therapy typically take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The length of therapy varies greatly depending on your goals, the issues you're addressing, and your personal progress. Some clients see improvement in just a few sessions, while others benefit from longer-term work. We'll regularly check in about your progress and adjust as needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your payment options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept direct payment via bank transfer, UPI, and major credit/debit cards. We offer flexible payment plans and a special introductory rate for first-time clients. Payment is required at the time of booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is online therapy as effective as in-person therapy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Research shows that online therapy can be just as effective as in-person sessions for most conditions. Many clients find it more convenient and comfortable, leading to better engagement and outcomes. The therapeutic relationship remains strong through video sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the right therapist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We'll help match you with a therapist based on your specific needs, preferences, and goals. Factors include the therapist's specialties, approach, availability, and personality fit. You can always request a different therapist if the initial match isn't quite right."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/base.css">
@@ -534,37 +617,10 @@
     </footer>
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
-    <script src="../script.js"></script>
+    <script src="../script.js" defer></script>
 
     <script>
-        // FAQ Accordion functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-
-                question.addEventListener('click', function () {
-                    const isActive = item.classList.contains('active');
-
-                    // Close all FAQ items
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                        faqItem.querySelector('i').classList.remove('fa-chevron-up');
-                        faqItem.querySelector('i').classList.add('fa-chevron-down');
-                    });
-
-                    // Open clicked item if it wasn't active
-                    if (!isActive) {
-                        item.classList.add('active');
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    }
-                });
-            });
-        });
+        // FAQ functionality is now handled globally in script.js
     </script>
 
 </body>

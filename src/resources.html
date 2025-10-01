@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;" https://kit.fontawesome.com>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -28,7 +28,18 @@
     <meta name="robots" content="index, follow">
     <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
     <link rel="canonical" href="https://therapycouncil.org/resources">
-
+    
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Therapy Council Resources - Therapist-Backed Mental Health Guides">
     <meta property="og:description" content="Explore resources on anxiety, sleep, relationships, and digital wellbeing. Practical, evidence-based guidance posted regularly.">
@@ -41,6 +52,28 @@
     <meta name="twitter:title" content="Therapy Council Resources - Therapist-Backed Mental Health Guides">
     <meta name="twitter:description" content="Explore resources on anxiety, sleep, relationships, and digital wellbeing. Practical, evidence-based guidance posted regularly.">
     <meta name="twitter:image" content="https://therapycouncil.org/logo/logo_black.png">
+    
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://therapycouncil.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://therapycouncil.org/resources"
+        }
+      ]
+    }
+    </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/base.css">
@@ -277,10 +310,10 @@
                 <!-- Category Tabs -->
                 <div class="category-tabs">
                     <button class="category-tab active" data-category="all">All Articles</button>
-                    <button class="category-tab" data-category="Mental Health">Mental Health</button>
+                    <button class="category-tab" data-category="Depression & Anxiety">Depression & Anxiety</button>
                     <button class="category-tab" data-category="Digital Wellbeing">Digital Wellbeing</button>
-                    <button class="category-tab" data-category="Therapy">Therapy</button>
-                    <button class="category-tab" data-category="Wellness">Wellness</button>
+                    <button class="category-tab" data-category="Therapy Guide">Therapy Guide</button>
+                    <button class="category-tab" data-category="Wellness & Self-Care">Wellness & Self-Care</button>
                 </div>
             </div>
         </div>
@@ -290,14 +323,31 @@
     <section class="blog-listing">
         <div class="container">
             <div class="blog-grid" id="blogGrid">
-                <article class="post-card" data-category="Mental Health" data-title="How Much Does Therapy Cost in India? Affordable Options Explained" data-content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options. therapy cost India, affordable therapy, online therapy India, mental health cost, therapy prices, psychological counseling cost, therapy budget">
+                <!-- Depression Article -->
+                <article class="post-card" data-category="Depression & Anxiety,Therapy Guide" data-title="When Low Mood Becomes Depression: How to Spot It?" data-content="Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. depression symptoms, clinical depression, low mood, mental health treatment, depression therapy, when to seek help, depression signs, CBT, antidepressants">
+                    <a class="post-link" href="/resources/posts/low-mood-to-depression">
+                        <div class="post-thumb">
+                            <img src="../resources/posts/low-mood-to-depression/3.webp" alt="When low mood becomes depression guide" loading="lazy">
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date">2025-10-01</span>
+                            <span class="post-tag">Depression & Anxiety</span>
+                            <span class="post-tag">Therapy Guide</span>
+                        </div>
+                        <h3 class="post-title">When Low Mood Becomes Depression: How to Spot It?</h3>
+                        <p class="post-excerpt">Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. Clear, practical, and therapist-reviewed.</p>
+                        <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </article>
+
+                <article class="post-card" data-category="Therapy Guide" data-title="How Much Does Therapy Cost in India? Affordable Options Explained" data-content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options. therapy cost India, affordable therapy, online therapy India, mental health cost, therapy prices, psychological counseling cost, therapy budget">
                     <a class="post-link" href="/resources/posts/therapy-costs-india">
                         <div class="post-thumb">
                             <img src="../resources/posts/therapy-costs-india/2.svg" alt="Therapy costs and affordable mental healthcare illustration" loading="lazy">
                         </div>
                         <div class="post-meta">
                             <span class="post-date">2025-09-16</span>
-                            <span class="post-tag">Mental Health</span>
+                            <span class="post-tag">Therapy Guide</span>
                         </div>
                         <h3 class="post-title">How Much Does Therapy Cost in India? Affordable Options Explained</h3>
                         <p class="post-excerpt">Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options.</p>
@@ -306,7 +356,7 @@
                 </article>
 
                 <!-- Digital Detox Article -->
-                <article class="post-card" data-category="Digital Wellbeing" data-title="Digital Detox vs. Digital Balance: Which Is Better for Your Mental Wellbeing?" data-content="Understand the difference between a full reset and a sustainable approach, and how to choose what supports your mind best. digital detox, digital balance, mental wellbeing, technology habits, screen time, digital wellness, mindfulness, stress management">
+                <article class="post-card" data-category="Digital Wellbeing,Wellness & Self-Care" data-title="Digital Detox vs. Digital Balance: Which Is Better for Your Mental Wellbeing?" data-content="Understand the difference between a full reset and a sustainable approach, and how to choose what supports your mind best. digital detox, digital balance, mental wellbeing, technology habits, screen time, digital wellness, mindfulness, stress management">
                     <a class="post-link" href="/resources/posts/digital-detox-vs-digital-balance">
                         <div class="post-thumb">
                             <img src="../resources/posts/digital-detox-vs-digital-balance/1.svg" alt="Digital wellbeing illustration" loading="lazy">
@@ -314,6 +364,7 @@
                         <div class="post-meta">
                             <span class="post-date">2025-09-13</span>
                             <span class="post-tag">Digital Wellbeing</span>
+                            <span class="post-tag">Wellness & Self-Care</span>
                         </div>
                         <h3 class="post-title">Digital Detox vs. Digital Balance: Which Is Better for Your Mental Wellbeing?</h3>
                         <p class="post-excerpt">Understand the difference between a full reset and a sustainable approach, and how to choose what supports your mind best.</p>
@@ -419,7 +470,7 @@
     </footer>
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
-    <script src="../script.js"></script>
+    <script src="../script.js" defer></script>
     
     <script>
         // Search and Filter Functionality
@@ -451,12 +502,12 @@
                 let visibleCount = 0;
                 
                 articles.forEach(article => {
-                    const category = article.getAttribute('data-category');
+                    const categories = article.getAttribute('data-category').split(',');
                     const title = article.getAttribute('data-title').toLowerCase();
                     const content = article.getAttribute('data-content').toLowerCase();
                     
-                    // Check category filter
-                    const categoryMatch = currentCategory === 'all' || category === currentCategory;
+                    // Check category filter (article can have multiple categories)
+                    const categoryMatch = currentCategory === 'all' || categories.includes(currentCategory);
                     
                     // Check search term
                     const searchMatch = !currentSearchTerm || 

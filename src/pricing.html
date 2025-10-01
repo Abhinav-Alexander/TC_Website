@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;" https://kit.fontawesome.com>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -29,6 +29,17 @@
     <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
     <link rel="canonical" href="https://therapycouncil.org/pricing">
     
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Affordable Therapy Pricing – Therapy Council">
     <meta property="og:description" content="Professional online therapy starting at ₹650 for your first session. Transparent pricing, no hidden fees, flexible payment options. Quality mental health care for everyone.">
@@ -41,6 +52,94 @@
     <meta name="twitter:title" content="Affordable Therapy Pricing – Therapy Council">
     <meta name="twitter:description" content="Professional online therapy starting at ₹650 for your first session. Transparent pricing, no hidden fees, flexible payment options. Quality mental health care for everyone.">
     <meta name="twitter:image" content="https://therapycouncil.org/logo/logo_black.png">
+    
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://therapycouncil.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": "https://therapycouncil.org/pricing"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the special offer price really ₹650?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We're offering 57% OFF for your first session - that's ₹650 instead of ₹1,499. This special discount applies only to your first session. This is a complete 45-minute session with an experienced therapist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after my first session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your therapist will share a brief summary and a suggested plan based on your goals. You decide the pace—weekly, bi-weekly, or as needed. There's no obligation; many clients continue only if they feel a clear benefit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any hidden fees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Complete transparency is our promise. The investment you see is exactly what you pay - no surprises, no hidden costs. We believe trust is the foundation of transformation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you accept insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Currently, we don't directly accept insurance, but we can provide receipts for reimbursement if your insurance covers mental health services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel or reschedule sessions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can cancel or reschedule up to 24 hours before your session without any charges. We understand life can be unpredictable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I'm not satisfied with my session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your success is our priority. If your first session doesn't meet expectations, we'll either match you with a more suitable therapist or provide a complete refund. Your investment is protected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do monthly packages work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your Transformation Package includes 4 intensive sessions within the month, delivering accelerated results with VIP priority scheduling. Each session builds momentum - unused sessions can be rescheduled within your package month to maximize your investment."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/base.css">
@@ -382,9 +481,9 @@
 </section>
 
 <!-- ▸ FAQ SECTION ------------------------------------------------------- -->
-<section class="pricing-faq">
-    <div class="container">
-        <h2>Special Offer Questions & Answers</h2>
+    <section class="pricing-faq">
+        <div class="container">
+        <h2>Frequently Asked Questions</h2>
         <div class="faq-grid">
             <div class="faq-item">
                 <div class="faq-question">
@@ -395,15 +494,15 @@
                     <p>Yes! We're offering 57% OFF for your first session - that's ₹650 instead of ₹1,499. This special discount applies only to your first session. This is a complete 45-minute session with an experienced therapist.</p>
                 </div>
             </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>What happens after my first session?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Your therapist will share a brief summary and a suggested plan based on your goals. You decide the pace—weekly, bi‑weekly, or as needed. There’s no obligation; many clients continue only if they feel a clear benefit.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What happens after my first session?</h4>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
+                <div class="faq-answer">
+                    <p>Your therapist will share a brief summary and a suggested plan based on your goals. You decide the pace—weekly, bi‑weekly, or as needed. There's no obligation; many clients continue only if they feel a clear benefit.</p>
+                </div>
+            </div>
             <div class="faq-item">
                 <div class="faq-question">
                     <h4>Are there any hidden fees?</h4>
@@ -538,36 +637,7 @@
 </footer>
 
 <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
-<script src="../script.js"></script>
-<script>
-// FAQ functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        question.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-            });
-            
-            // Toggle current item
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    });
-    
-
-    
-    // Removed artificial scarcity counter
-});
-</script>
+<script src="../script.js" defer></script>
 
 </body>
 </html> 

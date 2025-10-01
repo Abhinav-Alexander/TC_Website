@@ -82,9 +82,9 @@
 .hero-google-rating {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 6px;
-    margin: 0 0 20px 0;
+    margin: 0 auto 20px auto;
     padding: 6px 12px;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -95,13 +95,13 @@
 
 .hero-google-rating .stars {
     color: #fbbf24;
-    font-size: 14px;
+    font-size: 26px;
     font-weight: bold;
 }
 
 .hero-google-rating .rating-text {
     color: #1f2937;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -113,15 +113,15 @@
   
   .hero-google-rating {
     padding: 5px 10px;
-    margin: 0 0 16px 0;
+    margin: 15px auto 16px auto;
   }
   
   .hero-google-rating .stars {
-    font-size: 12px;
+    font-size: 20px;
   }
   
   .hero-google-rating .rating-text {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
@@ -133,6 +133,9 @@
 .hero-stats {
     margin-top: 12px;
     margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .stat-badge {
@@ -232,6 +235,7 @@
     margin: 0 16px;
     position: relative;
     z-index: 20;
+    text-align: left;
 }
 
 .form-header {
@@ -675,6 +679,9 @@
 
 /* Desktop: Show 3 testimonials */
 @media (min-width: 768px) {
+    /* Align Google rating with the left-aligned hero headline */
+    .hero-stats { justify-content: flex-start; }
+    .hero-google-rating { margin: 0 0 20px 0; justify-content: flex-start; }
     .testimonials-carousel .testimonial-card {
         flex: 0 0 calc(33.333% - 11px);
     }

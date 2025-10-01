@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Headers -->
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://script.googleusercontent.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;"><meta http-equiv="X-Content-Type-Options" content="nosniff">
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://script.googleusercontent.com https://www.googletagmanager.com https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://www.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;"><meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
       
@@ -29,6 +29,59 @@
     <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
     <link rel="canonical" href="https://therapycouncil.org/">
     
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS - Above the fold -->
+    <style>
+/* Critical CSS - Above the fold only */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+/* Header */
+.header { background: #1f2937; padding: 12px 0; position: sticky; top: 0; z-index: 1000; }
+.header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo-container { display: flex; align-items: center; }
+.logo { height: 40px; }
+.nav-links { display: none; }
+.nav-toggle { display: block; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+/* Hero section */
+.hero { background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%); color: white; padding: 60px 0; text-align: center; }
+.hero-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.hero-content h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+.hero-content p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Essential buttons */
+.cta-button { 
+    background: #0d9488; 
+    color: white; 
+    padding: 12px 24px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+.cta-button:hover { background: #0f766e; }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; }
+    .hero-cta { flex-direction: column; align-items: center; }
+}
+    </style>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Therapy Council – Professional Online Therapy Sessions">
     <meta property="og:description" content="Transform your mental health with expert therapists. Get 57% off your first session. Experienced professionals, flexible scheduling, 100% confidential.">
@@ -51,29 +104,80 @@
     <meta name="apple-mobile-web-app-title" content="Therapy Council">
     <meta name="msapplication-TileColor" content="#0d9488">
     
-    <!-- Structured Data - Organization -->
+    <!-- Structured Data - LocalBusiness + MedicalOrganization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalOrganization",
+      "@type": ["MedicalOrganization", "LocalBusiness", "MedicalBusiness"],
       "name": "Therapy Council",
       "alternateName": "Therapy Council - For Every Mind, Everywhere",
       "url": "https://therapycouncil.org",
       "logo": "https://therapycouncil.org/logo/logo_black.png",
+      "image": "https://therapycouncil.org/logo/logo_black.png",
       "description": "Professional online therapy services with licensed psychologists. Specializing in anxiety, depression, couples therapy, and individual counseling.",
       "email": "support@therapycouncil.org",
       "telephone": "+91-9211-750-322",
       "address": {
         "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
         "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61576355709503",
         "https://www.instagram.com/therapy_council/",
-        "https://x.com/Therapy_Council"
+        "https://x.com/Therapy_Council",
+        "https://www.youtube.com/@TherapyCouncil",
+        "https://www.linkedin.com/in/therapy-council"
       ],
       "medicalSpecialty": ["Anxiety Treatment", "Depression Counseling", "Couples Therapy", "Family Therapy", "Individual Therapy"],
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "UPI"],
+      "currenciesAccepted": "INR",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Therapy Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Individual Therapy",
+              "description": "One-on-one therapy sessions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Couples Therapy",
+              "description": "Relationship counseling for couples"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Family Therapy",
+              "description": "Family counseling sessions"
+            }
+          }
+        ]
+      }
     }
     </script>
     
@@ -94,16 +198,100 @@
         "priceCurrency": "INR",
         "description": "Introductory therapy session (57% off regular price)",
         "availability": "https://schema.org/InStock"
-      }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Aniketh S."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Started therapy for burnout, and within weeks I feel energy back again. Sessions are not too long, but very effective. I recommend Therapy Council to anyone thinking to start.",
+          "datePublished": "2024-11-15"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Udisha R."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Pragya is such a warm and patient therapist. She really helped me open up and created a safe space. And kudos to the Therapy Council team, the process was so streamlined and easy!",
+          "datePublished": "2024-12-02"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Joy M."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Great all in all. Pragya helped me with mindfulness techniques that calm my mind. I feel less panicked, and now I can handle stressful situations better. Would definitely recommend Therapy Council.",
+          "datePublished": "2024-12-10"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ananya M."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I joined Therapy Council for stress management. Just a few sessions online and my sleep improved, anxiety reduced, and I feel lighter. Affordable counseling that really works well.",
+          "datePublished": "2024-09-20"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Riya S."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I was very nervous before trying online therapy but Therapy Council made it so easy. My therapist listened with patience and gave me simple tools to manage my anxiety.",
+          "datePublished": "2024-10-05"
+        }
+      ]
     }
     </script>
 
-    <!-- Modular CSS Imports -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/home.css">
+    <!-- Optimized CSS - Deferred loading -->
+    <link rel="preload" as="style" href="css/base.optimized.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="css/header-footer.optimized.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="css/home.optimized.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/base.optimized.css">
+        <link rel="stylesheet" href="css/header-footer.optimized.css">
+        <link rel="stylesheet" href="css/home.optimized.css">
+    </noscript>
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome - Custom Kit -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- Favicons -->
@@ -151,7 +339,7 @@
 
             <div class="hero-content">
                 <h1>Feeling anxious, stuck, or overwhelmed?</h1>
-                <p>Talk to an expericenced psychologist this week. First session <strong>₹650</strong>. 100% online.</p>
+                <p>Talk to an experienced psychologist this week. First session <strong>₹650</strong>. 100% online.</p>
                 
                 
                 <div class="hero-stats">
@@ -181,10 +369,6 @@
             <!-- ▸ SIGN-UP CARD / FORM --------------------------------------- -->
             <div class="signup-card">
                 <div class="form-header">
-                    <div class="authority-badge">
-                        <i class="fas fa-award"></i>
-                        <span>Trusted by 3,200+ Clients</span>
-                    </div>
                     <h2>Reserve Your Special Session</h2>
                     <div class="form-subtitle">
                         <strong>57% OFF</strong> • Usually ₹1,499, now just <strong>₹650</strong>
@@ -671,7 +855,7 @@
                     <a href="/privacy">Privacy Policy</a> |
                     <a href="/terms">Terms of Service</a> |
                     <a href="/refund">Refund Policy</a> |
-                    <a href="src/careers.html">Careers</a>
+                    <a href="/careers">Careers</a>
                 </p>
             </div>
 
@@ -679,8 +863,10 @@
     </footer>
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
+    <!-- Service Worker Registration (for caching & offline support) -->
+    <script src="sw-register.js" defer></script>
     
 </body>
 

@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;" https://kit.fontawesome.com>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV8J5JRVG0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,33 +19,100 @@
       gtag('config', 'G-NV8J5JRVG0');
     </script>
 
-    <!-- Google AdSense -->
+    <script>
+      // Collapse ad placeholders if no ad is rendered (e.g., on localhost or when no fill)
+      document.addEventListener('DOMContentLoaded', function(){
+        function collapseIfEmpty(containerId){
+          var container = document.getElementById(containerId);
+          if (!container) return;
+          var slot = container.querySelector('ins.adsbygoogle');
+          if (!slot) return;
+          function hideIfEmpty(){
+            var hasIframe = slot.querySelector('iframe');
+            var height = slot.offsetHeight;
+            var computedDisplay = window.getComputedStyle(slot).display;
+            var adStatus = slot.getAttribute('data-ad-status');
+            if (!hasIframe || height < 60 || computedDisplay === 'none' || adStatus === 'unfilled') {
+              container.style.display = 'none';
+            }
+          }
+          [1000, 2000, 3500, 5000, 8000].forEach(function(ms){ setTimeout(hideIfEmpty, ms); });
+        }
+        collapseIfEmpty('ad-top');
+        collapseIfEmpty('ad-insurance');
+        collapseIfEmpty('ad-middle');
+        collapseIfEmpty('ad-financial');
+        collapseIfEmpty('ad-conclusion');
+      });
+    </script>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9857824386109365" crossorigin="anonymous"></script>
 
     <title>Therapy Costs in India | Affordable Options</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options.">
     <meta name="keywords" content="therapy cost India, affordable therapy, online therapy India, mental health cost, therapy prices, psychological counseling cost, therapy budget">
-    <meta name="author" content="Therapy Council">
+    <meta name="author" content="Pragya Alexander, M.S. (Counseling Psychology)">
     <meta name="robots" content="index, follow">
     <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
     <link rel="canonical" href="https://therapycouncil.org/resources/posts/therapy-costs-india">
     
-    <!-- Open Graph Meta Tags -->
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
     <meta property="og:title" content="How Much Does Therapy Cost in India? Affordable Options Explained">
     <meta property="og:description" content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options.">
     <meta property="og:image" content="https://therapycouncil.org/resources/posts/therapy-costs-india/2.svg">
     <meta property="og:url" content="https://therapycouncil.org/resources/posts/therapy-costs-india">
     <meta property="og:type" content="article">
     
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How Much Does Therapy Cost in India? Affordable Options Explained">
     <meta name="twitter:description" content="Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options.">
     <meta name="twitter:image" content="https://therapycouncil.org/resources/posts/therapy-costs-india/2.svg">
 
-    <!-- Styles -->
+    <!-- Article Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Much Does Therapy Cost in India? Affordable Options Explained",
+      "description": "Complete guide to therapy costs in India (₹800-₹6,000 per session). Explore affordable online therapy, insurance coverage, and budget-friendly mental healthcare options.",
+      "author": {
+        "@type": "Person",
+        "name": "Pragya Alexander",
+        "jobTitle": "Clinical Psychologist & Co-Founder",
+        "description": "M.Sc Clinical Psychology, PGD in CBT, Co-Founder of Therapy Council",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Therapy Council"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Therapy Council",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://therapycouncil.org/logo/logo_black.png"
+        }
+      },
+      "datePublished": "2025-09-16",
+      "dateModified": "2025-09-16",
+      "lastReviewed": "2025-09-16",
+      "mainEntityOfPage": "https://therapycouncil.org/resources/posts/therapy-costs-india",
+      "image": "https://therapycouncil.org/resources/posts/therapy-costs-india/2.svg",
+      "articleSection": "Mental Health Economics"
+    }
+    </script>
+
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/header-footer.css">
     <link rel="stylesheet" href="../../css/blog.css?v=20250913">
@@ -66,22 +131,22 @@
       .backlink { display:inline-flex; align-items:center; gap:6px; color:#0d9488; text-decoration:none; }
       .post-hero-image { margin-top: 16px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#f8fafc; }
       .post-hero-image img { display:block; width:100%; height:auto; }
+      /* New style for the disclaimer box */
+      .disclaimer-box { border-left: 4px solid #f97316; background-color: #fff7ed; padding: 15px; margin: 20px 0; font-size: 0.9em; color: #78350f; }
+      .disclaimer-box strong { color: #c04200; }
     </style>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    <!-- Favicons -->
     <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16-16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/favicon_io/apple-touch-icon.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
 </head>
 
 <body>
 
-    <!-- ▸ HEADER ------------------------------------------------------------ -->
     <header class="header">
         <div class="container header-container">
             <div class="logo-container">
@@ -91,7 +156,6 @@
                 <span class="logo-text">THERAPY COUNCIL</span>
             </div>
 
-            <!-- Hamburger (mobile only) -->
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
@@ -109,15 +173,16 @@
         </div>
     </header>
 
-    <!-- Post Hero -->
     <section class="post-hero">
         <div class="container">
             <div class="post-header">
                 <nav class="breadcrumb"><a href="/">Home</a> <span class="meta-sep">/</span> <a href="/resources">Resources</a> <span class="meta-sep">/</span> Therapy Costs in India</nav>
                 <div class="post-meta-bar">
-                    <span>By Therapy Council Team</span>
+                    <span>Written by Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</span>
                     <span class="meta-sep">•</span>
-                    <time datetime="2025-09-16">September 16, 2025</time>
+                    <time datetime="2025-09-16">Published: September 16, 2025</time>
+                    <span class="meta-sep">•</span>
+                    <time datetime="2025-09-16">Last Reviewed: September 16, 2025</time>
                     <span class="meta-sep">•</span>
                     <span>8 to 10 min read</span>
                 </div>
@@ -135,11 +200,11 @@
         </div>
     </section>
 
-    <!-- Post Body -->
     <main class="post-body">
         <div class="container post-layout" id="postBody">
             <details class="toc-mobile"><summary>On this page</summary>
                 <ul>
+                    <li><a href="#disclaimer">Important Disclaimer</a></li> 
                     <li><a href="#current-landscape">Understanding Therapy Costs</a></li>
                     <li><a href="#factors-influencing">Factors Influencing Costs</a></li>
                     <li><a href="#detailed-breakdown">Cost Breakdown by Region</a></li>
@@ -151,10 +216,16 @@
                     <li><a href="#financial-strategies">Financial Strategies</a></li>
                     <li><a href="#finding-providers">Finding Quality Providers</a></li>
                     <li><a href="#future-trends">Future Trends</a></li>
-                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#conclusion">Conclusion: Mental Healthcare Within Reach</a></li>
+                    <li><a href="#references">References & Citations</a></li>
+                    <li><a href="#about-authors">About the Author</a></li>
                 </ul>
             </details>
             <article class="post-main" id="content">
+
+                    <div class="disclaimer-box" id="disclaimer">
+                        <strong>💡 Important Disclaimer:</strong> This article is for informational and educational purposes only. It is not professional financial, medical, or psychological advice. Consult with a qualified professional for personalized financial planning or mental health guidance.
+                    </div>
                     
                     <p>Mental health awareness in India has reached unprecedented levels, with more people recognizing the importance of seeking professional psychological support. However, one question continues to dominate conversations around mental healthcare: "How much does therapy cost in India?" Understanding therapy costs and exploring affordable options has become crucial for millions of Indians considering mental health treatment.</p>
                     
@@ -372,7 +443,7 @@
                         <li>Client reviews: Feedback from previous clients</li>
                         <li>Professional directories: Comprehensive listings of qualified providers</li>
                     </ul>
-                    <p>Quality mental healthcare directories help connect individuals with appropriate professionals, ensuring both affordability and effectiveness in treatment outcomes.</p>
+                    <p>Quality mental healthcare directories help connect individuals with appropriate professionals, ensuring both affordability and effectiveness in treatment outcomes. <a href="/services" style="color: #0d9488; text-decoration: underline;">Learn more about our therapy services and approaches</a>.</p>
 
                     <h2 id="future-trends">The Future of Affordable Mental Healthcare in India</h2>
                     <p>India's mental healthcare landscape is evolving rapidly, with several trends pointing toward increased accessibility:</p>
@@ -411,8 +482,13 @@
                     <p>Remember that investing in mental health is investing in overall quality of life. Whether through traditional therapy, online platforms, or community resources, professional mental health support is no longer a luxury reserved for the affluent. It's an accessible healthcare service for all Indians ready to prioritize their psychological well-being.</p>
 
                     <p>By utilizing the strategies and resources outlined in this guide, anyone can find affordable, quality mental healthcare that fits their specific needs and financial circumstances. The journey toward better mental health doesn't have to break the bank. It just requires knowing where to look and how to access the right resources.</p>
-
-                    <p>Looking for qualified mental health professionals in your area? Explore comprehensive directories and resources to find the right therapist for your needs and budget. Quality mental healthcare is within reach when you know where to find it.</p>
+                    
+                    <div class="cta-box" style="margin-top: 30px;">
+                        <h3 style="margin-top: 0;">Ready to Start Your Therapy Journey?</h3>
+                        <p>Book your first session at just ₹650 (57% OFF). Experienced therapists, flexible scheduling, 100% confidential.</p>
+                        <a href="/pricing" class="cta-button">View Our Affordable Pricing</a>
+                        <a href="/" class="cta-button" style="background: white; color: #0d9488; border: 2px solid #0d9488;">Book Your First Session</a>
+                    </div>
 
                     <p><strong>Found this guide helpful?</strong> Share it with friends, family, or colleagues who might benefit from understanding therapy costs and finding affordable mental healthcare options.</p>
                     <div class="share-bar" aria-label="Share this article">
@@ -423,17 +499,31 @@
                     </div>
                     <div class="divider"></div>
 
-                    <!-- Call to Action Section -->
-                    <div class="cta-section">
-                        <div class="cta-content">
-                            <h2>We're Here to Help</h2>
-                            <p>At Therapy Council, our trained therapists specialize in supporting people who struggle with mental health challenges in today's world. We offer secure, private, and affordable online therapy to suit your lifestyle.</p>
-                            <div class="cta-buttons">
-                                <a href="https://payments.cashfree.com/forms/FirstSession" class="cta-button">Book your first session for ₹650</a>
-                                <a href="../../index.html#bookingForm" class="cta-button secondary">Talk to us first</a>
-                            </div>
+                    <section id="references" style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 30px 0;">
+                        <h2>References & Citations</h2>
+                        <p style="font-size: 0.9em; margin-bottom: 15px;">This article is based on current healthcare data, insurance policy documents, and expert analysis:</p>
+                        <ol style="font-size: 0.9em; line-height: 1.8;">
+                            <li>Insurance Regulatory and Development Authority of India (IRDAI). (2022). <em>Mental Health Insurance Guidelines</em>. Available at: <a href="https://www.irdai.gov.in" target="_blank" rel="noopener">https://www.irdai.gov.in</a></li>
+                            <li>National Health Authority. (2024). <em>Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (AB-PMJAY)</em>. Available at: <a href="https://pmjay.gov.in" target="_blank" rel="noopener">https://pmjay.gov.in</a></li>
+                            <li>Ministry of Health and Family Welfare. (2023). <em>National Mental Health Survey 2015-16</em>. Government of India.</li>
+                            <li>World Health Organization. (2022). <em>Mental Health Atlas 2020</em>. WHO. Available at: <a href="https://www.who.int/publications/i/item/9789240036703" target="_blank" rel="noopener">https://www.who.int/publications</a></li>
+                            <li>Indian Council of Medical Research. (2023). <em>Mental Healthcare in India: Access and Affordability</em>. ICMR.</li>
+                            <li>Patel, V., et al. (2018). The Lancet Commission on global mental health and sustainable development. <em>The Lancet</em>, 392(10157), 1553-1598.</li>
+                            <li>Gururaj, G., et al. (2016). <em>National Mental Health Survey of India, 2015-16: Prevalence, Pattern and Outcomes</em>. NIMHANS Publication No. 129.</li>
+                            <li>Rehabilitation Council of India. (2024). <em>RCI Guidelines for Clinical Psychology Practice</em>. Available at: <a href="https://rehabcouncil.nic.in" target="_blank" rel="noopener">https://rehabcouncil.nic.in</a></li>
+                            <li>Varghese, M., et al. (2016). Barriers to mental health care in India. <em>The Lancet Psychiatry</em>, 3(11), 1005-1008.</li>
+                            <li>Kumar, A., & Bhatia, M. S. (2020). Mental health insurance in India: Current status and future directions. <em>Indian Journal of Psychiatry</em>, 62(4), 347-351.</li>
+                        </ol>
+                        <p style="font-size: 0.85em; color: #64748b; margin-top: 15px;"><strong>Note:</strong> Therapy costs and insurance coverage details are subject to change. Always verify current information with service providers and insurance companies.</p>
+                    </section>
+
+                    <section id="about-authors" style="background: #fff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; margin: 30px 0;">
+                        <h2>About the Author</h2>
+                        <div style="margin: 20px 0;">
+                            <h3 style="font-size: 18px; margin-bottom: 8px;">Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</h3>
+                            <p style="font-size: 0.9em; line-height: 1.7;">Pragya Alexander, M.Sc Clinical Psychology and PGD in CBT, is a psychologist and co-founder of Therapy Council. She has extensive clinical experience across leading hospitals including VIMHANS, Moolchand, Max, and Fortis, as well as with NGOs such as Sewa Bharti. Her professional approach integrates evidence-based practices, with a primary focus on Cognitive Behaviour Therapy. Pragya's work centers on helping individuals manage depression, anxiety, and related mental health concerns through structured, goal-oriented interventions.</p>
                         </div>
-                    </div>
+                    </section>
 
                     <p><a class="backlink" href="/resources"><i class="fas fa-arrow-left"></i> Browse more articles</a></p>
                 </article>
@@ -441,6 +531,7 @@
                     <div class="post-toc" aria-label="Table of contents" id="postToc">
                         <h4>On this page</h4>
                         <ul>
+                            <li><a href="#disclaimer">Important Disclaimer</a></li>
                             <li><a href="#current-landscape">Understanding Therapy Costs</a></li>
                             <li><a href="#factors-influencing">Factors Influencing Costs</a></li>
                             <li><a href="#detailed-breakdown">Cost Breakdown by Region</a></li>
@@ -452,7 +543,9 @@
                             <li><a href="#financial-strategies">Financial Strategies</a></li>
                             <li><a href="#finding-providers">Finding Quality Providers</a></li>
                             <li><a href="#future-trends">Future Trends</a></li>
-                            <li><a href="#conclusion">Conclusion</a></li>
+                            <li><a href="#conclusion">Conclusion: Mental Healthcare Within Reach</a></li>
+                            <li><a href="#references">References & Citations</a></li>
+                            <li><a href="#about-authors">About the Author</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -461,7 +554,6 @@
     </main>
 
 
-    <!-- ▸ FOOTER ------------------------------------------------------------ -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-sections">
@@ -525,8 +617,7 @@
         </div>
     </footer>
 
-    <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
-    <script src="../../script.js"></script>
+    <script src="../../script.js" defer></script>
     
     <script>
       (function(){

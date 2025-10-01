@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://script.google.com https://apis.google.com https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;" https://kit.fontawesome.com>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV8J5JRVG0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NV8J5JRVG0');
+    </script>
+
+    <script>
+      // Collapse ad placeholders if no ad is rendered (e.g., on localhost or when no fill)
+      document.addEventListener('DOMContentLoaded', function(){
+        function collapseIfEmpty(containerId){
+          var container = document.getElementById(containerId);
+          if (!container) return;
+          var slot = container.querySelector('ins.adsbygoogle');
+          if (!slot) return;
+          function hideIfEmpty(){
+            var hasIframe = slot.querySelector('iframe');
+            var height = slot.offsetHeight;
+            var computedDisplay = window.getComputedStyle(slot).display;
+            var adStatus = slot.getAttribute('data-ad-status');
+            if (!hasIframe || height < 60 || computedDisplay === 'none' || adStatus === 'unfilled') {
+              container.style.display = 'none';
+            }
+          }
+          [1000, 2000, 3500, 5000, 8000].forEach(function(ms){ setTimeout(hideIfEmpty, ms); });
+        }
+        collapseIfEmpty('ad-top');
+        collapseIfEmpty('ad-treatments');
+        collapseIfEmpty('ad-middle');
+      });
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9857824386109365" crossorigin="anonymous"></script>
+
+    <title>When Low Mood Becomes Depression | Signs, Treatments, and How to Get Help</title>
+    
+    <meta name="description" content="Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. Clear, practical, and therapist-reviewed.">
+    <meta name="keywords" content="depression symptoms, clinical depression, low mood, mental health treatment, depression therapy, when to seek help, depression signs">
+    <meta name="author" content="Pragya Alexander, M.Sc Clinical Psychology">
+    <meta name="robots" content="index, follow">
+    <meta name="msvalidate.01" content="D21F6E42BD44C613B541F255340BCE17" />
+    <link rel="canonical" href="https://therapycouncil.org/resources/posts/low-mood-to-depression">
+    
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance: Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"></noscript>
+    
+    <meta property="og:title" content="When Low Mood Becomes Depression: How to Spot It, What Actually Works, and How to Get Help">
+    <meta property="og:description" content="Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. Clear, practical, and therapist-reviewed.">
+    <meta property="og:image" content="https://therapycouncil.org/resources/posts/low-mood-to-depression/3.webp">
+    <meta property="og:url" content="https://therapycouncil.org/resources/posts/low-mood-to-depression">
+    <meta property="og:type" content="article">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When Low Mood Becomes Depression: How to Spot It, What Actually Works, and How to Get Help">
+    <meta name="twitter:description" content="Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. Clear, practical, and therapist-reviewed.">
+    <meta name="twitter:image" content="https://therapycouncil.org/resources/posts/low-mood-to-depression/3.webp">
+
+    <!-- Article Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "headline": "When Low Mood Becomes Depression: How to Spot It, What Actually Works, and How to Get Help",
+      "description": "Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today. Clear, practical, and therapist-reviewed.",
+      "author": {
+        "@type": "Person",
+        "name": "Pragya Alexander",
+        "jobTitle": "Clinical Psychologist & Co-Founder",
+        "description": "M.Sc Clinical Psychology, PGD in CBT, Co-Founder of Therapy Council",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Therapy Council"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Therapy Council",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://therapycouncil.org/logo/logo_black.png"
+        }
+      },
+      "datePublished": "2025-10-01",
+      "dateModified": "2025-10-01",
+      "lastReviewed": "2025-10-01",
+      "mainEntityOfPage": "https://therapycouncil.org/resources/posts/low-mood-to-depression",
+      "about": {
+        "@type": "MedicalCondition",
+        "name": "Depression"
+      },
+      "specialty": "Psychiatry"
+    }
+    </script>
+
+    <!-- FAQ Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does depression last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It varies. Some episodes last weeks, others months. With treatment many people improve in weeks to months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can therapy alone treat depression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For mild to moderate depression, therapy alone often works. For moderate to severe depression, therapy plus medication is common."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I seek urgent help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you have any thoughts of harming yourself or others, seek immediate help via local emergency services or crisis lines."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/header-footer.css">
+    <link rel="stylesheet" href="../../css/blog.css?v=20250913">
+    <style>
+      .post-hero { padding: 40px 0; border-bottom: 1px solid #e5e7eb; background: #ffffff; }
+      .post-header { max-width: 880px; margin: 0 auto; }
+      .post-title { font-size: 34px; line-height: 1.25; color: #111827; margin: 8px 0 12px; }
+      .post-subtitle { color: #334155; margin: 0 0 20px; }
+      .post-meta-bar { display:flex; gap:12px; color:#64748b; font-size:14px; }
+      .post-body { max-width: 880px; margin: 24px auto 40px; color:#334155; }
+      .post-body h2 { color:#111827; margin: 28px 0 10px; font-size:24px; }
+      .post-body h3 { color:#111827; margin: 20px 0 8px; font-size:20px; }
+      .post-body p { line-height:1.7; margin: 10px 0; }
+      .post-body ul, .post-body ol { margin: 10px 0 10px 20px; }
+      .post-body li { margin: 6px 0; }
+      .divider { height:1px; background:#e5e7eb; margin: 24px 0; }
+      .backlink { display:inline-flex; align-items:center; gap:6px; color:#0d9488; text-decoration:none; }
+      .post-hero-image { margin-top: 16px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#f8fafc; }
+      .post-hero-image img { display:block; width:100%; height:auto; }
+      /* Disclaimer and warning boxes */
+      .disclaimer-box { border-left: 4px solid #f97316; background-color: #fff7ed; padding: 15px; margin: 20px 0; font-size: 0.9em; color: #78350f; }
+      .disclaimer-box strong { color: #c04200; }
+      .warning-box { border-left: 4px solid #dc2626; background-color: #fef2f2; padding: 15px; margin: 20px 0; font-size: 0.95em; color: #991b1b; }
+      .warning-box strong { color: #dc2626; }
+      .cta-box { background: #f0fdfa; border: 2px solid #0d9488; border-radius: 8px; padding: 20px; margin: 24px 0; text-align: center; }
+      .cta-box .cta-button { display: inline-block; background: #0d9488; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+      .cta-box .cta-button:hover { background: #0f766e; }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo-image">
+                    <img src="../../logo/logo_white.png" alt="Therapy Council Logo">
+                </div>
+                <span class="logo-text">THERAPY COUNCIL</span>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="post-hero">
+        <div class="container">
+            <div class="post-header">
+                <nav class="breadcrumb"><a href="/">Home</a> <span class="meta-sep">/</span> <a href="/resources">Resources</a> <span class="meta-sep">/</span> When Low Mood Becomes Depression</nav>
+                <div class="post-meta-bar">
+                    <span>Written by Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</span>
+                    <span class="meta-sep">•</span>
+                    <time datetime="2025-10-01">Published: October 1, 2025</time>
+                    <span class="meta-sep">•</span>
+                    <time datetime="2025-10-01">Last Reviewed: October 1, 2025</time>
+                    <span class="meta-sep">•</span>
+                    <span>8 to 10 min read</span>
+                </div>
+                <h1 class="post-title">When Low Mood Becomes Depression: How to Spot It, What Actually Works, and How to Get Help</h1>
+                <div class="post-hero-image">
+                    <img src="../../resources/posts/low-mood-to-depression/3.webp" alt="Understanding when low mood becomes depression" loading="eager">
+                </div>
+                <div class="share-bar">
+                    <a aria-label="Share on X" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression&text=When%20Low%20Mood%20Becomes%20Depression" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/x/0f172a" alt="X (formerly Twitter)" /></a>
+                    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a aria-label="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a aria-label="Share on Threads" href="https://www.threads.net/intent/post?text=When%20Low%20Mood%20Becomes%20Depression&url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/threads/0f172a" alt="Threads" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="post-body">
+        <div class="container post-layout" id="postBody">
+            <details class="toc-mobile"><summary>On this page</summary>
+                <ul>
+                    <li><a href="#disclaimer">Important Disclaimer</a></li>
+                    <li><a href="#summary">Quick Summary</a></li>
+                    <li><a href="#symptoms">What Depression Actually Looks Like</a></li>
+                    <li><a href="#causes">What Causes It</a></li>
+                    <li><a href="#treatments">What Actually Helps</a></li>
+                    <li><a href="#triage">How to Decide What You Need</a></li>
+                    <li><a href="#self-help">Quick Self-Help Starter Pack</a></li>
+                    <li><a href="#crisis-helplines">Crisis Helplines</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#references">References & Citations</a></li>
+                    <li><a href="#about-authors">About the Author</a></li>
+                </ul>
+            </details>
+            <article class="post-main" id="content">
+
+                    <div class="disclaimer-box" id="disclaimer">
+                        <strong>Important Disclaimer:</strong> This article is for informational and educational purposes only. It is not professional medical or psychological advice, diagnosis, or treatment. Always seek the advice of a qualified mental health professional with any questions you may have regarding depression or any mental health condition.
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Crisis Support:</strong> If you are having thoughts of harming yourself or others, please seek immediate help. Contact your local emergency services (108/102 in India), visit the nearest hospital emergency room, or call a crisis helpline listed at the bottom of this article. You are not alone, and help is available 24/7.
+                    </div>
+                    
+                    <section id="summary">
+                        <h2>Quick Summary</h2>
+                        <p>Feeling low sometimes is normal. Depression is different: it lasts longer, affects daily function, and has medical and psychological treatments that work. If you or someone you care about is struggling, help is available and recovery is possible.</p>
+                        <p>This guide will help you understand the difference between temporary low mood and clinical depression, recognize warning signs, and learn about evidence-based treatments that can make a real difference.</p>
+                    </section>
+
+                    <section id="symptoms">
+                        <h2>1. What Depression Actually Looks Like</h2>
+                        <p>Depression is more than just feeling sad. It's a serious mental health condition that affects how you feel, think, and handle daily activities. While everyone experiences occasional sadness or low mood, clinical depression is persistent and significantly impacts your quality of life.</p>
+
+                        <h3>Common Signs and Symptoms</h3>
+                        <p>Depression can manifest differently in different people, but common symptoms include:</p>
+                        <ul>
+                            <li><strong>Persistent low mood:</strong> Feeling sad, empty, or hopeless most of the day, nearly every day for at least two weeks</li>
+                            <li><strong>Loss of interest or pleasure:</strong> Not enjoying activities you used to love, including hobbies, social activities, or sex</li>
+                            <li><strong>Changes in sleep:</strong> Sleeping too much or too little, or experiencing poor quality sleep</li>
+                            <li><strong>Appetite and weight changes:</strong> Significant weight loss or gain, or changes in appetite</li>
+                            <li><strong>Low energy:</strong> Feeling tired, sluggish, or physically drained even after rest</li>
+                            <li><strong>Difficulty concentrating:</strong> Trouble focusing, making decisions, or remembering things</li>
+                            <li><strong>Feelings of worthlessness or guilt:</strong> Excessive self-criticism or guilt about things that aren't your fault</li>
+                            <li><strong>Physical symptoms:</strong> Unexplained aches, pains, or digestive problems that don't respond to treatment</li>
+                            <li><strong>Thoughts of death or suicide:</strong> Recurring thoughts about death, suicidal ideation, or suicide attempts</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Red Flag - Seek Immediate Help If:</strong>
+                            <ul style="margin: 10px 0 0 20px;">
+                                <li>Someone has a specific plan or intent to harm themselves</li>
+                                <li>Someone is talking about wanting to die or feeling like a burden</li>
+                                <li>Someone is giving away possessions or saying goodbye</li>
+                                <li>Someone shows sudden improvement after severe depression (can indicate they've made a decision to end their life)</li>
+                            </ul>
+                            <p style="margin-top: 10px;"><strong>Crisis lines and emergency services are available 24/7. Don't wait.</strong></p>
+                        </div>
+
+                        <h3>How Depression Differs from Normal Low Mood</h3>
+                        <p>It's normal to feel sad after a loss, disappointment, or stressful event. The key differences with clinical depression include:</p>
+                        <ul>
+                            <li><strong>Duration:</strong> Symptoms persist for at least two weeks, often much longer</li>
+                            <li><strong>Intensity:</strong> Feelings are more severe and overwhelming</li>
+                            <li><strong>Impact on function:</strong> Significant interference with work, relationships, and daily activities</li>
+                            <li><strong>Physical symptoms:</strong> Noticeable changes in sleep, appetite, and energy levels</li>
+                            <li><strong>Response to positive events:</strong> Good news or positive experiences don't improve mood</li>
+                        </ul>
+                    </section>
+
+                    <div class="ad-container" id="ad-top">
+                        <span class="ad-label">Advertisement</span>
+                        <ins class="adsbygoogle"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="ca-pub-9857824386109365"
+                             data-ad-slot="1061265103"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <section id="causes">
+                        <h2>2. What Causes It: The Evidence</h2>
+                        <p>Depression rarely has a single cause. Research shows it typically arises from a complex interaction of biological, psychological, and social factors. Understanding these factors can help reduce stigma and guide treatment decisions.</p>
+
+                        <h3>Biological Factors</h3>
+                        <ul>
+                            <li><strong>Brain chemistry:</strong> Imbalances in neurotransmitters like serotonin, dopamine, and norepinephrine</li>
+                            <li><strong>Genetics:</strong> Depression often runs in families, suggesting a genetic component</li>
+                            <li><strong>Hormones:</strong> Thyroid problems, hormonal changes during pregnancy, postpartum, or menopause</li>
+                            <li><strong>Chronic illness:</strong> Conditions like diabetes, heart disease, or chronic pain increase depression risk</li>
+                        </ul>
+
+                        <h3>Psychological Factors</h3>
+                        <ul>
+                            <li><strong>Trauma:</strong> Past abuse, neglect, or traumatic experiences</li>
+                            <li><strong>Personality traits:</strong> Tendencies toward negative thinking or low self-esteem</li>
+                            <li><strong>Other mental health conditions:</strong> Anxiety disorders, PTSD, or substance use disorders</li>
+                        </ul>
+
+                        <h3>Social and Environmental Factors</h3>
+                        <ul>
+                            <li><strong>Life stressors:</strong> Loss of a loved one, divorce, job loss, or financial problems</li>
+                            <li><strong>Social isolation:</strong> Lack of supportive relationships or feeling disconnected</li>
+                            <li><strong>Chronic stress:</strong> Ongoing difficult situations at work, home, or in relationships</li>
+                            <li><strong>Substance use:</strong> Alcohol or drug misuse can trigger or worsen depression</li>
+                        </ul>
+
+                        <p><strong>Important to know:</strong> Depression is not a sign of weakness, and it's not something you can simply "snap out of." It's a legitimate medical condition that requires proper treatment.</p>
+                    </section>
+
+                    <section id="treatments">
+                        <h2>3. What Actually Helps: Treatments with Evidence</h2>
+                        <p>The good news is that depression is one of the most treatable mental health conditions. Most people who seek treatment experience significant improvement. Here are the evidence-based approaches that work:</p>
+
+                        <h3>Psychotherapy (Talk Therapy)</h3>
+                        <p>Psychotherapy is a first-line treatment for depression, especially for mild to moderate cases. Several types have strong research support:</p>
+                        <ul>
+                            <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps identify and change negative thought patterns and behaviors. One of the most researched and effective therapies for depression.</li>
+                            <li><strong>Interpersonal Therapy (IPT):</strong> Focuses on improving relationships and communication patterns that contribute to depression.</li>
+                            <li><strong>Behavioral Activation:</strong> Helps you gradually re-engage with activities and routines that bring meaning and pleasure.</li>
+                            <li><strong>Mindfulness-Based Cognitive Therapy (MBCT):</strong> Combines mindfulness practices with cognitive therapy to prevent relapse.</li>
+                        </ul>
+
+                        <div class="cta-box">
+                            <p><strong>Ready to take the first step?</strong></p>
+                            <p>Our licensed therapists specialize in evidence-based treatments for depression.</p>
+                            <a href="/pricing" class="cta-button">Book a Free 15-Minute Screening Call</a>
+                        </div>
+
+                        <h3>Antidepressant Medications</h3>
+                        <p>Medications can be highly effective, especially for moderate to severe depression. They work by balancing brain chemistry:</p>
+                        <ul>
+                            <li><strong>SSRIs (Selective Serotonin Reuptake Inhibitors):</strong> Most commonly prescribed; generally well-tolerated</li>
+                            <li><strong>SNRIs (Serotonin-Norepinephrine Reuptake Inhibitors):</strong> Another common first-line option</li>
+                            <li><strong>Other types:</strong> Including atypical antidepressants, tricyclics, and MAOIs, prescribed based on individual needs</li>
+                        </ul>
+                        <p><strong>Important:</strong> Medications should only be prescribed and monitored by a qualified psychiatrist or physician. They typically take 2-6 weeks to show full effects, and finding the right medication may require some trial and adjustment.</p>
+
+                        <h3>Combined Treatment</h3>
+                        <p>Research shows that for moderate to severe depression, combining therapy and medication is often more effective than either approach alone. Your healthcare provider can help determine the best approach for your situation.</p>
+
+                        <div class="ad-container" id="ad-treatments">
+                            <span class="ad-label">Advertisement</span>
+                            <ins class="adsbygoogle"
+                                 data-ad-layout="in-article"
+                                 data-ad-format="fluid"
+                                 data-ad-client="ca-pub-9857824386109365"
+                                 data-ad-slot="1061265103"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+
+                        <h3>Lifestyle and Complementary Approaches</h3>
+                        <p>While not replacements for professional treatment, these can support recovery:</p>
+                        <ul>
+                            <li><strong>Regular exercise:</strong> Moderate exercise has been shown to reduce depression symptoms</li>
+                            <li><strong>Sleep hygiene:</strong> Maintaining consistent sleep schedules and good sleep habits</li>
+                            <li><strong>Nutrition:</strong> A balanced diet supports overall mental health</li>
+                            <li><strong>Social connection:</strong> Maintaining relationships and seeking support</li>
+                            <li><strong>Stress reduction:</strong> Techniques like meditation, yoga, or relaxation exercises</li>
+                        </ul>
+                        <p><strong>Note:</strong> These lifestyle approaches work best as complements to, not substitutes for, professional treatment when depression is present.</p>
+                    </section>
+
+                    <section id="triage">
+                        <h2>4. How to Decide What You Need Right Now: Practical Triage</h2>
+                        <p>Not sure where to start? Here's a practical guide to help you assess what level of support you might need:</p>
+
+                        <h3>Mild Symptoms</h3>
+                        <p><strong>What it looks like:</strong> Some symptoms present but you're still able to function in most areas of life. You notice changes but can still work, maintain relationships, and care for yourself.</p>
+                        <p><strong>Recommended approach:</strong></p>
+                        <ul>
+                            <li>Try structured self-help approaches (see section below)</li>
+                            <li>Schedule an appointment with a therapist for professional assessment</li>
+                            <li>Monitor symptoms - if they worsen or persist beyond 2-3 weeks, escalate care</li>
+                            <li>Consider online therapy or counseling for flexible, accessible support</li>
+                        </ul>
+
+                        <h3>Moderate Symptoms</h3>
+                        <p><strong>What it looks like:</strong> Multiple symptoms that noticeably impact your daily functioning. You're struggling at work or school, relationships are affected, self-care is becoming difficult.</p>
+                        <p><strong>Recommended approach:</strong></p>
+                        <ul>
+                            <li>Prioritize getting a professional assessment from a licensed therapist or psychologist</li>
+                            <li>Consider starting regular therapy sessions (weekly or bi-weekly)</li>
+                            <li>Consult with a psychiatrist about whether medication might help</li>
+                            <li>Build a support system - inform trusted friends or family</li>
+                        </ul>
+
+                        <div class="cta-box">
+                            <p><strong>Experiencing moderate symptoms?</strong></p>
+                            <p>Don't wait for things to get worse. Early intervention leads to better outcomes.</p>
+                            <a href="/pricing" class="cta-button">Schedule Your Screening Today</a>
+                        </div>
+
+                        <h3>Severe Symptoms</h3>
+                        <p><strong>What it looks like:</strong> Symptoms are overwhelming and severely impacting all areas of life. You may have difficulty getting out of bed, going to work, or caring for yourself. Thoughts of self-harm or suicide may be present.</p>
+                        <p><strong>Recommended approach:</strong></p>
+                        <ul>
+                            <li>Seek urgent psychiatric assessment - contact a psychiatrist or emergency services</li>
+                            <li>Consider intensive treatment options like intensive outpatient programs or, in severe cases, hospitalization</li>
+                            <li>Ensure you have safe supervision and support - don't stay alone</li>
+                            <li>Call a crisis helpline immediately if having thoughts of self-harm (numbers below)</li>
+                            <li>Medication evaluation is typically recommended at this level</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Remember:</strong> If you're unsure about the severity, err on the side of caution and seek professional evaluation. Mental health professionals are trained to assess risk and recommend appropriate treatment.
+                        </div>
+                    </section>
+
+                    <div class="ad-container" id="ad-middle">
+                        <span class="ad-label">Advertisement</span>
+                        <ins class="adsbygoogle"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="ca-pub-9857824386109365"
+                             data-ad-slot="1061265103"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <section id="self-help">
+                        <h2>5. Quick Self-Help Starter Pack That Actually Helps</h2>
+                        <p>While professional help is important for depression, these evidence-informed self-help strategies can support your recovery:</p>
+
+                        <h3>1. Track Your Symptoms</h3>
+                        <p>Keep a simple symptom log for 2 weeks to help identify patterns and severity:</p>
+                        <ul>
+                            <li>Mood (rate 1-10 daily)</li>
+                            <li>Sleep quality and duration</li>
+                            <li>Appetite and eating patterns</li>
+                            <li>Activity level and energy</li>
+                            <li>Any triggers or particularly difficult times of day</li>
+                        </ul>
+                        <p>This information is valuable for your healthcare provider and helps you notice progress.</p>
+
+                        <h3>2. Maintain Scheduled Activities</h3>
+                        <p>Behavioral activation is a proven strategy:</p>
+                        <ul>
+                            <li>Schedule one activity you used to enjoy for 15 minutes daily, even if you don't feel like it</li>
+                            <li>Start small - even getting dressed or taking a short walk counts</li>
+                            <li>Don't wait to "feel like it" - action often precedes motivation in depression</li>
+                            <li>Gradually increase activity as you're able</li>
+                        </ul>
+
+                        <h3>3. Practice Good Sleep Hygiene</h3>
+                        <p>Sleep problems worsen depression, so protecting sleep is crucial:</p>
+                        <ul>
+                            <li>Keep a consistent wake time, even on weekends</li>
+                            <li>Limit screen time 60 minutes before bed</li>
+                            <li>Create a calming bedtime routine</li>
+                            <li>Keep your bedroom cool, dark, and quiet</li>
+                            <li>Avoid caffeine after 2pm and alcohol before bed</li>
+                        </ul>
+
+                        <h3>4. Reach Out Daily</h3>
+                        <p>Social connection is protective against depression:</p>
+                        <ul>
+                            <li>Text, call, or meet with one trusted person each day</li>
+                            <li>Share honestly about how you're feeling (when comfortable)</li>
+                            <li>Accept help when offered</li>
+                            <li>Consider joining a support group (in-person or online)</li>
+                        </ul>
+
+                        <h3>5. Limit Alcohol and Avoid Drugs</h3>
+                        <p>Substance use can worsen depression and interfere with treatment. If you're using substances to cope, discuss this with a healthcare provider.</p>
+
+                        <h3>6. Be Patient and Compassionate with Yourself</h3>
+                        <p>Recovery takes time. Treat yourself with the same kindness you'd show a friend going through a difficult time. Small steps forward are still progress.</p>
+                    </section>
+
+                    <section id="crisis-helplines">
+                        <h2>Crisis Helplines in India</h2>
+                        <p>If you're experiencing a mental health crisis or having thoughts of self-harm, immediate support is available 24/7. These helplines are free, confidential, and staffed by trained professionals:</p>
+                        <ul>
+                            <li><strong>KIRAN Mental Health Rehabilitation Helpline:</strong> 1800-599-0019 (24/7, toll-free)</li>
+                            <li><strong>Vandrevala Foundation:</strong> 1860-2662-345 or 1800-2333-330 (24/7)</li>
+                            <li><strong>iCall (Tata Institute of Social Sciences):</strong> 9152987821 (Monday to Saturday, 8 AM to 10 PM)</li>
+                            <li><strong>SNEHA Suicide Prevention Centre:</strong> +91-44-24640050 (24/7)</li>
+                            <li><strong>Roshni (Hyderabad):</strong> +91-40-66202000, +91-40-66202001</li>
+                            <li><strong>Samaritans Mumbai:</strong> +91-22-64643267 (24/7)</li>
+                            <li><strong>ASRA (Delhi):</strong> +91-11-23389090</li>
+                            <li><strong>Maithri (Kochi):</strong> +91-484-2540530</li>
+                            <li><strong>Lifeline (Kolkata):</strong> +91-33-24637401, +91-33-24637432</li>
+                            <li><strong>Saath (Ahmedabad):</strong> +91-79-26305544, +91-79-26300222</li>
+                        </ul>
+                        <p><strong>Emergency Services:</strong> In case of immediate danger to yourself or others, call emergency services (108/102 in India) or go to the nearest hospital emergency room.</p>
+                    </section>
+
+                    <section id="faqs">
+                        <h2>Frequently Asked Questions</h2>
+                        
+                        <h3>How long does depression last?</h3>
+                        <p>It varies from person to person. Some depressive episodes last a few weeks, while others can persist for months or longer if untreated. With appropriate treatment, many people experience significant improvement within 6-12 weeks. Early intervention generally leads to faster recovery. However, depression can be recurrent, so ongoing management and monitoring are important even after symptoms improve.</p>
+
+                        <h3>Can therapy alone treat depression?</h3>
+                        <p>For mild to moderate depression, therapy alone is often highly effective. Cognitive Behavioral Therapy (CBT), Interpersonal Therapy (IPT), and other evidence-based approaches have strong research support as standalone treatments. For moderate to severe depression, combining therapy with medication is typically recommended as the most effective approach. Your mental health professional can help determine the best treatment plan for your specific situation.</p>
+
+                        <h3>When should I seek urgent help?</h3>
+                        <p>Seek immediate help if you have any thoughts of harming yourself or others, if you have a specific plan to end your life, or if you're unable to care for yourself or ensure your safety. Other urgent signs include: sudden worsening of symptoms, complete inability to function in daily life, or psychotic symptoms (hallucinations or delusions). Contact emergency services (108/102), visit an emergency room, or call a crisis helpline immediately. Don't wait or try to handle it alone.</p>
+
+                        <h3>Will depression ever go away completely?</h3>
+                        <p>Many people fully recover from depression and experience long periods or even a lifetime without symptoms, especially with proper treatment. However, depression can be recurrent for some individuals. Learning to recognize early warning signs and having a relapse prevention plan can help. Continued self-care, stress management, and staying connected with support systems are important for maintaining mental health.</p>
+
+                        <h3>How do I know if I need medication?</h3>
+                        <p>A qualified psychiatrist or physician can help determine if medication is appropriate for you. Generally, medication is more likely to be recommended for moderate to severe depression, depression that hasn't responded to therapy alone, or when there's a family history of depression that responded well to medication. Some people prefer to try therapy first for mild to moderate symptoms. This decision should be made collaboratively with your healthcare provider based on your individual circumstances.</p>
+
+                        <h3>Can lifestyle changes really help with depression?</h3>
+                        <p>Yes, lifestyle factors play an important role in both preventing and managing depression. Regular exercise, good sleep, healthy nutrition, social connection, and stress management all have research support. However, for clinical depression, lifestyle changes work best as complements to professional treatment rather than replacements. Think of them as part of a comprehensive approach to mental health.</p>
+
+                        <h3>Is it normal to feel worse before feeling better in therapy?</h3>
+                        <p>Some people do experience temporary increases in distress early in therapy as they begin processing difficult emotions or making challenging changes. This is often a normal part of the healing process. However, if you feel significantly worse or unsafe, communicate this to your therapist immediately. They can adjust the approach or pace of treatment. Good therapy should generally help you feel more supported, even when working through difficult material.</p>
+
+                        <h3>How can I support someone with depression?</h3>
+                        <p>Listen without judgment, offer practical help (like helping with tasks or accompany them to appointments), encourage them to seek professional help, be patient (recovery takes time), and take care of your own mental health too. Don't try to "fix" them or tell them to "just think positive." Avoid minimizing their experience. If they're in crisis, help them access emergency services.</p>
+                    </section>
+
+                    <div class="cta-box">
+                        <p><strong>Take the First Step Toward Feeling Better</strong></p>
+                        <p>Depression is treatable, and you don't have to face it alone. Our licensed therapists are here to support you with evidence-based care tailored to your needs.</p>
+                        <a href="/pricing" class="cta-button">Get Started with a Free Consultation</a>
+                    </div>
+
+                    <p><strong>Found this article helpful?</strong> Share it with friends, family, or colleagues who might benefit from understanding depression and knowing where to get help.</p>
+                    <div class="share-bar" aria-label="Share this article">
+                        <a aria-label="Share on X" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression&text=When%20Low%20Mood%20Becomes%20Depression" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/x/0f172a" alt="X (formerly Twitter)" /></a>
+                        <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a aria-label="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a aria-label="Share on Threads" href="https://www.threads.net/intent/post?text=When%20Low%20Mood%20Becomes%20Depression&url=https%3A%2F%2Ftherapycouncil.org%2Fresources%2Fposts%2Flow-mood-to-depression" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/threads/0f172a" alt="Threads" /></a>
+                    </div>
+                    <div class="divider"></div>
+
+                    <section id="references" style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 30px 0;">
+                        <h2>References & Citations</h2>
+                        <p style="font-size: 0.9em; margin-bottom: 15px;">This article is based on peer-reviewed research, clinical guidelines, and expert consensus. Below are key references:</p>
+                        <ol style="font-size: 0.9em; line-height: 1.8;">
+                            <li>American Psychiatric Association. (2013). <em>Diagnostic and Statistical Manual of Mental Disorders (5th ed.)</em>. Arlington, VA: American Psychiatric Publishing.</li>
+                            <li>World Health Organization. (2017). <em>Depression and Other Common Mental Disorders: Global Health Estimates</em>. WHO. Available at: <a href="https://www.who.int/publications/i/item/depression-global-health-estimates" target="_blank" rel="noopener">https://www.who.int/publications</a></li>
+                            <li>National Institute of Mental Health. (2024). <em>Major Depression</em>. NIMH. Available at: <a href="https://www.nimh.nih.gov/health/statistics/major-depression" target="_blank" rel="noopener">https://www.nimh.nih.gov/health/statistics/major-depression</a></li>
+                            <li>Cuijpers, P., et al. (2020). Psychotherapy for depression across different age groups: A systematic review and meta-analysis. <em>JAMA Psychiatry</em>, 77(7), 694-702.</li>
+                            <li>Hofmann, S.G., Asnaani, A., Vonk, I.J., et al. (2012). The efficacy of cognitive behavioral therapy: A review of meta-analyses. <em>Cognitive Therapy and Research</em>, 36(5), 427-440.</li>
+                            <li>National Institute for Health and Care Excellence (NICE). (2022). <em>Depression in adults: treatment and management</em>. NICE Guideline [NG222]. Available at: <a href="https://www.nice.org.uk/guidance/ng222" target="_blank" rel="noopener">https://www.nice.org.uk/guidance/ng222</a></li>
+                            <li>Malhi, G.S., et al. (2021). Royal Australian and New Zealand College of Psychiatrists clinical practice guidelines for mood disorders. <em>Australian & New Zealand Journal of Psychiatry</em>, 55(1), 7-117.</li>
+                            <li>Indian Psychiatric Society. (2017). <em>Indian Psychiatric Society Guidelines for Treatment of Depression</em>. Available at: <a href="http://www.indianjpsychiatry.org" target="_blank" rel="noopener">http://www.indianjpsychiatry.org</a></li>
+                            <li>Cipriani, A., et al. (2018). Comparative efficacy and acceptability of 21 antidepressant drugs for the acute treatment of adults with major depressive disorder: a systematic review and network meta-analysis. <em>The Lancet</em>, 391(10128), 1357-1366.</li>
+                            <li>NIMHANS (National Institute of Mental Health and Neuro Sciences). (2024). <em>Mental Health Resources</em>. Available at: <a href="https://nimhans.ac.in" target="_blank" rel="noopener">https://nimhans.ac.in</a></li>
+                        </ol>
+                        <p style="font-size: 0.85em; color: #64748b; margin-top: 15px;"><strong>Note:</strong> This article is intended for educational purposes and should not replace professional medical advice. Always consult with a qualified mental health professional for diagnosis and treatment.</p>
+                    </section>
+
+                    <section id="about-authors" style="background: #fff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; margin: 30px 0;">
+                        <h2>About the Author</h2>
+                        <div style="margin: 20px 0;">
+                            <h3 style="font-size: 18px; margin-bottom: 8px;">Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</h3>
+                            <p style="font-size: 0.9em; line-height: 1.7;">Pragya Alexander, M.Sc Clinical Psychology and PGD in CBT, is a psychologist and co-founder of Therapy Council. She has extensive clinical experience across leading hospitals including VIMHANS, Moolchand, Max, and Fortis, as well as with NGOs such as Sewa Bharti. Her professional approach integrates evidence-based practices, with a primary focus on Cognitive Behaviour Therapy. Pragya's work centers on helping individuals manage depression, anxiety, and related mental health concerns through structured, goal-oriented interventions.</p>
+                        </div>
+                    </section>
+
+                    <p><a class="backlink" href="/resources"><i class="fas fa-arrow-left"></i> Browse more articles</a></p>
+                </article>
+                <aside class="post-aside">
+                    <div class="post-toc" aria-label="Table of contents" id="postToc">
+                        <h4>On this page</h4>
+                        <ul>
+                            <li><a href="#disclaimer">Important Disclaimer</a></li>
+                            <li><a href="#summary">Quick Summary</a></li>
+                            <li><a href="#symptoms">What Depression Actually Looks Like</a></li>
+                            <li><a href="#causes">What Causes It</a></li>
+                            <li><a href="#treatments">What Actually Helps</a></li>
+                            <li><a href="#triage">How to Decide What You Need</a></li>
+                            <li><a href="#self-help">Quick Self-Help Starter Pack</a></li>
+                            <li><a href="#crisis-helplines">Crisis Helplines</a></li>
+                            <li><a href="#faqs">FAQs</a></li>
+                            <li><a href="#references">References & Citations</a></li>
+                            <li><a href="#about-authors">About the Author</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-sections">
+                <div class="footer-brand">
+                    <h3>Therapy Council</h3>
+                    <p>For Every Mind, Everywhere</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61576355709503" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/therapy_council/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/Therapy_Council" target="_blank" rel="noopener noreferrer" class="social-icon twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    <a href="https://www.youtube.com/@TherapyCouncil" target="_blank" rel="noopener noreferrer" class="social-icon youtube" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/therapy-council" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                </div>
+
+                <div class="footer-credentials">
+                    <h3>Professional Credentials</h3>
+                    <div class="credential-list">
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <span>Experienced Psychologists</span>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <span>Evidence-Based</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>support@therapycouncil.org</p>
+                    <p>(+91) 9211-750-322</p>
+                    <a href="https://wa.me/919211750322?text=Hi%20Therapy%20Council%2C%20I%20need%20support." target="_blank" rel="noopener noreferrer" class="cta-button">Get Support</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2025 Therapy Council. All rights reserved.
+                    <a href="/privacy">Privacy Policy</a> |
+                    <a href="/terms">Terms of Service</a> |
+                    <a href="/refund">Refund Policy</a> |
+                    <a href="/careers">Careers</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+    
+    <script>
+      (function(){
+        // Hide TOC above the article title and near footer
+        const toc = document.getElementById('postToc');
+        const startEl = document.getElementById('content');
+        const endEl = document.getElementById('references');
+        const pageY = (el) => el.getBoundingClientRect().top + window.scrollY;
+        const getBounds = () => ({ start: pageY(startEl) - 140, end: pageY(endEl) - 140 });
+        let bounds = getBounds();
+        const onScroll = () => {
+          const y = window.scrollY;
+          if (y < bounds.start || y > bounds.end) toc.classList.add('toc-hidden');
+          else toc.classList.remove('toc-hidden');
+        };
+        window.addEventListener('resize', () => { bounds = getBounds(); onScroll(); });
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      })();
+      
+      // Highlight active TOC section
+      (function(){
+        const headings = document.querySelectorAll('#content h2[id], #content h3[id]');
+        const links = new Map();
+        document.querySelectorAll('#postToc a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            links.set(href.slice(1), link);
+          }
+        });
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const link = links.get(id);
+            if (!link) return;
+            if (entry.isIntersecting) {
+              document.querySelectorAll('#postToc a.active').forEach(el => el.classList.remove('active'));
+              link.classList.add('active');
+            }
+          });
+        }, { rootMargin: '0px 0px -70% 0px', threshold: 0.1 });
+        headings.forEach(h => observer.observe(h));
+      })();
+    </script>
+
+</body>
+
+</html>
+
+

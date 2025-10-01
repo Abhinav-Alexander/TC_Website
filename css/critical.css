@@ -1,0 +1,39 @@
+
+/* Critical CSS - Above the fold only */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+/* Header */
+.header { background: #1f2937; padding: 12px 0; position: sticky; top: 0; z-index: 1000; }
+.header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo-container { display: flex; align-items: center; }
+.logo { height: 40px; }
+.nav-links { display: none; }
+.nav-toggle { display: block; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+/* Hero section */
+.hero { background: linear-gradient(135deg, #3C827F 0%, #2d6862 100%); color: white; padding: 60px 0; text-align: center; }
+.hero-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.hero-content h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+.hero-content p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Essential buttons */
+.cta-button { 
+    background: #0d9488; 
+    color: white; 
+    padding: 12px 24px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+.cta-button:hover { background: #0f766e; }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; }
+    .hero-cta { flex-direction: column; align-items: center; }
+}

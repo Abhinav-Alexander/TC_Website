@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "minify-css": "node minify-css.cjs",
+    "build-production": "./build-production.sh",
+    "convert-logos": "./convert-logos-to-webp.sh",
+    "cache-version": "node cache-version.js",
+    "build-with-cache": "npm run minify-css && npm run cache-version"
   },
   "devDependencies": {
     "vite": "^6.3.5"

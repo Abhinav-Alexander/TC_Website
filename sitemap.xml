@@ -73,6 +73,22 @@
         <priority>0.6</priority>
     </url>
     
+    <!-- Resource Post: Low Mood to Depression -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/low-mood-to-depression</loc>
+        <lastmod>2025-10-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resource Post: Therapy Costs in India -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/therapy-costs-india</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- Careers page intentionally omitted until public route is available -->
     
     <!-- Thank You pages omitted (noindex and blocked in robots) -->
