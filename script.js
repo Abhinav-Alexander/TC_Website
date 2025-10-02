@@ -600,6 +600,21 @@ document.addEventListener('DOMContentLoaded', function() {
             setActiveDot();
         }
 
+        // Wait until cards have a measurable width before first setup
+        function setupWhenReady(attempt = 0){
+            const width = getCardWidth();
+            if (width && width > 0) {
+                setup();
+                return;
+            }
+            if (attempt < 40) { // up to ~2s @ 50ms
+                setTimeout(() => setupWhenReady(attempt + 1), 50);
+            } else {
+                // Last resort, try once more on next frame
+                requestAnimationFrame(setup);
+            }
+        }
+
         function goTo(newIndex){
             index = newIndex;
             track.style.transition = 'transform 0.3s ease';
@@ -670,8 +685,12 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('mouseup', onTouchEnd);
         }
 
-        setup();
-        window.addEventListener('resize', ()=>{ setup(); });
+        // Run after DOM ready, window load, and fonts ready to avoid first-load blank state
+        setupWhenReady();
+        window.addEventListener('load', () => setupWhenReady());
+        if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => setupWhenReady()); }
+        // Recalculate on resize
+        window.addEventListener('resize', ()=>{ setupWhenReady(); });
     })();
 
     // Testimonials carousel initialization (seamless infinite)
@@ -731,6 +750,20 @@ document.addEventListener('DOMContentLoaded', function() {
             track.style.transition = '';
         }
 
+        // Wait until card width is measurable to prevent blank first render
+        function setupWhenReady(attempt = 0){
+            const width = getCardWidth();
+            if (width && width > 0) {
+                setup();
+                return;
+            }
+            if (attempt < 40) {
+                setTimeout(() => setupWhenReady(attempt + 1), 50);
+            } else {
+                requestAnimationFrame(setup);
+            }
+        }
+
         function goTo(newIndex){
             index = newIndex;
             track.style.transition = 'transform 0.3s ease';
@@ -774,9 +807,11 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('mouseup', onTouchEnd);
         }
 
-        // init and handle resize rebuild
-        setup();
-        window.addEventListener('resize', ()=> setup());
+        // init and handle resize rebuild, robust against late layout
+        setupWhenReady();
+        window.addEventListener('load', () => setupWhenReady());
+        if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => setupWhenReady()); }
+        window.addEventListener('resize', ()=> setupWhenReady());
     })();
 
     /* ── FAQ Accordion Functionality ──────────────────────────────── */
