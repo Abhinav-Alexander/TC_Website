@@ -54,12 +54,13 @@
     <meta name="twitter:image" content="https://therapycouncil.org/logo/logo_black.png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/header-footer.css">
-    <link rel="stylesheet" href="../css/blog.css?v=20250913">
+    <link rel="stylesheet" href="../css/base.optimized.css">
+    <link rel="stylesheet" href="../css/header-footer.optimized.css">
+    <link rel="stylesheet" href="../css/blog.optimized.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!-- Font Awesome - Deferred Loading -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></noscript>
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
