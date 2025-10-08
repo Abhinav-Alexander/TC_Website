@@ -9,7 +9,7 @@
     
     <!-- ================================================================ -->
     <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
-    <!-- Last Updated: 2025-01-27                                        -->
+    <!-- Last Updated: 2025-10-08                                        -->
     <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
@@ -60,7 +60,7 @@
     <!-- Resources - Updated regularly -->
     <url>
         <loc>https://therapycouncil.org/resources</loc>
-        <lastmod>2025-09-12</lastmod>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -89,7 +89,21 @@
         <priority>0.7</priority>
     </url>
     
-    <!-- Careers page intentionally omitted until public route is available -->
+    <!-- Resource Post: Understanding and Managing Anxiety -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/anxiety-understanding-managing</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Careers Page - Medium Priority -->
+    <url>
+        <loc>https://therapycouncil.org/careers</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     
     <!-- Thank You pages omitted (noindex and blocked in robots) -->
     
@@ -118,7 +132,7 @@
     <!-- Sitemap Reference (Self-referencing for completeness) -->
     <url>
         <loc>https://therapycouncil.org/sitemap.xml</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.2</priority>
     </url>

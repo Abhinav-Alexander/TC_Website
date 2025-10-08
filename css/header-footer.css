@@ -180,6 +180,14 @@
 
 .footer-brand p { color: rgba(255,255,255,0.95); margin-bottom: 16px; font-size: 15px; line-height: 1.7; }
 
+.footer-credentials p { 
+    color: #ffffff; 
+    font-size: 16px; 
+    margin-bottom: 12px; 
+    font-weight: 500;
+    line-height: 1.6;
+}
+
 /* Updated Social Icons with Real Links */
 .social-icons {
     display: flex;
