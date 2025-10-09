@@ -31,9 +31,6 @@ Disallow: /thank-you/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-free/
 
-# Allow but throttle crawling of less important files
-Crawl-delay: 1
-
 # Sitemap location
 Sitemap: https://therapycouncil.org/sitemap.xml
 
