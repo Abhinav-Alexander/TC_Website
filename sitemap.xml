@@ -9,7 +9,7 @@
     
     <!-- ================================================================ -->
     <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
-    <!-- Last Updated: 2025-10-08                                        -->
+    <!-- Last Updated: 2025-10-10                                        -->
     <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
@@ -60,7 +60,7 @@
     <!-- Resources - Updated regularly -->
     <url>
         <loc>https://therapycouncil.org/resources</loc>
-        <lastmod>2025-10-08</lastmod>
+        <lastmod>2025-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -93,6 +93,14 @@
     <url>
         <loc>https://therapycouncil.org/resources/posts/anxiety-understanding-managing</loc>
         <lastmod>2025-10-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resource Post: Mental Health Day 2025 -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/mental-health-day</loc>
+        <lastmod>2025-10-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

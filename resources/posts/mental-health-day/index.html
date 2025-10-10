@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resources | Therapy Council</title>
-    <link rel="canonical" href="https://therapycouncil.org/resources" />
+    <title>Mental Health Day 2025: Meaning, Tips & How to Observe | Therapy Council</title>
+    <link rel="canonical" href="https://therapycouncil.org/resources/posts/mental-health-day" />
     <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
@@ -16,17 +16,24 @@
     <div class="wrap"><div class="spinner"></div><div>Loading…</div></div>
     <script>
       (function(){
-        const target = '../src/resources.html?v=20251010b';
+        const target = '../../../src/posts/mental-health-day.html?v=20251010';
         fetch(target, { credentials: 'same-origin', cache: 'no-cache' })
-          .then(r => r.text())
+          .then(r => {
+            if (!r.ok) throw new Error('Failed to fetch');
+            return r.text();
+          })
           .then(html => {
-            history.replaceState(null, '', '/resources');
+            history.replaceState(null, '', '/resources/posts/mental-health-day');
             document.open();
             document.write(html);
             document.close();
           })
-          .catch(() => { window.location.href = target; });
+          .catch(err => { 
+            console.error('Navigation error:', err);
+            window.location.href = target; 
+          });
       })();
     </script>
   </body>
-  </html>
+</html>
+
