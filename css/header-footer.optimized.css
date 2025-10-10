@@ -83,6 +83,7 @@
     line-height: 1;
     color: #e6f6f3;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .nav-toggle i { color: inherit; }
@@ -93,7 +94,7 @@
     .header { border-bottom: 1px solid rgba(255,255,255,0.15); }
     .header-container { padding: 10px 14px; }
     .logo-image { margin-right: 10px; }
-    .logo-image img { height: 44px; }
+    .logo-image img { height: 44px; width: 44px; }
     .logo-text { font-size: 16px; letter-spacing: 1.6px; font-weight: 600; }
 
     .nav-toggle {
@@ -119,16 +120,18 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 999;
         border-radius: 0 0 8px 8px;
+        width: 100%;
     }
 
     .nav-links.open {
-        max-height: 300px;
-        padding: 1rem 0;
+        max-height: 400px;
+        padding: 8px 0;
     }
 
     .nav-links li {
-        padding: 12px 24px;
-        border-bottom: 1px solid #f3f4f6;
+        list-style: none;
+        padding: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
         transition: background-color 0.2s ease;
     }
 
@@ -138,13 +141,26 @@
 
     .nav-links li:hover {
         background-color: rgba(255,255,255,0.08);
-        color: #ffffff;
     }
 
     .nav-links li a {
         display: block;
         width: 100%;
+        padding: 14px 24px;
+        color: #e5e7eb;
+        text-decoration: none;
         font-weight: 500;
+        font-size: 16px;
+    }
+
+    .nav-links li a:hover {
+        color: #ffffff;
+    }
+
+    .nav-links li a.active {
+        color: #ffffff;
+        font-weight: 600;
+        background-color: rgba(255,255,255,0.1);
     }
 }
 
