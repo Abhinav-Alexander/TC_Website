@@ -814,6 +814,169 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', ()=> setupWhenReady());
     })();
 
+    /* ── Resources Carousel Functionality ──────────────────────────────── */
+    (function() {
+        const track = document.getElementById('resourcesTrack');
+        const prevBtn = document.getElementById('resourcesPrev');
+        const nextBtn = document.getElementById('resourcesNext');
+        const dotsContainer = document.getElementById('resourcesDots');
+        
+        if (!track || !prevBtn || !nextBtn || !dotsContainer) {
+            console.log('Resources carousel elements not found:', {track, prevBtn, nextBtn, dotsContainer});
+            return;
+        }
+        
+        const cards = track.querySelectorAll('.resource-card');
+        if (cards.length === 0) {
+            console.log('No resource cards found');
+            return;
+        }
+        
+        console.log('Resources carousel initialized with', cards.length, 'cards');
+        
+        let index = 0;
+        let cardsPerView = 3;
+        const totalCards = cards.length;
+        
+        function updateCardsPerView() {
+            const width = window.innerWidth;
+            if (width < 768) cardsPerView = 1;
+            else if (width < 1024) cardsPerView = 2;
+            else cardsPerView = 3;
+        }
+        
+        function getCardWidth() {
+            return cards[0].offsetWidth;
+        }
+        
+        function getGap() {
+            return 24;
+        }
+        
+        function updateCarousel() {
+            const cardWidth = getCardWidth();
+            const gap = getGap();
+            const offset = -(index * (cardWidth + gap));
+            track.style.transform = `translateX(${offset}px)`;
+            
+            // Update buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index >= Math.max(0, totalCards - cardsPerView);
+            
+            // Update dots
+            updateDots();
+        }
+        
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const maxIndex = Math.max(1, totalCards - cardsPerView + 1);
+            
+            for (let i = 0; i < maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(dot);
+            }
+            updateDots();
+        }
+        
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        function goTo(newIndex) {
+            const maxIndex = Math.max(0, totalCards - cardsPerView);
+            index = Math.max(0, Math.min(newIndex, maxIndex));
+            updateCarousel();
+        }
+        
+        function setupWhenReady() {
+            updateCardsPerView();
+            createDots();
+            updateCarousel();
+            console.log('Resources carousel setup complete, showing', cardsPerView, 'cards per view');
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            console.log('Prev button clicked, current index:', index);
+            goTo(index - 1);
+        });
+        nextBtn.addEventListener('click', () => {
+            console.log('Next button clicked, current index:', index);
+            goTo(index + 1);
+        });
+        
+        // Touch/drag support
+        let startX = 0;
+        let isDragging = false;
+        let dragDelta = 0;
+        const viewport = track.parentElement;
+        
+        function onTouchStart(e) {
+            if (!viewport) return;
+            startX = e.touches ? e.touches[0].clientX : e.clientX;
+            isDragging = true;
+            dragDelta = 0;
+            track.style.transition = 'none';
+        }
+        
+        function onTouchMove(e) {
+            if (!isDragging) return;
+            const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+            dragDelta = currentX - startX;
+            const cardWidth = getCardWidth();
+            const gap = getGap();
+            const baseOffset = -(index * (cardWidth + gap));
+            track.style.transform = `translateX(${baseOffset + dragDelta}px)`;
+        }
+        
+        function onTouchEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = '';
+            const threshold = Math.min(120, getCardWidth() * 0.25);
+            if (dragDelta > threshold) goTo(index - 1);
+            else if (dragDelta < -threshold) goTo(index + 1);
+            else goTo(index);
+            dragDelta = 0;
+        }
+        
+        if (viewport) {
+            viewport.addEventListener('touchstart', onTouchStart, {passive: true});
+            viewport.addEventListener('touchmove', onTouchMove, {passive: true});
+            viewport.addEventListener('touchend', onTouchEnd);
+            viewport.addEventListener('mousedown', (e) => { e.preventDefault(); onTouchStart(e); });
+            window.addEventListener('mousemove', onTouchMove);
+            window.addEventListener('mouseup', onTouchEnd);
+        }
+        
+        // Initialize and handle resize
+        setTimeout(() => {
+            setupWhenReady();
+            console.log('Initial setup triggered');
+        }, 100);
+        
+        window.addEventListener('load', () => {
+            setupWhenReady();
+            console.log('Load event setup triggered');
+        });
+        
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+                setupWhenReady();
+                console.log('Fonts ready setup triggered');
+            });
+        }
+        
+        window.addEventListener('resize', () => {
+            setupWhenReady();
+            console.log('Resize setup triggered');
+        });
+    })();
+
     /* ── FAQ Accordion Functionality ──────────────────────────────── */
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {

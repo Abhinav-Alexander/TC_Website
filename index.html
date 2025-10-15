@@ -746,63 +746,134 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
         </div>
     </section>
 
-    <!-- Value Clarity & Scarcity -->
-    <section class="value-section">
-        <div class="container value-container">
-            <div class="expect-content">
-                <h2>What to Expect</h2>
-                <div class="expect-details">
-                    <h3>Your First Session</h3>
-                    <ul class="benefits-list">
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>A comfortable, non-judgmental space to share your story</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>Collaborative goal-setting based on your needs</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>Initial insights and practical takeaways you can use immediately</p>
-                        </li>
-                        <li>
-                            <div class="bullet-point"></div>
-                            <p>A personalized recommendation for your therapy journey</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="approach">
-                    <h3>Our Approach</h3>
-                    <p>
-                        We combine evidence-based techniques with compassionate care to help you overcome challenges and
-                        thrive. Our integrative methods are tailored to your unique situation.
-                    </p>
-                </div>
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="resources-header">
+                <h2>Mental Health Resources</h2>
+                <p>Therapist-backed articles and guides to support your wellbeing</p>
             </div>
+            
+            <div class="resources-carousel">
+                <button class="carousel-btn prev" id="resourcesPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-viewport" id="resourcesViewport">
+                    <div class="carousel-track" id="resourcesTrack">
+                        <!-- Article 1: Workplace Burnout (NEW) -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/workplace-burnout" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/workplace-burnout/burnout.svg" alt="Workplace burnout recognition and recovery guide" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Oct 15, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">Workplace Burnout: How to Recognize, Recover, and Reclaim Your Well-being</h3>
+                                    <p class="resource-excerpt">Learn to identify burnout symptoms, understand why millennials face unique challenges, and discover evidence-based recovery strategies.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
 
-            <div class="offer-card">
-                <div class="offer-header">
-                                    <h3>Special Offer</h3>
-                <p>Exclusive 57% OFF on your first session!</p>
+                        <!-- Article 2: Mental Health Day -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/mental-health-day" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/mental-health-day/mental_health_day.svg" alt="Mental Health Day 2025: awareness and self-care strategies" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Oct 10, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">Mental Health Day 2025: How to Observe, Reflect & Take Action</h3>
+                                    <p class="resource-excerpt">Discover why Mental Health Day matters, explore self-care strategies, and learn how to support loved ones.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
 
-                    <div class="price-display">
-                        <div class="original-price">1499</div>
-                        <div class="sale-price">650</div>
-                        <div class="discount-tag">
-                            57% OFF
-                        </div>
-                    </div>
+                        <!-- Article 3: Anxiety -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/anxiety-understanding-managing" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/anxiety-understanding-managing/4.svg" alt="Understanding when worry becomes anxiety disorder" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Oct 8, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">When Worry Becomes Anxiety: From Occasional Concern to Persistent Struggle</h3>
+                                    <p class="resource-excerpt">Understand when worry crosses the line into anxiety disorder. Learn to spot the signs and discover practical coping strategies.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
 
-                    <div class="availability">
-                        <i class="fas fa-calendar"></i>
-                        <span>Evening and weekend slots available</span>
+                        <!-- Article 4: Depression -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/low-mood-to-depression" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/low-mood-to-depression/3.webp" alt="Understanding when low mood becomes depression" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Oct 1, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">When Low Mood Becomes Depression: How to Spot It?</h3>
+                                    <p class="resource-excerpt">Learn how to tell normal lows from clinical depression, evidence-backed treatments, and simple next steps to get help today.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Article 5: Therapy Costs -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/therapy-costs-india" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/therapy-costs-india/2.svg" alt="Therapy costs in India: affordable mental healthcare guide" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Sep 16, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">How Much Does Therapy Cost in India? Affordable Options Explained</h3>
+                                    <p class="resource-excerpt">Complete guide to therapy costs in India. Explore affordable online therapy, insurance coverage, and budget-friendly options.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Article 6: Digital Detox -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/digital-detox-vs-digital-balance" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/digital-detox-vs-digital-balance/1.svg" alt="Digital detox vs digital balance for mental wellbeing" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Sep 13, 2025</span>
+                                    </div>
+                                    <h3 class="resource-title">Digital Detox vs. Digital Balance: Which Is Better for Your Mental Wellbeing?</h3>
+                                    <p class="resource-excerpt">Understand the difference between a full reset and a sustainable approach, and how to choose what supports your mind best.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
                     </div>
                 </div>
-
-                <button class="cta-button offer-cta"
-                    onclick="window.location.href='/#bookingForm'">Book your first session – ₹650</button>
+                
+                <button class="carousel-btn next" id="resourcesNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-dots" id="resourcesDots"></div>
+            
+            <div class="resources-cta">
+                <a href="/resources" class="cta-button secondary">View All Resources</a>
             </div>
         </div>
     </section>
