@@ -9,13 +9,13 @@
     
     <!-- ================================================================ -->
     <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
-    <!-- Last Updated: 2025-10-10                                        -->
+    <!-- Last Updated: 2025-10-17                                        -->
     <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://therapycouncil.org/</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -57,6 +57,14 @@
         <priority>0.9</priority>
     </url>
     
+    <!-- Blog - Medium Priority -->
+    <url>
+        <loc>https://therapycouncil.org/blog</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
     <!-- Resources - Updated regularly -->
     <url>
         <loc>https://therapycouncil.org/resources</loc>
@@ -68,7 +76,7 @@
     <!-- Resource Post: Digital Detox vs Digital Balance -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/digital-detox-vs-digital-balance</loc>
-        <lastmod>2025-09-12</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -76,7 +84,7 @@
     <!-- Resource Post: Low Mood to Depression -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/low-mood-to-depression</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -84,7 +92,7 @@
     <!-- Resource Post: Therapy Costs in India -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/therapy-costs-india</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -92,7 +100,15 @@
     <!-- Resource Post: Understanding and Managing Anxiety -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/anxiety-understanding-managing</loc>
-        <lastmod>2025-10-08</lastmod>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resource Post: Workplace Burnout -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/workplace-burnout</loc>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -118,21 +134,21 @@
     <!-- Legal Pages - Important for Trust & Compliance -->
     <url>
         <loc>https://therapycouncil.org/privacy</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://therapycouncil.org/terms</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://therapycouncil.org/refund</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -140,7 +156,7 @@
     <!-- Sitemap Reference (Self-referencing for completeness) -->
     <url>
         <loc>https://therapycouncil.org/sitemap.xml</loc>
-        <lastmod>2025-01-08</lastmod>
+        <lastmod>2025-10-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.2</priority>
     </url>
