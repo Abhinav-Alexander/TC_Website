@@ -9,7 +9,7 @@
     
     <!-- ================================================================ -->
     <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
-    <!-- Last Updated: 2025-10-17                                        -->
+    <!-- Last Updated: 2025-10-22                                        -->
     <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
@@ -49,6 +49,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Corporate Partnerships Page - High Priority -->
+    <url>
+        <loc>https://therapycouncil.org/corporate-partnerships</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- Pricing Page - High Priority -->
     <url>
         <loc>https://therapycouncil.org/pricing</loc>
@@ -73,6 +81,7 @@
         <priority>0.85</priority>
     </url>
 
+    
     <!-- Resource Post: Digital Detox vs Digital Balance -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/digital-detox-vs-digital-balance</loc>

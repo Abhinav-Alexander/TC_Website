@@ -2,6 +2,10 @@
 # https://therapycouncil.org/robots.txt
 
 User-agent: *
+User-agent: Googlebot
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: Mediapartners-Google
 
 # Allow crawling of main content
 Allow: /
@@ -10,6 +14,7 @@ Allow: /js/
 Allow: /logo/
 Allow: /favicon_io/
 Allow: /blog_images/
+Allow: /assets/
 
 # Block sensitive areas
 Disallow: /docs/

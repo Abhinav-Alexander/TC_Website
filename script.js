@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', ()=>{ setupWhenReady(); });
     })();
 
-    // Testimonials carousel initialization (seamless infinite)
+    // Testimonials carousel initialization (simple, no repetition)
     (function initTestimonialsCarousel(){
         const track = document.querySelector('.testimonials-carousel .carousel-track');
         const prev = document.querySelector('.testimonials-carousel .carousel-btn.prev');
@@ -701,11 +701,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const viewport = document.querySelector('.testimonials-carousel .carousel-viewport');
         if (!track || !prev || !next) return;
 
-        let originals = Array.from(track.children);
-        originals.forEach(el => el.dataset.original = 'true');
-        let originalCount = originals.length;
-        let index = 0; // will be set to visible in setup
-        const leftOffset = -8;
+        const cards = Array.from(track.children);
+        const totalCards = cards.length;
+        let index = 0;
 
         function getVisibleCount(){
             return window.innerWidth >= 768 ? 3 : 1;
@@ -723,95 +721,85 @@ document.addEventListener('DOMContentLoaded', function() {
             return first.getBoundingClientRect().width + getGap();
         }
 
-        function clearClones(){
-            track.querySelectorAll('[data-clone="true"]').forEach(n => n.remove());
+        function updateCarousel(){
+            const cardWidth = getCardWidth();
+            const offset = -(index * cardWidth);
+            track.style.transform = `translateX(${offset}px)`;
+            
+            // Update button states
+            prev.disabled = index === 0;
+            next.disabled = index >= Math.max(0, totalCards - getVisibleCount());
         }
 
-        function setup(){
-            clearClones();
-            originals = Array.from(track.querySelectorAll('[data-original="true"]'));
-            originalCount = originals.length;
-            const visible = getVisibleCount();
-
-            const firstClones = originals.slice(0, visible).map(c => { const n=c.cloneNode(true); n.dataset.clone='true'; return n; });
-            const lastClones = originals.slice(-visible).map(c => { const n=c.cloneNode(true); n.dataset.clone='true'; return n; });
-
-            // prepend last clones (keep order)
-            lastClones.forEach((n,i)=> track.insertBefore(lastClones[lastClones.length-1-i], track.firstChild));
-            // append first clones
-            firstClones.forEach(n=> track.appendChild(n));
-
-            // start at first real slide
-            index = visible;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
-            // force reflow to apply
-            void track.offsetHeight;
-            track.style.transition = '';
+        function goTo(newIndex){
+            const maxIndex = Math.max(0, totalCards - getVisibleCount());
+            index = Math.max(0, Math.min(newIndex, maxIndex));
+            updateCarousel();
         }
 
-        // Wait until card width is measurable to prevent blank first render
         function setupWhenReady(attempt = 0){
             const width = getCardWidth();
             if (width && width > 0) {
-                setup();
+                updateCarousel();
                 return;
             }
             if (attempt < 40) {
                 setTimeout(() => setupWhenReady(attempt + 1), 50);
             } else {
-                requestAnimationFrame(setup);
-            }
-        }
-
-        function goTo(newIndex){
-            index = newIndex;
-            track.style.transition = 'transform 0.3s ease';
-            track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
-        }
-
-        function onTransitionEnd(){
-            const visible = getVisibleCount();
-            const start = visible;
-            const end = visible + originalCount - 1;
-            if (index > end){
-                track.style.transition = 'none';
-                index = start;
-                track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
-                void track.offsetHeight;
-                track.style.transition = '';
-            } else if (index < start){
-                track.style.transition = 'none';
-                index = end;
-                track.style.transform = `translateX(${-(index * getCardWidth()) + leftOffset}px)`;
-                void track.offsetHeight;
-                track.style.transition = '';
+                updateCarousel();
             }
         }
 
         prev.addEventListener('click', ()=> goTo(index - 1));
         next.addEventListener('click', ()=> goTo(index + 1));
-        track.addEventListener('transitionend', onTransitionEnd);
 
-        // Touch/drag
-        let startX=0, isDragging=false, dragDelta=0;
-        function onTouchStart(e){ const t=e.touches?e.touches[0]:e; startX=t.clientX; isDragging=true; dragDelta=0; track.style.transition='none'; }
-        function onTouchMove(e){ if(!isDragging) return; const t=e.touches?e.touches[0]:e; dragDelta=t.clientX-startX; const base=-(index*getCardWidth())+leftOffset; track.style.transform=`translateX(${base+dragDelta}px)`; }
-        function onTouchEnd(){ if(!isDragging) return; isDragging=false; track.style.transition=''; const threshold=Math.min(120, getCardWidth()*0.25); if(dragDelta>threshold) goTo(index-1); else if(dragDelta<-threshold) goTo(index+1); else goTo(index); dragDelta=0; }
-        if (viewport){
-            viewport.addEventListener('touchstart', onTouchStart, {passive:true});
-            viewport.addEventListener('touchmove', onTouchMove, {passive:true});
+        // Touch/drag support
+        let startX = 0;
+        let isDragging = false;
+        let dragDelta = 0;
+        
+        function onTouchStart(e) {
+            if (!viewport) return;
+            startX = e.touches ? e.touches[0].clientX : e.clientX;
+            isDragging = true;
+            dragDelta = 0;
+            track.style.transition = 'none';
+        }
+        
+        function onTouchMove(e) {
+            if (!isDragging) return;
+            const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+            dragDelta = currentX - startX;
+            const cardWidth = getCardWidth();
+            const baseOffset = -(index * cardWidth);
+            track.style.transform = `translateX(${baseOffset + dragDelta}px)`;
+        }
+        
+        function onTouchEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = '';
+            const threshold = Math.min(120, getCardWidth() * 0.25);
+            if (dragDelta > threshold) goTo(index - 1);
+            else if (dragDelta < -threshold) goTo(index + 1);
+            else goTo(index);
+            dragDelta = 0;
+        }
+        
+        if (viewport) {
+            viewport.addEventListener('touchstart', onTouchStart, {passive: true});
+            viewport.addEventListener('touchmove', onTouchMove, {passive: true});
             viewport.addEventListener('touchend', onTouchEnd);
-            viewport.addEventListener('mousedown', (e)=>{ e.preventDefault(); onTouchStart(e); });
+            viewport.addEventListener('mousedown', (e) => { e.preventDefault(); onTouchStart(e); });
             window.addEventListener('mousemove', onTouchMove);
             window.addEventListener('mouseup', onTouchEnd);
         }
 
-        // init and handle resize rebuild, robust against late layout
+        // Initialize and handle resize
         setupWhenReady();
         window.addEventListener('load', () => setupWhenReady());
         if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => setupWhenReady()); }
-        window.addEventListener('resize', ()=> setupWhenReady());
+        window.addEventListener('resize', () => setupWhenReady());
     })();
 
     /* ── Resources Carousel Functionality ──────────────────────────────── */

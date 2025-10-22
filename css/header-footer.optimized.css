@@ -301,6 +301,20 @@
 
 .footer-contact p { color: rgba(255,255,255,0.94); margin-bottom: 8px; font-size: 15px; }
 
+/* Footer contact links styling */
+.footer-contact a {
+    color: #bfdbfe; /* lighter blue for contrast */
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #93c5fd; /* lighter blue on hover */
+    text-decoration: underline;
+}
+
 .support-button {
     background-color: #0d9488;
     color: white;
