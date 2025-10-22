@@ -31,11 +31,49 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '785305737807988');
     fbq('track', 'PageView');
-    </script>
+</script>
+
+<!-- Submit Application Event Tracking -->
+<script>
+    // Track when user clicks booking buttons
+    document.addEventListener('DOMContentLoaded', function() {
+        // Main booking button
+        const bookNowBtn = document.getElementById('bookNowDirect');
+        if (bookNowBtn) {
+            bookNowBtn.addEventListener('click', function() {
+                fbq('track', 'SubmitApplication');
+            });
+        }
+        
+        // Sticky CTA button
+        const stickyBtn = document.getElementById('stickyCtaBtn');
+        if (stickyBtn) {
+            stickyBtn.addEventListener('click', function() {
+                fbq('track', 'SubmitApplication');
+            });
+        }
+        
+        // All booking links
+        const bookingLinks = document.querySelectorAll('a[href*="payments.cashfree.com"]');
+        bookingLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                fbq('track', 'SubmitApplication');
+            });
+        });
+    });
+</script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=785305737807988&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7C89C8M');</script>
+    <!-- End Google Tag Manager -->
 
     <title>67% OFF First Session | Online Therapy | Therapy Council</title>
     
@@ -324,6 +362,11 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
 </head>
 
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7C89C8M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ▸ HEADER ------------------------------------------------------------ -->
     <header class="header">
