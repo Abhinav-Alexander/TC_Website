@@ -133,6 +133,135 @@
       /* New style for the disclaimer box */
       .disclaimer-box { border-left: 4px solid #f97316; background-color: #fff7ed; padding: 15px; margin: 20px 0; font-size: 0.9em; color: #78350f; }
       .disclaimer-box strong { color: #c04200; }
+      /* References dropdown styling */
+      .references-dropdown {
+        margin: 30px 0;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+      
+      .references-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        cursor: pointer;
+        list-style: none;
+        background: #f8fafc;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+      }
+      
+      .references-summary:hover {
+        background: #f1f5f9;
+      }
+      
+      .references-summary h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #111827;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .references-icon {
+        color: #64748b;
+        font-size: 14px;
+        transition: transform 0.2s ease;
+      }
+      
+      .references-dropdown[open] .references-icon {
+        transform: rotate(180deg);
+      }
+      
+      .references-content {
+        padding: 20px;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+      }
+      
+      .references-content ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+      
+      .references-content li {
+        margin-bottom: 12px;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+      
+      .references-content a {
+        color: #0d9488;
+        text-decoration: none;
+        word-break: break-all;
+      }
+      
+      .references-content a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Author dropdown styling */
+      .author-dropdown {
+        margin: 30px 0;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+      
+      .author-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        cursor: pointer;
+        list-style: none;
+        background: #f8fafc;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+      }
+      
+      .author-summary:hover {
+        background: #f1f5f9;
+      }
+      
+      .author-summary h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #111827;
+      }
+      
+      .author-icon {
+        color: #64748b;
+        font-size: 14px;
+        transition: transform 0.2s ease;
+      }
+      
+      .author-dropdown[open] .author-icon {
+        transform: rotate(180deg);
+      }
+      
+      .author-content {
+        padding: 20px;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+      }
+      
+      .author-content h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #111827;
+      }
+      
+      .author-content p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #334155;
+        margin: 0;
+      }
+      
       /* Related Articles Section */
       .related-articles { padding: 40px 0; background: #f8fafc; border-top: 1px solid #e5e7eb; }
       .related-articles h2 { text-align: center; color: #111827; font-size: 28px; margin-bottom: 32px; }
@@ -260,7 +389,7 @@
                     
                     <p>Five years ago, the idea of discussing your deepest anxieties with a therapist over a video call seemed impersonal, perhaps even ineffective. Today, online therapy in India has transformed from a pandemic necessity to the preferred choice for millions seeking mental health support.</p>
 
-                    <p>The numbers tell a compelling story. India's online therapy market grew by 320% between 2020 and 2023, according to a report by RedSeer Consulting. What started as a temporary alternative has become the primary way Indians access mental healthcare. But this shift isn't just about convenience—it represents a fundamental change in how we approach mental health in a country where stigma, accessibility, and affordability have long been barriers to care.</p>
+                    <p>The numbers tell a compelling story. India's online therapy market grew by 320% between 2020 and 2023, according to a report by RedSeer Consulting. What started as a temporary alternative has become the primary way Indians access mental healthcare. But this shift isn't just about convenience. It represents a fundamental change in how we approach mental health in a country where stigma, accessibility, and affordability have long been barriers to care.</p>
 
                     <h2 id="introduction">The Mental Health Crisis in India</h2>
                     <p>India accounts for nearly 15% of the global mental health burden, according to the World Health Organization. The National Mental Health Survey of India found that nearly 10% of the population suffers from mental disorders, yet the treatment gap exceeds 70%.</p>
@@ -431,7 +560,7 @@
 
                     <h2 id="who-benefits">Online Therapy vs Traditional Therapy: Making the Choice</h2>
                     
-                    <p>Online therapy isn't universally superior—it's differently suited. Here's how to decide:</p>
+                    <p>Online therapy isn't universally superior. It's differently suited. Here's how to decide:</p>
 
                     <h3>Choose Online Therapy If:</h3>
                     <ul>
@@ -512,7 +641,7 @@
                     <p>The stigma around mental health is gradually eroding, particularly among younger Indians. A 2023 survey by YourDOST found that 68% of millennials and Gen Z Indians are willing to try online therapy, compared to just 34% of those over 45.</p>
 
                     <h3>Your Mental Health Deserves Priority</h3>
-                    <p>Mental health isn't a luxury—it's a necessity. Whether you're struggling with diagnosed conditions, navigating life transitions, dealing with relationship challenges, or simply feeling overwhelmed, therapy can help.</p>
+                    <p>Mental health isn't a luxury. It's a necessity. Whether you're struggling with diagnosed conditions, navigating life transitions, dealing with relationship challenges, or simply feeling overwhelmed, therapy can help.</p>
 
                     <p>Online therapy has made mental health support accessible, affordable, and convenient for millions of Indians who previously couldn't access care. You no longer need to suffer in silence, worry about judgment, or postpone support because of logistics.</p>
 
@@ -520,9 +649,9 @@
                     
                     <div class="cta-box" style="margin-top: 30px;">
                         <h3 style="margin-top: 0;">Ready to Experience Online Therapy with Therapy Council?</h3>
-                        <p>Connect with experienced therapists from leading hospitals. Book your first session at just ₹650 (67% OFF regular price). Evidence-based CBT, flexible scheduling, HIPAA-compliant platform.</p>
+                        <p>Connect with experienced therapists from leading hospitals. Evidence-based CBT, flexible scheduling, HIPAA-compliant platform.</p>
                         <a href="/pricing" class="cta-button">View Our Affordable Pricing</a>
-                        <a href="/" class="cta-button" style="background: white; color: #0d9488; border: 2px solid #0d9488;">Book Your First Session</a>
+                        <a href="/" class="cta-button" style="background: white; color: #0d9488; border: 2px solid #0d9488;">Book Your Session</a>
                     </div>
 
                     <p><strong>Found this guide helpful?</strong> Share it with friends, family, or colleagues who might benefit from understanding online therapy options.</p>
@@ -534,34 +663,40 @@
                     </div>
                     <div class="divider"></div>
 
-                    <section id="references" style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 30px 0;">
-                        <h2>References & Citations</h2>
-                        <p style="font-size: 0.9em; margin-bottom: 15px;">This article is based on current research, clinical practice guidelines, and expert analysis:</p>
-                        <ol style="font-size: 0.9em; line-height: 1.8;">
-                            <li>World Health Organization. (2022). <em>Mental Health Atlas 2020</em>. Available at: <a href="https://www.who.int/publications/i/item/9789240036703" target="_blank" rel="noopener">https://www.who.int/publications</a></li>
-                            <li>National Mental Health Survey of India. (2016). <em>Prevalence, Pattern and Outcomes</em>. NIMHANS Publication No. 129.</li>
-                            <li>RedSeer Consulting. (2023). <em>India Online Therapy Market Analysis Report</em>.</li>
-                            <li>The Lancet Psychiatry. (2017). <em>Mental Health in India: Current Status and Future Directions</em>.</li>
-                            <li>Asian Journal of Psychiatry. (2021). <em>Mental Health Stigma in India: A Cross-Sectional Study</em>.</li>
-                            <li>Indian Journal of Psychiatry. (2022). <em>Telepsychiatry in Rural and Semi-Urban Areas: Effectiveness Study</em>.</li>
-                            <li>Indian Council of Medical Research. (2021). <em>Cost-Effectiveness of Teletherapy in India</em>.</li>
-                            <li>Journal of Medical Internet Research. (2021). <em>Meta-Analysis of Online vs Face-to-Face Therapy Effectiveness</em>.</li>
-                            <li>American Psychological Association. (2022). <em>Online Cognitive Behavioral Therapy: Efficacy and Outcomes</em>.</li>
-                            <li>Indian Journal of Psychological Medicine. (2022). <em>Therapeutic Alliance in Online and In-Person Settings</em>.</li>
-                            <li>National Crime Records Bureau. (2021). <em>Accidental Deaths and Suicides in India Report</em>.</li>
-                            <li>Ministry of Health and Family Welfare. (2022). <em>National Tele Mental Health Programme</em>. Government of India.</li>
-                            <li>YourDOST. (2023). <em>Mental Health Awareness Survey: Generational Attitudes Towards Online Therapy</em>.</li>
-                        </ol>
-                        <p style="font-size: 0.85em; color: #64748b; margin-top: 15px;"><strong>Note:</strong> Information is subject to change. Always verify current details with healthcare providers and platforms.</p>
-                    </section>
-
-                    <section id="about-authors" style="background: #fff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; margin: 30px 0;">
-                        <h2>About the Author</h2>
-                        <div style="margin: 20px 0;">
-                            <h3 style="font-size: 18px; margin-bottom: 8px;">Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</h3>
-                            <p style="font-size: 0.9em; line-height: 1.7;">With a Master's in Clinical Psychology and advanced training in Cognitive Behavioural Therapy, Pragya Alexander founded Therapy Council to make quality mental healthcare accessible. Her clinical background spans leading medical institutions such as VIMHANS, Max Healthcare, Moolchand Hospital, and Fortis, along with community work through Sewa Bharti. Pragya specializes in evidence-based treatments, helping clients navigate depression, anxiety, and life stressors through practical, structured therapeutic approaches.</p>
+                    <details class="references-dropdown" id="references">
+                        <summary class="references-summary">
+                            <h2>References & Citations</h2>
+                            <i class="fas fa-chevron-down references-icon"></i>
+                        </summary>
+                        <div class="references-content">
+                            <ol>
+                                <li>World Health Organization. (2022). <em>Mental Health Atlas 2020</em>. Available at: <a href="https://www.who.int/publications/i/item/9789240036703" target="_blank" rel="noopener">https://www.who.int/publications</a></li>
+                                <li>National Mental Health Survey of India. (2016). <em>Prevalence, Pattern and Outcomes</em>. NIMHANS Publication No. 129.</li>
+                                <li>RedSeer Consulting. (2023). <em>India Online Therapy Market Analysis Report</em>.</li>
+                                <li>The Lancet Psychiatry. (2017). <em>Mental Health in India: Current Status and Future Directions</em>.</li>
+                                <li>Asian Journal of Psychiatry. (2021). <em>Mental Health Stigma in India: A Cross-Sectional Study</em>.</li>
+                                <li>Indian Journal of Psychiatry. (2022). <em>Telepsychiatry in Rural and Semi-Urban Areas: Effectiveness Study</em>.</li>
+                                <li>Indian Council of Medical Research. (2021). <em>Cost-Effectiveness of Teletherapy in India</em>.</li>
+                                <li>Journal of Medical Internet Research. (2021). <em>Meta-Analysis of Online vs Face-to-Face Therapy Effectiveness</em>.</li>
+                                <li>American Psychological Association. (2022). <em>Online Cognitive Behavioral Therapy: Efficacy and Outcomes</em>.</li>
+                                <li>Indian Journal of Psychological Medicine. (2022). <em>Therapeutic Alliance in Online and In-Person Settings</em>.</li>
+                                <li>National Crime Records Bureau. (2021). <em>Accidental Deaths and Suicides in India Report</em>.</li>
+                                <li>Ministry of Health and Family Welfare. (2022). <em>National Tele Mental Health Programme</em>. Government of India.</li>
+                                <li>YourDOST. (2023). <em>Mental Health Awareness Survey: Generational Attitudes Towards Online Therapy</em>.</li>
+                            </ol>
                         </div>
-                    </section>
+                    </details>
+
+                    <details class="author-dropdown" id="about-authors">
+                        <summary class="author-summary">
+                            <h2>About the Author</h2>
+                            <i class="fas fa-chevron-down author-icon"></i>
+                        </summary>
+                        <div class="author-content">
+                            <h3>Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</h3>
+                            <p>With a Master's in Clinical Psychology and advanced training in Cognitive Behavioural Therapy, Pragya Alexander founded Therapy Council to make quality mental healthcare accessible. Her clinical background spans leading medical institutions such as VIMHANS, Max Healthcare, Moolchand Hospital, and Fortis, along with community work through Sewa Bharti. Pragya specializes in evidence-based treatments, helping clients navigate depression, anxiety, and life stressors through practical, structured therapeutic approaches.</p>
+                        </div>
+                    </details>
 
                     <p><a class="backlink" href="/resources"><i class="fas fa-arrow-left"></i> Browse more articles</a></p>
                 </article>
