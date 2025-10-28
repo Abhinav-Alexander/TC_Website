@@ -66,7 +66,7 @@
   <meta property="og:url" content="https://therapycouncil.org/resources/posts/dating-burnout-digital-age">
   <meta property="og:type" content="article">
   <meta property="article:section" content="Relationships & Dating">
-  <meta property="article:published_time" content="2025-01-15">
+  <meta property="article:published_time" content="2025-10-22">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dating Burnout in the Digital Age: Tinder Fatigue and Finding Connection">
@@ -97,9 +97,9 @@
         "url": "https://therapycouncil.org/logo/logo_black.png"
       }
     },
-    "datePublished": "2025-01-15",
-    "dateModified": "2025-01-15",
-    "lastReviewed": "2025-01-15",
+    "datePublished": "2025-10-22",
+    "dateModified": "2025-10-22",
+    "lastReviewed": "2025-10-22",
     "mainEntityOfPage": "https://therapycouncil.org/resources/posts/dating-burnout-digital-age",
     "image": "https://therapycouncil.org/logo/logo_black.png",
     "articleSection": "Relationships & Dating"
@@ -398,9 +398,9 @@
                 <div class="post-meta-bar">
                     <span>Written by Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT</span>
                     <span class="meta-sep">•</span>
-                    <time datetime="2025-01-15">Published: January 15, 2025</time>
+                    <time datetime="2025-10-22">Published: October 22, 2025</time>
                     <span class="meta-sep">•</span>
-                    <time datetime="2025-01-15">Last Reviewed: January 15, 2025</time>
+                    <time datetime="2025-10-22">Last Reviewed: October 22, 2025</time>
                     <span class="meta-sep">•</span>
                     <span>12 to 15 min read</span>
                 </div>
@@ -861,6 +861,48 @@
     </div>
   </footer>
 
+  <script src="../../js/blog-data.js"></script>
   <script src="../../script.js" defer></script>
+  
+  <script>
+    // Populate blog post data from centralized source
+    document.addEventListener('DOMContentLoaded', function() {
+      const post = BlogUtils.getPostBySlug('dating-burnout-digital-age');
+      if (post) {
+        // Update meta tags
+        const publishedTimeMeta = document.querySelector('meta[property="article:published_time"]');
+        if (publishedTimeMeta) {
+          publishedTimeMeta.setAttribute('content', post.date);
+        }
+
+        // Update structured data
+        const structuredDataScript = document.querySelector('script[type="application/ld+json"]');
+        if (structuredDataScript) {
+          try {
+            const structuredData = JSON.parse(structuredDataScript.textContent);
+            structuredData.datePublished = post.date;
+            structuredData.dateModified = post.date;
+            structuredData.lastReviewed = post.date;
+            structuredDataScript.textContent = JSON.stringify(structuredData);
+          } catch (e) {
+            console.warn('Could not update structured data:', e);
+          }
+        }
+
+        // Update visible dates
+        const publishedDateElement = document.querySelector('time[datetime]');
+        if (publishedDateElement) {
+          publishedDateElement.setAttribute('datetime', post.date);
+          publishedDateElement.textContent = `Published: ${post.publishedDate}`;
+        }
+
+        const lastReviewedElement = document.querySelector('time[datetime]:nth-of-type(2)');
+        if (lastReviewedElement) {
+          lastReviewedElement.setAttribute('datetime', post.date);
+          lastReviewedElement.textContent = `Last Reviewed: ${post.lastReviewed}`;
+        }
+      }
+    });
+  </script>
 </body>
 </html>

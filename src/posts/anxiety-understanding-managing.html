@@ -745,6 +745,49 @@
       })();
     </script>
 
+  <script src="../../js/blog-data.js"></script>
+  
+  <script>
+    // Populate blog post data from centralized source
+    document.addEventListener('DOMContentLoaded', function() {
+      const post = BlogUtils.getPostBySlug('anxiety-understanding-managing');
+      if (post) {
+        // Update meta tags
+        const publishedTimeMeta = document.querySelector('meta[property="article:published_time"]');
+        if (publishedTimeMeta) {
+          publishedTimeMeta.setAttribute('content', post.date);
+        }
+
+        // Update structured data
+        const structuredDataScript = document.querySelector('script[type="application/ld+json"]');
+        if (structuredDataScript) {
+          try {
+            const structuredData = JSON.parse(structuredDataScript.textContent);
+            structuredData.datePublished = post.date;
+            structuredData.dateModified = post.date;
+            structuredData.lastReviewed = post.date;
+            structuredDataScript.textContent = JSON.stringify(structuredData);
+          } catch (e) {
+            console.warn('Could not update structured data:', e);
+          }
+        }
+
+        // Update visible dates
+        const publishedDateElement = document.querySelector('time[datetime]');
+        if (publishedDateElement) {
+          publishedDateElement.setAttribute('datetime', post.date);
+          publishedDateElement.textContent = `Published: ${post.publishedDate}`;
+        }
+
+        const lastReviewedElement = document.querySelector('time[datetime]:nth-of-type(2)');
+        if (lastReviewedElement) {
+          lastReviewedElement.setAttribute('datetime', post.date);
+          lastReviewedElement.textContent = `Last Reviewed: ${post.lastReviewed}`;
+        }
+      }
+    });
+  </script>
+
 </body>
 
 </html>

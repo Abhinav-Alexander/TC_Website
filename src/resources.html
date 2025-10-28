@@ -346,7 +346,24 @@
     <section class="blog-listing">
         <div class="container">
             <div class="blog-grid" id="blogGrid">
-                <!-- Dating Burnout Article - NEWEST -->
+                <!-- Online Therapy First Choice Article - NEWEST -->
+                <article class="post-card" data-category="Therapy Guide,Digital Wellbeing" data-title="Why Online Therapy is Becoming the First Choice in India" data-content="Discover why millions of Indians are choosing online therapy. Explore accessibility, affordability, effectiveness, and how digital mental healthcare is transforming lives. online therapy India, teletherapy, virtual counseling, digital mental health, affordable therapy, video therapy, accessibility, effectiveness">
+                    <a class="post-link" href="/resources/posts/online-therapy-first-choice-india">
+                        <div class="post-thumb">
+                            <img src="../resources/posts/online-therapy-first-choice-india/online-therapy.svg" alt="Why online therapy is becoming the first choice in India" loading="lazy">
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date">2025-10-28</span>
+                            <span class="post-tag">Therapy Guide</span>
+                            <span class="post-tag">Digital Wellbeing</span>
+                        </div>
+                        <h3 class="post-title">Why Online Therapy is Becoming the First Choice in India</h3>
+                        <p class="post-excerpt">Discover why millions of Indians are choosing online therapy. Explore accessibility, affordability, effectiveness, and how digital mental healthcare is transforming lives.</p>
+                        <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </article>
+
+                <!-- Dating Burnout Article -->
                 <article class="post-card" data-category="Relationships & Dating,Digital Wellbeing" data-title="Dating Burnout in the Digital Age: Recognition, Recovery & Mental Health Guide" data-content="Learn to identify dating burnout symptoms, understand digital dating fatigue, and discover evidence-based recovery strategies. dating burnout, digital dating fatigue, dating app burnout, online dating exhaustion, relationship burnout, dating stress, mental health, therapy for dating, digital wellness, dating recovery">
                     <a class="post-link" href="/resources/posts/dating-burnout-digital-age">
                         <div class="post-thumb">
@@ -553,6 +570,7 @@
     </footer>
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+    <script src="../js/blog-data.js"></script>
     <script src="../script.js" defer></script>
     
     <script>
@@ -664,6 +682,72 @@
             // Initialize
             filterArticles();
         })();
+
+        // Populate blog dates from centralized data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update dating burnout article
+            const datingBurnoutPost = BlogUtils.getPostBySlug('dating-burnout-digital-age');
+            if (datingBurnoutPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="Relationships & Dating"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = datingBurnoutPost.date;
+                }
+            }
+
+            // Update workplace burnout article
+            const workplaceBurnoutPost = BlogUtils.getPostBySlug('workplace-burnout');
+            if (workplaceBurnoutPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="Workplace Burnout"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = workplaceBurnoutPost.date;
+                }
+            }
+
+            // Update mental health day article
+            const mentalHealthDayPost = BlogUtils.getPostBySlug('mental-health-day');
+            if (mentalHealthDayPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="Mental Health Day"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = mentalHealthDayPost.date;
+                }
+            }
+
+            // Update anxiety article
+            const anxietyPost = BlogUtils.getPostBySlug('anxiety-understanding-managing');
+            if (anxietyPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="When Worry Becomes Anxiety"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = anxietyPost.date;
+                }
+            }
+
+            // Update depression article
+            const depressionPost = BlogUtils.getPostBySlug('low-mood-to-depression');
+            if (depressionPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="When Low Mood Becomes Depression"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = depressionPost.date;
+                }
+            }
+
+            // Update therapy costs article
+            const therapyCostsPost = BlogUtils.getPostBySlug('therapy-costs-india');
+            if (therapyCostsPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="Therapy Guide"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = therapyCostsPost.date;
+                }
+            }
+
+            // Update digital detox article
+            const digitalDetoxPost = BlogUtils.getPostBySlug('digital-detox-vs-digital-balance');
+            if (digitalDetoxPost) {
+                const dateElement = document.querySelector('.post-card[data-category*="Digital Detox vs. Digital Balance"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = digitalDetoxPost.date;
+                }
+            }
+        });
     </script>
 
 </body>

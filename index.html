@@ -864,7 +864,30 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                 <div class="carousel-viewport" id="resourcesViewport">
                     <div class="carousel-track" id="resourcesTrack">
 
-                        <!-- Article 1: Dating Burnout - NEWEST -->
+                        <!-- Article 1: Online Therapy First Choice - NEWEST -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/online-therapy-first-choice-india" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/online-therapy-first-choice-india/online-therapy.svg" alt="Why online therapy is becoming the first choice in India" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Oct 28, 2025</span>
+                                        <span class="reading-time">5-7 min read</span>
+                                    </div>
+                                    <h3 class="resource-title">Why Online Therapy is Becoming the First Choice in India</h3>
+                                    <div class="resource-tags">
+                                        <span class="tag">Online Therapy</span>
+                                        <span class="tag">Digital Health</span>
+                                        <span class="tag">India</span>
+                                    </div>
+                                    <p class="resource-excerpt">Discover why millions of Indians are choosing online therapy. Explore accessibility, affordability, effectiveness, and how digital mental healthcare is transforming lives.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Article 2: Dating Burnout -->
                         <article class="resource-card">
                             <a href="/resources/posts/dating-burnout-digital-age" class="resource-link">
                                 <div class="resource-image">
@@ -872,7 +895,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                                 </div>
                                 <div class="resource-content">
                                     <div class="resource-meta">
-                                        <span class="resource-date">Jan 15, 2025</span>
+                                        <span class="resource-date">Oct 22, 2025</span>
                                         <span class="reading-time">12 min read</span>
                                     </div>
                                     <h3 class="resource-title">Dating Burnout in the Digital Age: Recognition, Recovery & Mental Health Guide</h3>
@@ -887,7 +910,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 2: Workplace Burnout -->
+                        <!-- Article 3: Workplace Burnout -->
                         <article class="resource-card">
                             <a href="/resources/posts/workplace-burnout" class="resource-link">
                                 <div class="resource-image">
@@ -910,7 +933,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 3: Mental Health Day -->
+                        <!-- Article 4: Mental Health Day -->
                         <article class="resource-card">
                             <a href="/resources/posts/mental-health-day" class="resource-link">
                                 <div class="resource-image">
@@ -933,7 +956,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 4: Anxiety -->
+                        <!-- Article 5: Anxiety -->
                         <article class="resource-card">
                             <a href="/resources/posts/anxiety-understanding-managing" class="resource-link">
                                 <div class="resource-image">
@@ -956,7 +979,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 5: Depression -->
+                        <!-- Article 6: Depression -->
                         <article class="resource-card">
                             <a href="/resources/posts/low-mood-to-depression" class="resource-link">
                                 <div class="resource-image">
@@ -979,7 +1002,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 6: Therapy Costs -->
+                        <!-- Article 7: Therapy Costs -->
                         <article class="resource-card">
                             <a href="/resources/posts/therapy-costs-india" class="resource-link">
                                 <div class="resource-image">
@@ -1002,7 +1025,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                             </a>
                         </article>
 
-                        <!-- Article 7: Digital Detox -->
+                        <!-- Article 8: Digital Detox -->
                         <article class="resource-card">
                             <a href="/resources/posts/digital-detox-vs-digital-balance" class="resource-link">
                                 <div class="resource-image">
@@ -1110,10 +1133,89 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
     </footer>
 
     <!-- ▸ SCRIPTS ----------------------------------------------------------- -->
+    <script src="js/blog-data.js"></script>
     <script src="script.js" defer></script>
     
     <!-- Service Worker Registration (for caching & offline support) -->
     <script src="sw-register.js" defer></script>
+    
+    <!-- Blog Data Population Script -->
+    <script>
+        // Populate blog dates and content from centralized data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update online therapy article
+            const onlineTherapyPost = BlogUtils.getPostBySlug('online-therapy-first-choice-india');
+            if (onlineTherapyPost) {
+                const dateElement = document.querySelector('.resource-card:first-child .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = onlineTherapyPost.displayDate;
+                }
+            }
+
+            // Update dating burnout article
+            const datingBurnoutPost = BlogUtils.getPostBySlug('dating-burnout-digital-age');
+            if (datingBurnoutPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(2) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = datingBurnoutPost.displayDate;
+                }
+            }
+
+            // Update workplace burnout article
+            const workplaceBurnoutPost = BlogUtils.getPostBySlug('workplace-burnout');
+            if (workplaceBurnoutPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(3) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = workplaceBurnoutPost.displayDate;
+                }
+            }
+
+            // Update mental health day article
+            const mentalHealthDayPost = BlogUtils.getPostBySlug('mental-health-day');
+            if (mentalHealthDayPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(4) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = mentalHealthDayPost.displayDate;
+                }
+            }
+
+            // Update anxiety article
+            const anxietyPost = BlogUtils.getPostBySlug('anxiety-understanding-managing');
+            if (anxietyPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(5) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = anxietyPost.displayDate;
+                }
+            }
+
+            // Update depression article
+            const depressionPost = BlogUtils.getPostBySlug('low-mood-to-depression');
+            if (depressionPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(6) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = depressionPost.displayDate;
+                }
+            }
+
+            // Update therapy costs article
+            const therapyCostsPost = BlogUtils.getPostBySlug('therapy-costs-india');
+            if (therapyCostsPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(7) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = therapyCostsPost.displayDate;
+                }
+            }
+
+            // Update digital detox article
+            const digitalDetoxPost = BlogUtils.getPostBySlug('digital-detox-vs-digital-balance');
+            if (digitalDetoxPost) {
+                const dateElement = document.querySelector('.resource-card:nth-child(8) .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = digitalDetoxPost.displayDate;
+                }
+            }
+        });
+    </script>
     
 </body>
 
