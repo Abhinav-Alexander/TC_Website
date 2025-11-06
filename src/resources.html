@@ -346,7 +346,24 @@
     <section class="blog-listing">
         <div class="container">
             <div class="blog-grid" id="blogGrid">
-                <!-- Online Therapy First Choice Article - NEWEST -->
+                <!-- PCOS and Mental Health Article - NEWEST -->
+                <article class="post-card" data-category="Wellness & Self-Care,Therapy Guide" data-title="The Link Between PCOS and Mental Health (And How Therapy Supports You)" data-content="Understanding the connection between PCOS and mental health, and how therapy can provide essential support for managing both physical and emotional challenges. PCOS, polycystic ovary syndrome, mental health, PCOS depression, PCOS anxiety, therapy for PCOS, women's health, PCOS support, mental wellness">
+                    <a class="post-link" href="/resources/posts/pcos-and-mental-health">
+                        <div class="post-thumb">
+                            <img src="../resources/posts/pcos-and-mental-health/pcos.svg" alt="The link between PCOS and mental health and how therapy supports you" loading="lazy">
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date">2025-11-04</span>
+                            <span class="post-tag">Wellness & Self-Care</span>
+                            <span class="post-tag">Therapy Guide</span>
+                        </div>
+                        <h3 class="post-title">The Link Between PCOS and Mental Health (And How Therapy Supports You)</h3>
+                        <p class="post-excerpt">Understanding the connection between PCOS and mental health, and how therapy can provide essential support for managing both physical and emotional challenges.</p>
+                        <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </article>
+
+                <!-- Online Therapy First Choice Article -->
                 <article class="post-card" data-category="Therapy Guide,Digital Wellbeing" data-title="Why Online Therapy is Becoming the First Choice in India" data-content="Discover why millions of Indians are choosing online therapy. Explore accessibility, affordability, effectiveness, and how digital mental healthcare is transforming lives. online therapy India, teletherapy, virtual counseling, digital mental health, affordable therapy, video therapy, accessibility, effectiveness">
                     <a class="post-link" href="/resources/posts/online-therapy-first-choice-india">
                         <div class="post-thumb">
@@ -685,6 +702,15 @@
 
         // Populate blog dates from centralized data
         document.addEventListener('DOMContentLoaded', function() {
+            // Update PCOS and mental health article
+            const pcosPost = BlogUtils.getPostBySlug('pcos-and-mental-health');
+            if (pcosPost) {
+                const dateElement = document.querySelector('.post-card[data-title*="PCOS and Mental Health"] .post-date');
+                if (dateElement) {
+                    dateElement.textContent = pcosPost.date;
+                }
+            }
+
             // Update dating burnout article
             const datingBurnoutPost = BlogUtils.getPostBySlug('dating-burnout-digital-age');
             if (datingBurnoutPost) {

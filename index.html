@@ -860,7 +860,30 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
                 <div class="carousel-viewport" id="resourcesViewport">
                     <div class="carousel-track" id="resourcesTrack">
 
-                        <!-- Article 1: Online Therapy First Choice - NEWEST -->
+                        <!-- Article 1: PCOS and Mental Health - NEWEST -->
+                        <article class="resource-card">
+                            <a href="/resources/posts/pcos-and-mental-health" class="resource-link">
+                                <div class="resource-image">
+                                    <img src="resources/posts/pcos-and-mental-health/pcos.svg" alt="The link between PCOS and mental health and how therapy supports you" loading="lazy">
+                                </div>
+                                <div class="resource-content">
+                                    <div class="resource-meta">
+                                        <span class="resource-date">Nov 6, 2025</span>
+                                        <span class="reading-time">8 min read</span>
+                                    </div>
+                                    <h3 class="resource-title">The Link Between PCOS and Mental Health (And How Therapy Supports You)</h3>
+                                    <div class="resource-tags">
+                                        <span class="tag">PCOS</span>
+                                        <span class="tag">Mental Health</span>
+                                        <span class="tag">Women's Health</span>
+                                    </div>
+                                    <p class="resource-excerpt">Understanding the connection between PCOS and mental health, and how therapy can provide essential support for managing both physical and emotional challenges.</p>
+                                    <span class="resource-read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Article 2: Online Therapy First Choice -->
                         <article class="resource-card">
                             <a href="/resources/posts/online-therapy-first-choice-india" class="resource-link">
                                 <div class="resource-image">
@@ -1139,10 +1162,19 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
     <script>
         // Populate blog dates and content from centralized data
         document.addEventListener('DOMContentLoaded', function() {
+            // Update PCOS and mental health article
+            const pcosPost = BlogUtils.getPostBySlug('pcos-and-mental-health');
+            if (pcosPost) {
+                const dateElement = document.querySelector('.resource-card:first-child .resource-date');
+                if (dateElement) {
+                    dateElement.textContent = pcosPost.displayDate;
+                }
+            }
+
             // Update online therapy article
             const onlineTherapyPost = BlogUtils.getPostBySlug('online-therapy-first-choice-india');
             if (onlineTherapyPost) {
-                const dateElement = document.querySelector('.resource-card:first-child .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(2) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = onlineTherapyPost.displayDate;
                 }
@@ -1151,7 +1183,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update dating burnout article
             const datingBurnoutPost = BlogUtils.getPostBySlug('dating-burnout-digital-age');
             if (datingBurnoutPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(2) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(3) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = datingBurnoutPost.displayDate;
                 }
@@ -1160,7 +1192,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update workplace burnout article
             const workplaceBurnoutPost = BlogUtils.getPostBySlug('workplace-burnout');
             if (workplaceBurnoutPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(3) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(4) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = workplaceBurnoutPost.displayDate;
                 }
@@ -1169,7 +1201,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update mental health day article
             const mentalHealthDayPost = BlogUtils.getPostBySlug('mental-health-day');
             if (mentalHealthDayPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(4) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(5) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = mentalHealthDayPost.displayDate;
                 }
@@ -1178,7 +1210,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update anxiety article
             const anxietyPost = BlogUtils.getPostBySlug('anxiety-understanding-managing');
             if (anxietyPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(5) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(6) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = anxietyPost.displayDate;
                 }
@@ -1187,7 +1219,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update depression article
             const depressionPost = BlogUtils.getPostBySlug('low-mood-to-depression');
             if (depressionPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(6) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(7) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = depressionPost.displayDate;
                 }
@@ -1196,7 +1228,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update therapy costs article
             const therapyCostsPost = BlogUtils.getPostBySlug('therapy-costs-india');
             if (therapyCostsPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(7) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(8) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = therapyCostsPost.displayDate;
                 }
@@ -1205,7 +1237,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; }
             // Update digital detox article
             const digitalDetoxPost = BlogUtils.getPostBySlug('digital-detox-vs-digital-balance');
             if (digitalDetoxPost) {
-                const dateElement = document.querySelector('.resource-card:nth-child(8) .resource-date');
+                const dateElement = document.querySelector('.resource-card:nth-child(9) .resource-date');
                 if (dateElement) {
                     dateElement.textContent = digitalDetoxPost.displayDate;
                 }

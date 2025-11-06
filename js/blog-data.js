@@ -4,7 +4,26 @@
  */
 
 const BLOG_DATA = {
-  // Latest blog post - Online Therapy First Choice in India
+  // Latest blog post - PCOS and Mental Health
+  'pcos-and-mental-health': {
+    slug: 'pcos-and-mental-health',
+    title: 'The Link Between PCOS and Mental Health (And How Therapy Supports You)',
+    shortTitle: 'The Link Between PCOS and Mental Health (And How Therapy Supports You)',
+    date: '2025-11-06',
+    displayDate: 'Nov 6, 2025',
+    publishedDate: 'November 6, 2025',
+    lastReviewed: 'November 6, 2025',
+    readingTime: '8 min read',
+    excerpt: 'Understanding the connection between PCOS and mental health, and how therapy can provide essential support for managing both physical and emotional challenges.',
+    categories: ['Wellness & Self-Care', 'Therapy Guide'],
+    tags: ['PCOS', 'Mental Health', 'Women\'s Health', 'Therapy'],
+    image: 'resources/posts/pcos-and-mental-health/pcos.svg',
+    imageAlt: 'The link between PCOS and mental health and how therapy supports you',
+    author: 'Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT',
+    url: '/resources/posts/pcos-and-mental-health'
+  },
+
+  // Online Therapy First Choice in India
   'online-therapy-first-choice-india': {
     slug: 'online-therapy-first-choice-india',
     title: 'Why Online Therapy is Becoming the First Choice in India',
