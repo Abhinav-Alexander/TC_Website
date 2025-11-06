@@ -76,11 +76,18 @@
     <!-- Resources - Updated regularly -->
     <url>
         <loc>https://therapycouncil.org/resources</loc>
-        <lastmod>2025-10-10</lastmod>
+        <lastmod>2025-11-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
+    <!-- Resource Post: PCOS and Mental Health - NEWEST -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/pcos-and-mental-health</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
     
     <!-- Resource Post: Digital Detox vs Digital Balance -->
     <url>
