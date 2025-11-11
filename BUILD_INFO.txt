@@ -1,0 +1,12 @@
+Therapy Council Website - Production Build
+==========================================
+
+Build Date: 2025-11-11 15:37:50
+Build Type: Production (Optimized)
+
+Optimizations Applied:
+----------------------
+✅ CSS Minification (all files)
+✅ Google Fonts preloaded (async loading)
+✅ JavaScript deferred loading
+✅ Resource hints (dns-prefetch, preconnect)
