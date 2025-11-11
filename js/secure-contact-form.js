@@ -60,12 +60,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add timestamp
             formData.append('timestamp', Date.now());
             
-            // Submit to your endpoint
+            // Submit to your endpoint (send JSON for serverless compatibility)
             console.log('Submitting to:', contactForm.action);
-            
+
+            const payload = {
+                name,
+                email,
+                phone: formData.get('phone') || '',
+                service: formData.get('service') || '',
+                message,
+                website: formData.get('website') || '',
+                timestamp: formData.get('timestamp')
+            };
+
             const response = await fetch(contactForm.action, {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                mode: 'cors',
+                credentials: 'omit'
             });
             
             console.log('Response status:', response.status);

@@ -17,6 +17,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "nodemailer": "^6.9.14",
     "mongodb": "^6.19.0"
   }
 }
