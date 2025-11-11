@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "./build-production.sh",
     "preview": "vite preview",
     "minify-css": "node minify-css.cjs",
     "build-production": "./build-production.sh",
@@ -17,7 +17,6 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "nodemailer": "^6.9.14",
     "mongodb": "^6.19.0"
   }
 }
