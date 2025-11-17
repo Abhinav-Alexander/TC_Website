@@ -9,7 +9,7 @@
     
     <!-- ================================================================ -->
     <!-- THERAPY COUNCIL WEBSITE SITEMAP                                -->
-    <!-- Last Updated: 2025-10-22                                        -->
+    <!-- Last Updated: 2025-01-27                                        -->
     <!-- ================================================================ -->
     
     <!-- Homepage - Highest Priority -->
@@ -76,12 +76,28 @@
     <!-- Resources - Updated regularly -->
     <url>
         <loc>https://therapycouncil.org/resources</loc>
-        <lastmod>2025-11-06</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
-    <!-- Resource Post: PCOS and Mental Health - NEWEST -->
+    <!-- Resource Post: Exam Stress - NEWEST -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/exam-stress</loc>
+        <lastmod>2025-11-17</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Resource Post: Why Therapy Is Important -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/why-therapy-is-important</loc>
+        <lastmod>2025-11-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resource Post: PCOS and Mental Health -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/pcos-and-mental-health</loc>
         <lastmod>2025-11-06</lastmod>
@@ -89,10 +105,26 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- Resource Post: Online Therapy First Choice in India -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/online-therapy-first-choice-india</loc>
+        <lastmod>2025-10-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resource Post: Dating Burnout in the Digital Age -->
+    <url>
+        <loc>https://therapycouncil.org/resources/posts/dating-burnout-digital-age</loc>
+        <lastmod>2025-10-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- Resource Post: Digital Detox vs Digital Balance -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/digital-detox-vs-digital-balance</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -100,7 +132,7 @@
     <!-- Resource Post: Low Mood to Depression -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/low-mood-to-depression</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-10-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -108,7 +140,7 @@
     <!-- Resource Post: Therapy Costs in India -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/therapy-costs-india</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-09-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -116,7 +148,7 @@
     <!-- Resource Post: Understanding and Managing Anxiety -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/anxiety-understanding-managing</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -124,7 +156,7 @@
     <!-- Resource Post: Workplace Burnout -->
     <url>
         <loc>https://therapycouncil.org/resources/posts/workplace-burnout</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-10-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -172,7 +204,7 @@
     <!-- Sitemap Reference (Self-referencing for completeness) -->
     <url>
         <loc>https://therapycouncil.org/sitemap.xml</loc>
-        <lastmod>2025-10-17</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.2</priority>
     </url>

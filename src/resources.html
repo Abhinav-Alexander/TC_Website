@@ -348,6 +348,39 @@
     <section class="blog-listing">
         <div class="container">
             <div class="blog-grid" id="blogGrid">
+                <!-- Exam Stress Article - NEWEST -->
+                <article class="post-card" data-category="Wellness & Self-Care,Depression & Anxiety" data-title="Exam Stress: Understanding, Managing & Overcoming Academic Pressure" data-content="Learn to identify exam stress symptoms, understand academic pressure, and discover evidence-based strategies to manage stress during exams. exam stress, academic stress, test anxiety, exam anxiety, study stress, managing exam stress, exam preparation, student mental health, stress management, therapy for students">
+                    <a class="post-link" href="/resources/posts/exam-stress">
+                        <div class="post-thumb">
+                            <img src="../resources/posts/exam-stress/Exam.svg" alt="Exam stress and academic pressure management" loading="lazy">
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date">2025-11-17</span>
+                            <span class="post-tag">Wellness & Self-Care</span>
+                            <span class="post-tag">Depression & Anxiety</span>
+                        </div>
+                        <h3 class="post-title">Exam Stress: Understanding, Managing & Overcoming Academic Pressure</h3>
+                        <p class="post-excerpt">Learn to identify exam stress symptoms, understand academic pressure, and discover evidence-based strategies to manage stress during exams.</p>
+                        <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </article>
+
+                <!-- Why Therapy Is Important Article -->
+                <article class="post-card" data-category="Therapy Guide" data-title="Why Therapy Is Important: 7 Reasons Professional Support Changes Everything" data-content="Therapy is not a last resort. Explore seven evidence-backed reasons to work with a licensed therapist and how professional support transforms wellbeing in India.">
+                    <a class="post-link" href="/resources/posts/why-therapy-is-important">
+                        <div class="post-thumb">
+                            <img src="../resources/posts/why-therapy-is-important/why.svg" alt="Illustration showing multiple conversations that represent therapy support and progress" loading="lazy">
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date">2025-11-13</span>
+                            <span class="post-tag">Therapy Guide</span>
+                        </div>
+                        <h3 class="post-title">Why Therapy Is Important: 7 Reasons Professional Support Changes Everything</h3>
+                        <p class="post-excerpt">Therapy delivers expert guidance, evidence-based tools, and compassionate accountability long before life feels overwhelming. See how it changes everything.</p>
+                        <span class="read-more">Read article <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </article>
+
                 <!-- PCOS and Mental Health Article - NEWEST -->
                 <article class="post-card" data-category="Wellness & Self-Care,Therapy Guide" data-title="The Link Between PCOS and Mental Health (And How Therapy Supports You)" data-content="Understanding the connection between PCOS and mental health, and how therapy can provide essential support for managing both physical and emotional challenges. PCOS, polycystic ovary syndrome, mental health, PCOS depression, PCOS anxiety, therapy for PCOS, women's health, PCOS support, mental wellness">
                     <a class="post-link" href="/resources/posts/pcos-and-mental-health">
@@ -704,6 +737,35 @@
 
         // Populate blog dates from centralized data
         document.addEventListener('DOMContentLoaded', function() {
+            // Update "Why Therapy Is Important" article
+            const whyTherapyPost = BlogUtils.getPostBySlug('why-therapy-is-important');
+            if (whyTherapyPost) {
+                const card = document.querySelector('.post-card[data-title*="Why Therapy Is Important"]');
+                if (card) {
+                    const dateElement = card.querySelector('.post-date');
+                    if (dateElement) {
+                        dateElement.textContent = whyTherapyPost.date || whyTherapyPost.publishedDate || whyTherapyPost.displayDate;
+                    }
+                    const titleElement = card.querySelector('.post-title');
+                    if (titleElement) {
+                        titleElement.textContent = whyTherapyPost.title;
+                    }
+                    const excerptElement = card.querySelector('.post-excerpt');
+                    if (excerptElement) {
+                        excerptElement.textContent = whyTherapyPost.excerpt;
+                    }
+                    const imageElement = card.querySelector('.post-thumb img');
+                    if (imageElement && whyTherapyPost.image) {
+                        imageElement.src = `../${whyTherapyPost.image}`;
+                        imageElement.alt = whyTherapyPost.imageAlt || imageElement.alt;
+                    }
+                    const linkElement = card.querySelector('.post-link');
+                    if (linkElement && whyTherapyPost.url) {
+                        linkElement.href = whyTherapyPost.url;
+                    }
+                }
+            }
+
             // Update PCOS and mental health article
             const pcosPost = BlogUtils.getPostBySlug('pcos-and-mental-health');
             if (pcosPost) {
@@ -773,6 +835,35 @@
                 const dateElement = document.querySelector('.post-card[data-category*="Digital Detox vs. Digital Balance"] .post-date');
                 if (dateElement) {
                     dateElement.textContent = digitalDetoxPost.date;
+                }
+            }
+
+            // Update exam stress article
+            const examStressPost = BlogUtils.getPostBySlug('exam-stress');
+            if (examStressPost) {
+                const card = document.querySelector('.post-card[data-resource-slug="exam-stress"], .post-card[data-title*="Exam Stress"]');
+                if (card) {
+                    const dateElement = card.querySelector('.post-date');
+                    if (dateElement) {
+                        dateElement.textContent = examStressPost.date || examStressPost.displayDate;
+                    }
+                    const titleElement = card.querySelector('.post-title');
+                    if (titleElement) {
+                        titleElement.textContent = examStressPost.title;
+                    }
+                    const excerptElement = card.querySelector('.post-excerpt');
+                    if (excerptElement) {
+                        excerptElement.textContent = examStressPost.excerpt;
+                    }
+                    const imageElement = card.querySelector('.post-thumb img');
+                    if (imageElement && examStressPost.image) {
+                        imageElement.src = `../${examStressPost.image}`;
+                        imageElement.alt = examStressPost.imageAlt || imageElement.alt;
+                    }
+                    const linkElement = card.querySelector('.post-link');
+                    if (linkElement && examStressPost.url) {
+                        linkElement.href = examStressPost.url;
+                    }
                 }
             }
         });
