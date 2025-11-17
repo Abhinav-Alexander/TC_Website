@@ -4,6 +4,25 @@
  */
 
 const BLOG_DATA = {
+  // Latest blog post - Exam Stress
+  'exam-stress': {
+    slug: 'exam-stress',
+    title: 'Exam Stress: Understanding, Managing & Overcoming Academic Pressure',
+    shortTitle: 'Exam Stress: Understanding, Managing & Overcoming Academic Pressure',
+    date: '2025-01-27',
+    displayDate: 'Jan 27, 2025',
+    publishedDate: 'January 27, 2025',
+    lastReviewed: 'January 27, 2025',
+    readingTime: '8 to 10 min read',
+    excerpt: 'Learn to identify exam stress symptoms, understand academic pressure, and discover evidence-based strategies to manage stress during exams.',
+    categories: ['Wellness & Self-Care', 'Depression & Anxiety'],
+    tags: ['Exam Stress', 'Academic Pressure', 'Student Mental Health', 'Stress Management'],
+    image: 'resources/posts/exam-stress/Exam.svg',
+    imageAlt: 'Exam stress and academic pressure management',
+    author: 'Pragya Alexander, M.Sc Clinical Psychology, PGD in CBT',
+    url: '/resources/posts/exam-stress'
+  },
+
   // Latest blog post - Why Therapy Is Important
   'why-therapy-is-important': {
     slug: 'why-therapy-is-important',
