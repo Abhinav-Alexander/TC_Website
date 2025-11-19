@@ -252,6 +252,10 @@
     background: #ff0000;
 }
 
+.social-icon.medium:hover {
+    background: #000000;
+}
+
 .credential-list {
     display: flex;
     flex-wrap: wrap;
