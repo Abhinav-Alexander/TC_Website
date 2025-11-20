@@ -348,6 +348,31 @@
     font-weight: 600;
 }
 
+.crisis-disclaimer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+}
+
+.crisis-disclaimer strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.crisis-disclaimer a {
+    color: #60a5fa;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+}
+
+.crisis-disclaimer a:hover {
+    color: #93c5fd;
+}
+
 @media (max-width: 767px) {
     .footer-brand p,
     .credential-item span,
